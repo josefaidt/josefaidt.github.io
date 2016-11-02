@@ -1,0 +1,14 @@
+{
+  "name": "josef-grunt-env",
+  "version": "0.0.1",
+  "author": "Josef Aidt",
+  "description": "first attempt at creating a grunt-specific package file",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-git": "^1.0.1",
+    "grunt-sass": "^1.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
