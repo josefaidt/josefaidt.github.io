@@ -1,5 +1,5 @@
 # vanir
-Website project created for personal portfolio.
+Website project created for personal portfolio. Version release will mark the milestone for ART 4567 final project.
 
 
 
