@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+/**********************************
+ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+***********************************/
+/**********************************
+TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
+***********************************/
+/**********************************
+RESPONSINVE RATIO: http://codepen.io/derekjp/pen/avodwL
+***********************************/
+/* ------ The Mixin ------ */
+/* ------ The Set Up ------ */
+@media (max-width: 299px) {
+  body {
+    font-size: 12px;
+    line-height: 19.416px; }
+  h1 {
+    font-size: 50.829612384px;
+    line-height: 58.248px;
+    margin-top: 38.832px;
+    margin-bottom: 19.416px; }
+  h2 {
+    font-size: 31.415088px;
+    line-height: 38.832px;
+    margin-top: 19.416px;
+    margin-bottom: 19.416px; }
+  h3 {
+    font-size: 19.416px;
+    line-height: 19.416px;
+    margin-top: 19.416px;
+    margin-bottom: 19.416px; }
+  h4 {
+    font-size: 12px;
+    line-height: 19.416px;
+    margin-top: 19.416px;
+    margin-bottom: 19.416px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 19.416px;
+    margin-bottom: 19.416px; } }
+
+@media (min-width: 300px) {
+  body {
+    font-size: 14px;
+    line-height: 22.652px; }
+  h1 {
+    font-size: 59.301214448px;
+    line-height: 67.956px;
+    margin-top: 45.304px;
+    margin-bottom: 22.652px; }
+  h2 {
+    font-size: 36.650936px;
+    line-height: 45.304px;
+    margin-top: 22.652px;
+    margin-bottom: 22.652px; }
+  h3 {
+    font-size: 22.652px;
+    line-height: 22.652px;
+    margin-top: 22.652px;
+    margin-bottom: 22.652px; }
+  h4 {
+    font-size: 14px;
+    line-height: 22.652px;
+    margin-top: 22.652px;
+    margin-bottom: 22.652px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 22.652px;
+    margin-bottom: 22.652px; } }
+
+@media (min-width: 600px) {
+  body {
+    font-size: 15px;
+    line-height: 24.27px; }
+  h1 {
+    font-size: 63.53701548px;
+    line-height: 72.81px;
+    margin-top: 48.54px;
+    margin-bottom: 24.27px; }
+  h2 {
+    font-size: 39.26886px;
+    line-height: 48.54px;
+    margin-top: 24.27px;
+    margin-bottom: 24.27px; }
+  h3 {
+    font-size: 24.27px;
+    line-height: 24.27px;
+    margin-top: 24.27px;
+    margin-bottom: 24.27px; }
+  h4 {
+    font-size: 15px;
+    line-height: 24.27px;
+    margin-top: 24.27px;
+    margin-bottom: 24.27px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 24.27px;
+    margin-bottom: 24.27px; } }
+
+@media (min-width: 800px) {
+  body {
+    font-size: 16px;
+    line-height: 25.888px; }
+  h1 {
+    font-size: 67.772816512px;
+    line-height: 77.664px;
+    margin-top: 51.776px;
+    margin-bottom: 25.888px; }
+  h2 {
+    font-size: 41.886784px;
+    line-height: 51.776px;
+    margin-top: 25.888px;
+    margin-bottom: 25.888px; }
+  h3 {
+    font-size: 25.888px;
+    line-height: 25.888px;
+    margin-top: 25.888px;
+    margin-bottom: 25.888px; }
+  h4 {
+    font-size: 16px;
+    line-height: 25.888px;
+    margin-top: 25.888px;
+    margin-bottom: 25.888px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 25.888px;
+    margin-bottom: 25.888px; } }
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 19px;
+    line-height: 30.742px; }
+  h1 {
+    font-size: 80.480219608px;
+    line-height: 92.226px;
+    margin-top: 61.484px;
+    margin-bottom: 30.742px; }
+  h2 {
+    font-size: 49.740556px;
+    line-height: 61.484px;
+    margin-top: 30.742px;
+    margin-bottom: 30.742px; }
+  h3 {
+    font-size: 30.742px;
+    line-height: 30.742px;
+    margin-top: 30.742px;
+    margin-bottom: 30.742px; }
+  h4 {
+    font-size: 19px;
+    line-height: 30.742px;
+    margin-top: 30.742px;
+    margin-bottom: 30.742px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 30.742px;
+    margin-bottom: 30.742px; } }
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 21px;
+    line-height: 33.978px; }
+  h1 {
+    font-size: 88.951821672px;
+    line-height: 101.934px;
+    margin-top: 67.956px;
+    margin-bottom: 33.978px; }
+  h2 {
+    font-size: 54.976404px;
+    line-height: 67.956px;
+    margin-top: 33.978px;
+    margin-bottom: 33.978px; }
+  h3 {
+    font-size: 33.978px;
+    line-height: 33.978px;
+    margin-top: 33.978px;
+    margin-bottom: 33.978px; }
+  h4 {
+    font-size: 21px;
+    line-height: 33.978px;
+    margin-top: 33.978px;
+    margin-bottom: 33.978px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 33.978px;
+    margin-bottom: 33.978px; } }
+
+@media (min-width: 1400px) {
+  body {
+    font-size: 23px;
+    line-height: 37.214px; }
+  h1 {
+    font-size: 97.423423736px;
+    line-height: 111.642px;
+    margin-top: 74.428px;
+    margin-bottom: 37.214px; }
+  h2 {
+    font-size: 60.212252px;
+    line-height: 74.428px;
+    margin-top: 37.214px;
+    margin-bottom: 37.214px; }
+  h3 {
+    font-size: 37.214px;
+    line-height: 37.214px;
+    margin-top: 37.214px;
+    margin-bottom: 37.214px; }
+  h4 {
+    font-size: 23px;
+    line-height: 37.214px;
+    margin-top: 37.214px;
+    margin-bottom: 37.214px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 37.214px;
+    margin-bottom: 37.214px; } }
+
+@media (min-width: 1600px) {
+  body {
+    font-size: 25px;
+    line-height: 40.45px; }
+  h1 {
+    font-size: 105.8950258px;
+    line-height: 121.35px;
+    margin-top: 80.9px;
+    margin-bottom: 40.45px; }
+  h2 {
+    font-size: 65.4481px;
+    line-height: 80.9px;
+    margin-top: 40.45px;
+    margin-bottom: 40.45px; }
+  h3 {
+    font-size: 40.45px;
+    line-height: 40.45px;
+    margin-top: 40.45px;
+    margin-bottom: 40.45px; }
+  h4 {
+    font-size: 25px;
+    line-height: 40.45px;
+    margin-top: 40.45px;
+    margin-bottom: 40.45px; }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 40.45px;
+    margin-bottom: 40.45px; } }
+
+/* ------ Demo styles ------ */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+  width: 90%;
+  margin: 0 auto 2em; }
+
+p, ul, ol, pre, table, blockquote, h1, h2, h3, h4, h5, h6 {
+  transition: all 200ms ease-in-out; }
+
+code {
+  background: #ccc;
+  display: inline-block; }
+
+pre, code {
+  width: 100%; }
+
+pre {
+  margin: 1em; }
