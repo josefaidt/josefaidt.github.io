@@ -2,9 +2,23 @@
 // Version: v0.0.1
 // Author: Josef Aidt
 
-/**********************************
-ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
-***********************************/
+
+//
+//  Background
+//
+
+@mixin bg-picture() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+//
+//  ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+//
+
 @mixin keyframes($animation-name) {
     @-webkit-keyframes #{$animation-name} {
         @content;
@@ -32,9 +46,9 @@ ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-
 }
 
 
-/**********************************
-TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
-***********************************/
+//
+//  TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
+//
 
 @mixin transition($transition...) {
   -moz-transition:    $transition;
@@ -66,115 +80,3 @@ TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
   -webkit-transition-delay: $delay;
   transition-delay:         $delay;
 }
-
-
-/**********************************
-RESPONSINVE RATIO: http://codepen.io/derekjp/pen/avodwL
-***********************************/
-
-/* ------ The Mixin ------ */
-@mixin typography($font-size){
-  $base-line-height: $font-size * $ratio;
-  $margin: $base-line-height;
-  body{
-    font-size: $font-size;
-    line-height: ($font-size * $ratio);
-  }
-  h1{
-    font-size: ((($font-size * $ratio) * $ratio) * $ratio);
-    line-height: ($font-size * $ratio) * 3;
-    margin-top: $margin * 2;
-    margin-bottom: $margin;
-  }
-
-  h2{
-    font-size: (($font-size * $ratio) * $ratio);
-    line-height: ($font-size * $ratio) * 2;
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-
-  h3{
-    font-size: $font-size * $ratio;
-    line-height: ($font-size * $ratio);
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-  h4{
-    font-size: $font-size;
-    line-height: ($font-size * $ratio);
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-  p, ul, ol, pre, table, blockquote{
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-}
-
-/* ------ The Set Up ------ */
-//Step 1) Pick your ratio
-//example: 1.618 = Golden Ratio
-$ratio: 1.618;
-
-//Step 2) Pick your base font size per breakpoint using the mixin
-//example: @include typography(16px);
-
-//0 - first breakpoint
-@media (max-width: 299px){
-  @include typography(12px);
-}
-//start of mobile first breakpoints
-@media (min-width: 300px){
-  @include typography(14px);
-}
-@media(min-width: 600px){
-  @include typography(15px);
-}
-@media(min-width: 800px){
-  @include typography(16px);
-}
-@media(min-width: 1000px){
-  @include typography(19px);
-}
-@media(min-width: 1200px){
-  @include typography(21px);
-}
-@media(min-width: 1400px){
-  @include typography(23px);
-}
-@media(min-width: 1600px){
-  @include typography(25px);
-}
-
-
-/* ------ Demo styles ------ */
-html{
-	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased !important;
-	text-rendering: optimizelegibility;
-	-moz-osx-font-smoothing: grayscale;
-}
-body{
-  font-family: 'Roboto', sans-serif;
-  color: rgb(33,33,33);
-  width: 90%;
-  margin: 0 auto 2em;
-}
-p, ul, ol, pre, table, blockquote, h1, h2, h3, h4, h5, h6{
-  transition: all 200ms ease-in-out;
-}
-code{
-  background: #ccc;
-  display: inline-block;
-}
-pre, code{
-  width: 100%;
-}
-pre{
-  margin: 1em;
-}
-
-
