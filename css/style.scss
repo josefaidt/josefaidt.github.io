@@ -1,181 +1,122 @@
+@import "normalize";
 @import "variables";
+@import "mixins";
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 // play with experimental grid... see onenote notes for details
-
-/**********************************
-ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
-***********************************/
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }  
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }  
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};      
-}
-
-
-/**********************************
-TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
-***********************************/
-
-@mixin transition($transition...) {
-  -moz-transition:    $transition;
-  -o-transition:      $transition;
-  -webkit-transition: $transition;
-  transition:         $transition;
-}
-@mixin transition-property($property...) {
-  -moz-transition-property:    $property;
-  -o-transition-property:      $property;
-  -webkit-transition-property: $property;
-  transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-  -moz-transition-property:    $duration;
-  -o-transition-property:      $duration;
-  -webkit-transition-property: $duration;
-  transition-property:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-  -moz-transition-timing-function:    $timing;
-  -o-transition-timing-function:      $timing;
-  -webkit-transition-timing-function: $timing;
-  transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-  -moz-transition-delay:    $delay;
-  -o-transition-delay:      $delay;
-  -webkit-transition-delay: $delay;
-  transition-delay:         $delay;
-}
-
-
-/**********************************
-RESPONSINVE RATIO: http://codepen.io/derekjp/pen/avodwL
-***********************************/
-
-/* ------ The Mixin ------ */
-@mixin typography($font-size){
-  $base-line-height: $font-size * $ratio;
-  $margin: $base-line-height;
-  body{
-    font-size: $font-size;
-    line-height: ($font-size * $ratio);
-  }
-  h1{
-    font-size: ((($font-size * $ratio) * $ratio) * $ratio);
-    line-height: ($font-size * $ratio) * 3;
-    margin-top: $margin * 2;
-    margin-bottom: $margin;
-  }
-
-  h2{
-    font-size: (($font-size * $ratio) * $ratio);
-    line-height: ($font-size * $ratio) * 2;
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-
-  h3{
-    font-size: $font-size * $ratio;
-    line-height: ($font-size * $ratio);
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-  h4{
-    font-size: $font-size;
-    line-height: ($font-size * $ratio);
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-  p, ul, ol, pre, table, blockquote{
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-}
-
-/* ------ The Set Up ------ */
-//Step 1) Pick your ratio
-//example: 1.618 = Golden Ratio
-$ratio: 1.618;
-
-//Step 2) Pick your base font size per breakpoint using the mixin
-//example: @include typography(16px);
-
-//0 - first breakpoint
-@media (max-width: 299px){
-  @include typography(12px);
-}
-//start of mobile first breakpoints
-@media (min-width: 300px){
-  @include typography(14px);
-}
-@media(min-width: 600px){
-  @include typography(15px);
-}
-@media(min-width: 800px){
-  @include typography(16px);
-}
-@media(min-width: 1000px){
-  @include typography(19px);
-}
-@media(min-width: 1200px){
-  @include typography(21px);
-}
-@media(min-width: 1400px){
-  @include typography(23px);
-}
-@media(min-width: 1600px){
-  @include typography(25px);
-}
-
-
-/* ------ Demo styles ------ */
-html{
-	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased !important;
-	text-rendering: optimizelegibility;
-	-moz-osx-font-smoothing: grayscale;
-}
-body{
-  font-family: 'Roboto', sans-serif;
-  color: rgb(33,33,33);
-  width: 90%;
-  margin: 0 auto 2em;
-}
-p, ul, ol, pre, table, blockquote, h1, h2, h3, h4, h5, h6{
-  transition: all 200ms ease-in-out;
-}
-code{
-  background: #ccc;
-  display: inline-block;
-}
-pre, code{
+body {
+  // font-family: 'Josefin Sans', open sans;
+  background: url('../img/mt_2010.jpg') no-repeat center center fixed; 
+  @include bg-picture();
   width: 100%;
-}
-pre{
-  margin: 1em;
+  color: white;
 }
 
+//Flex styles
+.flex {
+  display: flex;
+  // display: -webkit-flex;
+}
 
+.navigation {
+  justify-content: space-between;
+}
+
+.justify {
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+// .main_h {
+//   position: fixed;
+//   top: 0px;
+//   max-height: 70px;
+//   z-index: 999;
+//   width: 100%;
+//   padding-top: 17px;
+//   background: #333;
+//   overflow: hidden;
+//   @include transition(all 0.3s);
+//   opacity: 1;
+//   top: -100px;
+//   padding-bottom: 6px;
+//   font-family: 'Josefin Sans', open sans;
+// }
+
+nav {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #333;
+  box-shadow: 0px 0px 10px 0px black;
+  div#logo {
+    padding: 20px;
+    h1, h3 {
+      margin: 0;
+      text-align: center;
+    }
+  }
+  ul {
+    width: 60%;
+    margin: 0;
+    li {
+      list-style: none;
+      &:hover {
+        background: #555;
+      }
+      @include transition(0.3s);
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 1.3em;
+          padding: 0 40px;
+      }
+    }
+  }
+}
+
+//media queries
+@media only screen and (max-width: 900px) {
+  .navigation {
+    flex-direction: column;
+  }
+  .justify {
+    justify-content: center;
+  }
+  ul {
+    width: 100% !important;
+    height: 50px;
+    padding: 0;
+    background: #333;
+    li:hover {
+        background: #555 !important;
+    } 
+  }
+}
+
+@media only screen and (max-width: 600x) {
+  ul{
+    flex-direction: column;
+    height: auto;
+    li {
+      height: 50px !important;
+      width: 100%;
+      justify-content: center;
+    }
+  .mobile-toggle {
+    display: block;
+  }
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}}

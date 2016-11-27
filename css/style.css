@@ -1,263 +1,486 @@
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
-/**********************************
-ANIMATION KEYFRAME MIXIN: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
-***********************************/
-/**********************************
-TRANSITIONS: https://codepen.io/sawmac/pen/cayhK
-***********************************/
-/**********************************
-RESPONSINVE RATIO: http://codepen.io/derekjp/pen/avodwL
-***********************************/
-/* ------ The Mixin ------ */
-/* ------ The Set Up ------ */
-@media (max-width: 299px) {
-  body {
-    font-size: 12px;
-    line-height: 19.416px; }
-  h1 {
-    font-size: 50.829612384px;
-    line-height: 58.248px;
-    margin-top: 38.832px;
-    margin-bottom: 19.416px; }
-  h2 {
-    font-size: 31.415088px;
-    line-height: 38.832px;
-    margin-top: 19.416px;
-    margin-bottom: 19.416px; }
-  h3 {
-    font-size: 19.416px;
-    line-height: 19.416px;
-    margin-top: 19.416px;
-    margin-bottom: 19.416px; }
-  h4 {
-    font-size: 12px;
-    line-height: 19.416px;
-    margin-top: 19.416px;
-    margin-bottom: 19.416px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 19.416px;
-    margin-bottom: 19.416px; } }
-
-@media (min-width: 300px) {
-  body {
-    font-size: 14px;
-    line-height: 22.652px; }
-  h1 {
-    font-size: 59.301214448px;
-    line-height: 67.956px;
-    margin-top: 45.304px;
-    margin-bottom: 22.652px; }
-  h2 {
-    font-size: 36.650936px;
-    line-height: 45.304px;
-    margin-top: 22.652px;
-    margin-bottom: 22.652px; }
-  h3 {
-    font-size: 22.652px;
-    line-height: 22.652px;
-    margin-top: 22.652px;
-    margin-bottom: 22.652px; }
-  h4 {
-    font-size: 14px;
-    line-height: 22.652px;
-    margin-top: 22.652px;
-    margin-bottom: 22.652px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 22.652px;
-    margin-bottom: 22.652px; } }
-
-@media (min-width: 600px) {
-  body {
-    font-size: 15px;
-    line-height: 24.27px; }
-  h1 {
-    font-size: 63.53701548px;
-    line-height: 72.81px;
-    margin-top: 48.54px;
-    margin-bottom: 24.27px; }
-  h2 {
-    font-size: 39.26886px;
-    line-height: 48.54px;
-    margin-top: 24.27px;
-    margin-bottom: 24.27px; }
-  h3 {
-    font-size: 24.27px;
-    line-height: 24.27px;
-    margin-top: 24.27px;
-    margin-bottom: 24.27px; }
-  h4 {
-    font-size: 15px;
-    line-height: 24.27px;
-    margin-top: 24.27px;
-    margin-bottom: 24.27px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 24.27px;
-    margin-bottom: 24.27px; } }
-
-@media (min-width: 800px) {
-  body {
-    font-size: 16px;
-    line-height: 25.888px; }
-  h1 {
-    font-size: 67.772816512px;
-    line-height: 77.664px;
-    margin-top: 51.776px;
-    margin-bottom: 25.888px; }
-  h2 {
-    font-size: 41.886784px;
-    line-height: 51.776px;
-    margin-top: 25.888px;
-    margin-bottom: 25.888px; }
-  h3 {
-    font-size: 25.888px;
-    line-height: 25.888px;
-    margin-top: 25.888px;
-    margin-bottom: 25.888px; }
-  h4 {
-    font-size: 16px;
-    line-height: 25.888px;
-    margin-top: 25.888px;
-    margin-bottom: 25.888px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 25.888px;
-    margin-bottom: 25.888px; } }
-
-@media (min-width: 1000px) {
-  body {
-    font-size: 19px;
-    line-height: 30.742px; }
-  h1 {
-    font-size: 80.480219608px;
-    line-height: 92.226px;
-    margin-top: 61.484px;
-    margin-bottom: 30.742px; }
-  h2 {
-    font-size: 49.740556px;
-    line-height: 61.484px;
-    margin-top: 30.742px;
-    margin-bottom: 30.742px; }
-  h3 {
-    font-size: 30.742px;
-    line-height: 30.742px;
-    margin-top: 30.742px;
-    margin-bottom: 30.742px; }
-  h4 {
-    font-size: 19px;
-    line-height: 30.742px;
-    margin-top: 30.742px;
-    margin-bottom: 30.742px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 30.742px;
-    margin-bottom: 30.742px; } }
-
-@media (min-width: 1200px) {
-  body {
-    font-size: 21px;
-    line-height: 33.978px; }
-  h1 {
-    font-size: 88.951821672px;
-    line-height: 101.934px;
-    margin-top: 67.956px;
-    margin-bottom: 33.978px; }
-  h2 {
-    font-size: 54.976404px;
-    line-height: 67.956px;
-    margin-top: 33.978px;
-    margin-bottom: 33.978px; }
-  h3 {
-    font-size: 33.978px;
-    line-height: 33.978px;
-    margin-top: 33.978px;
-    margin-bottom: 33.978px; }
-  h4 {
-    font-size: 21px;
-    line-height: 33.978px;
-    margin-top: 33.978px;
-    margin-bottom: 33.978px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 33.978px;
-    margin-bottom: 33.978px; } }
-
-@media (min-width: 1400px) {
-  body {
-    font-size: 23px;
-    line-height: 37.214px; }
-  h1 {
-    font-size: 97.423423736px;
-    line-height: 111.642px;
-    margin-top: 74.428px;
-    margin-bottom: 37.214px; }
-  h2 {
-    font-size: 60.212252px;
-    line-height: 74.428px;
-    margin-top: 37.214px;
-    margin-bottom: 37.214px; }
-  h3 {
-    font-size: 37.214px;
-    line-height: 37.214px;
-    margin-top: 37.214px;
-    margin-bottom: 37.214px; }
-  h4 {
-    font-size: 23px;
-    line-height: 37.214px;
-    margin-top: 37.214px;
-    margin-bottom: 37.214px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 37.214px;
-    margin-bottom: 37.214px; } }
-
-@media (min-width: 1600px) {
-  body {
-    font-size: 25px;
-    line-height: 40.45px; }
-  h1 {
-    font-size: 105.8950258px;
-    line-height: 121.35px;
-    margin-top: 80.9px;
-    margin-bottom: 40.45px; }
-  h2 {
-    font-size: 65.4481px;
-    line-height: 80.9px;
-    margin-top: 40.45px;
-    margin-bottom: 40.45px; }
-  h3 {
-    font-size: 40.45px;
-    line-height: 40.45px;
-    margin-top: 40.45px;
-    margin-bottom: 40.45px; }
-  h4 {
-    font-size: 25px;
-    line-height: 40.45px;
-    margin-top: 40.45px;
-    margin-bottom: 40.45px; }
-  p, ul, ol, pre, table, blockquote {
-    margin-top: 40.45px;
-    margin-bottom: 40.45px; } }
-
-/* ------ Demo styles ------ */
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
   -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased !important;
-  text-rendering: optimizelegibility;
-  -moz-osx-font-smoothing: grayscale; }
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
 
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #212121;
-  width: 90%;
-  margin: 0 auto 2em; }
+  margin: 0; }
 
-p, ul, ol, pre, table, blockquote, h1, h2, h3, h4, h5, h6 {
-  transition: all 200ms ease-in-out; }
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
 
-code {
-  background: #ccc;
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
   display: inline-block; }
 
-pre, code {
-  width: 100%; }
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
 
-pre {
-  margin: 1em; }
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+body {
+  background: url("../img/mt_2010.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  color: white; }
+
+.flex {
+  display: flex; }
+
+.navigation {
+  justify-content: space-between; }
+
+.justify {
+  -webkit-box-pack: end;
+  justify-content: flex-end; }
+
+.vertical-center {
+  align-items: center; }
+
+nav {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #333;
+  box-shadow: 0px 0px 10px 0px black; }
+  nav div#logo {
+    padding: 20px; }
+    nav div#logo h1, nav div#logo h3 {
+      margin: 0;
+      text-align: center; }
+  nav ul {
+    width: 60%;
+    margin: 0; }
+    nav ul li {
+      list-style: none;
+      -moz-transition: 0.3s;
+      -o-transition: 0.3s;
+      -webkit-transition: 0.3s;
+      transition: 0.3s; }
+      nav ul li:hover {
+        background: #555; }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3em;
+        padding: 0 40px; }
+
+@media only screen and (max-width: 900px) {
+  .navigation {
+    flex-direction: column; }
+  .justify {
+    justify-content: center; }
+  ul {
+    width: 100% !important;
+    height: 50px;
+    padding: 0;
+    background: #333; }
+    ul li:hover {
+      background: #555 !important; } }
+
+@media only screen and (max-width: 600x) {
+  ul {
+    flex-direction: column;
+    height: auto; }
+    ul li {
+      height: 50px !important;
+      width: 100%;
+      justify-content: center; }
+    ul .mobile-toggle {
+      display: block; }
+  .mobile-toggle span {
+    width: 30px;
+    height: 4px;
+    margin-bottom: 6px;
+    border-radius: 1000px;
+    background: #8f8f8f;
+    display: block; } }
