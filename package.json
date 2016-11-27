@@ -10,5 +10,8 @@
     "grunt-git": "^1.0.1",
     "grunt-sass": "^1.2.1",
     "load-grunt-tasks": "^3.5.2"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
   }
 }
