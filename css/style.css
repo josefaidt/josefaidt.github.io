@@ -157,7 +157,10 @@ body {
           background: #555;
           border-bottom: 1px solid #9f9; }
         .main-header .main-nav-container .main-nav li:hover {
-          background: #555; }
+          background: #555;
+          border-bottom: 1px solid #D46A6A; }
+        .main-header .main-nav-container .main-nav li.active:hover {
+          border-bottom: 1px solid #9f9; }
         .main-header .main-nav-container .main-nav li a {
           align-items: center;
           flex: 1;

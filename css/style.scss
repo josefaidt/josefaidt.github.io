@@ -77,6 +77,10 @@ body {
         
         &:hover {
           background: $nav-highlight;
+          border-bottom: 1px solid $clrPaleRed;
+        }
+        &.active:hover {
+          border-bottom: 1px solid $clrGreen;
         }
         transition: all 0.3s ease;
         
