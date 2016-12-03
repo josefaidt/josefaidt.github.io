@@ -1,21 +1,26 @@
 {
-  "name": "josef-grunt-env",
-  "version": "0.0.1",
+  "name": "josef-grunt",
+  "version": "0.0.2",
   "author": "Josef Aidt",
+  "license": "MIT",
   "description": "first attempt at creating a grunt-specific package file",
   "repository": {
     "type": "git",
     "url": "git://github.com/sevensummitt/thejosef.life"
-  }
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-git": "^1.0.1",
-    "grunt-sass": "^1.2.1",
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
     "normalize.css": "^5.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/sevensummitt/thejosef.life/issues"
+  },
+  "homepage": "https://github.com/sevensummitt/thejosef.life#readme"
 }
