@@ -153,6 +153,9 @@ body {
         flex-direction: column;
         text-align: center;
         transition: all 0.3s ease; }
+        .main-header .main-nav-container .main-nav li.active {
+          background: #555;
+          border-bottom: 1px solid #9f9; }
         .main-header .main-nav-container .main-nav li:hover {
           background: #555; }
         .main-header .main-nav-container .main-nav li a {
@@ -169,7 +172,10 @@ body {
     .main-header .main-nav-container .main-nav li {
       flex: 1 0 40%; }
       .main-header .main-nav-container .main-nav li a {
-        padding: 7px; } }
+        padding: 7px; }
+  .content article.home-about-text .article-body {
+    flex-direction: column;
+    align-items: center; } }
 
 @media all and (max-width: 769px) {
   .main-header {
@@ -181,7 +187,13 @@ body {
       .main-header .main-nav-container .main-nav {
         margin: auto; }
         .main-header .main-nav-container .main-nav li a {
-          font-size: 1rem; } }
+          font-size: 1rem; }
+  .content article.home-about-text {
+    flex-direction: column; }
+    .content article.home-about-text .article-body {
+      flex-wrap: wrap; }
+      .content article.home-about-text .article-body .img {
+        align-self: center; } }
 
 * {
   box-sizing: border-box; }
@@ -201,7 +213,7 @@ a {
   text-decoration: none; }
 
 .content {
-  padding: 50px 2% 200px; }
+  padding: 50px 5% 200px; }
   .content article {
     padding-bottom: 10px; }
     .content article h1 {
@@ -209,6 +221,7 @@ a {
     .content article p {
       padding: 0 10px; }
   .content article.home-about-text {
+    padding: 0 5%;
     flex-direction: column;
     flex-wrap: wrap; }
     .content article.home-about-text .title {
@@ -218,15 +231,17 @@ a {
       font-size: 2.5em;
       line-height: 1; }
       .content article.home-about-text .title span {
+        color: #dbd9d8;
         border-bottom: 2px solid #9f9;
-        opacity: 0.6;
         font-size: 0.5em;
         line-height: 3; }
     .content article.home-about-text .article-body {
       justify-content: space-between;
       flex-grow: 1; }
+      .content article.home-about-text .article-body .article-item a {
+        color: #D46A6A; }
       .content article.home-about-text .article-body .img {
-        background-image: url("http://i.imgur.com/CdpYn7H.jpg"); }
+        border-radius: 25px; }
 
 .bg {
   background: url("http://i.imgur.com/2KygkAF.jpg") no-repeat center center fixed;

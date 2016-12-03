@@ -69,6 +69,11 @@ body {
         // align-items: stretch;
         flex-direction: column;
         text-align: center;
+
+        &.active {
+          background: $nav-highlight;
+          border-bottom: 1px solid $clrGreen;
+        }
         
         &:hover {
           background: $nav-highlight;
@@ -105,7 +110,20 @@ body {
         }
       }
     }
-//     end main-nav-container
+    // end main-nav-container
+  }
+  // end main-header
+
+  .content {
+
+    article.home-about-text {
+
+      .article-body {
+        flex-direction: column;
+        // justify-content: center;  
+        align-items: center;
+      }
+    }
   }
 }
 // end tablet
@@ -129,6 +147,24 @@ body {
       }
     }   
   }
+  // end main-header
+
+  .content {
+
+    article.home-about-text {
+      flex-direction: column;
+
+      .article-body {
+        flex-wrap: wrap;
+        
+        .img {
+          align-self: center;
+        }
+      }
+    }
+    // end article
+  }
+  // end content
 }
 // end phone
 
@@ -154,7 +190,7 @@ a {
 }
 
 .content {
-  padding: 50px 2% 200px;
+  padding: 50px 5% 200px;
   article {
     padding-bottom: 10px;
     h1 {
@@ -165,6 +201,7 @@ a {
     }
   }
   article.home-about-text {
+    padding: 0 5%;
     // h1 {
     //   text-transform: uppercase;
     //   color: white;
@@ -175,6 +212,7 @@ a {
     // }
     flex-direction: column;
     flex-wrap: wrap;
+
     .title {
       text-align: center;
       align-self: center;
@@ -182,22 +220,25 @@ a {
       font-size: 2.5em;
       line-height: 1; 
       span {
+        color: #dbd9d8;
         border-bottom: 2px solid $clrGreen;
-        opacity: 0.6;
+        // opacity: 0.6;
         font-size: 0.5em;
         line-height: 3;
       }
     }
     .article-body {
       // flex-direction: row;
-      // flex-wrap: nowrap;
       justify-content: space-between;
       flex-grow: 1;
       .article-item {
         
+        a {
+          color: $clrPaleRed;
+        }
       }
       .img {
-          background-image: url("http://i.imgur.com/CdpYn7H.jpg");
+        border-radius: 25px; 
       }
     } 
   }
