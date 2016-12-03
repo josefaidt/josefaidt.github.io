@@ -18,13 +18,12 @@ module.exports = function(grunt){
 		// },
 
 		sass:{
-			production: {
-				options:{
-					paths:['css'],
-					// plugins:[ new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]})],
-					report:'min',
+			dist: {
+				options: {
+					style: 'expanded'
+
 				},
-				files:{
+				files: {
 					'css/style.css':'css/style.scss',
 					'css/page.css':'css/page.scss'
 				}
@@ -52,7 +51,7 @@ module.exports = function(grunt){
 				}
 			},
 			css:{
-				files:'css/style.scss',
+				files:['css/style.scss','css/page.scss'],
 				tasks:['sass'],
 				options:{
 					livereload:true
@@ -70,12 +69,13 @@ module.exports = function(grunt){
 	require('load-grunt-tasks')(grunt);
 	// var jpegRecompress = require('imagemin-jpeg-recompress');
 	
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
     // define the default task that executes when we run 'grunt' from inside the project
+  grunt.registerTask('default', ['sass']);
 	grunt.registerTask('default', ['watch']);
 
 };
