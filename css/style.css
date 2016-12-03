@@ -189,8 +189,6 @@ body {
       width: 50%; }
       .main-header .main-nav-container .main-nav {
         margin: auto; }
-        .main-header .main-nav-container .main-nav li a {
-          font-size: 1rem; }
   .content article.home-about-text {
     flex-direction: column; }
     .content article.home-about-text .article-body {
