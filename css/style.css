@@ -175,7 +175,7 @@ body {
     .main-header .main-nav-container .main-nav li {
       flex: 1 0 40%; }
       .main-header .main-nav-container .main-nav li a {
-        padding: 7px; }
+        padding: 1.2em; }
   .content article.home-about-text .article-body {
     flex-direction: column;
     align-items: center; } }
@@ -184,6 +184,8 @@ body {
   .main-header {
     align-items: center;
     width: 100%; }
+    .main-header .logo {
+      font-size: 1.2em; }
     .main-header .main-nav-container {
       margin: 0;
       width: 50%; }

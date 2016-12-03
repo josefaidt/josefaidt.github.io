@@ -109,7 +109,7 @@ body {
           flex: 1 0 40%;
           
           a {
-            padding: 7px;
+            padding: 1.2em;
           }
         }
       }
@@ -137,6 +137,10 @@ body {
   .main-header {
     align-items: center;
     width: 100%;
+
+    .logo {
+      font-size: 1.2em;
+    }
     
     .main-nav-container {
       margin: 0;
