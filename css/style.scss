@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 @import "transformicon";
+@import "icons";
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Open+Sans');
 
 $breakpoint-tablet: 1025px;
@@ -109,7 +110,7 @@ body {
           flex: 1 0 40%;
           
           a {
-            padding: 1.2em;
+            padding: 1.1em;
           }
         }
       }
@@ -278,31 +279,16 @@ a {
   }
 }
 
-@-webkit-keyframes scroll {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
 
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-}
-@keyframes scroll {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
+.footer {
+  align-items: center;
+  // flex-direction: column;
+  background: $nav-color;
 
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    transform: translateY(20px);
+  .footer-nav {
+
+    .footer-nav-item {
+
+    }
   }
 }
