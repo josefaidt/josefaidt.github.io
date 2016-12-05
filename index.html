@@ -10,12 +10,11 @@
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="js/transformicon.js"></script>
 </head>
-<body>
+<body class="flex column">
 	<header class="main-header flex">
 	  <div class="logo">
 	    <h1><a href="#">josef.aidt</a></h1>
@@ -49,7 +48,7 @@
 
 
 	<!-- THE BODY -->
-	<div class="content flex column">
+	<main class="content flex column">
 		<article class="flex home-about-text column">
 	    <h1 class="title">A Web Portfolio<br>
 	    	<span>"The power of imagination makes us infinite."  -John Muir</span>
@@ -69,16 +68,27 @@
 					</div>
 				</div>
 		</article>
-	</div>
+	</main>
 
 	<!-- FOOTER -->
-	<footer class="footer flex column">
-		<ul class="footer-nav flex">
+	<footer class="footer flex row">
+		<div class="contact-info footer-item">
+			<span>
+				Josef J. Aidt <br>
+				<a href="mailto:josef.aidt@gmail.com" class="email">josef.aidt@gmail.com</a>
+			</span>
+
+		</div>
+
+		<!-- <ul class="footer-nav flex">
 			<li class="footer-nav-item flex"><a href="content/about.html">About</a></li>
 			<li class="footer-nav-item flex"><a href="content/contact.html">Contact</a></li>
+		</ul> -->
+		
+		<ul class="social-nav footer-item flex">
+			<li><a class="icon icon-circle-github" href="https://github.com/sevensummitt/" target="_blank"></a></li>
+			<li><a class="icon icon-circle-linkedin" href="https://www.linkedin.com/in/josefaidt" target="_blank"></a></li>
 		</ul>
-
-		<a class="icon-circle-github"></a>
 	</footer>
 </body>
 </html>
