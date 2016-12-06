@@ -8,13 +8,12 @@
 	<meta charset="UTF-8">
 	<title>josef.aidt</title>
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../css/flaticon.css">
 	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="js/transformicon.js"></script>
 </head>
-<body>
+<body id="body-page">
 	<header class="main-header flex">
 	  <div class="logo">
 	    <h1><a href="#">josef.aidt</a></h1>
@@ -30,18 +29,51 @@
 	  </nav>
 	</header>
 	
+	<!-- BACKGROUND, BG TEXT & INDICATOR -->
+	<div class="bg-page-blog flex column">
+		<div class="item bg-text">
+			<h1>Blog</h1>
+		</div>
+    <div class="bg-scroll">
+    	<span class="tcon-indicator" aria-label="scroll" aria-hidden="true">
+			  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="tcon-svgchevron" viewBox="0 0 30 36">
+			    <path class="a3" d="M0,0l15,16L30,0"></path>
+			    <path class="a2" d="M0,10l15,16l15-16"></path>
+			    <path class="a1" d="M0,20l15,16l15-16"></path>
+			  </svg>
+			</span>
+    </div>
+	</div>
+
+
 	<!-- THE BODY -->
-	<div class="content flex column">
-		<article class="flex home-about-text column">
-	    <h1 class="title">About Me, Personally<br>
+	<main class="content flex column">
+		<article class="flex home-about-text page column">
+	    <h1 class="title">Blog<br>
 	    	<span></span>
 	    </h1>
 	    <div class="article-body flex row">
 		    <div class="article-item">
-
+					
 		    </div>
 		  </div>
 		</article>
-	</div>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer flex row">
+		<div class="contact-info">
+			<span>
+				&copy Josef Aidt 2016 <br>
+				<a href="mailto:josef.aidt@gmail.com" class="email">josef.aidt@gmail.com</a>
+			</span>
+
+		</div>
+		
+		<ul class="social-nav flex">
+			<li class="flex"><a class="icon icon-circle-github" href="https://github.com/sevensummitt/" target="_blank"></a></li>
+			<li class="flex"><a href="https://www.linkedin.com/in/josefaidt" class="icon icon-circle-linkedin" target="_blank"></a></li>
+		</ul>
+	</footer>
 </body>
 </html>
