@@ -440,11 +440,18 @@ a {
 }
 .content article.page header {
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.content article.page header h1 {
+  height: inherit;
+}
+.content article.page header .header-icons .icon {
+  padding: 0 5px;
 }
 .content article.page .title h1, .content article.page .title h2, .content article.page .title h3 {
   color: #5a535b;
   text-align: left;
-  align-self: flex-start;
 }
 .content article.page .title h1 a, .content article.page .title h2 a, .content article.page .title h3 a {
   color: #5a535b;
@@ -455,6 +462,13 @@ a {
 .content article.page .article-item img.about {
   float: right;
   padding: 10px;
+}
+.content .page-cards {
+  flex-wrap: wrap;
+}
+.content .page-cards article.page header {
+  justify-content: space-between;
+  align-items: stretch;
 }
 @media all and (max-width: 1025px) {
   .content article .article-body {

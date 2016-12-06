@@ -326,19 +326,30 @@ a {
         border-radius: 25px; 
       }
     } 
-    // end article
 
     &.page {
 
       header {
         justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        h1 {
+          height: inherit;
+        }
+
+        .header-icons {
+          .icon {
+            padding: 0 5px;
+          } 
+        }
       }
 
       .title {
         h1, h2, h3 {
           color: $page-text;
           text-align: left;
-          align-self: flex-start;
+          // align-self: flex-start;
 
           a {
             color: $page-text;
@@ -361,6 +372,16 @@ a {
     // end page
   }
   // end article
+
+  .page-cards {
+    flex-wrap: wrap;
+    article.page {
+      header {
+        justify-content: space-between;
+        align-items: stretch;
+      }
+    }
+  }
 
 
   // media queries for CONTENT
