@@ -354,7 +354,7 @@ body a {
 }
 
 .bg-page-work {
-  background: url("http://i.imgur.com/Un0SZ9i.jpg");
+  background: url("http://i.imgur.com/Un0SZ9i.jpg") no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -401,22 +401,19 @@ a {
 }
 
 main.content {
-  display: flex;
-  flex-direction: column;
   padding: 75px 5% 200px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
-main.content.work {
+main.content.content-cards {
   background: #dce2d6;
 }
 main.content article {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding-bottom: 10px;
   padding: 0 5%;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
 main.content article h1 {
   line-height: 1.8;
@@ -461,6 +458,9 @@ main.content article.page header {
 main.content article.page header h1 {
   height: inherit;
 }
+main.content article.page header .header-icons {
+  align-self: flex-start;
+}
 main.content article.page header .header-icons .icon {
   padding: 0 5px;
 }
@@ -478,6 +478,11 @@ main.content article.page .article-item img.about {
   float: right;
   padding: 10px;
 }
+@media all and (max-width: 769px) {
+  main.content article.page .article-item img.about {
+    display: inline-block;
+  }
+}
 main.content section.page-cards {
   flex-wrap: wrap;
   justify-content: space-around;
@@ -485,11 +490,21 @@ main.content section.page-cards {
 @media all and (max-width: 769px) {
   main.content section.page-cards {
     flex-direction: column;
+    flex: 1 0 90%;
+    justify-content: stretch;
+  }
+}
+@media all and (max-width: 1025px) {
+  main.content section.page-cards {
+    flex-direction: column;
+    flex: 1 0 90%;
+    justify-content: stretch;
   }
 }
 main.content section.page-cards article.page {
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
   background: white;
   border-radius: 2px;
   padding-bottom: 20px;
@@ -497,7 +512,11 @@ main.content section.page-cards article.page {
 }
 main.content section.page-cards article.page header {
   justify-content: space-between;
-  align-items: stretch;
+}
+@media all and (max-width: 769px) {
+  main.content section.page-cards article.page iframe {
+    overflow: hidden;
+  }
 }
 @media all and (max-width: 1025px) {
   main.content article .article-body {
@@ -523,15 +542,14 @@ main.content section.page-cards article.page header {
 .footer {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: white;
   background: none repeat scroll 0% 0% #333;
-  z-index: -2;
   height: 80px;
   font-size: 0.9em;
   padding-top: 10px;
   line-height: 1.4;
-  justify-content: center;
-  align-items: center;
 }
 .footer .contact-info {
   padding: 0 10px;
