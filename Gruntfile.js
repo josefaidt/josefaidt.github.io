@@ -24,8 +24,8 @@ module.exports = function(grunt){
 
 				},
 				files: {
-					'css/style.css':'css/style.scss',
-					'css/page.css':'css/page.scss'
+					'css/style.css':'css/style.scss'
+					// 'css/page.css':'css/page.scss'
 				}
 			}
 		},
