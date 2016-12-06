@@ -401,6 +401,8 @@ a {
 }
 
 main.content {
+  display: flex;
+  flex-direction: column;
   padding: 75px 5% 200px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
@@ -409,6 +411,8 @@ main.content.work {
   background: #dce2d6;
 }
 main.content article {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 10px;
   padding: 0 5%;
   flex-direction: column;
@@ -429,7 +433,7 @@ main.content article .title h1, main.content article .title h2, main.content art
 }
 main.content article .title h1 span, main.content article .title h2 span, main.content article .title h3 span {
   color: #dbd9d8;
-  border-bottom: 2px solid #9f9;
+  border-bottom: 2px solid #D46A6A;
   font-size: 0.5em;
   line-height: 3;
 }
@@ -445,6 +449,9 @@ main.content article .article-body .article-item a {
 }
 main.content article .article-body .img {
   border-radius: 25px;
+}
+main.content article.home h1 span {
+  border-bottom: 2px solid #9f9;
 }
 main.content article.page header {
   justify-content: space-between;
@@ -471,16 +478,24 @@ main.content article.page .article-item img.about {
   float: right;
   padding: 10px;
 }
-main.content .page-cards {
+main.content section.page-cards {
   flex-wrap: wrap;
+  justify-content: space-around;
 }
-main.content .page-cards article.page {
+@media all and (max-width: 769px) {
+  main.content section.page-cards {
+    flex-direction: column;
+  }
+}
+main.content section.page-cards article.page {
+  display: flex;
+  flex-direction: column;
   background: white;
   border-radius: 2px;
   padding-bottom: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-main.content .page-cards article.page header {
+main.content section.page-cards article.page header {
   justify-content: space-between;
   align-items: stretch;
 }
@@ -506,9 +521,11 @@ main.content .page-cards article.page header {
 }
 
 .footer {
+  display: flex;
+  flex-direction: row;
   color: white;
   background: none repeat scroll 0% 0% #333;
-  z-index: -1;
+  z-index: -2;
   height: 80px;
   font-size: 0.9em;
   padding-top: 10px;
