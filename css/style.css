@@ -386,6 +386,11 @@ body {
   color: #5a535b;
 }
 
+#body-page-cards {
+  background: #dce2d6;
+  color: #5a535b;
+}
+
 p {
   font-size: 17px;
   line-height: 2;
@@ -395,98 +400,107 @@ a {
   text-decoration: none;
 }
 
-.content {
+main.content {
   padding: 75px 5% 200px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
-.content article {
+main.content.work {
+  background: #dce2d6;
+}
+main.content article {
   padding-bottom: 10px;
   padding: 0 5%;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.content article h1 {
+main.content article h1 {
   line-height: 1.8;
 }
-.content article p {
+main.content article p {
   padding: 0 10px;
 }
-.content article .title h1, .content article .title h2, .content article .title h3 {
+main.content article .title h1, main.content article .title h2, main.content article .title h3 {
   text-align: center;
   align-self: center;
   color: white;
   font-size: 2.5em;
   line-height: 1;
 }
-.content article .title h1 span, .content article .title h2 span, .content article .title h3 span {
+main.content article .title h1 span, main.content article .title h2 span, main.content article .title h3 span {
   color: #dbd9d8;
   border-bottom: 2px solid #9f9;
   font-size: 0.5em;
   line-height: 3;
 }
-.content article .article-body {
+main.content article .article-body {
   justify-content: space-between;
   flex-grow: 1;
 }
-.content article .article-body .article-item {
+main.content article .article-body .article-item {
   padding: 5px 20px;
 }
-.content article .article-body .article-item a {
+main.content article .article-body .article-item a {
   color: #D46A6A;
 }
-.content article .article-body .img {
+main.content article .article-body .img {
   border-radius: 25px;
 }
-.content article.page header {
+main.content article.page header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
-.content article.page header h1 {
+main.content article.page header h1 {
   height: inherit;
 }
-.content article.page header .header-icons .icon {
+main.content article.page header .header-icons .icon {
   padding: 0 5px;
 }
-.content article.page .title h1, .content article.page .title h2, .content article.page .title h3 {
+main.content article.page .title h1, main.content article.page .title h2, main.content article.page .title h3 {
   color: #5a535b;
   text-align: left;
 }
-.content article.page .title h1 a, .content article.page .title h2 a, .content article.page .title h3 a {
+main.content article.page .title h1 a, main.content article.page .title h2 a, main.content article.page .title h3 a {
   color: #5a535b;
 }
-.content article.page .title h1 span, .content article.page .title h2 span, .content article.page .title h3 span {
+main.content article.page .title h1 span, main.content article.page .title h2 span, main.content article.page .title h3 span {
   color: #5a535b;
 }
-.content article.page .article-item img.about {
+main.content article.page .article-item img.about {
   float: right;
   padding: 10px;
 }
-.content .page-cards {
+main.content .page-cards {
   flex-wrap: wrap;
 }
-.content .page-cards article.page header {
+main.content .page-cards article.page {
+  background: white;
+  border-radius: 2px;
+  padding-bottom: 20px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+main.content .page-cards article.page header {
   justify-content: space-between;
   align-items: stretch;
 }
 @media all and (max-width: 1025px) {
-  .content article .article-body {
+  main.content article .article-body {
     flex-direction: column;
     align-items: center;
   }
 }
 @media all and (max-width: 769px) {
-  .content article {
+  main.content article {
     width: 100%;
     flex-direction: column;
     align-items: center;
     padding: 0;
   }
-  .content article .title {
+  main.content article .title {
     text-align: center;
   }
-  .content article .article-body {
+  main.content article .article-body {
     flex-wrap: wrap;
   }
 }
