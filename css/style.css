@@ -313,6 +313,60 @@ body a {
   line-height: 3;
 }
 
+[class^="bg-page-"], [class*=" bg-page-"] {
+  min-height: 100vh;
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Josefin Sans", sans-serif;
+  justify-content: space-around;
+}
+[class^="bg-page-"] .tcon-svgchevron path, [class*=" bg-page-"] .tcon-svgchevron path {
+  stroke: white;
+}
+[class^="bg-page-"] .bg-scroll, [class*=" bg-page-"] .bg-scroll {
+  align-self: center;
+}
+[class^="bg-page-"] .bg-text, [class*=" bg-page-"] .bg-text {
+  text-align: center;
+}
+[class^="bg-page-"] h1, [class*=" bg-page-"] h1 {
+  font-size: 6em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+[class^="bg-page-"] h1 span, [class*=" bg-page-"] h1 span {
+  text-transform: lowercase;
+  font-size: 0.5em;
+  color: #D46A6A;
+  border-bottom: 2px solid #D46A6A;
+  line-height: 3;
+}
+
+.bg-page-about {
+  background: url("http://i.imgur.com/FBQpSOp.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.bg-page-work {
+  background: url("http://i.imgur.com/Un0SZ9i.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.bg-page-blog {
+  background: url("http://i.imgur.com/u9U5lNF.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -323,6 +377,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+}
+
+#body-page {
+  background: white;
+  color: #5a535b;
 }
 
 p {
@@ -379,6 +438,15 @@ a {
 .content article.home-about-text .article-body .img {
   border-radius: 25px;
 }
+.content article.page .title {
+  color: #5a535b;
+  text-align: left;
+  align-self: flex-start;
+}
+.content article.page .article-body img {
+  float: right;
+  padding: 5px;
+}
 @media all and (max-width: 1025px) {
   .content article.home-about-text .article-body {
     flex-direction: column;
@@ -398,15 +466,15 @@ a {
 }
 
 .footer {
-  background: #333;
-  z-index: 0;
+  color: white;
+  background: none repeat scroll 0% 0% #333;
+  z-index: -1;
   height: 80px;
   font-size: 0.9em;
   padding-top: 10px;
-  background: none repeat scroll 0% 0% #333;
+  line-height: 1.4;
   justify-content: center;
   align-items: center;
-  line-height: 1.4;
 }
 .footer .contact-info {
   padding: 0 10px;
