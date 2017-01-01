@@ -56,4 +56,8 @@
     content: $icon-share;
   }
 }
-
+.icon-pushpin {
+  &:before {
+    content: $icon-pushpin;
+  }
+}
