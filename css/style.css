@@ -178,6 +178,10 @@
   content: "";
 }
 
+.icon-pushpin:before {
+  content: "";
+}
+
 .flex {
   display: flex;
   display: -webkit-flex;
@@ -205,6 +209,18 @@ body a {
 
 * {
   box-sizing: border-box;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.bold {
+  font-style: oblique;
+}
+
+.indent {
+  text-indent: 40px;
 }
 
 .main-header {
@@ -408,81 +424,6 @@ main.content {
 main.content.content-cards {
   background: #dce2d6;
 }
-main.content article {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-bottom: 10px;
-  padding: 0 5%;
-}
-main.content article h1 {
-  line-height: 1.8;
-}
-main.content article p {
-  padding: 0 10px;
-}
-main.content article .title h1, main.content article .title h2, main.content article .title h3 {
-  text-align: center;
-  align-self: center;
-  color: white;
-  font-size: 2.5em;
-  line-height: 1;
-}
-main.content article .title h1 span, main.content article .title h2 span, main.content article .title h3 span {
-  color: #dbd9d8;
-  border-bottom: 2px solid #D46A6A;
-  font-size: 0.5em;
-  line-height: 3;
-}
-main.content article .article-body {
-  justify-content: space-between;
-  flex-grow: 1;
-}
-main.content article .article-body .article-item {
-  padding: 5px 20px;
-}
-main.content article .article-body .article-item a {
-  color: #D46A6A;
-}
-main.content article .article-body .img {
-  border-radius: 25px;
-}
-main.content article.home h1 span {
-  border-bottom: 2px solid #9f9;
-}
-main.content article.page header {
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-main.content article.page header h1 {
-  height: inherit;
-}
-main.content article.page header .header-icons {
-  align-self: flex-start;
-}
-main.content article.page header .header-icons .icon {
-  padding: 0 5px;
-}
-main.content article.page .title h1, main.content article.page .title h2, main.content article.page .title h3 {
-  color: #5a535b;
-  text-align: left;
-}
-main.content article.page .title h1 a, main.content article.page .title h2 a, main.content article.page .title h3 a {
-  color: #5a535b;
-}
-main.content article.page .title h1 span, main.content article.page .title h2 span, main.content article.page .title h3 span {
-  color: #5a535b;
-}
-main.content article.page .article-item img.about {
-  float: right;
-  padding: 10px;
-}
-@media all and (max-width: 769px) {
-  main.content article.page .article-item img.about {
-    display: inline-block;
-  }
-}
 main.content section.page-cards {
   flex-wrap: wrap;
   justify-content: space-around;
@@ -536,6 +477,100 @@ main.content section.page-cards article.page header {
   }
   main.content article .article-body {
     flex-wrap: wrap;
+  }
+}
+main.content article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  padding: 0 5%;
+}
+main.content article h1 {
+  line-height: 1.8;
+}
+main.content article p {
+  padding: 0 10px;
+}
+main.content article .title h1, main.content article .title h2, main.content article .title h3 {
+  text-align: center;
+  align-self: center;
+  color: white;
+  font-size: 2.5em;
+  line-height: 1;
+}
+main.content article .title h1 span, main.content article .title h2 span, main.content article .title h3 span {
+  color: #dbd9d8;
+  border-bottom: 2px solid #D46A6A;
+  font-size: 0.5em;
+  line-height: 3;
+}
+main.content article .article-body {
+  justify-content: space-between;
+  flex-grow: 1;
+}
+main.content article .article-body .article-item {
+  padding: 5px 20px;
+}
+main.content article .article-body .article-item a {
+  color: #D46A6A;
+}
+main.content article .article-body .img {
+  border-radius: 25px;
+}
+main.content article.home h1 span {
+  border-bottom: 2px solid #9f9;
+}
+main.content article.page.card {
+  padding-bottom: 50px;
+}
+main.content article.page.card h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+main.content article.page.card p {
+  margin: 0;
+}
+main.content article.page header {
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+main.content article.page header .header-icons {
+  align-self: flex-start;
+}
+main.content article.page header .header-icons .icon {
+  border-bottom: none;
+  padding: 0 5px;
+}
+main.content article.page header .header-icons .icon.icon-pushpin {
+  font-size: 0.8em;
+  color: blue;
+}
+main.content article.page header.blog-about h1 {
+  font-size: 2.8em;
+  margin: 0.5em 0 0.1em;
+}
+main.content article.page header.blog-about span {
+  font-weight: 600;
+}
+main.content article.page .title h1, main.content article.page .title h2, main.content article.page .title h3 {
+  color: #5a535b;
+  text-align: left;
+}
+main.content article.page .title h1 a, main.content article.page .title h2 a, main.content article.page .title h3 a {
+  color: #5a535b;
+}
+main.content article.page .title h1 span, main.content article.page .title h2 span, main.content article.page .title h3 span {
+  color: #5a535b;
+}
+main.content article.page .article-item img.about {
+  float: right;
+  padding: 10px;
+}
+@media all and (max-width: 769px) {
+  main.content article.page .article-item img.about {
+    display: inline-block;
   }
 }
 
