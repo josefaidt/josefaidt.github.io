@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+	vanir
+	Josef Aidt 2017
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>josef.aidt</title>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	<link rel="stylesheet" href="./css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body id="body-page">
+	<header class="main-header flex">
+	  <div class="logo">
+	    <h1><a href="index.html">josef.aidt</a></h1>
+	  </div>
+	  
+	  <nav class="main-nav-container row flex">
+	    <ul class="main-nav flex">
+	      <li class="flex"><a class="flex" href="index.html">Home</a></li>
+	      <li class="flex"><a class="flex" href="about.html">About</a></li>
+				<li class="flex active"><a class="flex" href="#">Work</a></li>
+				<li class="flex"><a class="flex" href="blog.html">Blog</a></li>
+	    </ul>
+	  </nav>
+	</header>
+	
+	<!-- BACKGROUND, BG TEXT & INDICATOR -->
+	<div class="bg-page-work flex column">
+		<div class="item bg-text">
+			<h1>Work</h1>
+		</div>
+    <div class="bg-scroll">
+    	<span class="tcon-indicator" aria-label="scroll" aria-hidden="true">
+			  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="tcon-svgchevron" viewBox="0 0 30 36">
+			    <path class="a3" d="M0,0l15,16L30,0"></path>
+			    <path class="a2" d="M0,10l15,16l15-16"></path>
+			    <path class="a1" d="M0,20l15,16l15-16"></path>
+			  </svg>
+			</span>
+    </div>
+	</div>
+
+
+	<!-- THE BODY -->
+	<main class="content content-cards">
+		<section class="page-cards flex row">
+			<article class="page card">
+				<header class="title flex row">
+			    <h1 class="">R&eacute;sum&eacute;</h1>
+			    <ul class="header-icons flex row">
+			    	<li><h1><a class="icon icon-pdf" href="assets/jaidt_Resume.pdf" target="_blank"></a></h1></li>
+			    	<li><h1><a class="icon icon-circle-download" href="assets/jaidt_Resume.pdf" target="_blank" download></a></h1></li>
+			    </ul>
+			  </header>	    
+		    <div class="article-body flex row">
+			    <div class="article-item">
+						<iframe src="assets/jaidt_Resume.pdf" frameborder="0" width="400" height="550"></iframe> 
+			    </div>
+			  </div>
+			</article>
+
+			<article class="page card">
+				<header class="title flex row">
+					<h1>Internship Report</h1>
+					<ul class="header-icons flex row">
+			    	<li><h1><a class="icon icon-pdf" href="assets/jaidt-fmolhs-internship-report.pdf" target="_blank"></a></h1></li>
+			    	<li><h1><a class="icon icon-circle-download" href="assets/jaidt-fmolhs-internship-report.pdf" target="_blank" download></a></h1></li>
+			    </ul>
+				</header>		
+				<div class="article-body flex row">
+					<div class="article-item">
+						<iframe src="assets/jaidt-fmolhs-internship-report.pdf" frameborder="0" width="400" height="550"></iframe>
+					</div>
+				</div>		
+			</article>
+			
+			<article class="page card">
+				<header class="title flex row">
+					<h1>ART 4567 <br>
+					<span>Interactive Multimedia Design</span>	
+					<ul class="header-icons flex row">
+						<li>
+							<h1><a href="https://github.com/josefaidt" class="icon icon-circle-github" target="_blank"></a></h1>
+						</li>
+					</ul></h1>
+				</header>
+			</article>
+		</section>
+
+		<!-- <div class="page-cards flex row">
+			<article class="page">
+				<header class="title">
+					<h1>Database Design</h1>
+					<ul class="header-icons flex row">
+			    	<li><h1><a class="icon icon-pdf" href="assets/jaidt-fmolhs-internship-report.pdf" target="_blank"></a></h1></li>
+			    	<li><h1><a class="icon icon-circle-download" href="assets/jaidt-fmolhs-internship-report.pdf" target="_blank" download></a></h1></li>
+			    </ul>
+				</header>
+			</article>
+		</div> -->
+
+
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="contact-info">
+			<span>
+				&copy; Josef Aidt 2017 <br>
+				<a href="mailto:josef.aidt@gmail.com" class="email">josef.aidt@gmail.com</a>
+			</span>
+
+		</div>
+		
+		<ul class="social-nav flex">
+			<li class="flex"><a class="icon icon-circle-github" href="https://github.com/josefaidt/" target="_blank"></a></li>
+			<li class="flex"><a href="https://www.linkedin.com/in/josefaidt" class="icon icon-circle-linkedin" target="_blank"></a></li>
+		</ul>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/transformicon.js"></script>
+	<script src="./js/animsition.min.js"></script>
+</body>
+</html>
