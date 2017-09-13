@@ -24,7 +24,7 @@ module.exports = function(grunt){
 
 				},
 				files: {
-					'css/style.css':'css/style.scss'
+					'src/css/style.css':'src/css/style.scss'
 					// 'css/page.css':'css/page.scss'
 				}
 			}
@@ -42,6 +42,28 @@ module.exports = function(grunt){
 			}
 		},
 
+		cssmin: {
+		  target: {
+		    files: [{
+		      expand: true,
+		      cwd: 'src/css',
+		      src: ['style.css', '!*.min.css'],
+		      dest: 'dist/css',
+		      ext: '.min.css'
+		    }]
+		  }
+		},
+
+		copy: {
+			main: {
+				expand: true,
+				cwd: 'src',
+				src: '**/*.html',
+				dest: 'dist/'
+			}
+		},
+
+		// grunt watch cmd
 		watch: {
 			scripts:{
 				files:'js/script.js',
@@ -51,8 +73,15 @@ module.exports = function(grunt){
 				}
 			},
 			css:{
-				files:['css/style.scss','css/page.scss'],
-				tasks:['sass'],
+				files:['src/css/style.scss','src/css/page.scss'],
+				tasks:['sass', 'cssmin'],
+				options:{
+					livereload:true
+				}
+			},
+			html:{
+				files:['src/*.html'],
+				tasks:['copy'],
 				options:{
 					livereload:true
 				}
@@ -69,13 +98,15 @@ module.exports = function(grunt){
 	require('load-grunt-tasks')(grunt);
 	// var jpegRecompress = require('imagemin-jpeg-recompress');
 	
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
     // define the default task that executes when we run 'grunt' from inside the project
-  grunt.registerTask('default', ['sass']);
-	grunt.registerTask('default', ['watch']);
+  // grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['sass', 'cssmin', 'copy', 'watch']);
 
 };
