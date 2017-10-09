@@ -1,5 +1,6 @@
 # thejosef.life - personal portfolio
-Website project created for my personal portfolio.
+Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/).
+GoDaddy is still hosting my 1.0 release at [thejosef.life](http://www.thejosef.life/). Domain merge coming soon.
 
 ## Version 2.0
 Coming soon is version 2.0 of the site, showcasing an entire new structure and layout by utilizing a combination of CSS Grid and Flexbox. Stay tuned!
