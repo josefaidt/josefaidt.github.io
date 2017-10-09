@@ -24,7 +24,7 @@ module.exports = function(grunt){
 
 				},
 				files: {
-					'src/css/style.css':'src/css/style.scss'
+					'css/style.css':'css/style.scss'
 					// 'css/page.css':'css/page.scss'
 				}
 			}
@@ -46,9 +46,9 @@ module.exports = function(grunt){
 		  target: {
 		    files: [{
 		      expand: true,
-		      cwd: 'src/css',
+		      cwd: 'css',
 		      src: ['style.css', '!*.min.css'],
-		      dest: 'dist/css',
+		      dest: 'css',
 		      ext: '.min.css'
 		    }]
 		  }
@@ -73,14 +73,14 @@ module.exports = function(grunt){
 				}
 			},
 			css:{
-				files:['src/css/style.scss','src/css/page.scss'],
+				files:['css/style.scss','css/page.scss'],
 				tasks:['sass', 'cssmin'],
 				options:{
 					livereload:true
 				}
 			},
 			html:{
-				files:['src/*.html'],
+				files:['*.html'],
 				tasks:['copy'],
 				options:{
 					livereload:true
