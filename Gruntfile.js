@@ -107,6 +107,6 @@ module.exports = function(grunt){
 
     // define the default task that executes when we run 'grunt' from inside the project
   // grunt.registerTask('default', ['sass']);
-	grunt.registerTask('default', ['sass', 'cssmin', 'copy', 'watch']);
+	grunt.registerTask('default', ['sass', 'cssmin', 'watch']);
 
 };

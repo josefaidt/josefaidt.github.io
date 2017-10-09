@@ -1,28 +1,28 @@
 {
-  "name": "josef-grunt",
-  "version": "0.0.2",
+  "name": "thejosef.life",
+  "version": "0.1.1",
   "author": "Josef Aidt",
   "license": "MIT",
-  "description": "first attempt at creating a grunt-specific package file",
+  "description": "Website created to showcase myself and my projects",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sevensummitt/thejosef.life"
+    "url": "git://github.com/josefaidt/josefaidt.github.io"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-git": "^1.0.1",
+    "grunt-git": "^1.0.7",
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
     "normalize.css": "^5.0.0"
   },
   "bugs": {
-    "url": "https://github.com/sevensummitt/thejosef.life/issues"
+    "url": "hgit://github.com/josefaidt/josefaidt.github.io/issues"
   },
-  "homepage": "https://github.com/sevensummitt/thejosef.life#readme"
+  "homepage": "git://github.com/josefaidt/josefaidt.github.io#readme"
 }
