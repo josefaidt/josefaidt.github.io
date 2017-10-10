@@ -13,7 +13,7 @@
   width: 40px;
   background: transparent;
   outline: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
 .tcon > * {
@@ -28,24 +28,24 @@
 
 .tcon-menu__lines {
   display: inline-block;
-  height: 5.71429px;
+  height: 5.7142857143px;
   width: 40px;
-  border-radius: 2.85714px;
+  border-radius: 2.8571428571px;
   transition: 0.3s;
   background: black;
   position: relative;
 }
 .tcon-menu__lines::before, .tcon-menu__lines::after {
   display: inline-block;
-  height: 5.71429px;
+  height: 5.7142857143px;
   width: 40px;
-  border-radius: 2.85714px;
+  border-radius: 2.8571428571px;
   transition: 0.3s;
   background: black;
   content: '';
   position: absolute;
   left: 0;
-  transform-origin: 2.85714px center;
+  transform-origin: 2.8571428571px center;
   width: 100%;
 }
 .tcon-menu__lines::before {

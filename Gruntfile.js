@@ -54,14 +54,14 @@ module.exports = function(grunt){
 		  }
 		},
 
-		copy: {
-			main: {
-				expand: true,
-				cwd: 'src',
-				src: '**/*.html',
-				dest: 'dist/'
-			}
-		},
+		// copy: {
+		// 	main: {
+		// 		expand: true,
+		// 		cwd: 'src',
+		// 		src: '**/*.html',
+		// 		dest: 'dist/'
+		// 	}
+		// },
 
 		// grunt watch cmd
 		watch: {
@@ -79,13 +79,13 @@ module.exports = function(grunt){
 					livereload:true
 				}
 			},
-			html:{
-				files:['*.html'],
-				tasks:['copy'],
-				options:{
-					livereload:true
-				}
-			},
+			// html:{
+			// 	files:['*.html'],
+			// 	tasks:['copy'],
+			// 	options:{
+			// 		livereload:true
+			// 	}
+			// },
 			commit:{
 				files:['.git/logs/HEAD'],
 				tasks:['imagemin']
