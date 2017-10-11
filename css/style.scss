@@ -178,7 +178,7 @@ body {
 
 .bg {
   // background: url('../img/mt_2010.jpg') no-repeat center center fixed; 
-  background: url('http://i.imgur.com/2KygkAF.jpg') no-repeat center center fixed; 
+  background: url('https://i.imgur.com/2KygkAF.jpg') no-repeat center center fixed; 
   @include bg-picture();
   min-height: 100vh;
   color: white;
@@ -237,18 +237,18 @@ body {
 }
 
 .bg-page-about {
-  background: url('http://i.imgur.com/FBQpSOp.jpg') no-repeat center center fixed;
+  background: url('https://i.imgur.com/FBQpSOp.jpg') no-repeat center center fixed;
   background-size: cover; 
   @include bg-picture();
 }
 
 .bg-page-work {
-  background: url('http://i.imgur.com/Un0SZ9i.jpg') no-repeat fixed; 
+  background: url('https://i.imgur.com/Un0SZ9i.jpg') no-repeat fixed; 
   @include bg-picture();
 }
 
 .bg-page-blog {
-  background: url('http://i.imgur.com/u9U5lNF.jpg') no-repeat center center fixed; 
+  background: url('https://i.imgur.com/u9U5lNF.jpg') no-repeat center center fixed; 
   @include bg-picture();
 }
 
