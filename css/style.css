@@ -294,6 +294,7 @@ body a {
 @media all and (max-width: 769px) {
   .main-header .logo {
     font-size: 1.2em;
+    display: hidden;
   }
   .main-header .main-nav-container {
     margin: 0;
