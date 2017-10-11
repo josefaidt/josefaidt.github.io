@@ -3,6 +3,11 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ## [Released]
 ---
+## [1.1.1] - 2017-10-09
+### Added
+- viewport meta tag on child pages
+- hid logo on phone layout for extra space
+
 ## [1.1.0] - 2017-10-07
 ### Added
 - switched to Yarn package manager in new development environment
