@@ -7,6 +7,7 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 ### Added
 - viewport meta tag on child pages
 - hid logo on phone layout for extra space
+- secure imgur links
 
 ## [1.1.0] - 2017-10-07
 ### Added
