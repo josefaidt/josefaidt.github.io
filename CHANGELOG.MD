@@ -4,6 +4,10 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 ## [Released]
 ---
 ## [1.1.2] - 2017-10-12
+### Added
+- work: content for ART4567
+- work: content for rouge-theme
+
 ### Changed
 - mobile layout: card padding expanded for readability
 - mobile layout: fixed art4567 card header
