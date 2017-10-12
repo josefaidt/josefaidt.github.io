@@ -331,6 +331,11 @@ main.content {
         // align-items: stretch;
       }
 
+      .article-body {
+        display: flex;
+        flex-direction: row;
+      }
+
       @media all and (max-width: $breakpoint-phone) {
         padding: 10px 0px 20px 0px;
         iframe {

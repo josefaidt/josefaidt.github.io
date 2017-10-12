@@ -463,6 +463,10 @@ main.content section.page-cards article.page {
 main.content section.page-cards article.page header {
   justify-content: space-between;
 }
+main.content section.page-cards article.page .article-body {
+  display: flex;
+  flex-direction: row;
+}
 @media all and (max-width: 769px) {
   main.content section.page-cards article.page {
     padding: 10px 0px 20px 0px;
