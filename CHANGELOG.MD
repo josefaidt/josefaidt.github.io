@@ -3,6 +3,12 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ## [Released]
 ---
+## [1.1.2] - 2017-10-12
+### Changed
+- mobile layout: card padding expanded for readability
+- mobile layout: fixed art4567 card header
+- mobile layout: logo display set to none
+
 ## [1.1.1] - 2017-10-09
 ### Added
 - viewport meta tag on child pages

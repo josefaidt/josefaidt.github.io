@@ -292,9 +292,8 @@ body a {
   }
 }
 @media all and (max-width: 769px) {
-  .main-header .logo {
-    font-size: 1.2em;
-    display: hidden;
+  .main-header .logo h1 {
+    display: none;
   }
   .main-header .main-nav-container {
     margin: 0;
@@ -426,6 +425,11 @@ main.content {
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
+@media all and (max-width: 769px) {
+  main.content {
+    padding: 75px 3px 200px;
+  }
+}
 main.content.content-cards {
   background: #dce2d6;
 }
@@ -460,6 +464,9 @@ main.content section.page-cards article.page header {
   justify-content: space-between;
 }
 @media all and (max-width: 769px) {
+  main.content section.page-cards article.page {
+    padding: 10px 0px 20px 0px;
+  }
   main.content section.page-cards article.page iframe {
     overflow: hidden;
   }

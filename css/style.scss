@@ -145,9 +145,9 @@ body {
     // width: 100%;
     // justify-content: space-around;
 
-    .logo {
-      font-size: 1.2em;
-      display: hidden;
+    .logo h1 {
+      // font-size: 1.2em;
+      display: none;
     }
     
     .main-nav-container {
@@ -291,6 +291,10 @@ main.content {
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
 
+  @media all and (max-width: $breakpoint-phone) {
+    padding: 75px 3px 200px;
+  }
+
   &.content-cards {
     background: $clrGreenPale;
   }
@@ -328,6 +332,7 @@ main.content {
       }
 
       @media all and (max-width: $breakpoint-phone) {
+        padding: 10px 0px 20px 0px;
         iframe {
           overflow: hidden;
         }
@@ -344,10 +349,6 @@ main.content {
         flex-direction: column;
         // justify-content: center;  
         align-items: center;
-      }
-
-      &.page {
-
       }
     }
   }
