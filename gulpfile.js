@@ -8,7 +8,7 @@ imagemin = require('gulp-imagemin');
 
 // common paths
 const paths = {
-  images: './src/img/**/*',
+  img: './src/img/**/*',
   scss: './src/css/**/*.scss',
   css: './src/css/*.css',
   html: './src/*.html',
@@ -45,7 +45,7 @@ gulp.task('css', function() {
 
 // copy & optimize all images
 gulp.task('images', function() {
-  return gulp.src(paths.images)
+  return gulp.src(paths.img)
     // Pass in options to the task 
     .pipe(imagemin({optimizationLevel: 5}))
     .pipe(gulp.dest('./img'));
@@ -60,7 +60,7 @@ gulp.task('html', function() {
 // watch for changes
 gulp.task('watch', function() {
   gulp.watch(paths.scss, ['css']);
-  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.img, ['images']);
   gulp.watch(paths.html, ['html']);
 });
 
