@@ -1,6 +1,6 @@
 {
   "name": "thejosef.life",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Josef Aidt",
   "license": "MIT",
   "description": "Website created to showcase myself and my projects",
@@ -11,7 +11,6 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
@@ -20,9 +19,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.0"
-  },
+  "dependencies": {},
   "bugs": {
     "url": "hgit://github.com/josefaidt/josefaidt.github.io/issues"
   },
