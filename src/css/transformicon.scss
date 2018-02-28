@@ -1,3 +1,5 @@
+@import 'variables';
+
 $tcon-size: 40px !default;
 $tcon-transition: .3s !default;
 $tcon-jstransform: 'tcon-transform' !default;
@@ -11,7 +13,7 @@ $tcon-menu-arrow360left-transformation: (
   transform: scale3d(.8, .8, .8) rotate3d(0, 0, 1, 360deg)
 ) !default;
 .tcon {
-  appearance: none;
+  // appearance: none;
   border: none;
   cursor: pointer;
   display: flex;
