@@ -349,7 +349,6 @@ main.content {
   // media queries for CONTENT
   @media all and (max-width: $breakpoint-tablet) {
     article {
-
       .article-body {
         flex-direction: column;
         // justify-content: center;  

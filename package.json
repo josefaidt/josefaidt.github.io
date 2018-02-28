@@ -6,23 +6,29 @@
   "description": "Website created to showcase myself and my projects",
   "repository": {
     "type": "git",
-    "url": "git://github.com/josefaidt/josefaidt.github.io"
+    "url": "git://github.com/josefaidt/josefaidt.github.io.git"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^2.2.1",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.1.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-git": "^1.0.7",
-    "load-grunt-tasks": "^3.5.2"
+    "babel-preset-env": "^1.6.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "normalize.css": "^5.0.0"
+    "normalize.css": "^8.0.0"
   },
   "bugs": {
     "url": "hgit://github.com/josefaidt/josefaidt.github.io/issues"
   },
-  "homepage": "git://github.com/josefaidt/josefaidt.github.io#readme"
+  "homepage": "git://github.com/josefaidt/josefaidt.github.io#readme",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
