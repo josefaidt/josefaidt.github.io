@@ -1,24 +1,14 @@
 const gulp = require('gulp'),
-concat = require('gulp-concat'),
-uglify = require('gulp-uglify'),
-rename = require('gulp-rename'),
-cssmin = require('gulp-cssmin'),
-sass = require('gulp-sass'),
-imagemin = require('gulp-imagemin');
-
-// common paths
-const paths = {
-  img: './src/img/**/*',
-  scss: './src/css/**/*.scss',
-  css: './src/css/*.css',
-  html: './src/*.html',
-  // dist: './dist'
-  dist: './'
-};
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    cssmin = require('gulp-cssmin'),
+    sass = require('gulp-sass'),
+    imagemin = require('gulp-imagemin');
 
 
 // concatenate and minify JS
-// gulp.task('scripts', function() {
+// gulp.task('scripts', () => {
 //   return gulp.src([
 //     'src/js/main.js',
 //     'src/js/app.js'
@@ -31,39 +21,43 @@ const paths = {
 // });
 
 
-// transpile SCSS and minify
-gulp.task('css', function() {
-  return gulp.src(paths.scss) // Gets all files src/css
+// transpile SCSS
+gulp.task('scss', () => {
+  return gulp.src('src/scss/style.scss') // Gets all files src/css
     .pipe(sass())
-    .pipe(concat('style.css'))
-    .pipe(gulp.dest('./src/css'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssmin({zindex: false}))
-    .pipe(gulp.dest('./src/css'))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('src/css'))
 });
 
-// copy & optimize all images
-gulp.task('images', function() {
-  return gulp.src(paths.img)
+// minify css
+gulp.task('cssmin', () => {
+  return gulp.src('src/css/style.css')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(cssmin({zindex: false}))
+    .pipe(gulp.dest('css'));
+})
+
+// optimize & copy all images
+gulp.task('imgmin', () => {
+  return gulp.src('src/img/**/*')
     // Pass in options to the task 
     .pipe(imagemin({optimizationLevel: 5}))
-    .pipe(gulp.dest('./img'));
+    .pipe(gulp.dest('img'));
 });
 
 // copy html files
-gulp.task('html', function() {
-  gulp.src('./src/*.html')
-    .pipe(gulp.dest(paths.dist));
+gulp.task('html', () => {
+  gulp.src('src/**/*.html')
+    .pipe(gulp.dest('./'));
 });
 
 // watch for changes
-gulp.task('watch', function() {
-  gulp.watch(paths.scss, ['css']);
-  gulp.watch(paths.img, ['images']);
-  gulp.watch(paths.html, ['html']);
+gulp.task('watch', () => {
+  gulp.watch('src/scss/**/*.scss', ['scss']);
+  gulp.watch('src/css/style.css', ['cssmin']);
+  gulp.watch('src/img/**/*', ['imgmin']);
+  gulp.watch('src/**/*.html', ['html']);
 });
 
 // Default Task
-gulp.task('default', ['css', 'images', 'html']);
+gulp.task('default', ['scss', 'cssmin', 'imgmin', 'html']);
 // gulp.task('default', ['watch']);
