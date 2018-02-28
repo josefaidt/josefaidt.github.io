@@ -65,5 +65,6 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-// gulp.task('default', ['watch', 'css', 'images', 'copy', 'html']);
-gulp.task('default', ['watch']);
+// gulp.task('default', ['watch', 'css', 'images', 'html']);
+gulp.task('default', ['css', 'images', 'html']);
+// gulp.task('default', ['watch']);
