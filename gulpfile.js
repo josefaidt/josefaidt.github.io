@@ -9,7 +9,7 @@ imagemin = require('gulp-imagemin');
 // common paths
 const paths = {
   images: './src/img/**/*',
-  scss: './src/css/*.scss',
+  scss: './src/css/**/*.scss',
   css: './src/css/*.css',
   html: './src/*.html',
   // dist: './dist'
@@ -65,6 +65,5 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-// gulp.task('default', ['watch', 'css', 'images', 'html']);
 gulp.task('default', ['css', 'images', 'html']);
 // gulp.task('default', ['watch']);
