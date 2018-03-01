@@ -3,6 +3,11 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ## [Released]
 ---
+## [1.2.1] - 2018-02-28
+### Changed
+- gulpfile polishing
+- SCSS file restructures
+
 ## [1.2.0] - 2018-02-27
 ### Changed
 - task runner from Grunt to Gulp
