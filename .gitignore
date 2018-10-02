@@ -1,4 +1,11 @@
 .DS_Store
-node_modules/
-.sass-cache/
-.old/
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store
+
+/.old

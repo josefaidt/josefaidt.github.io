@@ -1,0 +1,10 @@
+
+{
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.tabSize": 2,
+
+  // recommended
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+}
