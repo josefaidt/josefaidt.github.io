@@ -7,3 +7,6 @@ yarn-error.log
 
 # Old Directory
 /.old
+
+# Public directory
+/public

@@ -1,32 +1,44 @@
 module.exports = {
-  extends: ['standard'], 
-  plugins: ['standard'], 
+  extends: ['standard'],
+  plugins: ['standard', 'react'],
   rules: {
-    'no-unused-vars': 1,
-    'semi': 2,
-    'indent': [2, 2],
-    'no-return-await': 0,
-    'space-before-function-paren': [2, {
+    'no-var': 'error', // optional, recommended when using es6+
+    'no-unused-vars': 1, // recommended
+    'arrow-spacing': ['error', { 'before': true, 'after': true }], // recommended
+    'indent': ['error', 2],
+    'comma-dangle': ['error', {
+      'objects': 'only-multiline',
+      'arrays': 'only-multiline',
+      'imports': 'never',
+      'exports': 'never',
+      'functions': 'never'
+    }],
+
+    // options to emulate prettier setup
+    'semi': ['error', 'never'],
+    'max-len': ['error', { 'code': 80 }],
+    'template-curly-spacing': ['error', 'always'],
+    'arrow-parens': ['error', 'as-needed'],
+
+    // standard.js
+    'space-before-function-paren': ['error', {
       'named': 'always',
       'anonymous': 'always',
       'asyncArrow': 'always'
     }],
-    'template-curly-spacing': [2, 'always'],
-    'arrow-parens': [2, 'as-needed'],
-    'arrow-spacing': [2, { 'before': true, 'after': true }],
-    'no-var': 2,
 
-    // standard plugin
-    'standard/object-curly-even-spacing': [2, 'either'],
-    'standard/array-bracket-even-spacing': [2, 'either'],
-    'standard/computed-property-even-spacing': [2, 'even'],
-    'standard/no-callback-literal': [2, ['cb', 'callback']]
+    // standard plugin - options
+    'standard/object-curly-even-spacing': ['error', 'either'],
+    'standard/array-bracket-even-spacing': ['error', 'either'],
+    'standard/computed-property-even-spacing': ['error', 'even'],
+    'standard/no-callback-literal': ['error', ['cb', 'callback']],
+
+    // react plugin - options
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error'
   },
-  env: {
-    'es6': true,
-    'node': true
-  },
+  parser: 'babel-eslint',
   parserOptions: {
-    'ecmaVersion': 8
+    'ecmaVersion': 8, // optional, recommended 6+
   }
 }
