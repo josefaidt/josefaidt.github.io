@@ -1,44 +1,62 @@
 module.exports = {
-  extends: ['standard'],
-  plugins: ['standard', 'react'],
-  rules: {
-    'no-var': 'error', // optional, recommended when using es6+
-    'no-unused-vars': 1, // recommended
-    'arrow-spacing': ['error', { 'before': true, 'after': true }], // recommended
-    'indent': ['error', 2],
-    'comma-dangle': ['error', {
-      'objects': 'only-multiline',
-      'arrays': 'only-multiline',
-      'imports': 'never',
-      'exports': 'never',
-      'functions': 'never'
-    }],
-
-    // options to emulate prettier setup
-    'semi': ['error', 'never'],
-    'max-len': ['error', { 'code': 80 }],
-    'template-curly-spacing': ['error', 'always'],
-    'arrow-parens': ['error', 'as-needed'],
-
-    // standard.js
-    'space-before-function-paren': ['error', {
-      'named': 'always',
-      'anonymous': 'always',
-      'asyncArrow': 'always'
-    }],
-
-    // standard plugin - options
-    'standard/object-curly-even-spacing': ['error', 'either'],
-    'standard/array-bracket-even-spacing': ['error', 'either'],
-    'standard/computed-property-even-spacing': ['error', 'even'],
-    'standard/no-callback-literal': ['error', ['cb', 'callback']],
-
-    // react plugin - options
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error'
-  },
+  extends: [
+    'standard',
+    'plugin:react/recommended',
+    'prettier',
+    'prettier/react',
+    'prettier/standard'
+  ],
+  plugins: [
+    'prettier',
+    'react',
+    'standard'
+  ],
   parser: 'babel-eslint',
   parserOptions: {
-    'ecmaVersion': 8, // optional, recommended 6+
+    'ecmaVersion': 8,
+    'ecmaFeatures': {
+      'impliedStrict': true,
+      'classes': true,
+      'jsx': true
+    }
+  },
+  'env': {
+    'browser': true,
+    'node': true,
+    'es6': true
+  },
+  rules: {
+    'no-var': 2,
+    'no-unused-vars': [1, { 'argsIgnorePattern': 'res|next|^err|reject' }],
+    'no-tabs': 2,
+    'no-param-reassign': [2, { 'props': false }],
+    'quotes': [2, 'single', {
+      'avoidEscape': true,
+      'allowTemplateLiterals': true
+    }],
+
+    'prefer-const': [2, { 'destructuring': 'all' }],
+
+    // standard plugin - options
+    // 'standard/object-curly-even-spacing': [2, 'either'],
+    // 'standard/array-bracket-even-spacing': [2, 'either'],
+    // 'standard/computed-property-even-spacing': [2, 'even'],
+    'standard/no-callback-literal': [2, ['cb', 'callback']],
+
+    // react plugin - options
+    'react/jsx-uses-react': 2,
+    'react/jsx-uses-vars': 2,
+
+    // prettier
+    'prettier/prettier': [2, {
+      'trailingComma': 'none',
+      'singleQuote': true,
+      'semi': false,
+      'tabWidth': 2,
+      'printWidth': 100,
+      'bracketSpacing': true,
+      'jsxBracketSameLine': true,
+      'arrowParens': 'avoid'
+    }]
   }
 }
