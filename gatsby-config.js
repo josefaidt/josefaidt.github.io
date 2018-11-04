@@ -1,8 +1,8 @@
-const siteConfig = require('./site-config');
+const siteConfig = require('./site-config')
 
 module.exports = {
   siteMetadata: {
-    ...siteConfig,
+    ...siteConfig
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,8 +15,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content`,
-      },
+        path: `${__dirname}/content`
+      }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -25,9 +25,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
-          include: /images/,
-        },
-      },
-    },
-  ],
-};
+          include: /images/
+        }
+      }
+    }
+  ]
+}
