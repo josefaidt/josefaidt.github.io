@@ -1,0 +1,25 @@
+$clrGreen: #9f9;
+$clrGreenPale: #dce2d6;
+$clrPaleRed: #D46A6A;
+$clrRedBrown: #9c7c74;
+
+$navColor: #333;
+$navHighlight: #555;
+
+$page-text: #5a535b;
+
+
+// icons flaticon
+$icomoon-font-path: "fonts" !default;
+
+$icon-circle-download: "\f100";
+$icon-circle-github: "\f101";
+$icon-circle-linkedin: "\f105";
+$icon-circle-share: "\f103";
+$icon-pdf: "\f102";
+$icon-share: "\f104";
+$icon-pushpin: "\e900";
+
+:export {
+  color: $navColor;
+}

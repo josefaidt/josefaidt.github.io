@@ -1,32 +1,33 @@
+const siteConfig = require('./site-config');
+
 module.exports = {
   siteMetadata: {
-    title: 'josefaidt.me'
+    ...siteConfig,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-eslint`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
-      }
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
     },
-    'gatsby-plugin-offline',
-    // 'gatsby-plugin-sass',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-webpack-size`,
     {
-      resolve: 'gatsby-plugin-emotion',
+      resolve: `gatsby-plugin-react-svg`,
       options: {
-        // babel-plugin-emotion
-        sourceMap: false,
-        autoLabel: process.env.NODE_ENV !== 'production',
-        labelFormat: '[local]',
-        cssPropOptimization: true
-      }
-    }
-  ]
-}
+        rule: {
+          include: /images/,
+        },
+      },
+    },
+  ],
+};

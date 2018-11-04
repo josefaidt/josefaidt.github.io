@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     'standard',
     'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'prettier/react',
     'prettier/standard'
@@ -9,7 +10,8 @@ module.exports = {
   plugins: [
     'prettier',
     'react',
-    'standard'
+    'standard',
+    'jsx-a11y'
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -26,6 +28,8 @@ module.exports = {
     'es6': true
   },
   rules: {
+    'strict': 0,
+    'no-console': 'warn',
     'no-var': 2,
     'no-unused-vars': [1, { 'argsIgnorePattern': 'res|next|^err|reject' }],
     'no-tabs': 2,

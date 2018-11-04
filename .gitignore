@@ -2,11 +2,24 @@
 
 # Project dependencies
 .cache
-node_modules
+node_modules/
 yarn-error.log
 
 # Old Directory
-/.old
+.old/
 
 # Public directory
-/public
+public/
+
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.cache/
+public
+build

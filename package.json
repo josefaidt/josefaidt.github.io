@@ -1,59 +1,64 @@
 {
-  "name": "thejosef.life",
-  "version": "1.2.1",
-  "author": "Josef Aidt",
-  "description": "Website created to showcase myself and my projects",
+  "name": "josefaidt.me",
   "license": "MIT",
+  "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "test": "eslint src"
+    "serve": "gatsby serve",
+    "ssr": "yarn build && yarn serve",
+    "format": "eslint --fix src",
+    "build:dir": "mkdir -p public/icons/",
+    "build:favicons": "node scripts/favicons",
+    "build": "yarn build:dir && yarn build:favicons && gatsby build",
+    "test": "ava **/*.test.js --verbose"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.0-beta.5",
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
-    "gatsby": "^2.0.0",
-    "gatsby-plugin-emotion": "^2.0.5",
-    "gatsby-plugin-manifest": "^2.0.2",
+    "@reach/dialog": "^0.1.2",
+    "@reach/router": "^1.1.1",
+    "@reach/visually-hidden": "^0.1.1",
+    "babel-plugin-styled-components": "^1.7.1",
+    "gatsby": "^2.0.6",
+    "gatsby-image": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sass": "^2.0.1",
-    "node-sass": "^4.9.4",
+    "gatsby-plugin-react-svg": "^2.0.0",
+    "gatsby-plugin-sharp": "^2.0.5",
+    "gatsby-plugin-sitemap": "^2.0.1",
+    "gatsby-plugin-styled-components": "^3.0.0",
+    "gatsby-plugin-webpack-size": "^0.0.2",
+    "gatsby-source-filesystem": "^2.0.1",
+    "gatsby-transformer-json": "^2.1.1",
+    "gatsby-transformer-remark": "^2.1.1",
+    "gatsby-transformer-sharp": "^2.1.1",
+    "intersection-observer": "^0.5.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-emotion": "^9.2.12",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-pose": "^3.3.0",
+    "styled-components": "^4.0.0-beta.7"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-plugin-emotion": "^9.2.11",
+    "ava": "^0.25.0",
+    "babel-eslint": "^10.0.0",
+    "chrome-launcher": "^0.10.2",
+    "directory-named-webpack-plugin": "4.0.0",
     "eslint": "^5.6.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
-    "lodash": "^4.17.11",
-    "prettier": "^1.14.3",
-    "rimraf": "^2.6.2"
-  },
-  "bugs": {
-    "url": "hgit://github.com/josefaidt/josefaidt.github.io/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/josefaidt/josefaidt.github.io.git"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "homepage": "git://github.com/josefaidt/josefaidt.github.io#readme"
+    "favicons": "^5.1.1",
+    "gatsby-plugin-eslint": "^2.0.1",
+    "lighthouse": "^3.0.3",
+    "node-gyp": "^3.7.0",
+    "prettier": "^1.13.5",
+    "why-did-you-update": "0.1.1"
+  }
 }
