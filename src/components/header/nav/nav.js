@@ -15,6 +15,9 @@ const Nav = () => (
         <Link to="/test">Test</Link>
       </li>
       <li>
+        <Link to="/work">Work</Link>
+      </li>
+      <li>
         <a href="https://github.com/josefaidt/josefaidt.github.io">GitHub</a>
       </li>
     </ul>

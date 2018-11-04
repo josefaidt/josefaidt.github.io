@@ -5,7 +5,7 @@ module.exports = {
   siteTitleShort: `josefaidt`,
   siteDescription: `Josef Aidt's personal web portfolio`,
   siteUrl: `https://josefaidt.me`,
-  themeColor: `#000`,
+  themeColor: `#333`,
   backgroundColor: `#fff`,
   pathPrefix: null,
   logo: path.resolve(__dirname, 'src/images/icon.png'),

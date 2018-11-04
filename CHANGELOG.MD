@@ -3,6 +3,16 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ## [Released]
 ---
+## [2.0.0-alpha.1] - 2018-11-03
+### Added
+- new style, planning to move to Netlify
+- Gatsby.js
+  - starter
+  - GraphQL
+  - jsx-a11y
+- ESLint
+- started Github GraphQL queries
+
 ## [1.2.1] - 2018-02-28
 ### Changed
 - gulpfile polishing
