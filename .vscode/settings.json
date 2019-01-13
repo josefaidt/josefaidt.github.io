@@ -5,6 +5,10 @@
   "editor.tabSize": 2,
 
   // recommended
+  "editor.formatOnSave": false,
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "configFile": "./.eslintrc.js"
+  }
 }
