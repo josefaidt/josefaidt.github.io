@@ -4,6 +4,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
+import { theme } from './Meta'
 import './layout.css'
 
 const Container = styled.div`
@@ -17,17 +18,11 @@ const Container = styled.div`
   font-size: 1rem;
 `
 
-// Define what props.theme will look like
-export const theme = {
-  red: '#D46A6A',
-  rouge: '#c6797e',
-  black: 'black',
-  maxWidth: '1000px'
-}
-
 const StyledLayout = styled.div`
   background: white;
-  color: #5a535b;
+  color: ${theme.almostblack};
+  font-family: 'Open Sans';
+  font-size: 1rem;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -57,10 +52,8 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <StyledLayout>
       <Header siteTitle="josef.aidt" />
-      <Container>
-        {children}
-        <Footer />
-      </Container>
+      <Container>{children}</Container>
+      <Footer />
     </StyledLayout>
   </div>
 )
