@@ -35,6 +35,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/components/`
+        // ignore: [`**/\.*`], // ignore files starting with a dot
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `josefaidt.me`,
