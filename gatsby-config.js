@@ -1,16 +1,29 @@
+const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `josefaidt`,
     description: `Welcome to my personal site.`,
-    author: `josefaidt`
+    author: `josefaidt`,
+    // logo: path.resolve(__dirname, 'src/images/icon.png'),
+    social: {
+      twitter: `gatsbyjs`,
+      fbAppId: `966242223397117`
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: `${__dirname}/src/images/`
       }
     },
     {
@@ -21,9 +34,6 @@ module.exports = {
         // ignore: [`**/\.*`], // ignore files starting with a dot
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,7 +43,7 @@ module.exports = {
         background_color: `#172030`,
         theme_color: `#c6797e`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/logo.png` // This path is relative to the root of the site.
       }
     },
     {

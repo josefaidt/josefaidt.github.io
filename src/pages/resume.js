@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import { theme } from '../components/Meta'
+import { FilePdfIcon } from '../components/icons'
+import resume from '../assets/jaidt_Resume.pdf'
 
 const Imager = styled.div`
   img {
@@ -32,6 +34,20 @@ const Title = styled.div`
   display: flex;
   justify-content: space-between;
 `
+const SubtitleFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: auto;
+  span {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+  }
+  @media screen {
+    flex-direction: row;
+  }
+`
+
 const Line = () => (
   <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
     <line stroke="#bbb" x1="0" x2="200" y1="0" y2="0" />
@@ -47,7 +63,7 @@ const AboutPage = () => (
     <Title>
       <h1>Résumé</h1>
       {/* <iframe frameBorder="0" src="/assets/jaidt_Resume.pdf" /> */}
-      <a href="mailto:josef.aidt@gmail.com">josef.aidt@gmail.com</a>
+      <FilePdfIcon link={resume} />
     </Title>
     <Line />
     <h2>Objective</h2>
@@ -60,12 +76,19 @@ const AboutPage = () => (
     <h2>Work Experience</h2>
     <Line />
     <p>
-      <h3>
-        Frontend UI Developer{' '}
-        <a href="https://twitter.com/IBM" target="_blank">
-          @IBM
-        </a>
-      </h3>
+      <SubtitleFlex>
+        <h3>
+          Frontend UI Developer{' '}
+          <a href="https://twitter.com/IBM" target="_blank">
+            @IBM
+          </a>
+        </h3>
+        <span>
+          Present
+          <br />
+          Dec 2018
+        </span>
+      </SubtitleFlex>
       <ul>
         <li>
           Uses frontend development technologies to build fully-accessible, interactive websites
@@ -73,14 +96,21 @@ const AboutPage = () => (
         <li>Utilizes Agile methodologies to accomplish daily tasks, using JIRA</li>
         <li>Applies IBM Enterprise Design Thinking to website build and design</li>
       </ul>
-      <h3>
-        Programmer{' '}
-        <a
-          href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
-          target="_blank">
-          @FMOL Health System
-        </a>
-      </h3>
+      <SubtitleFlex>
+        <h3>
+          Programmer{' '}
+          <a
+            href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
+            target="_blank">
+            @FMOL Health System
+          </a>
+        </h3>
+        <span>
+          Dec 2018
+          <br />
+          Aug 2017
+        </span>
+      </SubtitleFlex>
       <ul>
         <li>
           Uses JavaScript and JQuery to accomplish various tasks within mature ERP environment,
@@ -107,14 +137,21 @@ const AboutPage = () => (
       </ul>
     </p>
     <p>
-      <h3>
-        IS Support Analyst{' '}
-        <a
-          href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
-          target="_blank">
-          @FMOL Health System
-        </a>
-      </h3>
+      <SubtitleFlex>
+        <h3>
+          IS Support Analyst{' '}
+          <a
+            href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
+            target="_blank">
+            @FMOL Health System
+          </a>
+        </h3>
+        <span>
+          Aug 2017
+          <br />
+          May 2014
+        </span>
+      </SubtitleFlex>
       <ul>
         <li>
           Managed, tested, and deployed VDI inventory. Created and managed standardization
@@ -155,11 +192,10 @@ const AboutPage = () => (
     <ul>
       <li>Node.js web and console applications </li>
       <li>Front-end: HTML/CSS, SCSS, JavaScript</li>
-      <li>Native: C#, C++, Objective-C</li>
-      <li>Object-Oriented Design </li>
+      <li>Object-Oriented Design</li>
       <li>Scripting: Python, PowerShell, batch, bash</li>
       <li>Database: SQL, MySQL, Oracle SQL, MongoDB</li>
-      <li>Modern Build Tools: Webpack, Babel</li>
+      <li>Modern Build Tools: Webpack, Parcel, Rollup, Babel</li>
       <li>“Legacy” Build Tools: Grunt, Gulp</li>
       <li>Package Managers: npm, primarily Yarn</li>
       <li>Azure Cloud web app bots</li>

@@ -29,7 +29,7 @@ const StyledFooter = styled.footer`
 `
 
 const Footer = ({ children }) => (
-  <StyledFooter>
+  <StyledFooter className="footer">
     {children}
     <div className="signature">
       © {new Date().getFullYear()}, Built with

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
-import Image from '../components/image'
+// import Image from '../components/image'
 import SEO from '../components/seo'
 
 const Quote = styled.div`
@@ -22,7 +22,7 @@ const IndexPage = () => (
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
       title="Home"
     />
-    <h1>Hello, welcome</h1>
+    <h1>Hello</h1>
     <p>
       My name is Josef, and I am a 26-year-old alumnus of Louisiana State University. I'm a
       full-stack JavaScript developer currently employed as a Frontend UI Developer at{' '}

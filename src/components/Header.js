@@ -2,7 +2,6 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import Nav from './Nav'
 
 const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
@@ -30,14 +29,14 @@ const StyledHeader = styled.div`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, children }) => (
   <StyledHeader>
     <div>
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
     </div>
-    <Nav />
+    {children}
   </StyledHeader>
 )
 
