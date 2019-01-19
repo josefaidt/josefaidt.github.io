@@ -6,6 +6,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { theme } from './Meta'
 import './layout.css'
+import Nav from './Nav'
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -16,6 +17,12 @@ const Container = styled.div`
   justify-content: center;
   font-family: 'Open Sans';
   font-size: 1rem;
+
+  .centered-image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 `
 
 const StyledLayout = styled.div`
@@ -55,6 +62,7 @@ const Layout = ({ children }) => (
       <Container>{children}</Container>
       <Footer />
     </StyledLayout>
+    {/* <Nav /> */}
   </div>
 )
 

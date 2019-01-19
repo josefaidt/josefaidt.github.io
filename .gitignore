@@ -83,3 +83,4 @@ logs
 **/*key.js
 
 .assets
+/public

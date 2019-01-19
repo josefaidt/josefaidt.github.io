@@ -619,6 +619,8 @@ pre tt:after {
 }
 @media only screen and (max-width: 480px) {
   html {
+    height: 100%;
+    width: 100%;
     font-size: 100%;
   }
 }

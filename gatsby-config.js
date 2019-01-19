@@ -13,8 +13,15 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`
+        // ignore: [`**/\.*`], // ignore files starting with a dot
+      }
+    },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
@@ -30,14 +37,14 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
           families: ['Josefin Sans', 'Open Sans']
         }
       }
     },
-    'gatsby-plugin-netlify'
+    `gatsby-plugin-netlify`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

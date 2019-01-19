@@ -5,9 +5,11 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 
-const Subtitle = styled.div`
-  margin-top: -1.2rem;
-  margin-bottom: 1.5rem;
+const Quote = styled.div`
+  /* margin-top: -1.2rem; */
+  /* margin-bottom: 1.5rem; */
+  margin: 3rem auto;
+  text-align: center;
   font-size: 0.9rem;
   color: dimgrey;
   font-style: italic;
@@ -20,8 +22,7 @@ const IndexPage = () => (
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
       title="Home"
     />
-    <h1>Hello and Welcome</h1>
-    <Subtitle>The power of imagination makes us infinite &mdash; John Muir</Subtitle>
+    <h1>Hello, welcome</h1>
     <p>
       My name is Josef, and I am a 26-year-old alumnus of Louisiana State University. I'm a
       full-stack JavaScript developer currently employed as a Frontend UI Developer at{' '}
@@ -35,6 +36,7 @@ const IndexPage = () => (
       seasonals. Over the years I've taken interest in the wild world of the web and all it has to
       offer. <br />
       <Link to="/about/">Read more.</Link>
+      <Quote>The power of imagination makes us infinite &mdash; John Muir</Quote>
     </p>
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>

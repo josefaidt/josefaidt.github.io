@@ -4,6 +4,27 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
+import Picture from '../components/images/LaunchImage'
+
+const ImageContainer = styled.div`
+  .image svg,
+  img {
+    height: 0;
+    width: 0;
+    padding-bottom: 2rem;
+    float: right;
+  }
+`
+const Imager = styled.div`
+  max-width: 300px;
+  margin-bottom: 1.45rem;
+  padding: 0 auto;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
 
 const AboutPage = () => (
   <Layout>
@@ -11,7 +32,7 @@ const AboutPage = () => (
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
       title="Home"
     />
-    <h1>About</h1>
+    <h1>About Me</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <p>
@@ -28,11 +49,6 @@ const AboutPage = () => (
       farmers market and cultivator ostrich. Apples ducks straw, quail a ostriches donkey, hay hook
       cucumbers. Lettus gobblers pens, radish o.
     </p>
-
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

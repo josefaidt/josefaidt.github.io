@@ -11,26 +11,51 @@ const StyledNav = styled.div`
   a {
     padding: 0 0.5rem;
   }
-  a.active {
-    filter: brightness(80%);
+  a.active,
+  a.active:hover {
+    filter: brightness(70%);
     padding-bottom: 1rem;
-    border-bottom: 1px solid;
-    transition: ease-in 0.3s;
-    /* color: black; */
+    border-bottom: 0;
   }
   a:hover {
-    filter: brightness(80%);
+    /* filter: brightness(80%); */
     padding-bottom: 1rem;
     border-bottom: 1px solid;
     transition: ease 300ms;
-    /* color: black; */
+  }
+  a:active {
+    filter: brightness(120%);
+    transition: ease 100ms;
+    border-bottom: 1px solid;
+  }
+  .screen {
+    margin: 0 auto;
+    z-index: 1;
+    box-shadow: 1px black;
   }
 `
 
 export default class Nav extends Component {
+  constructor(props) {
+    super(props)
+    // this.watcher =
+    this.state = { addClass: false }
+  }
+  toggle() {
+    this.setState({ addClass: !this.state.addClass })
+  }
+  isScreen = () => {
+    const x = window.matchMedia('(max-width: 700px)')
+    if (x.matches) {
+      // If media query matches
+      return true
+    } else {
+      return false
+    }
+  }
   render() {
     return (
-      <StyledNav>
+      <StyledNav className={this.isScreen() ? 'screen' : 'nav'}>
         <Link activeClassName="active" to="/">
           HOME
         </Link>
@@ -40,7 +65,7 @@ export default class Nav extends Component {
         <Link activeClassName="active" to="/resume/">
           RESUME
         </Link>
-        <a href="https://github.com/josefaidt" target="_blank">
+        <a href="https://github.com/josefaidt" rel="noopener noreferrer" target="_blank">
           Github ⎆
         </a>
       </StyledNav>
