@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   siteMetadata: {
-    title: `josefaidt`,
+    title: `josef.aidt`,
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
     // logo: path.resolve(__dirname, 'src/images/icon.png'),
@@ -43,7 +43,7 @@ module.exports = {
         background_color: `#172030`,
         theme_color: `#c6797e`,
         display: `minimal-ui`,
-        icon: `src/images/logo.png` // This path is relative to the root of the site.
+        icon: `src/images/logonew.png` // This path is relative to the root of the site.
       }
     },
     {
