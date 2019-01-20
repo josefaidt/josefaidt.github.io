@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import { theme } from '../components/Meta'
 import { FilePdfIcon } from '../components/icons'
 import resume from '../assets/jaidt_Resume.pdf'
+import Line from '../components/flair/Line'
 
 const Imager = styled.div`
   img {
@@ -48,12 +49,6 @@ const SubtitleFlex = styled.div`
     text-align: center;
   }
 `
-
-const Line = () => (
-  <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
-    <line stroke="#bbb" x1="0" x2="200" y1="0" y2="0" />
-  </svg>
-)
 
 const AboutPage = () => (
   <Layout>

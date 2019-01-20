@@ -1,20 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
 import Layout from '../components/Skeleton'
-// import Image from '../components/image'
 import SEO from '../components/seo'
-
-const Quote = styled.div`
-  /* margin-top: -1.2rem; */
-  /* margin-bottom: 1.5rem; */
-  margin: 3rem auto;
-  text-align: center;
-  font-size: 0.9rem;
-  color: dimgrey;
-  font-style: italic;
-  filter: brightness(120%);
-`
+import Quote from '../components/styles/Quote'
 
 const IndexPage = () => (
   <Layout>

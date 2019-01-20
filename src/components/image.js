@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql as gql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -46,11 +47,20 @@ const IMAGE_JOSEF_QUERY = gql`
   }
 `
 
+const StyledImage = styled.div`
+  margin-bottom: 1rem;
+  img {
+    border-radius: 25px;
+  }
+`
+
 const Image = () => (
-  <StaticQuery
-    query={IMAGE_JOSEF_QUERY}
-    render={data => <Img fluid={data.fileName.childImageSharp.fluid} />}
-  />
+  <StyledImage>
+    <StaticQuery
+      query={IMAGE_JOSEF_QUERY}
+      render={data => <Img fluid={data.fileName.childImageSharp.fluid} />}
+    />
+  </StyledImage>
 )
 
 export default Image
