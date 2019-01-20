@@ -46,6 +46,11 @@ const StyledLayout = styled.div`
     flex: 1 0 auto;
     height: 100%;
   }
+  @media only screen and (max-width: 760px) {
+    .content {
+      padding-bottom: 5rem;
+    }
+  }
 `
 
 const Layout = ({ children }) => (
@@ -53,12 +58,10 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <StyledLayout>
       <div className="content">
-        <Header siteTitle="josef.aidt">
-          <Nav />
-        </Header>
+        <Header siteTitle="josef.aidt">{window.innerWidth >= 760 ? <Nav /> : ''}</Header>
         <Container>{children}</Container>
       </div>
-      <Footer />
+      <Footer>{window.innerWidth >= 760 ? '' : <Nav />}</Footer>
     </StyledLayout>
     {/* <Nav /> */}
   </div>

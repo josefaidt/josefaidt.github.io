@@ -644,6 +644,10 @@ pre tt:after {
     height: 100%;
     width: 100%;
     font-size: 100%;
+    p, ul, li {
+      text-align: justify;
+      text-justify: inter-word;
+    }
   }
 }
 `

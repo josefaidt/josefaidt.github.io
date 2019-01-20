@@ -36,8 +36,8 @@ const IndexPage = () => (
       seasonals. Over the years I've taken interest in the wild world of the web and all it has to
       offer. <br />
       <Link to="/about/">Read more.</Link>
-      <Quote>The power of imagination makes us infinite &mdash; John Muir</Quote>
     </p>
+    <Quote>The power of imagination makes us infinite &mdash; John Muir</Quote>
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )

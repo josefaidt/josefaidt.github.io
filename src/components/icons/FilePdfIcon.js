@@ -14,7 +14,7 @@ const FilePdfIcon = ({ link }) => (
     <a href={link} rel="noopener noreferrer" target="_blank" download>
       <svg
         height="50"
-        style={{ stroke: theme.rouge, 'stroke-width': 0, fill: theme.rouge }}
+        style={{ stroke: theme.rouge, strokeWidth: 0, fill: theme.rouge }}
         version="1.1"
         viewBox="0 0 32 32"
         width="40"

@@ -43,8 +43,9 @@ const SubtitleFlex = styled.div`
     font-size: 0.9rem;
     margin-top: -1rem;
   }
-  @media screen {
-    flex-direction: row;
+  @media only screen and (max-width: 760px) {
+    flex-direction: column;
+    text-align: center;
   }
 `
 
