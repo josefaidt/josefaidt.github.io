@@ -58,10 +58,12 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <StyledLayout>
       <div className="content">
-        <Header siteTitle="josef.aidt">{window.innerWidth >= 760 ? <Nav /> : ''}</Header>
+        <Header siteTitle="josef.aidt">
+          {typeof window !== 'undefined' && window.innerWidth >= 760 ? <Nav /> : ''}
+        </Header>
         <Container>{children}</Container>
       </div>
-      <Footer>{window.innerWidth >= 760 ? '' : <Nav />}</Footer>
+      <Footer>{typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Nav />}</Footer>
     </StyledLayout>
     {/* <Nav /> */}
   </div>
