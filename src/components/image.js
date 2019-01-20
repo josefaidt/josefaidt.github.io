@@ -37,7 +37,7 @@ const ALL_IMAGE_QUERY = gql`
 
 const IMAGE_JOSEF_QUERY = gql`
   query IMAGE_JOSEF_QUERY {
-    fileName: file(name: { eq: "josef" }, extension: { eq: "jpg" }) {
+    fileName: file(name: { eq: "josef_w" }, extension: { eq: "png" }) {
       childImageSharp {
         fluid(maxWidth: 400, maxHeight: 250) {
           ...GatsbyImageSharpFluid

@@ -52,7 +52,7 @@ const AboutPage = () => (
       I grew up in a family of six, with three younger brothers. We all look similar, sporting the
       frequently-mispelled surname of Aidt
       <b>
-        <a href="#ff_1" id="#ff_s_1">
+        <a href="#funfact_1" id="#funfact_s_1">
           <sup>1</sup>
         </a>
       </b>
@@ -64,7 +64,7 @@ const AboutPage = () => (
       It was Louisiana that I spent most of my childhood and finished school, all the while
       participating in extra-carricular activies such as Boy Scouts
       <b>
-        <a href="#ff_2" id="#ff_s_2">
+        <a href="#funfact_2" id="#funfact_s_2">
           <sup>2</sup>
         </a>
       </b>
@@ -132,8 +132,10 @@ const AboutPage = () => (
     <h3>Fun-Facts:</h3>
     <ul>
       <li>
-        <a href="ff_s_1">
-          <sup id="ff_1">1</sup>
+        <a href="#funfact_s_1">
+          <b>
+            <sup id="funfact_1">1</sup>
+          </b>
         </a>
         there's a{' '}
         <a href="https://en.wikipedia.org/wiki/Aidt" target="_blank">
@@ -141,8 +143,10 @@ const AboutPage = () => (
         </a>
       </li>
       <li>
-        <a href="#ff_s_2">
-          <sup id="ff_2">2</sup>
+        <a href="#funfact_s_2">
+          <b>
+            <sup id="funfact_2">2</sup>
+          </b>
         </a>
         I'm an Eagle Scout! <Emoji>🦅</Emoji>
       </li>
