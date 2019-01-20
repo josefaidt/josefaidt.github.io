@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { graphql as gql } from 'gatsby'
+import { graphql as gql, Link } from 'gatsby'
 import styled from 'styled-components'
 import SEO from '../components/seo'
 import Layout from '../components/Skeleton'
+import { theme } from '../components/Meta'
 
 const ALL_BLOG_QUERY = gql`
   query ALL_BLOG_QUERY {
@@ -21,28 +22,72 @@ const ALL_BLOG_QUERY = gql`
   }
 `
 
-const BlogPage = () => (
-  <Layout>
-    <SEO
-      keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
-      title="Home"
-    />
-    <h1>Hello</h1>
-    <p>
-      My name is Josef, and I am a 26-year-old alumnus of Louisiana State University. I'm a
-      full-stack JavaScript developer currently employed as a Frontend UI Developer at{' '}
-      <a href="https://twitter.com/IBM" target="_blank">
-        @IBM
-      </a>
-      . When I'm not thinking about work or my personal projects I might be playing with my two
-      goofball dogs &mdash; Marvin and Maverick, hanging out with my friends enjoying our favorite
-      music tracks, or I might just be listening to deep house music playing video games. I'm a
-      sucker for movies with great soundtracks (i.e. written by John Williams) and Reese's
-      seasonals. Over the years I've taken interest in the wild world of the web and all it has to
-      offer. <br />
-      <Link to="/about/">Read more.</Link>
-    </p>
-    <Quote>The power of imagination makes us infinite &mdash; John Muir</Quote>
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
-  </Layout>
-)
+const StyledPostLink = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 1rem 0;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    /* background-color: red; */
+  }
+
+  .container {
+    padding: 2px 16px;
+    color: ${theme.almostblack};
+    filter: brightness(150%);
+    h1 {
+      color: ${theme.almostblack};
+      filter: brightness(100%);
+    }
+  }
+  .container:hover {
+    filter: brightness(80%);
+  }
+`
+
+const BlogPage = props => {
+  const postList = props.data.allMarkdownRemark
+  return (
+    <Layout>
+      <SEO
+        keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
+        title="Home"
+      />
+      <h1>Snakes and Sparklers</h1>
+      {postList.edges.map(({ node }, i) => (
+        <StyledPostLink key={i}>
+          <Link className="link card" to={node.fields.slug}>
+            <div className="post-list container">
+              <h1>{node.frontmatter.title}</h1>
+              <span>{node.frontmatter.date}</span>
+              <p>{node.excerpt}</p>
+            </div>
+          </Link>
+        </StyledPostLink>
+      ))}
+    </Layout>
+  )
+}
+
+export const listQuery = gql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM Do YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
+
+export default BlogPage

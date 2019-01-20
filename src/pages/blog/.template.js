@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, graphql as gql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../../components/Skeleton'
 import SEO from '../../components/seo'
@@ -26,6 +27,11 @@ const BlogPost = (props) => {
         keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
         title="Blog"
       />
+      <Link to="/blog/">
+        {/* <button> */}
+          BACK
+        {/* </button> */}
+      </Link>
       <div>
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -35,7 +41,7 @@ const BlogPost = (props) => {
 }
 
 export default BlogPost;
-export const query = graphql`
+export const query = gql`
 query PostQuery($slug: String!) {
    markdownRemark(fields: { slug: { eq: $slug } }) {
      html
