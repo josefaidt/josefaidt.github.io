@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/Skeleton'
 import Image from '../components/image'
 import SEO from '../components/seo'
-import Picture from '../components/images/LaunchImage'
+// import Image from '../components/image'
 
 const ImageContainer = styled.div`
   .image svg,
@@ -33,6 +33,7 @@ const AboutPage = () => (
       title="Home"
     />
     <h1>About Me</h1>
+    <Image />
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <p>

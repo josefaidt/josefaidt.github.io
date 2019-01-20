@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql as gql } from 'gatsby'
 import Img from 'gatsby-image'
 
 /*
@@ -13,81 +13,44 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-// const queryJosef = graphql`
-//   query {
-//     fileName: file(relativePath: { eq: "josef.jpg" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 300) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
-
-const squareImage = graphql`
-  fragment squareImage on File {
-    childImageSharp {
-      fluid(maxWidth: 200, maxHeight: 200) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
-
-const queryTest = graphql`
-  query {
-    image1: file(relativePath: { eq: "images/josef.jpg" }) {
-      ...squareImage
-    }
-
-    image2: file(relativePath: { eq: "images/undraw_launch.svg" }) {
-      ...squareImage
-    }
-
-    image3: file(relativePath: { eq: "images/gatsby-icon.png" }) {
-      ...squareImage
-    }
-  }
-`
-
-// const queryLaunch = graphql`
-//   query {
-//     placeholderImage: file(relativePath: { eq: "undraw_launching.svg" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 600) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
-
-// const Image = () => (
-//   <StaticQuery
-//     query={queryTest}
-//     render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-//   />
-// )
-// export default Image
-
-export default ({ data }) => (
-  <div>
-    <h1>Hello gatsby-image</h1>
-    <Img fixed={data.file.childImageSharp.fixed} />
-  </div>
-)
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "images/josef.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
+const ALL_IMAGE_QUERY = gql`
+  query ALL_IMAGE_QUERY {
+    allImageSharp {
+      edges {
+        node {
+          ... on ImageSharp {
+            original {
+              width
+              height
+              src
+            }
+            resize(width: 150, height: 150) {
+              src
+            }
+          }
         }
       }
     }
   }
 `
+
+const IMAGE_JOSEF_QUERY = gql`
+  query IMAGE_JOSEF_QUERY {
+    fileName: file(name: { eq: "josef" }, extension: { eq: "jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const Image = () => (
+  <StaticQuery
+    query={IMAGE_JOSEF_QUERY}
+    render={data => <Img fluid={data.fileName.childImageSharp.fluid} />}
+  />
+)
+
+export default Image

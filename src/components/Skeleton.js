@@ -51,6 +51,9 @@ const StyledLayout = styled.div`
       padding-bottom: 5rem;
     }
   }
+  .col2 {
+    background-color: red;
+  }
 `
 
 const Layout = ({ children }) => (

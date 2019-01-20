@@ -16,8 +16,8 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
