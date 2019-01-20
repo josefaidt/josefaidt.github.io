@@ -6,38 +6,13 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 import Line from '../components/flair/Line'
 import Quote from '../components/styles/Quote'
-
-const ImageContainer = styled.div`
-  .image svg,
-  img {
-    height: 0;
-    width: 0;
-    padding-bottom: 2rem;
-    float: right;
-  }
-`
-const Imager = styled.div`
-  max-width: 300px;
-  margin-bottom: 1.45rem;
-  padding: 0 auto;
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`
-
-const Emoji = styled.span`
-  margin: 0;
-  padding: 0;
-  font-size: 1.3rem;
-`
+import Emoji from '../components/styles/Emoji'
 
 const AboutPage = () => (
   <Layout>
     <SEO
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
-      title="Home"
+      title="About"
     />
     <h1>About Me</h1>
     <Image />
@@ -74,7 +49,7 @@ const AboutPage = () => (
         The Golden Band from Tigerland
       </a>
       . During my time at LSU I gained an adoration for web development and the technology behind
-      the web; after all, I grew up online. Whether I was online learning or playing video games I
+      the web, after all, I grew up online. Whether I was online learning or playing video games I
       always ended up browsing the web to find new and exciting websites fashioned with that next
       level of design flair.
     </p>

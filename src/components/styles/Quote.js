@@ -8,6 +8,10 @@ const Quote = styled.div`
   color: dimgrey;
   font-style: italic;
   filter: brightness(120%);
+
+  @media only screen and (max-width: 760px) {
+    margin: 3rem 1rem;
+  }
 `
 
 export default Quote
