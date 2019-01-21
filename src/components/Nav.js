@@ -86,9 +86,12 @@ export default class Nav extends Component {
         <Link activeClassName="active" to="/resume/">
           RESUME
         </Link>
-        <a href="https://github.com/josefaidt" rel="noopener noreferrer" target="_blank">
+        <Link activeClassName="active" to="/blog/">
+          BLOG
+        </Link>
+        {/* <a href="https://github.com/josefaidt" rel="noopener noreferrer" target="_blank">
           Github ⎆
-        </a>
+        </a> */}
       </StyledNav>
     )
   }

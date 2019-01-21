@@ -58,7 +58,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               )
               .concat(meta)}
             title={title}
-            titleTemplate={`${data.site.siteMetadata.title}`}
+            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           />
         )
       }}

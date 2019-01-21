@@ -104,8 +104,8 @@ const BlogPage = props => {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
-        title="Home"
+        keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `blog`]}
+        title="Blog"
       />
       <h1>Snakes and Sparklers</h1>
       <p>
