@@ -47,7 +47,7 @@ const IMAGE_JOSEF_QUERY = gql`
   }
 `
 
-const StyledImage = styled.div`
+export const StyledImage = styled.div`
   margin-bottom: 1rem;
   img {
     border-radius: 25px;

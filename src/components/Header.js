@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from './Meta'
+import { ShortLine } from './styles/Line'
 
 const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
@@ -36,6 +37,10 @@ const StyledHeader = styled.div`
   .nav {
     align-self: right;
   }
+
+  @media only screen and (max-width: 760px) {
+    max-height: 7vh;
+  }
 `
 
 const Header = ({ siteTitle, children }) => (
@@ -50,6 +55,7 @@ const Header = ({ siteTitle, children }) => (
       </h1>
     </div>
     {children}
+    {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <ShortLine />}
   </StyledHeader>
 )
 

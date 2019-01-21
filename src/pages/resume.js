@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import { theme } from '../components/Meta'
 import { FilePdfIcon } from '../components/icons'
 import resume from '../assets/jaidt_Resume.pdf'
-import Line from '../components/flair/Line'
+import Line from '../components/styles/Line'
 
 const Imager = styled.div`
   img {
