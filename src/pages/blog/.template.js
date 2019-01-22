@@ -95,6 +95,7 @@ const StyledFab = styled.div`
 
   .plus {
     text-align: center;
+    padding: auto;
   }
 `
 
