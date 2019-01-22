@@ -95,7 +95,7 @@ const StyledFab = styled.div`
 
   .plus {
     text-align: center;
-    margin: auto;
+    padding-right: 0.3rem
   }
 `
 
@@ -103,7 +103,7 @@ const Fab = () => (
   <StyledFab>
   <Link to="/blog/">
   <div className="fab" data-toggle="tooltip" data-placement="left" data-original-title="Create">
-    <p className="plus">&larr;</p>
+    <p className="plus">{'<'}</p>
   </div>
   </Link>
   </StyledFab>

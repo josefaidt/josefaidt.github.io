@@ -24,7 +24,7 @@ const Container = styled.div`
     width: 50%;
   }
   @media only screen and (max-width: 480px) {
-    margin: 0 auto;
+    margin: 0 0.1rem;
   }
 `
 
