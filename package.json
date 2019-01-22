@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "directory-named-webpack-plugin": "^4.0.0",
     "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-standard": "^12.0.0",

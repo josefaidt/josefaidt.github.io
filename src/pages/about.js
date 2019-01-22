@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 // import styled from 'styled-components'
-import Layout from '../components/Skeleton'
-import Image from '../components/image'
-import SEO from '../components/seo'
-import Line from '../components/styles/Line'
-import Quote from '../components/styles/Quote'
-import Emoji from '../components/styles/Emoji'
+import Layout from 'components/Skeleton'
+import Image from 'components/image'
+import SEO from 'components/seo'
+import Line from 'components/styles/Line'
+import Quote from 'components/styles/Quote'
+import Emoji from 'components/styles/Emoji'
 
 const AboutPage = () => (
   <Layout>

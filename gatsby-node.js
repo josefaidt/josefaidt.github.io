@@ -8,6 +8,7 @@
 
 const path = require('path')
 const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -58,4 +59,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug
     })
   }
+}
+
+exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      plugins: [new DirectoryNamedWebpackPlugin()]
+    }
+  })
 }

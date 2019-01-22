@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Layout from '../components/Skeleton'
-import Image from '../components/image'
-import SEO from '../components/seo'
-import { theme } from '../components/Meta'
-import { FilePdfIcon } from '../components/icons'
-import resume from '../assets/jaidt_Resume.pdf'
-import Line from '../components/styles/Line'
+import Layout from 'components/Skeleton'
+import Image from 'components/image'
+import SEO from 'components/seo'
+import { theme } from 'components/Meta'
+import { FilePdfIcon } from 'components/icons'
+import resume from 'assets/jaidt_Resume.pdf'
+import Line from 'components/styles/Line'
 
 const Imager = styled.div`
   img {

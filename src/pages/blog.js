@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { graphql as gql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import SEO from '../components/seo'
-import Layout from '../components/Skeleton'
-import { theme } from '../components/Meta'
-import Quote from '../components/styles/Quote'
+import SEO from 'components/seo'
+import Layout from 'components/Skeleton'
+import { theme } from 'components/Meta'
+import Quote from 'components/styles/Quote'
 
 const ALL_BLOG_QUERY = gql`
   query ALL_BLOG_QUERY {

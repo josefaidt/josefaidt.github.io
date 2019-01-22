@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import Layout from '../../components/Skeleton'
-import SEO from '../../components/seo'
-import { StyledImage } from '../../components/image'
-import { theme } from '../../components/Meta'
+import Layout from 'components/Skeleton'
+import SEO from 'components/seo'
+import { StyledImage } from 'components/image'
+import { theme } from 'components/Meta'
 
 // export default class BlogTemplate extends Component {
 //   render() {
