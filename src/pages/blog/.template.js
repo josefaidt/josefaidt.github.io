@@ -92,6 +92,10 @@ const StyledFab = styled.div`
     box-shadow: 0 6px 14px 0 #666;
     transform: scale(1.05);
   }
+
+  .plus {
+    text-align: center;
+  }
 `
 
 const Fab = () => (

@@ -39,7 +39,7 @@ const StyledHeader = styled.div`
   }
 
   @media only screen and (max-width: 760px) {
-    max-height: 7vh;
+    max-height: 10vh;
   }
 `
 
