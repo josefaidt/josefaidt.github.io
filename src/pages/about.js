@@ -27,7 +27,7 @@ const AboutPage = () => (
       I grew up in a family of six, with three younger brothers. We all look similar, sporting the
       frequently-mispelled surname of Aidt
       <b>
-        <a href="#funfact_1" id="#funfact_s_1">
+        <a href="#funfact_1">
           <sup>1</sup>
         </a>
       </b>
@@ -39,11 +39,11 @@ const AboutPage = () => (
       It was Louisiana that I spent most of my childhood and finished school, all the while
       participating in extra-carricular activies such as Boy Scouts
       <b>
-        <a href="#funfact_2" id="#funfact_s_2">
+        <a href="#funfact_2">
           <sup>2</sup>
         </a>
       </b>
-      , marching band, jazz band, and sports! Sports didn't end up lasting long, but band stuck; I
+      , marching band, jazz band, and sports! Sports didn't end up lasting long, but band stuck. I
       went on to play trumpet in LSU's marching band,{' '}
       <a href="https://www.bands.lsu.edu/tigerband" target="_blank">
         The Golden Band from Tigerland
@@ -56,10 +56,10 @@ const AboutPage = () => (
     <p>
       <i>I never thought about getting into development.</i> My curriculum included classes that
       covered C++ and C#, SEO and the surrounding business, and even higher-level concepts regarding
-      web usability and e-commerce, but it really wasn't until I was in my final semester in college
-      taking a communications-intensive art course that focused in web design. That's when I
-      realized that I enjoyed building for the web. Not necessarily grinding out websites all the
-      time, but actually building using web technologies.
+      web usability and e-commerce. But it wasn't until I was in my final semester in college taking
+      a communications-intensive art course that focused in web design. That's when I realized that
+      I enjoyed building for the web. Not necessarily grinding out websites all the time, but
+      actually building using web technologies.
     </p>
     <p>
       After school I went full-time as a desktop support analyst at the local hospital, working for{' '}
@@ -68,16 +68,16 @@ const AboutPage = () => (
         target="_blank">
         FMOL Health System
       </a>
-      . There I was able to apply knowledge learned from my degree as well as lean on my brief
-      programming background to help streamline existing processes and improve overall performance.
-      It was great to learn while on the job, both technically and intrapersonally. After managing
-      deployment and discovery projects for our team, as well as assist in large-scale equipment
-      deployments for the largest IT project in company history, I was presented with an opportunity
-      to join the company's Business Information Services (BIS) team. On this team I was stationed
-      to work for the ERP portion of the team, being able to utilize my frontend web development
-      skillset to engineer, modify, and maintain ERP submodules. Besides the frontend work I
-      developed ETL processes to create visual reports on scrubbed, reportable data by using SQL
-      Server Reporting Services and{' '}
+      . There I was able to apply knowledge learned from my degree in addition to leaning on my
+      brief programming background to help streamline existing processes and improve overall
+      performance. It was great to learn while on the job, technically and intrapersonally. After
+      leading deployment and discovery projects for our team, as well as assist in large-scale
+      equipment deployments for the largest IT project in company history, I was presented with an
+      opportunity to join the company's Business Information Services (BIS) team. There I was
+      stationed to work for the ERP portion of the team utilizing my frontend web development
+      skillset to engineer, modify, and maintain ERP submodules. Other than my web development
+      assignments I developed ETL processes using SQL to ultimately create visual reports on
+      scrubbed, reportable data by using SQL Server Reporting Services and{' '}
       <a href="https://www.tableau.com/" target="_blank">
         Tableau
       </a>
@@ -89,7 +89,7 @@ const AboutPage = () => (
       <a href="https://plex.tv" target="_blank">
         Plex
       </a>{' '}
-      stack in my off-time. As noted I am currently employed as a Frontend UI Developer{' '}
+      stack in my off-time. I am currently employed as a Frontend UI Developer{' '}
       <a href="https://twitter.com/IBM" target="_blank">
         @IBM
       </a>{' '}
@@ -107,22 +107,18 @@ const AboutPage = () => (
     <h3>Fun-Facts:</h3>
     <ul>
       <li>
-        <a href="#funfact_s_1">
-          <b>
-            <sup id="funfact_1">1</sup>
-          </b>
-        </a>
+        <b>
+          <sup id="funfact_1">1</sup>
+        </b>
         there's a{' '}
         <a href="https://en.wikipedia.org/wiki/Aidt" target="_blank">
           small Danish town called Aidt
         </a>
       </li>
       <li>
-        <a href="#funfact_s_2">
-          <b>
-            <sup id="funfact_2">2</sup>
-          </b>
-        </a>
+        <b>
+          <sup id="funfact_2">2</sup>
+        </b>
         I'm an Eagle Scout! <Emoji>🦅</Emoji>
       </li>
       <li>
