@@ -2,19 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import Raven from 'raven-js'
-import { SentryAPIKey } from 'config/config'
+import LogRocket from 'logrocket'
 import Header from './Header'
 import Footer from './Footer'
 import { theme } from './Meta'
 import Nav from './Nav'
 import { GlobalStyle } from './global.css'
 
-if (process.env.NODE_ENV === 'production') {
-  Raven.config(SentryAPIKey, {
-    environment: 'production'
-  }).install()
-}
+LogRocket.init('yf1oeo/josefaidtme')
 
 const Container = styled.div`
   margin: 3rem auto;
