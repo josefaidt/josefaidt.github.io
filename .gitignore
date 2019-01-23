@@ -85,3 +85,6 @@ logs
 .assets
 /public
 /gatsby-universal
+
+# secrets
+**/config

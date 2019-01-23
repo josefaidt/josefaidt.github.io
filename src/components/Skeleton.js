@@ -2,11 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import Raven from 'raven-js'
+import { SentryAPIKey } from 'config/config'
 import Header from './Header'
 import Footer from './Footer'
 import { theme } from './Meta'
 import Nav from './Nav'
 import { GlobalStyle } from './global.css'
+
+if (process.env.NODE_ENV === 'production') {
+  Raven.config(SentryAPIKey, {
+    environment: 'production'
+  }).install()
+}
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -36,6 +44,9 @@ const StyledLayout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   /* justify-content: 'space-between'; */
   .footer {
     margin: 0 auto;

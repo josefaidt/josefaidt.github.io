@@ -1,4 +1,4 @@
-# josefaidt.me - personal portfolio
+# josefaidt.me
 
 ![GitHub package version](https://img.shields.io/github/package-json/v/josefaidt/josefaidt.github.io.svg?style=flat-square)
 
@@ -7,7 +7,7 @@
 ![dev dependencies](https://img.shields.io/david/dev/josefaidt/josefaidt.github.io.svg?style=flat-square)
 ![License](https://img.shields.io/github/license/josefaidt/josefaidt.github.io.svg?style=flat-square)
 
-Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/).
+Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/). Visit the progress over at [trello](https://trello.com/b/GQqL1K11/josefaidtme).
 
 ## The Stack
 
