@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql as gql } from 'gatsby'
 import Img from 'gatsby-image'
-import styled from 'styled-components'
+import { StyledImage } from './styles/Image.css'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -44,13 +44,6 @@ const IMAGE_JOSEF_QUERY = gql`
         }
       }
     }
-  }
-`
-
-export const StyledImage = styled.div`
-  margin-bottom: 1rem;
-  img {
-    border-radius: 25px;
   }
 `
 

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { theme } from './Meta'
+import theme from './theme'
 export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;

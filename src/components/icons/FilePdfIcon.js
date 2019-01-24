@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { theme } from '../Meta'
+import theme from '../styles/theme'
 
 const StyledIcon = styled.div`
   a:hover {

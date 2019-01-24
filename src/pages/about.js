@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
-// import styled from 'styled-components'
 import Layout from 'components/Skeleton'
 import Image from 'components/image'
 import SEO from 'components/seo'

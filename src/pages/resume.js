@@ -2,20 +2,11 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from 'components/Skeleton'
-import Image from 'components/image'
 import SEO from 'components/seo'
-import { theme } from 'components/Meta'
 import { FilePdfIcon } from 'components/icons'
 import resume from 'assets/jaidt_Resume.pdf'
 import Line from 'components/styles/Line'
-
-const Imager = styled.div`
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`
+import { Title, SubtitleFlex } from 'components/styles/Titles.css'
 
 const queryResume = graphql`
   query Resume {
@@ -28,25 +19,6 @@ const queryResume = graphql`
         }
       }
     }
-  }
-`
-
-const Title = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-const SubtitleFlex = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: auto;
-  span {
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-top: -1rem;
-  }
-  @media only screen and (max-width: 760px) {
-    flex-direction: column;
-    text-align: center;
   }
 `
 

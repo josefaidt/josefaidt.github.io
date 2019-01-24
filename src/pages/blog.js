@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql as gql, Link } from 'gatsby'
-import styled from 'styled-components'
 import SEO from 'components/seo'
 import Layout from 'components/Skeleton'
-import { theme } from 'components/Meta'
 import Quote from 'components/styles/Quote'
+import { StyledPostLink, StyledTagList, StyledTag } from 'components/styles/Tags.css'
 
 const ALL_BLOG_QUERY = gql`
   query ALL_BLOG_QUERY {
@@ -40,96 +39,6 @@ const BLOG_QUERY = gql`
         }
       }
     }
-  }
-`
-
-const StyledPostLink = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  margin: 1rem 0;
-
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  .container {
-    padding: 1rem;
-    color: ${theme.almostblack};
-    /* transition */
-    h1,
-    p,
-    span,
-    span.tag {
-      color: #8b868c;
-      transition: color 0.2s ease;
-    }
-    /* filters */
-    h1 {
-      /* color: white; */
-      /* filter: brightness(150%); */
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    p,
-    span#date {
-      font-size: 0.8rem;
-      /* filter: brightness(150%); */
-    }
-    span.tag {
-      /* filter: brightness(120%); */
-      color: white;
-      /* background-color: #6a646b; */
-      background-color: #8b868c;
-      transition: background-color 0.2s linear;
-    }
-    #date {
-      font-style: italic;
-    }
-  }
-  .container:hover {
-    h1,
-    span#date,
-    p {
-      color: ${theme.almostblack};
-      /* color: red; */
-      /* filter: brightness(80%); */
-    }
-    span.tag {
-      background-color: ${theme.almostblack};
-      transition: background-color 0.2s linear;
-      color: white;
-    }
-  }
-
-  @media only screen and (max-width: 760px) {
-    margin: 1rem 0.3rem;
-  }
-`
-
-const StyledTag = styled.span`
-  background-color: ${theme.almostblack};
-  color: white;
-  border-radius: 5px;
-  padding: 0.1rem 0.5rem;
-  min-width: 80px;
-  text-align: center;
-  margin: 0 0.3rem 0.3rem 0;
-  font-size: 0.7rem;
-  color: white;
-  &:hover {
-    /* background-color: red; */
-  }
-`
-
-const StyledTagList = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  div {
-    display: flex;
-    flex-wrap: wrap;
   }
 `
 
@@ -215,9 +124,10 @@ class Blog extends Component {
         allTags.push(t)
       })
     })
+    const posts = postList.map(e => e.node)
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <SEO
           keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `blog`]}
           title="Blog"
@@ -231,78 +141,43 @@ class Blog extends Component {
           "Snakes and Sparklers are the only ones I like." -Kicking Wing, Joe Dirt (2001)
         </Quote>
         {/* <StyledTagList>{renderTags(allTags)}</StyledTagList> */}
-        {chunk(posts.slice(0, this.state.postsToShow), 3).map((chunk, i) => (
-          <div
-            key={`chunk-${i}`}
-            css={{
-              display: `flex`,
-              alignItems: `stretch`,
-              flexShrink: 0,
-              flexDirection: `row`,
-              marginBottom: rhythm(1 / 8),
-              [presets.Tablet]: {
-                marginBottom: rhythm(1)
-              }
-            }}>
-            {postList.map(({ node }, i) => {
-              const { slug } = node.fields
-              const post = node.frontmatter
-              return (
-                <StyledPostLink key={i}>
-                  <Link className="link card" to={slug}>
-                    <div className="post-list container">
-                      <h1>{post.title}</h1>
-                      {/* <Img alt="test" src={node.frontmatter.image} /> */}
-                      {post.tags ? <StyledTagList>{renderTags(post.tags)}</StyledTagList> : ''}
-                      {/* <br /> */}
-                      <span id="date">{post.date}</span>
-                      {/* <br /> */}
-                      <div className="excerpt-preview">
-                        <p>
-                          {node.excerpt}
-                          {/* <StyledImageSmall> */}
-                          {/* {node.frontmatter.image ? (
+        {postList.map(({ node }, i) => {
+          const { slug } = node.fields
+          const post = node.frontmatter
+          chunk(posts.slice(0, this.state.postsToShow), 3).map((chunk, i) => (
+            <StyledPostLink key={i}>
+              <Link className="link card" to={slug}>
+                <div className="post-list container">
+                  <h1>{post.title}</h1>
+                  {/* <Img alt="test" src={node.frontmatter.image} /> */}
+                  {post.tags ? <StyledTagList>{renderTags(post.tags)}</StyledTagList> : ''}
+                  <span id="date">{post.date}</span>
+                  <div className="excerpt-preview">
+                    <p>
+                      {node.excerpt}
+                      {/* <StyledImageSmall> */}
+                      {/* {node.frontmatter.image ? (
                           <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
                           ) : (
                             ''
                           )} */}
-                          {/* </StyledImageSmall> */}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                </StyledPostLink>
-              )
-            })}
-          </div>
-        ))}
+                      {/* </StyledImageSmall> */}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </StyledPostLink>
+          ))
+        })}
         {!this.state.showingMore && (
           <a
             css={{
-              ...scale(-0.5),
               border: `1px solid blue`,
               boxShadow: 0,
               background: `none`,
               color: `blue`,
               cursor: `pointer`,
-              margin: `0 auto`,
-              padding: rhythm(1 / 2),
-              width: `calc(100vw - ${rhythm(1)})`,
-              marginLeft: rhythm(0.5),
-              marginRight: rhythm(0.5),
-              marginBottom: rhythm(0.5),
-              marginTop: rhythm(0.5),
-              [presets.Tablet]: {
-                borderRadius: `100%`,
-                margin: `0 auto`,
-                marginBottom: rhythm(1.5),
-                marginTop: rhythm(1.5),
-                padding: rhythm(1),
-                height: rhythm(5),
-                width: rhythm(5),
-                lineHeight: rhythm(3),
-                textAlign: `center`
-              }
+              margin: `0 auto`
             }}
             data-testid="load-more"
             onClick={() => {
