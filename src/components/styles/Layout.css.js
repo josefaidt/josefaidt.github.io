@@ -42,6 +42,15 @@ export const StyledLayout = styled.div`
     flex: 1 0 auto;
     height: 100%;
   }
+  a {
+    color: ${theme.red};
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: ${theme.red4};
+    transition: color 0.2s ease;
+    /* color: white; */
+  }
   @media only screen and (max-width: 760px) {
     .content {
       padding-bottom: 5rem;

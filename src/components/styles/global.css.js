@@ -18,6 +18,7 @@ body {
 a {
   text-decoration: none;
   color: ${theme.red};
+  transition: color 0.2s ease;
 }
 button {  font-family: 'josefinsans'; }
 
