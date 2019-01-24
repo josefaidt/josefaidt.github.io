@@ -11,8 +11,8 @@ import React from 'react'
 
 export default class Test extends React.Component {
   constructor(props) {
-    super(props)
-    this.testProperty = 0
+    super(props),
+    this.testProperty: 0
   }
 
   render() {
