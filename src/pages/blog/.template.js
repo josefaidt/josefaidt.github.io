@@ -1,7 +1,7 @@
 import React, { Component, forwardRef } from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
-import posed from 'react-pose'
+// import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
@@ -88,22 +88,14 @@ const StyledFab = styled.div`
   }
 `
 
-const AnimatedFab = posed.div({
-  pressable: true,
-  init: { scale: 1 },
-  press: { scale: 0.8 }
-})
-
 const Fab = () => (
-  <AnimatedFab>
-    <StyledFab>
-      <Link to="/blog/">
-        <div className="fab" data-original-title="Create" data-placement="left" data-toggle="tooltip">
-          <p className="plus">{'<'}</p>
-        </div>
-      </Link>
-    </StyledFab>
-  </AnimatedFab>
+  <StyledFab>
+    <Link to="/blog/">
+      <div className="fab" data-original-title="Create" data-placement="left" data-toggle="tooltip">
+        <p className="plus">{'<'}</p>
+      </div>
+    </Link>
+  </StyledFab>
 )
 
 
