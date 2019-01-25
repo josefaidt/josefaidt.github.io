@@ -31,8 +31,7 @@ const AboutPage = () => (
         </a>
       </b>
       . My family moved a few times while I was younger to a few different states &mdash; namely
-      West Virgina, North Carolina, and Ohio &mdash; before moving to Louisiana as a final stop on
-      the train.
+      West Virgina, North Carolina, and Ohio &mdash; before moving to Louisiana as a final stop.
     </p>
     <p>
       It was Louisiana that I spent most of my childhood and finished school, all the while
