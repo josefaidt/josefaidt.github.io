@@ -1,18 +1,18 @@
-# josefaidt.me - personal portfolio
+# josefaidt.me
 
-Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/).
+![GitHub package version](https://img.shields.io/github/package-json/v/josefaidt/josefaidt.github.io.svg?style=flat-square)
 
-## Version 2.0
-Coming soon is version 2.0 of the site, showcasing an entire new structure and layout by utilizing a combination of CSSGrid and Flexbox.
+[![code style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
+![dependencies](https://img.shields.io/david/josefaidt/josefaidt.github.io.svg?style=flat-square)
+![dev dependencies](https://img.shields.io/david/dev/josefaidt/josefaidt.github.io.svg?style=flat-square)
+![License](https://img.shields.io/github/license/josefaidt/josefaidt.github.io.svg?style=flat-square)
 
-## Task Runner and Modules
-I have chosen to use Gulp to automate tasks. For this project I used npm and yarn to install the following packages:
+Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/). Visit the progress over at [trello](https://trello.com/b/GQqL1K11/josefaidtme).
 
-* gulp
-* gulp-clean
-* gulp-concat
-* gulp-cssmin
-* gulp-imagemin
-* gulp-rename
-* gulp-sass
-* gulp-uglify
+## The Stack
+
+This version of my website is built using the following technologies:
+
+- ESLint / Prettier &mdash; *linting and formatting*
+- [Gatsby v2](https://github.com/org/gatsby) &mdash; *static site generator; build*
+- [Netlify CMS](https://netlify.com) &mdash; *hosting*
