@@ -13,7 +13,7 @@ export const StyledNav = styled.div`
   @media (min-width: 760px) {
     a.active,
     a.active:hover {
-      filter: brightness(70%);
+      /* filter: brightness(70%); */
       padding-bottom: 1rem;
       border-bottom: 0;
     }
@@ -25,7 +25,7 @@ export const StyledNav = styled.div`
     }
   }
   a:active {
-    filter: brightness(120%);
+    filter: brightness(90%);
     transition: ease 100ms;
     border-bottom: 1px solid;
   }

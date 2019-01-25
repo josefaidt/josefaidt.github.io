@@ -5,7 +5,6 @@ import { StyledNav } from './styles/Nav.css'
 export default class Nav extends Component {
   constructor(props) {
     super(props)
-    // this.watcher =
     this.state = { addClass: false }
   }
   toggle() {

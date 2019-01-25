@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, forwardRef } from 'react'
 import { Link, graphql as gql } from 'gatsby'
+import PropTypes from 'prop-types'
+import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
-// import { BlogHeader, StyledBackButton, StyledFab } from './template.css'
 
 import styled from 'styled-components'
 import theme from 'components/styles/theme'
@@ -87,17 +88,24 @@ const StyledFab = styled.div`
   }
 `
 
-export { BlogHeader, StyledBackButton, StyledFab }
+const AnimatedFab = posed.div({
+  pressable: true,
+  init: { scale: 1 },
+  press: { scale: 0.8 }
+})
 
 const Fab = () => (
-  <StyledFab>
-    <Link to="/blog/">
-      <div className="fab" data-original-title="Create" data-placement="left" data-toggle="tooltip">
-        <p className="plus">{'<'}</p>
-      </div>
-    </Link>
-  </StyledFab>
+  <AnimatedFab>
+    <StyledFab>
+      <Link to="/blog/">
+        <div className="fab" data-original-title="Create" data-placement="left" data-toggle="tooltip">
+          <p className="plus">{'<'}</p>
+        </div>
+      </Link>
+    </StyledFab>
+  </AnimatedFab>
 )
+
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
@@ -132,6 +140,10 @@ const BlogPost = props => {
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Fab />}
     </Layout>
   )
+}
+
+BlogPost.propTypes = {
+  data: PropTypes.object.isRequired,
 }
 
 export default BlogPost

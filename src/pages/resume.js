@@ -1,28 +1,12 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { FilePdfIcon } from 'components/icons'
-import resume from 'assets/jaidt_Resume.pdf'
 import Line from 'components/styles/Line'
 import { Title, SubtitleFlex } from 'components/styles/Titles.css'
 
-const queryResume = graphql`
-  query Resume {
-    allFile(filter: { sourceInstanceName: { eq: "jaidt_Resume" } }) {
-      edges {
-        node {
-          extension
-          dir
-          modifiedTime
-        }
-      }
-    }
-  }
-`
-
-const AboutPage = () => (
+const AboutPage = ({ data }) => (
   <Layout>
     <SEO
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
@@ -30,8 +14,7 @@ const AboutPage = () => (
     />
     <Title>
       <h1>Résumé</h1>
-      {/* <iframe frameBorder="0" src="/assets/jaidt_Resume.pdf" /> */}
-      <FilePdfIcon link={resume} />
+      <FilePdfIcon link={data.allFile.edges[0].node.publicURL} />
     </Title>
     <Line />
     <h2>Objective</h2>
@@ -81,11 +64,11 @@ const AboutPage = () => (
       </SubtitleFlex>
       <ul>
         <li>
-          Uses JavaScript and JQuery to accomplish various tasks within mature ERP environment,
+          Used JavaScript and JQuery to accomplish various tasks within mature ERP environment,
           Lawson Infor
         </li>
         <li>
-          Designs and develops internal charitable giving campaigns, front-end benefits enrollment
+          Designed and developed internal charitable giving campaigns, front-end benefits enrollment
           form changes, and interfacing with external companies
         </li>
         <li>
@@ -94,12 +77,12 @@ const AboutPage = () => (
           deliver employee benefits statements
         </li>
         <li>
-          Utilizes MSSQL Server Reporting Services and Crystal Reports to deliver reports such as
+          Leveraged MSSQL Server Reporting Services and Crystal Reports to deliver reports such as
           supply chain asset management, financial reporting, and employee turnover; primarily from
           ERP’s Oracle database
         </li>
         <li>
-          Utilizes Tableau to visualize – and enhance – legacy reporting to provide interactive,
+          Utilized Tableau to visualize – and enhance – legacy reporting to provide interactive,
           meaningful results
         </li>
       </ul>
@@ -213,5 +196,20 @@ const AboutPage = () => (
     </p>
   </Layout>
 )
+
+export const queryResume = graphql`
+  query {
+    allFile(filter: { name: { eq: "jaidt_Resume" } }) {
+      edges {
+        node {
+          name
+          relativePath
+          relativeDirectory
+          publicURL
+        }
+      }
+    }
+  }
+`
 
 export default AboutPage

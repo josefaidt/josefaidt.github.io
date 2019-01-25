@@ -115,6 +115,10 @@ const BlogPage = props => {
   )
 }
 
+BlogPage.propTypes = {
+  data: PropTypes.object.isRequired
+}
+
 export const listQuery = gql`
   query ListQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {

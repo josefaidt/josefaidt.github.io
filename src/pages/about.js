@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Layout from 'components/Skeleton'
 import Image from 'components/image'
 import SEO from 'components/seo'
@@ -131,5 +132,9 @@ const AboutPage = () => (
     </ul>
   </Layout>
 )
+
+// AboutPage.protoTypes = {
+//   data: PropTypes.object.isRequired
+// }
 
 export default AboutPage
