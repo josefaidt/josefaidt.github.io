@@ -31,6 +31,7 @@
     "gatsby-transformer-json": "^2.1.7",
     "gatsby-transformer-remark": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.8",
+    "lodash": "^4.17.11",
     "logrocket": "^0.6.19",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
