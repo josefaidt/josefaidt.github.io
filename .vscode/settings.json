@@ -10,5 +10,9 @@
   "eslint.autoFixOnSave": true,
   "eslint.options": {
     "configFile": "./.eslintrc.js"
+  },
+
+  "markdownlint.config": {
+    "MD002": false
   }
 }
