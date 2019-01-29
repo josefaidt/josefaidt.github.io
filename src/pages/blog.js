@@ -34,6 +34,7 @@ const StyledLoadButton = styled.button`
   text-align: center;
   color: ${theme.rouge};
   font-weight: 700;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
