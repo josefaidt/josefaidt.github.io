@@ -1,11 +1,11 @@
 ---
-title: 'Installing ESLint Globally with VSCode'
+title: 'VSCode & Installing ESLint Globally'
 description: 'A brief tutorial to show you how to install ESLint globally and integrate with VSCode'
 date: '2019-01-29'
 tags: ['tooling', 'javascript']
 ---
 
-Okay, first off, when I say "global" ESLint configuration I mean using one ESLint config for all VSCode project. You might be wondering why this is useful if you can just load the same config file in every single project, and you can. Setting up a global config file isn't to supercede the benefits of project-level dotfiles, but enhance the times you don't want to set up another project.
+Okay, when I say installing ESLint "globally", I mean using one ESLint config for all VSCode project. You might be wondering why this is useful if you can just load the same config file in every single project, and you can. Setting up a global config file isn't to supercede the benefits of project-level dotfiles, but enhance the times you don't want to set up another project.
 
 Say you want to practice some interview questions or edit a quick file, but still have your code style for readability. You *can*. Here I will walk you through setting up your own global ESLint dotfile.
 
@@ -33,7 +33,7 @@ Great, we have ESLint installed globally and our dotfile has been created and po
 
 First, install the <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint extension for VSCode</a>. This will give us access to settings available for ESLint in our editor.
 
-If you created the ESLint dotfile elsewhere than the location noted above, don't worry, the location will not matter (seriously, you can put this thing anywhere if you wanted to, except the project directory - we'll get into that later). What will matter is the fact that VSCode will not be able to utilize environment variables to identify the location of your file, therefore you will need to use the full qualified path (example: `/Users/josef/.config/` rather than `~/.config`). Personally I drop mine in the `.config/` folder instead of the home root to avoid clogging up the home directory with a plethora of dotfiles. Given this information your VSCode User Settings for ESLint look this:
+If you created the ESLint dotfile elsewhere than the location noted above, don't worry, the location will not matter (seriously, you can put this thing anywhere if you wanted to, except the project directory - we'll get into that later). What will matter is the fact that VSCode will not be able to utilize environment variables to identify the location of your file, therefore you will need to use the full qualified path (example: `/Users/josef/.config/` rather than `~/.config`). Personally I drop mine in the `.config/` folder instead of the home root to avoid clogging up the directory with a plethora of dotfiles (this is virtually unavoidable). Given this information your VSCode User Settings for ESLint look this:
 
 ```json
 {
@@ -64,5 +64,5 @@ If you'd like to dive further into ESLint, I recommend checking out <a href="htt
 
 ### Quick Links
 
-<a href="https://gist.github.com/josefaidt/c79bcff379683ac6109730523354fb82" target="_blank">My current ESLint dotfile</a>
-<a href="https://gist.github.com/josefaidt/ed9dcc84164243c5f03b9340161acd26" target="_blank">Fish shell ESLint utilities</a> (What is <a href="https://fishshell.org" target="_blank">Fish</a>?)
+- <a href="https://gist.github.com/josefaidt/c79bcff379683ac6109730523354fb82" target="_blank">My current ESLint dotfile</a>
+- <a href="https://gist.github.com/josefaidt/ed9dcc84164243c5f03b9340161acd26" target="_blank">Fish shell ESLint utilities</a> *(What is <a href="https://fishshell.org" target="_blank">Fish</a>?)*
