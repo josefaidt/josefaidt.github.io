@@ -67,7 +67,7 @@ const StyledLoadButton = styled.button`
 `
 
 if (typeof window !== `undefined`) {
-  window.postsToShow = 10
+  window.postsToShow = 5
 }
 
 class BlogPage extends Component {
@@ -82,6 +82,7 @@ class BlogPage extends Component {
     super()
     let postsToShow = 4
     if (typeof window !== `undefined`) {
+      // eslint-disable-next-line prefer-destructuring
       postsToShow = window.postsToShow
     }
 
@@ -89,6 +90,15 @@ class BlogPage extends Component {
       showingMore: postsToShow > 10,
       postsToShow,
     }
+  }
+
+  componentDidMount() {
+    window.addEventListener(`scroll`, this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(`scroll`, this.handleScroll)
+    window.postsToShow = this.state.postsToShow
   }
 
   update() {
@@ -105,15 +115,6 @@ class BlogPage extends Component {
       this.ticking = true
       requestAnimationFrame(() => this.update())
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener(`scroll`, this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener(`scroll`, this.handleScroll)
-    window.postsToShow = this.state.postsToShow
   }
 
   render() {
@@ -181,12 +182,12 @@ class BlogPage extends Component {
               })}
             </div>
           ))}
-          {!this.state.showingMore && (
+          {!this.state.showingMore && postList.length > 4 && (
             <StyledLoadButton
               data-testid="load-more"
               onClick={() => {
                 this.setState({
-                  postsToShow: this.state.postsToShow + 12,
+                  postsToShow: this.state.postsToShow + 4,
                   showingMore: true,
                 })
               }}

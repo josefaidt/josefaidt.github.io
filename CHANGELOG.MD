@@ -6,7 +6,7 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ---
 
-## [2.0.0-alpha.2] - 2019-01-29
+## [2.0.1] - 2019-01-29
 
 ## Added
 
@@ -14,6 +14,10 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
   - 12 posts, 'endless' scrolling
   - posts are cached, hitting back in post goes back to position on blog page
   - "load more" button
+
+## [2.0.0] - 2019-01-26
+
+Release
 
 ## [2.0.0-alpha.1] - 2019-01-25
 
