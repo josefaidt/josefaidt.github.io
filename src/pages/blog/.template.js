@@ -101,13 +101,14 @@ const Fab = () => (
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
-  const { title } = post.frontmatter
-  const { image } = post.frontmatter
+  const { title, image, tags, description } = post.frontmatter
+  const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
+        keywords={seoTags.concat(tags)}
         title="Blog"
+        description={`${description.slice(0, 140)}...`}
       />
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
         <BlogHeader>
