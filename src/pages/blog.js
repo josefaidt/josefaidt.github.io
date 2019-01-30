@@ -162,11 +162,11 @@ class BlogPage extends Component {
               //   flexDirection: `row`,
               // }}
             >
-              {chunk.map(node => {
+              {chunk.map((node, x) => {
                 const { slug } = node.fields
                 const post = node.frontmatter
                 return (
-                  <StyledPostLink key={i}>
+                  <StyledPostLink key={x}>
                     <Link className="link card" to={slug}>
                       <div className="post-list container">
                         <h1>{post.title}</h1>
