@@ -12,47 +12,51 @@ function SEO({ description, lang, meta, keywords, title }) {
         return (
           <Helmet
             htmlAttributes={{
-              lang
+              lang,
             }}
             meta={[
               {
                 name: `description`,
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: `og:title`,
-                content: title
+                content: title,
               },
               {
                 property: `og:description`,
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: `og:type`,
-                content: `website`
+                content: `website`,
+              },
+              {
+                property: `og:image`,
+                content: data.site.siteMetaData.image,
               },
               {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary`,
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author
+                content: data.site.siteMetadata.author,
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: title,
               },
               {
                 name: `twitter:description`,
-                content: metaDescription
-              }
+                content: metaDescription,
+              },
             ]
               .concat(
                 keywords.length > 0
                   ? {
                       name: `keywords`,
-                      content: keywords.join(`, `)
+                      content: keywords.join(`, `),
                     }
                   : []
               )
@@ -69,7 +73,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: []
+  keywords: [],
 }
 
 SEO.propTypes = {
@@ -77,7 +81,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 export default SEO
@@ -89,6 +93,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        image
       }
     }
   }
