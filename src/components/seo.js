@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: data.site.siteMetaData.image,
+                content: data.site.siteMetadata.image,
               },
               {
                 name: `twitter:card`,
