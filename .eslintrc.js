@@ -98,7 +98,14 @@ module.exports = {
     'react/no-typos': 2,
     'react/prefer-stateless-function': 0,
     'react/react-in-jsx-scope': 0, // turn off when working with Apollo
-    'react/sort-comp': 2,
+    'react/sort-comp': [2, {
+      order: [
+        'static-methods',
+        'lifecycle',
+        'everything-else',
+        'render'
+      ],
+    }],
     'react/prop-types': 1,
 
     'jsx-a11y/accessible-emoji': 0,
@@ -107,13 +114,13 @@ module.exports = {
 
     // prettier
     'prettier/prettier': [2, {
-      'trailingComma': 'none',
+      'trailingComma': 'es5',
       'singleQuote': true,
       'semi': false,
       'tabWidth': 2,
       'printWidth': 100,
       'bracketSpacing': true,
-      'jsxBracketSameLine': true,
+      'jsxBracketSameLine': false,
       'arrowParens': 'avoid'
     }]
   }

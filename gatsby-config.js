@@ -4,11 +4,11 @@ module.exports = {
     title: `josef.aidt`,
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
-    // logo: path.resolve(__dirname, 'src/images/icon.png'),
+    logo: path.resolve(__dirname, 'src', 'images', 'logo2.png'),
     social: {
       twitter: `gatsbyjs`,
-      fbAppId: `966242223397117`
-    }
+      fbAppId: `966242223397117`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -52,11 +52,11 @@ module.exports = {
               showLineNumbers: true,
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
-              noInlineHighlight: false
-            }
-          }
-        ]
-      }
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -65,40 +65,40 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`
-      }
+        path: `${__dirname}/src/images/`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets/`
+        path: `${__dirname}/src/assets/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: `${__dirname}/src/components/`
+        path: `${__dirname}/src/components/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content/`
+        path: `${__dirname}/content/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/content/blog/`
+        path: `${__dirname}/content/blog/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -109,20 +109,20 @@ module.exports = {
         background_color: `#172030`,
         theme_color: `#c6797e`,
         display: `minimal-ui`,
-        icon: `src/images/logo2.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/logo2.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Josefin Sans', 'Open Sans']
-        }
-      }
+          families: ['Josefin Sans', 'Open Sans'],
+        },
+      },
     },
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ]
+  ],
 }

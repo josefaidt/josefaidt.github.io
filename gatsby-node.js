@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 
 const path = require('path')
-const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -34,6 +34,19 @@ exports.createPages = ({ actions, graphql }) => {
           console.log(result.errors)
           return reject(result.errors)
         }
+        const posts = result.data.allMarkdownRemark.edges
+        const postsPerPage = 6
+        const numPages = Math.ceil(posts.length / postsPerPage)
+        // Array.from({ length: numPages }).forEach((_, i) => {
+        //   createPage({
+        //     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        //     component: path.resolve('./src/pages/blog/.template.js'),
+        //     context: {
+        //       limit: postsPerPage,
+        //       skip: i * postsPerPage
+        //     }
+        //   })
+        // })
         const blogTemplate = path.resolve('./src/pages/blog/.template.js')
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           createPage({
