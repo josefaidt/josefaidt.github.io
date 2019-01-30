@@ -132,6 +132,8 @@ class BlogPage extends Component {
     return (
       <Layout location={this.props.location}>
         <SEO
+          description="Snakes and Sparklers - A compilation of my thoughts and opinions on all things tech, my experiences in the
+          industry, web development, and oxford commas."
           keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `blog`]}
           title="Blog"
         />
