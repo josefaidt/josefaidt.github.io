@@ -11,7 +11,8 @@ module.exports = {
     'prettier',
     'react',
     'standard',
-    'jsx-a11y'
+    'jsx-a11y',
+    'html'
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -52,7 +53,11 @@ module.exports = {
     'prefer-const': [2, { 'destructuring': 'all' }],
     'prefer-template': 2,
     'prefer-rest-params': 2,
-    'sort-imports': [0, { ignoreCase: true }],
+    'sort-imports': [0, { 
+      ignoreCase: true,
+      ignoreDeclarationSort: true,
+      memberSyntaxSortOrder: ['all', 'single', 'multiple', 'none'] 
+    }],
     'no-duplicate-imports': 2,
     'no-useless-rename': 2,
     'no-this-before-super': 2,
@@ -84,7 +89,7 @@ module.exports = {
     'react/jsx-key': 2,
     'react/jsx-no-bind': 0, // prevents using arrow functions on props
     'react/jsx-no-target-blank': 2,
-    'react/jsx-sort-props': [2, {
+    'react/jsx-sort-props': [0, {
       shorthandLast: true,
       callbacksLast: true,
       reservedFirst: ['key']
@@ -98,15 +103,8 @@ module.exports = {
     'react/no-typos': 2,
     'react/prefer-stateless-function': 0,
     'react/react-in-jsx-scope': 0, // turn off when working with Apollo
-    'react/sort-comp': [2, {
-      order: [
-        'static-methods',
-        'lifecycle',
-        'everything-else',
-        'render'
-      ],
-    }],
-    'react/prop-types': 1,
+    'react/sort-comp': 2,
+    'react/prop-types': 0,
 
     'jsx-a11y/accessible-emoji': 0,
     'jsx-a11y/anchor-is-valid': 1,
@@ -118,6 +116,7 @@ module.exports = {
       'singleQuote': true,
       'semi': false,
       'tabWidth': 2,
+      'useTabs': false,
       'printWidth': 100,
       'bracketSpacing': true,
       'jsxBracketSameLine': false,
