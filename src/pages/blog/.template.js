@@ -109,6 +109,7 @@ const BlogPost = props => {
         keywords={seoTags.concat(tags)}
         title="Blog"
         description={`${description.slice(0, 140)}...`}
+        image={image ? image : '/_images/logo2.png'}
       />
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
         <BlogHeader>
