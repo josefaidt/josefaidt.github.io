@@ -10,11 +10,11 @@ import { GlobalStyle } from './styles/global.css'
 import { Container, StyledLayout } from './styles/Layout.css'
 
 if (process.env.NODE_ENV === 'production') {
+  LogRocket.init('yf1oeo/josefaidtme')
   Raven.config('https://f7415391f2e94a179beb4083fb8cf296@sentry.io/1377206', {
-    environment: 'production'
+    environment: 'production',
   }).install()
 }
-LogRocket.init('yf1oeo/josefaidtme')
 
 const Layout = ({ children }) => (
   <div>
@@ -33,7 +33,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
