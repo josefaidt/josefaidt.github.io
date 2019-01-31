@@ -83,7 +83,9 @@ logs
 **/*key.js
 
 .assets
-/public
+!/public
+/public/*
+!/public/_images
 /gatsby-universal
 
 # secrets

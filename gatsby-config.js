@@ -5,7 +5,7 @@ module.exports = {
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
     url: `https://josefaidt.me`,
-    image: path.resolve(__dirname, 'src/images/logo2.png'),
+    image: '/_images/logo2.png',
     social: {
       twitter: `gatsbyjs`,
       fbAppId: `966242223397117`,
