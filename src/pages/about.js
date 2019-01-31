@@ -141,7 +141,7 @@ AboutPage.protoTypes = {
 
 export default AboutPage
 
-export const ABOUT_SEO = gql`
+export const query = gql`
   query ABOUT_SEO {
     allFile(filter: { name: { eq: "josef" } }) {
       edges {
