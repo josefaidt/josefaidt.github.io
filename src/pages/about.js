@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql as gql } from 'gatsby'
 import Layout from 'components/Skeleton'
 import Image from 'components/image'
 import SEO from 'components/seo'
@@ -7,9 +8,10 @@ import Line from 'components/styles/Line'
 import Quote from 'components/styles/Quote'
 import Emoji from 'components/styles/Emoji'
 
-const AboutPage = () => (
+const AboutPage = props => (
   <Layout>
     <SEO
+      image={props.data.allFile.edges[0].node.publicURL}
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
       title="About"
     />
@@ -63,7 +65,8 @@ const AboutPage = () => (
       After school I went full-time as a desktop support analyst at the local hospital, working for{' '}
       <a
         href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
-        target="_blank">
+        target="_blank"
+      >
         FMOL Health System
       </a>
       . There I was able to apply knowledge learned from my degree in addition to leaning on my
@@ -132,8 +135,21 @@ const AboutPage = () => (
   </Layout>
 )
 
-// AboutPage.protoTypes = {
-//   data: PropTypes.object.isRequired
-// }
+AboutPage.protoTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default AboutPage
+
+export const query = gql`
+  query ABOUT_SEO {
+    allFile(filter: { name: { eq: "josef" } }) {
+      edges {
+        node {
+          name
+          publicURL
+        }
+      }
+    }
+  }
+`

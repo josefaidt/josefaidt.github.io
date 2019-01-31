@@ -132,6 +132,8 @@ class BlogPage extends Component {
     return (
       <Layout location={this.props.location}>
         <SEO
+          description="Snakes and Sparklers - A compilation of my thoughts and opinions on all things tech, my experiences in the
+          industry, web development, and oxford commas."
           keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `blog`]}
           title="Blog"
         />
@@ -162,11 +164,11 @@ class BlogPage extends Component {
               //   flexDirection: `row`,
               // }}
             >
-              {chunk.map(node => {
+              {chunk.map((node, x) => {
                 const { slug } = node.fields
                 const post = node.frontmatter
                 return (
-                  <StyledPostLink key={i}>
+                  <StyledPostLink key={x}>
                     <Link className="link card" to={slug}>
                       <div className="post-list container">
                         <h1>{post.title}</h1>
