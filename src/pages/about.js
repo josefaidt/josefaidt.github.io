@@ -11,7 +11,7 @@ import Emoji from 'components/styles/Emoji'
 const AboutPage = props => (
   <Layout>
     <SEO
-      image={props.data.allFile.edges.node.publicUrl}
+      image={props.data.allFile.edges.node.publicURL}
       keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
       title="About"
     />
