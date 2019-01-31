@@ -139,6 +139,8 @@ AboutPage.protoTypes = {
   data: PropTypes.object.isRequired,
 }
 
+export default AboutPage
+
 export const ABOUT_SEO = gql`
   query ABOUT_SEO {
     allFile(filter: { name: { eq: "josef" } }) {
@@ -151,5 +153,3 @@ export const ABOUT_SEO = gql`
     }
   }
 `
-
-export default AboutPage
