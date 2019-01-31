@@ -9,7 +9,7 @@ function SEO({ description, lang, image, meta, keywords, title }) {
       query={detailsQuery}
       render={data => {
         const metaDescription = description || data.site.siteMetadata.description
-        const metaImage = image || data.site.siteMetadata.image
+        const metaImage = data.site.siteMetadata.image || image
         return (
           <Helmet
             htmlAttributes={{
