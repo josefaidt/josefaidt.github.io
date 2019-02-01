@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { FilePdfIcon } from 'components/icons'
@@ -26,7 +26,7 @@ const AboutPage = ({ data }) => (
     <br />
     <h2>Work Experience</h2>
     <Line />
-    <p>
+    <div>
       <SubtitleFlex>
         <h3>
           Frontend UI Developer{' '}
@@ -52,7 +52,8 @@ const AboutPage = ({ data }) => (
           Programmer{' '}
           <a
             href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
-            target="_blank">
+            target="_blank"
+          >
             @FMOL Health System
           </a>
         </h3>
@@ -86,14 +87,15 @@ const AboutPage = ({ data }) => (
           meaningful results
         </li>
       </ul>
-    </p>
-    <p>
+    </div>
+    <div>
       <SubtitleFlex>
         <h3>
           IS Support Analyst{' '}
           <a
             href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
-            target="_blank">
+            target="_blank"
+          >
             @FMOL Health System
           </a>
         </h3>
@@ -136,7 +138,7 @@ const AboutPage = ({ data }) => (
           documentation, deployments, and disposal procedures
         </li>
       </ul>
-    </p>
+    </div>
     <br />
     <h2>Language and Technology Proficiencies</h2>
     <Line />
@@ -155,27 +157,27 @@ const AboutPage = ({ data }) => (
     <br />
     <h2>Education</h2>
     <Line />
-    <p>
+    <div>
       <h3>Louisiana State University, Baton Rouge, LA</h3>
       <p>
         Bachelor of Science &ndash; Information Systems and Decision Sciences <br />
         Activities: LSU Tiger Marching Band, Association of IT Professionals LSU Chapter
       </p>
-    </p>
+    </div>
     <br />
     <h2>Accomplishments</h2>
     <Line />
-    <p>
+    <div>
       <h3>Boy Scouts of America &ndash; Eagle Scout</h3>
       <p>
         2009 Philmont Scout Ranch attendee <br />
         2010 Centennial National Scout Jamboree attendee
       </p>
-    </p>
+    </div>
     <br />
     <h2>Volunteer Work</h2>
     <Line />
-    <p>
+    <div>
       <h3>Geaux BIG Baton Rouge 2015</h3>
       <p>
         Annual event held by LSU Campus Life to give a streamlined opportunity for students to give
@@ -193,7 +195,7 @@ const AboutPage = ({ data }) => (
         Provided DJ and music entertainment services for various events such as local concerts,
         crowning galas, and fundraising ball
       </p>
-    </p>
+    </div>
   </Layout>
 )
 

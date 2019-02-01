@@ -4,5 +4,5 @@ export default {
   red4: '#dc8787',
   rouge: '#c6797e',
   almostblack: '#5a535b',
-  maxWidth: '1000px'
+  maxWidth: '1000px',
 }
