@@ -8,7 +8,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "lint": "yarn eslint --fix src",
+    "lint": "yarn eslint src",
+    "lint:fix": "yarn eslint --fix src",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
@@ -64,12 +65,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/josefaidt/josefaidt.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/josefaidt/josefaidt.github.io/issues"
   },
   "husky": {
-    "pre-commit": "yarn lint"
+    "pre-commit": "yarn lint",
+    "pre-push": "yarn lint:fix"
   }
 }
