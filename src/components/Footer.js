@@ -8,7 +8,7 @@ const Footer = ({ children }) => (
     <StyledFooter className="footer">
       <div className="footer-container">
         <div className="signature">
-          © {new Date().getFullYear()}, Built with
+          &copy; {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </div>

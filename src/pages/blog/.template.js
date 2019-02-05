@@ -1,13 +1,13 @@
 import React, { Component, forwardRef } from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 // import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
 
-import styled from 'styled-components'
 import theme from 'components/styles/theme'
 
 const BlogHeader = styled.div`
