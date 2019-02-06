@@ -102,12 +102,12 @@ const Fab = () => (
 const BlogPost = props => {
   const post = props.data.markdownRemark
   const { title, image, tags, description } = post.frontmatter
-  const seoTags = [`gatsby`, `josef`, `aidt`, `blog`]
+  const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
   return (
     <Layout>
       <SEO
         keywords={seoTags.concat(tags)}
-        title={title}
+        title="Blog"
         description={`${description.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
@@ -149,7 +149,6 @@ export const query = gql`
       frontmatter {
         title
         description
-        tags
         image {
           publicURL
           childImageSharp {

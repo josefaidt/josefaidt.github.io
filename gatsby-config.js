@@ -2,13 +2,13 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `josef.aidt`,
-    titleTemplate: ``,
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
     url: `https://josefaidt.me`,
     image: '/_images/logo2.png',
     social: {
-      twitter: `_garliic`,
+      twitter: `gatsbyjs`,
+      fbAppId: `966242223397117`,
     },
   },
   plugins: [
