@@ -7,12 +7,14 @@ import { StyledHeader } from './styles/Header.css'
 
 const AnimatedHeader = posed(StyledHeader)({
   enter: {
+    opacity: 1,
     y: 0,
     transition: {
       delay: 200,
     },
   },
   exit: {
+    opacity: 1,
     y: -100,
     transition: {
       ease: 'linear',
