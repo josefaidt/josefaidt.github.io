@@ -6,8 +6,6 @@ export const Container = styled.div`
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-between; */
   font-family: 'Open Sans';
   font-size: 1rem;
 
@@ -17,7 +15,7 @@ export const Container = styled.div`
     width: 50%;
   }
   @media only screen and (max-width: 480px) {
-    margin: 0 0.1rem;
+    margin: 0 0.5rem;
   }
 `
 
@@ -32,7 +30,6 @@ export const StyledLayout = styled.div`
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  /* justify-content: 'space-between'; */
   .footer {
     margin: 0 auto;
     max-width: 600px;
@@ -49,7 +46,6 @@ export const StyledLayout = styled.div`
   a:hover {
     color: ${theme.red4};
     transition: color 0.2s ease;
-    /* color: white; */
   }
   @media only screen and (max-width: 760px) {
     .content {

@@ -6,9 +6,21 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ---
 
+## [2.1.0] - 2019-02-09
+
+### Added
+
+- animations w/ react-pose
+- google analytics
+- blog anchor hashes (for back button)
+
+### Fixed
+
+- escaped HTML strings 
+
 ## [2.0.1] - 2019-01-29
 
-## Added
+### Added
 
 - blog pagination
   - 12 posts, 'endless' scrolling

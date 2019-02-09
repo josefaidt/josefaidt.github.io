@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { FilePdfIcon } from 'components/icons'
@@ -30,9 +31,9 @@ const AboutPage = ({ data }) => (
       <SubtitleFlex>
         <h3>
           Frontend UI Developer{' '}
-          <a href="https://twitter.com/IBM" target="_blank">
+          <OutboundLink href="https://twitter.com/IBM" target="_blank">
             @IBM
-          </a>
+          </OutboundLink>
         </h3>
         <span>
           Present
@@ -50,12 +51,12 @@ const AboutPage = ({ data }) => (
       <SubtitleFlex>
         <h3>
           Programmer{' '}
-          <a
+          <OutboundLink
             href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
             target="_blank"
           >
             @FMOL Health System
-          </a>
+          </OutboundLink>
         </h3>
         <span>
           Dec 2018
@@ -92,12 +93,12 @@ const AboutPage = ({ data }) => (
       <SubtitleFlex>
         <h3>
           IS Support Analyst{' '}
-          <a
+          <OutboundLink
             href="https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/"
             target="_blank"
           >
             @FMOL Health System
-          </a>
+          </OutboundLink>
         </h3>
         <span>
           Aug 2017

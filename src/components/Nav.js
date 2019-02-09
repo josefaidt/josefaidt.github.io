@@ -10,15 +10,6 @@ export default class Nav extends Component {
   toggle() {
     this.setState({ addClass: !this.state.addClass })
   }
-  // isScreen = () => {
-  //   const x = window.matchMedia('(max-width: 700px)')
-  //   if (x.matches) {
-  //     // If media query matches
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // }
   render() {
     return (
       <StyledNav className="nav">
@@ -34,9 +25,6 @@ export default class Nav extends Component {
         <Link activeClassName="active" to="/blog/">
           BLOG
         </Link>
-        {/* <a href="https://github.com/josefaidt" rel="noopener noreferrer" target="_blank">
-          Github ⎆
-        </a> */}
       </StyledNav>
     )
   }
