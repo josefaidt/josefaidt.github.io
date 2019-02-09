@@ -100,7 +100,7 @@ class BlogPage extends Component {
           industry, web development, and oxford commas.
         </p>
         <Quote style={{ margin: '0 auto 1rem auto' }}>
-          "Snakes and Sparklers are the only ones I like." -Kicking Wing, Joe Dirt (2001)
+          &quot;Snakes and Sparklers are the only ones I like.&quot; -Kicking Wing, Joe Dirt (2001)
         </Quote>
         <div
           css={{
@@ -112,21 +112,13 @@ class BlogPage extends Component {
         >
           {/* posts */}
           {chunk(posts.slice(0, this.state.postsToShow), 3).map((chunk, i) => (
-            <div
-              key={`chunk-${i}`}
-              // css={{
-              //   display: `flex`,
-              //   alignItems: `stretch`,
-              //   flexShrink: 0,
-              //   flexDirection: `row`,
-              // }}
-            >
+            <div key={`chunk-${i}`}>
               {chunk.map((node, x) => {
                 const { slug } = node.fields
                 const post = node.frontmatter
                 return (
                   <StyledPostLink key={x}>
-                    <Link className="link card" to={slug}>
+                    <Link className="link card" to={slug} id={node.id}>
                       <div className="post-list container">
                         <h1>{post.title}</h1>
                         {post.tags ? <StyledTagList>{renderTags(post.tags)}</StyledTagList> : ''}
@@ -165,6 +157,7 @@ export const listQuery = gql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
+          id
           fields {
             slug
           }
