@@ -43,10 +43,8 @@ const StyledBackButton = styled.div`
 
   .container {
     padding: 1rem;
-    /* color: ${theme.almostblack}; */
     filter: brightness(150%);
     h1 {
-      /* color: ${theme.almostblack}; */
       filter: brightness(100%);
     }
   }
