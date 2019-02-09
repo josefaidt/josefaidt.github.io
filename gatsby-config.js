@@ -1,4 +1,3 @@
-const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `josef.aidt`,
@@ -73,6 +72,20 @@ module.exports = {
         name: `blog`,
         path: `${__dirname}/content/blog/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-134211753-1',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/public/static/**'],
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'josefaidt.me',
       },
     },
     {

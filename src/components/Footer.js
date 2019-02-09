@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { GithubIcon, LinkedinIcon, SpotifyIcon } from './icons'
-import { FooterContainer, StyledFooter } from './styles/Footer.css'
+import { StyledFooter } from './styles/Footer.css'
 
 const Footer = ({ children }) => (
   <div>
@@ -10,7 +11,9 @@ const Footer = ({ children }) => (
         <div className="signature">
           &copy; {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <OutboundLink href="https://www.gatsbyjs.org" target="_blank">
+            Gatsby
+          </OutboundLink>
         </div>
         <div className="icons">
           <GithubIcon link="https://github.com/josefaidt" />
