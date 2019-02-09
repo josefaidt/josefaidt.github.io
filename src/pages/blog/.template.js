@@ -2,12 +2,10 @@ import React, { Component, forwardRef } from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
-
 import theme from 'components/styles/theme'
 
 const BlogHeader = styled.div`
@@ -75,22 +73,24 @@ const StyledFab = styled.div`
     position: fixed;
     right: 40px;
     bottom: 120px;
+
+    
+  }
+
+  .fab p {
+    text-align: center;
+    padding-right: 0.3rem;
   }
 
   .fab:hover {
     box-shadow: 0 6px 14px 0 #666;
     transform: scale(1.05);
   }
-
-  .plus {
-    text-align: center;
-    padding-right: 0.3rem;
-  }
 `
 
-const Fab = () => (
+const Fab = props => (
   <StyledFab>
-    <Link to="/blog/">
+    <Link to={props.anchorId}>
       <div className="fab">
         <p>{'<'}</p>
       </div>
@@ -98,23 +98,10 @@ const Fab = () => (
   </StyledFab>
 )
 
-const AnimatedFab = posed(Fab)({
-  enter: {
-    y: 0,
-    transition: {
-      delay: 200,
-    },
-  },
-  exit: {
-    y: 100,
-    transition: {
-      ease: 'linear',
-    },
-  },
-})
-
 const BlogPost = props => {
   const post = props.data.markdownRemark
+  const { id } = post
+  const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, description } = post.frontmatter
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
   return (
@@ -127,7 +114,7 @@ const BlogPost = props => {
       />
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
         <BlogHeader>
-          <Link to="/blog/">
+          <Link to={blogIdAnchor}>
             <StyledBackButton>
               {/* <button> */}
               <b>BACK</b>
@@ -145,7 +132,7 @@ const BlogPost = props => {
         </StyledImage>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <AnimatedFab />}
+      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Fab anchorId={blogIdAnchor} />}
     </Layout>
   )
 }
@@ -159,6 +146,7 @@ export default BlogPost
 export const query = gql`
   query PostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
       html
       frontmatter {
         title
