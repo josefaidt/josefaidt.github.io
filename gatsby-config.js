@@ -78,14 +78,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-134211753-1',
-        // Puts tracking script in the head instead of the body
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        exclude: ['/public/static/**'],
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'josefaidt.me',
       },
     },
     {
