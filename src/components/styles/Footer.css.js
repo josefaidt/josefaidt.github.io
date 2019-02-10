@@ -20,24 +20,6 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
   }
 
-  .icons {
-    display: flex;
-  }
-  .icon a {
-    padding: 0 10px;
-  }
-  .icon svg {
-    fill: ${theme.almostblack};
-    height: 1.5rem;
-  }
-  .icon svg:hover {
-    fill: ${theme.red};
-    transition: ease 0.3s;
-    /* stroke: ${theme.black}; */
-    /* width: 2rem;
-    height: 1.5rem; */
-  }
-
   @media only screen and (max-width: 760px) {
     /* filter: brightness(85%); */
     background-color: WHITESMOKE;

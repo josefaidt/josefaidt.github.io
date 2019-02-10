@@ -1,7 +1,8 @@
 import React from 'react'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import Icon from './icons'
+import Icon from './Icon'
 import { StyledFooter } from './styles/Footer.css'
+import StyledIcons from './styles/Icon.css'
 
 const Footer = ({ children }) => (
   <div>
@@ -15,14 +16,14 @@ const Footer = ({ children }) => (
             Gatsby
           </OutboundLink>
         </div>
-        <div className="icons">
+        <StyledIcons>
           <Icon icon="github" link="https://github.com/josefaidt" />
           <Icon icon="linkedin" link="https://linkedin.com/in/josefaidt" />
           <Icon
             icon="spotify"
             link="https://open.spotify.com/user/1215285465?si=oxVZ8WelTQyZBdr97Tz4fQ"
           />
-        </div>
+        </StyledIcons>
       </div>
     </StyledFooter>
   </div>
