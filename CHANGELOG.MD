@@ -6,6 +6,26 @@ All notable changes to the "josefaidt.github.io" extension will be documented in
 
 ---
 
+## [2.1.2] - 2019-02-10
+
+### Added
+
+- gatsby-mdx
+  - mdx page creation
+
+### Changed
+
+- blog fab animation
+  - delay increased
+  - pressable
+- mobile navigation animations
+
+## [2.1.1] - 2019-02-10
+
+### Fixed
+
+- google analytics (staged)
+
 ## [2.1.0] - 2019-02-09
 
 ### Added
