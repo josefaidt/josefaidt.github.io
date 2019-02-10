@@ -28,33 +28,47 @@ exports.createPages = ({ actions, graphql }) => {
               }
             }
           }
+          allMdx {
+            edges {
+              node {
+                id
+                fields {
+                  slug
+                }
+              }
+            }
+          }
         }
       `).then(result => {
+        // reject errors
         if (result.errors) {
           console.log(result.errors)
           return reject(result.errors)
         }
+
         const posts = result.data.allMarkdownRemark.edges
         const postsPerPage = 6
         const numPages = Math.ceil(posts.length / postsPerPage)
-        // Array.from({ length: numPages }).forEach((_, i) => {
-        //   createPage({
-        //     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-        //     component: path.resolve('./src/pages/blog/.template.js'),
-        //     context: {
-        //       limit: postsPerPage,
-        //       skip: i * postsPerPage
-        //     }
-        //   })
-        // })
         const blogTemplate = path.resolve('./src/pages/blog/.template.js')
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug,
             component: blogTemplate,
             context: {
-              slug: node.fields.slug
-            } // additional data can be passed via context
+              slug: node.fields.slug,
+            }, // additional data can be passed via context
+          })
+        })
+        result.data.allMdx.edges.forEach(({ node }) => {
+          createPage({
+            // This is the slug we created before
+            // (or `node.frontmatter.slug`)
+            path: node.fields.slug,
+            // This component will wrap our MDX content
+            component: path.resolve(`./src/components/Skeleton.mdx.js`),
+            // We can use the values in this context in
+            // our page layout component
+            context: { id: node.id },
           })
         })
       })
@@ -63,12 +77,25 @@ exports.createPages = ({ actions, graphql }) => {
 }
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
+  // markdown files
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
+    })
+  }
+  // mdx
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      // Name of the field you are adding
+      name: 'slug',
+      // Individual MDX node
+      node,
+      // Generated value based on filepath with "blog" prefix
+      value: value,
     })
   }
 }
@@ -77,7 +104,7 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      plugins: [new DirectoryNamedWebpackPlugin()]
-    }
+      plugins: [new DirectoryNamedWebpackPlugin()],
+    },
   })
 }

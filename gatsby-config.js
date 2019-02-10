@@ -74,6 +74,14 @@ module.exports = {
         // ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
+    `gatsby-mdx`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/pages/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
