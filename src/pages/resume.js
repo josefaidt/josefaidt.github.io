@@ -3,19 +3,19 @@ import { graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
-import { FilePdfIcon } from 'components/icons'
+import Icon from 'components/Icon'
 import Line from 'components/styles/Line'
 import { Title, SubtitleFlex } from 'components/styles/Titles.css'
 
 const AboutPage = ({ data }) => (
   <Layout>
     <SEO
-      keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`]}
+      keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `resume`]}
       title="Résumé"
     />
     <Title>
       <h1>Résumé</h1>
-      <FilePdfIcon link={data.allFile.edges[0].node.publicURL} />
+      <Icon icon="pdf" link={data.allFile.edges[0].node.publicURL} />
     </Title>
     <Line />
     <h2>Objective</h2>
