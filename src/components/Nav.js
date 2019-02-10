@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import posed from 'react-pose'
 import { StyledNav } from './styles/Nav.css'
+
+const AnimatedLink = posed(Link)({
+  pressable: true,
+  init: { scale: 1, opacity: 1 },
+  press: { scale: 0.8, opacity: 1 },
+})
 
 export default class Nav extends Component {
   constructor(props) {
@@ -13,18 +20,18 @@ export default class Nav extends Component {
   render() {
     return (
       <StyledNav className="nav">
-        <Link activeClassName="active" to="/">
+        <AnimatedLink activeClassName="active" to="/">
           HOME
-        </Link>
-        <Link activeClassName="active" to="/about/">
+        </AnimatedLink>
+        <AnimatedLink activeClassName="active" to="/about/">
           ABOUT
-        </Link>
-        <Link activeClassName="active" to="/resume/">
+        </AnimatedLink>
+        <AnimatedLink activeClassName="active" to="/resume/">
           RESUME
-        </Link>
-        <Link activeClassName="active" to="/blog/">
+        </AnimatedLink>
+        <AnimatedLink activeClassName="active" to="/blog/">
           BLOG
-        </Link>
+        </AnimatedLink>
       </StyledNav>
     )
   }

@@ -36,8 +36,11 @@ export const StyledNav = styled.div`
   }
 
   @media only screen and (max-width: 760px) {
-    padding: 1rem 0;
+    height: 9vh;
     display: flex;
+    /* align-items: center;
+    justify-content: stretch; */
+
     /* box-shadow: 0 0 40px 0 ${theme.almostblack}; */
     box-shadow: 0px 0px 40px -10px ${theme.almostblack};
     text-align: center;
@@ -50,6 +53,13 @@ export const StyledNav = styled.div`
     bottom: 0;
     a {
       flex-grow: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a:active {
+      border-bottom: none;
     }
   }
 `

@@ -2,6 +2,7 @@ import React, { Component, forwardRef } from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
@@ -86,15 +87,25 @@ const StyledFab = styled.div`
   }
 `
 
-const Fab = props => (
-  <StyledFab>
-    <Link to={props.anchorId}>
+const Fab = forwardRef(({ anchorId }, ref) => (
+  <StyledFab ref={ref}>
+    <Link to={anchorId}>
       <div className="fab">
-        <p>{'<'}</p>
+      <p>&lt;</p>
       </div>
     </Link>
   </StyledFab>
-)
+))
+
+const posedFabConfig = {
+  pressable: true,
+  init: { scale: 1 },
+  press: { scale: 5 }
+}
+
+const AnimatedFab = ({ anchorId }) => <Fab pose={posedFabConfig} anchorId={anchorId} />
+
+
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
@@ -130,7 +141,7 @@ const BlogPost = props => {
         </StyledImage>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Fab anchorId={blogIdAnchor} />}
+      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <AnimatedFab anchorId={blogIdAnchor} isOpen={true} />}
     </Layout>
   )
 }
