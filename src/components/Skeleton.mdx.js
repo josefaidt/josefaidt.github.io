@@ -30,7 +30,8 @@ MdxPageTemplate.props = {
 }
 
 export default MdxPageTemplate
-export const mdxPageQuery = gql`
+
+export const query = gql`
   query MdxPageQuery($id: String) {
     mdx(id: { eq: $id }) {
       id

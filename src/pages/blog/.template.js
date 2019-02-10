@@ -100,7 +100,7 @@ const Fab = forwardRef(({ anchorId }, ref) => (
 const posedFabConfig = {
   pressable: true,
   init: { scale: 1 },
-  press: { scale: 5 }
+  press: { scale: 0.5 }
 }
 
 const AnimatedFab = ({ anchorId }) => <Fab pose={posedFabConfig} anchorId={anchorId} />
@@ -125,9 +125,7 @@ const BlogPost = props => {
         <BlogHeader>
           <Link to={blogIdAnchor}>
             <StyledBackButton>
-              {/* <button> */}
               <b>BACK</b>
-              {/* </button> */}
             </StyledBackButton>
           </Link>
         </BlogHeader>

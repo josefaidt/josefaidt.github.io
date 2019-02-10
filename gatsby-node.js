@@ -59,15 +59,11 @@ exports.createPages = ({ actions, graphql }) => {
             }, // additional data can be passed via context
           })
         })
+        const mdxPageTemplate = path.resolve(`./src/components/Skeleton.mdx.js`)
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
-            // This is the slug we created before
-            // (or `node.frontmatter.slug`)
             path: node.fields.slug,
-            // This component will wrap our MDX content
-            component: path.resolve(`./src/components/Skeleton.mdx.js`),
-            // We can use the values in this context in
-            // our page layout component
+            component: mdxPageTemplate,
             context: { id: node.id },
           })
         })
