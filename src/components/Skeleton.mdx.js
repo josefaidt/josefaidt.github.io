@@ -8,7 +8,7 @@ import SEO from './seo'
 import Layout from './Skeleton'
 
 const MdxPageTemplate = ({ data: { mdx } }) => {
-  const { title, image, tags, description } = mdx.frontmatter
+  const { title, image, tags, description } = mdx.exports.meta
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
   return (
     <Layout>
@@ -35,15 +35,17 @@ export const query = gql`
   query MdxPageQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
-      frontmatter {
-        title
-        tags
-        description
-        image {
-          publicURL
-          childImageSharp {
-            fluid(maxWidth: 400, maxHeight: 250) {
-              ...GatsbyImageSharpFluid
+      exports {
+        meta {
+          title
+          tags
+          description
+          image {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
