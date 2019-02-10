@@ -2,7 +2,7 @@
   "name": "josefaidt.me",
   "private": false,
   "description": "my personal site",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
     "build": "gatsby build",
@@ -13,11 +13,14 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "@mdx-js/mdx": "^0.16.8",
+    "@mdx-js/tag": "^0.16.8",
     "babel-plugin-styled-components": "^1.10.0",
     "directory-named-webpack-plugin": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "gatsby": "^2.0.91",
     "gatsby-image": "^2.0.20",
+    "gatsby-mdx": "^0.3.6",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-netlify": "^2.0.6",
