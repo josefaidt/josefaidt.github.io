@@ -17,6 +17,13 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
     fill: ${theme.almostblack};
   }
 
+  .icon a {
+    span {
+      position: relative;
+      padding-left: 0.3rem;
+    }
+  }
+
   .icon svg {
     fill: rgb(90, 83, 91);
     height: ${props => props.iHeight};

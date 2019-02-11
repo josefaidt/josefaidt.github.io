@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import FilePdfIcon from './FilePdfIcon'
 import GithubIcon from './GithubIcon'
-import LinkedinIcon from './LinkedinIcon'
+import LinkedInIcon, { LinkedInIconInverted } from './LinkedinIcon'
 import PushpinIcon from './PushpinIcon'
 import SpotifyIcon from './SpotifyIcon'
 import TwitterIcon from './TwitterIcon'
@@ -15,14 +16,15 @@ const PlaceholderIcon = styled.div`
   border-radius: 5px;
 `
 
-const renderIcon = icon => {
+const renderIcon = (icon, invert) => {
   switch (icon) {
     case 'pdf':
       return <FilePdfIcon />
     case 'github':
       return <GithubIcon />
     case 'linkedin':
-      return <LinkedinIcon />
+  if (!invert) { return <LinkedInIcon /> }
+  else { return <LinkedInIconInverted/>}
     case 'pushpin':
       return <PushpinIcon />
     case 'spotify':
@@ -44,11 +46,18 @@ const Icon = props => {
         download={props.icon === 'pdf'}
         {...props}
       >
-        {renderIcon(props.icon)}
+        {renderIcon(props.icon, props.invert)}
         {props.share ? <span className="share">&rang;</span> : null}
       </OutboundLink>
     </div>
   )
+}
+
+Icon.propTypes = {
+  share: PropTypes.boolean,
+  invert: PropTypes.boolean,
+  icon: PropTypes.string,
+  link: PropTypes.string,
 }
 
 export default Icon

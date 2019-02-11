@@ -133,12 +133,18 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
             </StyledBackButton>
           </Link>
           <StyledIcons className="share_icons" height="2rem">
-            <Icon 
-              icon="twitter"
-              link={`https://twitter.com/intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ? tags : ""}&via=${meta.twitter}`}
+            <Icon
+              icon="linkedin"
+              link={`https://www.linkedin.com/shareArticle?mini=true&url=${meta.url}${slug}
+              &summary=${shareText}&source=${meta.title}`}
               share
-              rel="me"
+              invert
             />
+              <Icon 
+                icon="twitter"
+                link={`https://twitter.com/intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ? tags : ""}&via=${meta.twitter}`}
+                share
+              />
             {console.log(shareText)}
           </StyledIcons>
         </BlogHeader>
@@ -187,6 +193,7 @@ export const query = gql`
     }
     site {
       siteMetadata {
+        title
         url
         twitter
       }
