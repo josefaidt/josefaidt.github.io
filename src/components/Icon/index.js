@@ -42,6 +42,7 @@ const Icon = props => {
         rel="noopener noreferrer"
         target="_blank"
         download={props.icon === 'pdf'}
+        {...props}
       >
         {renderIcon(props.icon)}
         {props.share ? <span className="share">&rang;</span> : null}
