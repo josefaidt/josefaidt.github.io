@@ -5,9 +5,11 @@ import styled from 'styled-components'
 import posed from 'react-pose'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
+import Icon from 'components/Icon'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
-import theme from 'components/styles/theme'
+import theme from 'components/styles/_theme'
+import StyledIcons from 'components/styles/Icon.css'
 
 const BlogHeader = styled.div`
   display: flex;
@@ -100,16 +102,16 @@ const Fab = forwardRef(({ anchorId }, ref) => (
 const posedFabConfig = {
   pressable: true,
   init: { scale: 1 },
-  press: { scale: 0.5 }
+  press: { scale: 0.8 },
+  pressEnd: { scale: 1 },
 }
 
 const AnimatedFab = ({ anchorId }) => <Fab pose={posedFabConfig} anchorId={anchorId} />
 
 
 
-const BlogPost = props => {
-  const post = props.data.markdownRemark
-  const { id } = post
+const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) => {
+  const { id, fields: { slug } } = post
   const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, description } = post.frontmatter
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
@@ -128,6 +130,9 @@ const BlogPost = props => {
               <b>BACK</b>
             </StyledBackButton>
           </Link>
+          <StyledIcons className="share_icons" height="2rem">
+            <Icon icon="twitter" link={`${meta.url}${slug}`} share></Icon>
+          </StyledIcons>
         </BlogHeader>
       ) : (
         ''
@@ -139,7 +144,7 @@ const BlogPost = props => {
         </StyledImage>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <AnimatedFab anchorId={blogIdAnchor} isOpen={true} />}
+      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <AnimatedFab anchorId={blogIdAnchor} />}
     </Layout>
   )
 }
@@ -155,6 +160,9 @@ export const query = gql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         description
@@ -166,6 +174,11 @@ export const query = gql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        url
       }
     }
   }
