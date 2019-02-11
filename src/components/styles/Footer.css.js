@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './theme'
+import theme from './_theme'
 
 const FooterContainer = styled.div`
   @media screen and (max-width: 760px) {

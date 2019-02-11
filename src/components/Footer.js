@@ -16,7 +16,7 @@ const Footer = ({ children }) => (
             Gatsby
           </OutboundLink>
         </div>
-        <StyledIcons>
+        <StyledIcons iHeight="1.3rem">
           <Icon icon="github" link="https://github.com/josefaidt" />
           <Icon icon="linkedin" link="https://linkedin.com/in/josefaidt" />
           <Icon

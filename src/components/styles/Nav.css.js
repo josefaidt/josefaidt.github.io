@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './theme'
+import theme from './_theme'
 
 export const StyledNav = styled.div`
   font-family: 'Josefin Sans';

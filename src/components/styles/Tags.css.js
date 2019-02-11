@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './theme'
+import theme from './_theme'
 
 const StyledPostLink = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -28,20 +28,15 @@ const StyledPostLink = styled.div`
     }
     /* filters */
     h1 {
-      /* color: white; */
-      /* filter: brightness(150%); */
       font-size: 2rem;
       margin-bottom: 1rem;
     }
     p,
     span#date {
       font-size: 0.8rem;
-      /* filter: brightness(150%); */
     }
     span.tag {
-      /* filter: brightness(120%); */
       color: white;
-      /* background-color: #6a646b; */
       background-color: #8b868c;
       transition: background-color 0.2s linear;
     }
@@ -54,8 +49,6 @@ const StyledPostLink = styled.div`
     span#date,
     p {
       color: ${theme.almostblack};
-      /* color: red; */
-      /* filter: brightness(80%); */
     }
     span.tag {
       background-color: ${theme.almostblack};
@@ -90,7 +83,6 @@ const StyledTag = styled.span`
   font-size: 0.7rem;
   color: white;
   &:hover {
-    /* background-color: red; */
   }
 `
 

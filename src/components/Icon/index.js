@@ -44,6 +44,7 @@ const Icon = props => {
         download={props.icon === 'pdf'}
       >
         {renderIcon(props.icon)}
+        {props.share ? <span className="share">&rang;</span> : null}
       </OutboundLink>
     </div>
   )

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from '../theme'
+import theme from '../_theme'
 
 export default styled.button`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
