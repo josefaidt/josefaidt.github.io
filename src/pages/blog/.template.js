@@ -108,13 +108,15 @@ const posedFabConfig = {
 
 const AnimatedFab = ({ anchorId }) => <Fab pose={posedFabConfig} anchorId={anchorId} />
 
-
+// 
+// https://twitter.com/intent/tweet?text=VSCode%20&%20Installing%20ESLint%20Globally%20-%20
 
 const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) => {
   const { id, fields: { slug } } = post
   const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, description } = post.frontmatter
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
+  const shareText = encodeURIComponent(title)
   return (
     <Layout>
       <SEO
@@ -131,7 +133,13 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
             </StyledBackButton>
           </Link>
           <StyledIcons className="share_icons" height="2rem">
-            <Icon icon="twitter" link={`${meta.url}${slug}`} share></Icon>
+            <Icon 
+              icon="twitter"
+              link={`https://twitter.com/intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ? tags : ""}&via=${meta.twitter}`}
+              share
+              rel="me"
+            />
+            {console.log(shareText)}
           </StyledIcons>
         </BlogHeader>
       ) : (
@@ -166,6 +174,7 @@ export const query = gql`
       frontmatter {
         title
         description
+        tags
         image {
           publicURL
           childImageSharp {
@@ -179,6 +188,7 @@ export const query = gql`
     site {
       siteMetadata {
         url
+        twitter
       }
     }
   }

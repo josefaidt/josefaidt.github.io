@@ -3,6 +3,7 @@ module.exports = {
     title: `josef.aidt`,
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
+    twitter: `_garliic`,
     url: `https://josefaidt.me`,
     image: '/_images/logo2.png',
     social: {
