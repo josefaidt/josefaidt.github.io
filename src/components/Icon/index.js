@@ -54,8 +54,8 @@ const Icon = props => {
 }
 
 Icon.propTypes = {
-  share: PropTypes.boolean,
-  invert: PropTypes.boolean,
+  share: PropTypes.bool,
+  invert: PropTypes.bool,
   icon: PropTypes.string,
   link: PropTypes.string,
 }

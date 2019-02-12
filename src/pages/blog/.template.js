@@ -117,11 +117,16 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
   const { title, image, tags, description } = post.frontmatter
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
   const shareText = encodeURIComponent(title)
+  
+  const links = {
+    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${meta.url}${slug}&title=${shareText}&summary=${encodeURIComponent(description.slice(0, 80) + '...')}&source=${meta.url}`,
+    twitter: `https://twitter.com/intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ? tags : ""}&via=${meta.twitter}`
+  }
   return (
     <Layout>
       <SEO
         keywords={seoTags.concat(tags)}
-        title="Blog"
+        title={title}
         description={`${description.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
@@ -135,17 +140,17 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
           <StyledIcons className="share_icons" height="2rem">
             <Icon
               icon="linkedin"
-              link={`https://www.linkedin.com/shareArticle?mini=true&url=${meta.url}${slug}
-              &summary=${shareText}&source=${meta.title}`}
+              link={links.linkedin}
               share
               invert
             />
+            {console.log(links.linkedin)}
               <Icon 
                 icon="twitter"
-                link={`https://twitter.com/intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ? tags : ""}&via=${meta.twitter}`}
+                link={links.twitter}
                 share
               />
-            {console.log(shareText)}
+            {/* {console.log(shareText)} */}
           </StyledIcons>
         </BlogHeader>
       ) : (
