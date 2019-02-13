@@ -7,54 +7,11 @@ import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
 import Icon from 'components/Icon'
 import SEO from 'components/seo'
-import { StyledImage } from 'components/styles/Image.css'
 import theme from 'components/styles/_theme'
+import { StyledImage } from 'components/styles/Image.css'
 import StyledIcons from 'components/styles/Icon.css'
-
-const BlogHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-`
-
-const StyledBackButton = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  min-width: 100px;
-  max-width: 100px;
-  text-align: center;
-
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    letter-spacing: 3px;
-    transition: 0.3s ease;
-    background-color: #c6797e80;
-    border: 0.5px solid #c6797e80;
-    color: white;
-  }
-
-  &:active {
-    background-color: #c6797ebf;
-    color: white;
-    transition: 0.1s ease;
-    letter-spacing: 3px;
-  }
-
-  .container {
-    padding: 1rem;
-    filter: brightness(150%);
-    h1 {
-      filter: brightness(100%);
-    }
-  }
-  .container:hover {
-    filter: brightness(80%);
-  }
-`
+import StyledBackButton from 'components/Buttons/Back.css'
+import Fab from 'components/Buttons/Fab'
 
 const StyledFab = styled.div`
   .fab {
@@ -74,8 +31,6 @@ const StyledFab = styled.div`
     position: fixed;
     right: 40px;
     bottom: 120px;
-
-    
   }
 
   .fab p {
@@ -89,24 +44,61 @@ const StyledFab = styled.div`
   }
 `
 
-const Fab = forwardRef(({ anchorId }, ref) => (
+const StyledBlogHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`
+
+const FabMenuold = forwardRef(({ anchorId: { back, twitter, linkedin } }, ref) => (
   <StyledFab ref={ref}>
-    <Link to={anchorId}>
+    <button>
       <div className="fab">
-      <p>&lt;</p>
+      <p>&plus;</p>
       </div>
-    </Link>
+    </button>
+    <div className="floatUp">
+      <Link to={anchorId}>
+        <div className="fab">
+        <p>twitter</p>
+        </div>
+      </Link>
+      <Link to={anchorId}>
+        <div className="fab">
+        <p>linkedin</p>
+        </div>
+      </Link>
+    </div>
+    <div className="floatLeft">
+      <Link to={anchorId}>
+        <div className="fab">
+        <p>linkedin</p>
+        </div>
+      </Link>
+    </div>
   </StyledFab>
 ))
 
-const posedFabConfig = {
-  pressable: true,
-  init: { scale: 1 },
-  press: { scale: 0.8 },
-  pressEnd: { scale: 1 },
+function FabMenu ({ anchorId: { back, twitter, linkedin } }) {
+  // Declare a new state variable, which we'll call "count"
+  // const [open, isOpen] = useState(0)
+  const config = {
+    draggable: 'x',
+    dragBounds: { left: '-100%', right: '100%' }
+  }
+
+  return (
+    <div>   
+      <button pose={config}>
+        <div className="fab">
+          <p>&plus;</p>
+        </div>
+      </button>
+    </div>
+  )
 }
 
-const AnimatedFab = ({ anchorId }) => <Fab pose={posedFabConfig} anchorId={anchorId} />
+
 
 // 
 // https://twitter.com/intent/tweet?text=VSCode%20&%20Installing%20ESLint%20Globally%20-%20
@@ -131,7 +123,7 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
-        <BlogHeader>
+        <StyledBlogHeader>
           <Link to={blogIdAnchor}>
             <StyledBackButton>
               <b>BACK</b>
@@ -144,15 +136,13 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
               share
               invert
             />
-            {console.log(links.linkedin)}
-              <Icon 
-                icon="twitter"
-                link={links.twitter}
-                share
-              />
-            {/* {console.log(shareText)} */}
+            <Icon 
+              icon="twitter"
+              link={links.twitter}
+              share
+            />
           </StyledIcons>
-        </BlogHeader>
+        </StyledBlogHeader>
       ) : (
         ''
       )}
@@ -163,7 +153,7 @@ const BlogPost = ({data: {markdownRemark: post, site: { siteMetadata: meta}}}) =
         </StyledImage>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <AnimatedFab anchorId={blogIdAnchor} />}
+      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Fab symbol={'<'} anchorId={blogIdAnchor} />}
     </Layout>
   )
 }
