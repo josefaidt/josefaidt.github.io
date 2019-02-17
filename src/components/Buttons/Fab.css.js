@@ -18,7 +18,7 @@ const StyledFab = styled.div`
 
   position: fixed;
   right: 40px;
-  bottom: 80px;
+  bottom: 120px;
 
   &:hover {
     box-shadow: 0 6px 14px 0 #666;
@@ -27,10 +27,12 @@ const StyledFab = styled.div`
 
   button {
     background: none;
+    border: none;
   }
 
   button,
-  div.icon {
+  div.icon,
+  div.icon a {
     height: 100%;
     width: 100%;
     color: inherit;
