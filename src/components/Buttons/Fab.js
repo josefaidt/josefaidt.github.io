@@ -61,18 +61,18 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
     <>
       <StyledFab>
         {!open ? (
-          <Button onClick={() => setOpen(!open)}>
+          <Button onClick={() => setOpen(!open)} value="Open Menu">
             <div className="icon">{symbol}</div>
           </Button>
         ) : (
-          <ButtonActive onClick={() => setOpen(!open)}>
+          <ButtonActive onClick={() => setOpen(!open)} value="Close Menu">
             <div className="icon">{symbol}</div>
           </ButtonActive>
         )}
       </StyledFab>
       <PoseGroup>
         {open ? (
-          <SubItem y={'-125%'} zindex={10} key={1}>
+          <SubItem y={'-125%'} zindex={10} key={1} onClick={() => setOpen(!open)}>
             <Icon
               className="icon"
               icon="linkedin"
@@ -85,7 +85,7 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
           ''
         )}
         {open ? (
-          <SubItem y={'-250%'} zindex={9} key={2}>
+          <SubItem y={'-250%'} zindex={9} key={2} onClick={() => setOpen(!open)}>
             <Icon
               className="icon"
               icon="twitter"
@@ -98,7 +98,7 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
           ''
         )}
         {open ? (
-          <SubItem x={'-125%'} zindex={10} key={3}>
+          <SubItem x={'-125%'} zindex={10} key={3} onClick={() => setOpen(!open)}>
             <Link to={blogIdAnchor}>
               <div className="icon" style={{ fontSize: '1rem', color: 'white' }}>
                 {'BLOG'}
