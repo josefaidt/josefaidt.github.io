@@ -27,9 +27,6 @@ const StyledFooter = styled.footer`
     /* border-top: 1px solid ${theme.almostblack}; */
     padding: 1rem;
     bottom: 9vh;
-    &.noOffset {
-      bottom: 0;
-    }
     /* margin-bottom: 7vh; */
   }
 `
