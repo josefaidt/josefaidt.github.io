@@ -12,7 +12,6 @@ module.exports = {
     'react',
     'standard',
     'jsx-a11y',
-    'html'
   ],
   parser: 'babel-eslint',
   parserOptions: {
