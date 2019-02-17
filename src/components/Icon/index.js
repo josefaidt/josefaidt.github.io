@@ -23,8 +23,11 @@ const renderIcon = (icon, invert) => {
     case 'github':
       return <GithubIcon />
     case 'linkedin':
-  if (!invert) { return <LinkedInIcon /> }
-  else { return <LinkedInIconInverted/>}
+      if (!invert) {
+        return <LinkedInIcon />
+      } else {
+        return <LinkedInIconInverted />
+      }
     case 'pushpin':
       return <PushpinIcon />
     case 'spotify':
@@ -58,8 +61,9 @@ Icon.propTypes = {
   invert: PropTypes.bool,
   icon: PropTypes.string,
   link: PropTypes.string,
+  color: PropTypes.string,
 }
 
 export default Icon
 
-export { FilePdfIcon, GithubIcon, LinkedinIcon, PushpinIcon, SpotifyIcon, TwitterIcon }
+export { FilePdfIcon, GithubIcon, LinkedInIcon, PushpinIcon, SpotifyIcon, TwitterIcon }
