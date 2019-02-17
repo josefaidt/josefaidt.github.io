@@ -1,4 +1,4 @@
-import React, { Component, forwardRef, useState } from 'react'
+import React from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'

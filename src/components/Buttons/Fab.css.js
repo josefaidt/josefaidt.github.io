@@ -18,7 +18,7 @@ const StyledFab = styled.div`
 
   position: fixed;
   right: 40px;
-  bottom: 120px;
+  bottom: 80px;
 
   &:hover {
     box-shadow: 0 6px 14px 0 #666;
