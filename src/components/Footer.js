@@ -4,10 +4,10 @@ import Icon from './Icon'
 import { StyledFooter } from './styles/Footer.css'
 import StyledIcons from './styles/Icon.css'
 
-const Footer = ({ children }) => (
-  <div>
+const Footer = ({ children, noOffset }) => (
+  <>
     {children}
-    <StyledFooter className="footer">
+    <StyledFooter className={`footer ${noOffset ? 'noOffset' : ''}`}>
       <div className="footer-container">
         <div className="signature">
           &copy; {new Date().getFullYear()}, Built with
@@ -26,6 +26,6 @@ const Footer = ({ children }) => (
         </StyledIcons>
       </div>
     </StyledFooter>
-  </div>
+  </>
 )
 export default Footer
