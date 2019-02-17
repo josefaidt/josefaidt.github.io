@@ -35,12 +35,19 @@ const BlogPost = ({
 
   const links = {
     blogIdAnchor,
-    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${
+    linkedin: `linkedin://shareArticle?mini=true&url=${
       meta.url
     }${slug}&title=${shareText}&summary=${encodeURIComponent(
       `${description.slice(0, 80)}...`
     )}&source=${meta.url}`,
-    twitter: `https://twitter.com/intent/tweet?url=${
+    linkedinDesktop: `https://www.linkedin.com/shareArticle?mini=true&url=${
+      meta.url
+    }${slug}&title=${shareText}&summary=${encodeURIComponent(
+      `${description.slice(0, 80)}...`
+    )}&source=${meta.url}`,
+    twitter: `twitter://intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ||
+      ''}&via=${meta.twitter}`,
+    twitterDesktop: `https://twitter.com/intent/tweet?url=${
       meta.url
     }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${meta.twitter}`,
   }
