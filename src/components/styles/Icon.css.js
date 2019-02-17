@@ -18,6 +18,7 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   }
 
   .icon a {
+    display: flex;
     span {
       position: relative;
       padding-left: 0.3rem;
