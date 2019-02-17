@@ -1,4 +1,3 @@
-import { setTimeout } from 'timers'
 import React, { forwardRef, useState } from 'react'
 import { Link } from 'gatsby'
 import posed, { PoseGroup } from 'react-pose'
