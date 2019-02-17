@@ -58,22 +58,6 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
     },
   })
 
-  const handleTimeout = e => {
-    setTimeout(() => {
-      try {
-        if (e.currentTarget === document.activeElement) {
-          alert('hello')
-        }
-      } catch (e) {
-        // console.error(e)
-      }
-    }, 1000)
-    console.log(e.currentTarget)
-    console.log(document.activeElement)
-    console.log(e.currentTarget === document.activeElement)
-    console.log(e.currentTarget.hasAttribute(':focus'))
-  }
-
   return (
     <>
       <StyledFab>
@@ -96,7 +80,6 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
               link={linkedin}
               style={{ fill: 'whitesmoke', stroke: 'white' }}
               invert
-              onClick={handleTimeout}
             />
           </SubItem>
         ) : (
@@ -110,7 +93,6 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
               link={twitter}
               style={{ fill: 'whitesmoke', stroke: 'white' }}
               invert
-              onClick={handleTimeout}
             />
           </SubItem>
         ) : (
