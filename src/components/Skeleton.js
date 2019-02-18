@@ -17,9 +17,7 @@ const Layout = ({ children, isBlog }) => (
         <Container>{children}</Container>
       </div>
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
-        <Footer>
-          <Nav />
-        </Footer>
+        <Footer />
       ) : isBlog ? (
         <Footer noOffset />
       ) : (
