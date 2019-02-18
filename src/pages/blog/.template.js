@@ -1,125 +1,76 @@
-import React, { Component, forwardRef } from 'react'
+import React from 'react'
 import { Link, graphql as gql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Layout from 'components/Skeleton'
+import Icon from 'components/Icon'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
-import theme from 'components/styles/theme'
+import StyledIcons from 'components/styles/Icon.css'
+import StyledBackButton from 'components/Buttons/Back.css'
+import { FabMenu } from 'components/Buttons/Fab'
 
-const BlogHeader = styled.div`
+const StyledBlogHeader = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 `
 
-const StyledBackButton = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  min-width: 100px;
-  max-width: 100px;
-  text-align: center;
-
-  &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    letter-spacing: 3px;
-    transition: 0.3s ease;
-    background-color: #c6797e80;
-    border: 0.5px solid #c6797e80;
-    color: white;
-  }
-
-  &:active {
-    background-color: #c6797ebf;
-    color: white;
-    transition: 0.1s ease;
-    letter-spacing: 3px;
-  }
-
-  .container {
-    padding: 1rem;
-    filter: brightness(150%);
-    h1 {
-      filter: brightness(100%);
-    }
-  }
-  .container:hover {
-    filter: brightness(80%);
-  }
-`
-
-const StyledFab = styled.div`
-  .fab {
-    width: 70px;
-    height: 70px;
-    background-color: ${theme.rouge};
-    border-radius: 50%;
-    box-shadow: 0 6px 10px 0 #666;
-    transition: all 0.1s ease-in-out;
-
-    font-size: 50px;
-    color: white;
-    text-align: center;
-    line-height: 70px;
-    z-index: 20;
-
-    position: fixed;
-    right: 40px;
-    bottom: 120px;
-
-    
-  }
-
-  .fab p {
-    text-align: center;
-    padding-right: 0.3rem;
-  }
-
-  .fab:hover {
-    box-shadow: 0 6px 14px 0 #666;
-    transform: scale(1.05);
-  }
-`
-
-const Fab = props => (
-  <StyledFab>
-    <Link to={props.anchorId}>
-      <div className="fab">
-        <p>{'<'}</p>
-      </div>
-    </Link>
-  </StyledFab>
-)
-
-const BlogPost = props => {
-  const post = props.data.markdownRemark
-  const { id } = post
+// https://twitter.com/intent/tweet?text=VSCode%20&%20Installing%20ESLint%20Globally%20-%20
+const BlogPost = ({
+  data: {
+    markdownRemark: post,
+    site: { siteMetadata: meta },
+  },
+}) => {
+  const {
+    id,
+    fields: { slug },
+  } = post
   const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, description } = post.frontmatter
   const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
+  const shareText = encodeURIComponent(title)
+
+  const links = {
+    blogIdAnchor,
+    linkedinDeep: `linkedin://shareArticle?mini=true&url=${
+      meta.url
+    }${slug}&title=${shareText}&summary=${encodeURIComponent(
+      `${description.slice(0, 80)}...`
+    )}&source=${meta.url}`,
+    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${
+      meta.url
+    }${slug}&title=${shareText}&summary=${encodeURIComponent(
+      `${description.slice(0, 80)}...`
+    )}&source=${meta.url}`,
+    twitterDeep: `twitter://intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ||
+      ''}&via=${meta.twitter}`,
+    twitter: `https://twitter.com/intent/tweet?url=${
+      meta.url
+    }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${meta.twitter}`,
+  }
   return (
-    <Layout>
+    <Layout isBlog>
       <SEO
         keywords={seoTags.concat(tags)}
-        title="Blog"
+        title={title}
         description={`${description.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
       {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
-        <BlogHeader>
+        <StyledBlogHeader>
           <Link to={blogIdAnchor}>
             <StyledBackButton>
-              {/* <button> */}
               <b>BACK</b>
-              {/* </button> */}
             </StyledBackButton>
           </Link>
-        </BlogHeader>
+          <StyledIcons className="share_icons" height="2rem">
+            <Icon icon="linkedin" link={links.linkedin} share invert />
+            <Icon icon="twitter" link={links.twitter} share />
+          </StyledIcons>
+        </StyledBlogHeader>
       ) : (
         ''
       )}
@@ -130,7 +81,11 @@ const BlogPost = props => {
         </StyledImage>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? '' : <Fab anchorId={blogIdAnchor} />}
+      {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
+        ''
+      ) : (
+        <FabMenu symbol={'+'} {...links} />
+      )}
     </Layout>
   )
 }
@@ -146,9 +101,13 @@ export const query = gql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         description
+        tags
         image {
           publicURL
           childImageSharp {
@@ -157,6 +116,13 @@ export const query = gql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        url
+        twitter
       }
     }
   }

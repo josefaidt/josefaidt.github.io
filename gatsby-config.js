@@ -3,6 +3,7 @@ module.exports = {
     title: `josef.aidt`,
     description: `Welcome to my personal site.`,
     author: `josefaidt`,
+    twitter: `_garliic`,
     url: `https://josefaidt.me`,
     image: '/_images/logo2.png',
     social: {
@@ -36,6 +37,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: ['.mdx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content/`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -55,14 +69,6 @@ module.exports = {
       options: {
         name: `components`,
         path: `${__dirname}/src/components/`,
-        // ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/content/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
@@ -90,6 +96,13 @@ module.exports = {
         theme_color: `#c6797e`,
         display: `minimal-ui`,
         icon: `src/images/logo2.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `/_images/logo2.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     {

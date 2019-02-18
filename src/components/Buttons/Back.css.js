@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import theme from '../_theme'
 
-export default styled.button`
+const StyledBackButton = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -9,11 +8,8 @@ export default styled.button`
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   min-width: 100px;
-  /* max-width: 100px; */
+  max-width: 100px;
   text-align: center;
-  color: ${theme.rouge};
-  font-weight: 700;
-  cursor: pointer;
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -33,10 +29,8 @@ export default styled.button`
 
   .container {
     padding: 1rem;
-    /* color: ${theme.almostblack}; */
     filter: brightness(150%);
     h1 {
-      /* color: ${theme.almostblack}; */
       filter: brightness(100%);
     }
   }
@@ -44,3 +38,5 @@ export default styled.button`
     filter: brightness(80%);
   }
 `
+
+export default StyledBackButton

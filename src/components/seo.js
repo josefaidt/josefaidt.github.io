@@ -10,6 +10,7 @@ function SEO({ description, lang, image, meta, keywords, title }) {
       render={data => {
         const metaDescription = description || data.site.siteMetadata.description
         const metaImage = image || data.site.siteMetadata.image
+        const metaTitle = title || data.site.siteMetadata.title
         return (
           <Helmet
             htmlAttributes={{
@@ -21,8 +22,9 @@ function SEO({ description, lang, image, meta, keywords, title }) {
                 content: metaDescription,
               },
               {
+                name: `title`,
                 property: `og:title`,
-                content: title,
+                content: `${data.site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
               },
               {
                 property: `og:description`,
@@ -35,6 +37,10 @@ function SEO({ description, lang, image, meta, keywords, title }) {
               {
                 property: `og:image`,
                 content: metaImage,
+              },
+              {
+                property: `author`,
+                content: data.site.siteMetadata.author,
               },
               {
                 name: `twitter:card`,
@@ -62,8 +68,8 @@ function SEO({ description, lang, image, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            title={metaTitle}
+            titleTemplate={`${data.site.siteMetadata.title.split('')[0]}: %s`}
           />
         )
       }}

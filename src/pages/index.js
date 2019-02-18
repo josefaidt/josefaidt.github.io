@@ -14,7 +14,7 @@ const IndexPage = () => (
     <p>
       My name is Josef, and I am a 26-year-old alumnus of Louisiana State University. I'm a
       full-stack JavaScript developer currently employed as a Frontend UI Developer at{' '}
-      <a href="https://twitter.com/IBM" target="_blank">
+      <a href="https://twitter.com/IBM" target="_blank" rel="noopener noreferrer">
         @IBM
       </a>
       . When I'm not thinking about work or my personal projects I might be playing with my two

@@ -1,10 +1,49 @@
 # Change Log
 
-All notable changes to the "josefaidt.github.io" extension will be documented in this file.
+All notable changes to the "josefaidtaidt.me" website will be documented in this file.
 
 ## [Released]
 
 ---
+
+## [2.1.3] - 2019-02-18
+
+### Added
+
+- react hooks for eslint
+- better MDX page rendering w/ exports
+
+### Changed
+
+- blog fab now menu w/
+  - social share icons
+  - blog "back" button
+  - built using React Hooks
+- conditional render for nav
+  - if blog post, do not render (`<Layout isBlog>`)
+- single icon component w/ props
+  - invert
+  - share (renders pointer)
+
+## [2.1.2] - 2019-02-10
+
+### Added
+
+- gatsby-mdx
+  - mdx page creation
+
+### Changed
+
+- blog fab animation
+  - delay increased
+  - pressable
+- mobile navigation animations
+
+## [2.1.1] - 2019-02-10
+
+### Fixed
+
+- google analytics (staged)
 
 ## [2.1.0] - 2019-02-09
 

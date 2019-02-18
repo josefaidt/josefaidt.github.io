@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './theme'
+import theme from './_theme'
 
 const FooterContainer = styled.div`
   @media screen and (max-width: 760px) {
@@ -20,24 +20,6 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
   }
 
-  .icons {
-    display: flex;
-  }
-  .icon a {
-    padding: 0 10px;
-  }
-  .icon svg {
-    fill: ${theme.almostblack};
-    height: 1.5rem;
-  }
-  .icon svg:hover {
-    fill: ${theme.red};
-    transition: ease 0.3s;
-    /* stroke: ${theme.black}; */
-    /* width: 2rem;
-    height: 1.5rem; */
-  }
-
   @media only screen and (max-width: 760px) {
     /* filter: brightness(85%); */
     background-color: WHITESMOKE;
@@ -45,6 +27,9 @@ const StyledFooter = styled.footer`
     /* border-top: 1px solid ${theme.almostblack}; */
     padding: 1rem;
     bottom: 9vh;
+    &.noOffset {
+      bottom: 0;
+    }
     /* margin-bottom: 7vh; */
   }
 `
