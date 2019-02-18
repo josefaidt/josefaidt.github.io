@@ -23,7 +23,8 @@
 			"title: '$1'",
 			"description: '$2'",
 			"date: '$3'",
-			"image: $4",
+			"tags: ['$4']",
+			"image: $5",
 			"---",
 			"",
 			"$5"
