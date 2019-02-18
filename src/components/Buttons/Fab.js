@@ -100,7 +100,10 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
         {open ? (
           <SubItem x={'-125%'} zindex={10} key={3} onClick={() => setOpen(!open)}>
             <Link to={blogIdAnchor}>
-              <div className="icon" style={{ fontSize: '1rem', color: 'white' }}>
+              <div
+                className="icon"
+                style={{ fontSize: '1rem', color: 'white', fontWeight: 'bold' }}
+              >
                 {'BLOG'}
               </div>
             </Link>
