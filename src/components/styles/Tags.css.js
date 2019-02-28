@@ -77,7 +77,6 @@ const StyledTag = styled.span`
   color: white;
   border-radius: 5px;
   padding: 0.1rem 0.5rem;
-  min-width: 80px;
   text-align: center;
   margin: 0 0.3rem 0.3rem 0;
   font-size: 0.7rem;
