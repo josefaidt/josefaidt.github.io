@@ -12,13 +12,17 @@ Website project created for my personal portfolio. Visit it at [josefaidt.me](ht
 
 This version of my website is built using the following technologies:
 
-- ESLint / Prettier &mdash; *linting and formatting*
+- ESLint & Prettier &mdash; *linting and formatting*
   - Pseudo-Standard.js, see [Prettier#3845](https://github.com/prettier/prettier/issues/3845)
-- [Gatsby v2](https://github.com/org/gatsby) &mdash; *static site generator; build*
-  - React 16
-  - SEO
+- [Gatsby v2](https://gatsbyjs.org/) &mdash; *static site generator; build*
+  - React
+    - Hooks
+    - [styled-components](https://www.styled-components.com/)
+    - animations via [react-pose](https://popmotion.io/pose/) by Popmotion
+    - Markdown and MDX
+  - SEO via Google Analytics
   - Caching
-  - Routing
+  - Client-side routing
   - Service Workers for offline support
 - [Netlify CMS](https://netlify.com)
   - CI/CD
