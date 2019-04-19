@@ -4,10 +4,12 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import Icon from 'components/Icon'
+import { RepoCard } from 'components/Cards'
 import Line from 'components/styles/Line'
 import { Title, SubtitleFlex } from 'components/styles/Titles.css'
+import { StyledPostLink, StyledTagList, StyledTag } from 'components/styles/Tags.css'
 
-const AboutPage = ({ data }) => (
+const ResumePage = ({ data }) => (
   <Layout>
     <SEO keywords={[`gatsby`, `application`, `react`, `josef`, `aidt`, `resume`]} title="Résumé" />
     <Title>
@@ -15,6 +17,21 @@ const AboutPage = ({ data }) => (
       <Icon icon="pdf" link={data.allFile.edges[0].node.publicURL} />
     </Title>
     <Line />
+    <h2>Github Projects</h2>
+    <ul>
+      {data.githubUser.repositories.edges.map(({ node: r }, i) => (
+        <StyledPostLink key={i}>
+          <OutboundLink
+            className="link card"
+            href={r.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RepoCard {...r}/>
+          </OutboundLink>
+        </StyledPostLink>
+      ))}
+    </ul>
     <br />
     <h2>Work Experience</h2>
     <Line />
@@ -204,7 +221,30 @@ export const queryResume = graphql`
         }
       }
     }
+    githubUser {
+      name
+      url
+      repositories {
+        edges {
+          node {
+            id
+            name
+            description
+            url
+            stargazers {
+              totalCount
+            }
+            watchers {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+          }
+        }
+      }
+    }
   }
 `
 
-export default AboutPage
+export default ResumePage

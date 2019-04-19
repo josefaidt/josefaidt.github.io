@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require
+  require('dotenv').config()
+}
+
 module.exports = {
   siteMetadata: {
     title: `josef.aidt`,
@@ -86,7 +91,7 @@ module.exports = {
       resolve: '@dschau/gatsby-source-github',
       options: {
         headers: {
-          Authorization: `Bearer 371081bf623770b2a32345a2d32e5ce00454c76d`,
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
         queries: [
           `{
@@ -103,6 +108,15 @@ module.exports = {
                     name
                     description
                     url
+                    stargazers {
+                      totalCount
+                    }
+                    watchers {
+                      totalCount
+                    }
+                    forks {
+                      totalCount
+                    }
                   }
                 }
               }
