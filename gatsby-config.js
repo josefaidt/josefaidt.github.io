@@ -5,6 +5,7 @@ module.exports = {
     author: `josefaidt`,
     twitter: `garlicbred`,
     url: `https://josefaidt.me`,
+    siteUrl: `https://josefaidt.me`,
     image: '/_images/logo2.png',
     social: {
       twitter: `gatsbyjs`,
@@ -13,7 +14,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`,
     // `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     {
