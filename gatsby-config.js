@@ -5,6 +5,7 @@ module.exports = {
     author: `josefaidt`,
     twitter: `garlicbred`,
     url: `https://josefaidt.me`,
+    siteUrl: `https://josefaidt.me`,
     image: '/_images/logo2.png',
     social: {
       twitter: `gatsbyjs`,
