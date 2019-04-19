@@ -131,12 +131,12 @@ class BlogPage extends Component {
               })}
             </div>
           ))}
-          {!this.state.showingMore && postList.length > 4 && (
+          {!this.state.showingMore && postList.length > 5 && (
             <StyledLoadButton
               data-testid="load-more"
               onClick={() => {
                 this.setState({
-                  postsToShow: this.state.postsToShow + 4,
+                  postsToShow: this.state.postsToShow + 5,
                   showingMore: true,
                 })
               }}
