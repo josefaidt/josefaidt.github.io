@@ -6,6 +6,13 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ---
 
+## [2.1.4] - 2019-04-19
+
+### Changed
+
+- mobile padding
+- resume content rework
+
 ## [2.1.3] - 2019-02-18
 
 ### Added
