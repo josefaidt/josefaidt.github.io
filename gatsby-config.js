@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     // `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-playground`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -79,6 +80,35 @@ module.exports = {
         name: `blog`,
         path: `${__dirname}/content/blog/`,
         // ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: '@dschau/gatsby-source-github',
+      options: {
+        headers: {
+          Authorization: `Bearer 371081bf623770b2a32345a2d32e5ce00454c76d`,
+        },
+        queries: [
+          `{
+            user(login: "josefaidt") {
+              id
+              url
+              avatarUrl,
+              name
+              repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 12, ownerAffiliations: OWNER, isFork: false) {
+                totalCount
+                edges {
+                  node {
+                    id
+                    name
+                    description
+                    url
+                  }
+                }
+              }
+            }
+          }`,
+        ],
       },
     },
     {
