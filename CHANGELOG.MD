@@ -8,6 +8,10 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ## [2.1.4] - 2019-04-19
 
+### Added
+
+- Github Repo cards on resume
+
 ### Changed
 
 - mobile padding
