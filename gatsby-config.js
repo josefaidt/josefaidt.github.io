@@ -100,7 +100,7 @@ module.exports = {
               url
               avatarUrl,
               name
-              repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 12, ownerAffiliations: OWNER, isFork: false) {
+              repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 5, ownerAffiliations: OWNER, isFork: false) {
                 totalCount
                 edges {
                   node {

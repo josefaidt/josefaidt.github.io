@@ -18,6 +18,17 @@ const ResumePage = ({ data }) => (
     </Title>
     <Line />
     <h2>Github Projects</h2>
+    <p>
+      A truncated list of my most recently-active repositories. For a complete list of visit my{' '}
+      <OutboundLink
+        href="https://github.com/josefaidt?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github profile
+      </OutboundLink>
+      .
+    </p>
     <div className="repo-list--container">
       {data.githubUser.repositories.edges.map(({ node: r }, i) => (
         <OutboundLink
