@@ -10,7 +10,7 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ### Changed
 
-- hotfix: twitter seo - card image
+- hotfix: twitter metadata - card image
 
 ## [2.2.1] - 2019-04-20
 
