@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './_theme'
+import theme from '../styles/_theme'
 
 export const StyledNav = styled.div`
   font-family: 'Josefin Sans';
@@ -25,7 +25,7 @@ export const StyledNav = styled.div`
     }
   }
   a:active {
-    filter: brightness(90%);
+    filter: brightness(60%);
     transition: ease 100ms;
     border-bottom: 1px solid;
   }

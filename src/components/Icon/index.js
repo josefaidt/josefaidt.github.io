@@ -3,11 +3,12 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import FilePdfIcon from './FilePdfIcon'
-import GithubIcon from './GithubIcon'
+import GithubIcons from './GithubIcons'
 import LinkedInIcon, { LinkedInIconInverted } from './LinkedinIcon'
 import PushpinIcon from './PushpinIcon'
 import SpotifyIcon from './SpotifyIcon'
 import TwitterIcon from './TwitterIcon'
+import NewTabIcon from './NewTabIcon'
 
 const PlaceholderIcon = styled.div`
   height: 32px;
@@ -21,7 +22,7 @@ const renderIcon = (icon, invert) => {
     case 'pdf':
       return <FilePdfIcon />
     case 'github':
-      return <GithubIcon />
+      return <GithubIcons.icon />
     case 'linkedin':
       if (!invert) {
         return <LinkedInIcon />
@@ -34,6 +35,8 @@ const renderIcon = (icon, invert) => {
       return <SpotifyIcon />
     case 'twitter':
       return <TwitterIcon />
+    case 'newtab':
+      return <NewTabIcon />
     default:
       return <PlaceholderIcon />
   }
@@ -66,4 +69,4 @@ Icon.propTypes = {
 
 export default Icon
 
-export { FilePdfIcon, GithubIcon, LinkedInIcon, PushpinIcon, SpotifyIcon, TwitterIcon }
+export { FilePdfIcon, LinkedInIcon, PushpinIcon, SpotifyIcon, TwitterIcon, GithubIcons, NewTabIcon }

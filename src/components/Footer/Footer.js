@@ -1,8 +1,8 @@
 import React from 'react'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import Icon from './Icon'
-import { StyledFooter } from './styles/Footer.css'
-import StyledIcons from './styles/Icon.css'
+import StyledIcons from '../Icon/Icon.css'
+import Icon from '../Icon'
+import { StyledFooter } from './Footer.css'
 
 const Footer = ({ children, noOffset }) => (
   <>

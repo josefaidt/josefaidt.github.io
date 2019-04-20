@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import posed from 'react-pose'
-import { StyledNav } from './styles/Nav.css'
+import { StyledNav } from './Nav.css'
 
 const AnimatedLink = posed(Link)({
   pressable: true,

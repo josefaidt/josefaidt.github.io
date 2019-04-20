@@ -4,26 +4,44 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from 'components/Skeleton'
 import SEO from 'components/seo'
 import Icon from 'components/Icon'
+import { RepoCard } from 'components/Cards'
 import Line from 'components/styles/Line'
 import { Title, SubtitleFlex } from 'components/styles/Titles.css'
+import { StyledPostLink, StyledTagList, StyledTag } from 'components/styles/Tags.css'
 
-const AboutPage = ({ data }) => (
+const ResumePage = ({ data }) => (
   <Layout>
-    <SEO
-      keywords={[`gatsby`, `application`, `react`, `josef aidt`, `josef`, `aidt`, `resume`]}
-      title="Résumé"
-    />
+    <SEO keywords={[`gatsby`, `application`, `react`, `josef`, `aidt`, `resume`]} title="Résumé" />
     <Title>
       <h1>Résumé</h1>
       <Icon icon="pdf" link={data.allFile.edges[0].node.publicURL} />
     </Title>
     <Line />
-    <h2>Objective</h2>
+    <h2>Personal Projects</h2>
     <p>
-      I am looking to challenge my abilities in web development and engineering. By applying my
-      operational IT background, I seek to further my abilities in JavaScript’s Node.js and its
-      growing role in web applications and infrastructure.
+      A truncated list of my most recently-active repositories. For a complete list of visit my{' '}
+      <OutboundLink
+        href="https://github.com/josefaidt?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github profile
+      </OutboundLink>
+      .
     </p>
+    <div className="repo-list--container">
+      {data.githubUser.repositories.edges.map(({ node: r }, i) => (
+        <OutboundLink
+          className="link card"
+          href={r.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={i}
+        >
+          <RepoCard {...r} />
+        </OutboundLink>
+      ))}
+    </div>
     <br />
     <h2>Work Experience</h2>
     <Line />
@@ -43,7 +61,8 @@ const AboutPage = ({ data }) => (
       </SubtitleFlex>
       <ul>
         <li>
-          Uses frontend development technologies to build fully-accessible, interactive websites
+          Uses frontend development technologies to build fully-accessible, interactive educational
+          websites
         </li>
         <li>Utilizes Agile methodologies to accomplish daily tasks, using JIRA</li>
         <li>Applies IBM Enterprise Design Thinking to website build and design</li>
@@ -145,14 +164,14 @@ const AboutPage = ({ data }) => (
     <Line />
     <ul>
       <li>Node.js web and console applications </li>
-      <li>Front-end: HTML/CSS, SCSS, JavaScript</li>
-      <li>Object-Oriented Design</li>
-      <li>Scripting: Python, PowerShell, batch, bash</li>
-      <li>Database: SQL, MySQL, Oracle SQL, MongoDB</li>
+      <li>Front-end: HTML/CSS, SCSS, JavaScript (React, Gatsby)</li>
+      <li>Backend-end: Node.js, GraphQL, Apollo, Express, graphql-yoga</li>
+      <li>Cloud/Serverless Platforms: Netlify, AWS Amplify, ZEIT NOW 2</li>
+      <li>Scripting: Node.js, Python, PowerShell, batch, bash</li>
+      <li>Database: GraphQL, MSSQL, MySQL, Oracle SQL, MongoDB</li>
       <li>Modern Build Tools: Webpack, Parcel, Rollup, Babel</li>
       <li>“Legacy” Build Tools: Grunt, Gulp</li>
       <li>Package Managers: npm, primarily Yarn</li>
-      <li>Azure Cloud web app bots</li>
       <li>Methodologies: Agile, SCRUM (using Trello, JIRA)</li>
     </ul>
     <br />
@@ -212,7 +231,31 @@ export const queryResume = graphql`
         }
       }
     }
+    githubUser {
+      name
+      url
+      repositories {
+        edges {
+          node {
+            id
+            name
+            description
+            url
+            homepageUrl
+            stargazers {
+              totalCount
+            }
+            watchers {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+          }
+        }
+      }
+    }
   }
 `
 
-export default AboutPage
+export default ResumePage

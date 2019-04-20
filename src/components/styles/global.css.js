@@ -647,8 +647,8 @@ pre tt:after {
     width: 100%;
     font-size: 100%;
     p, ul, li {
-      text-align: justify;
-      text-justify: inter-word;
+      /* text-align: justify;
+      text-justify: inter-word; */
     }
   }
 }

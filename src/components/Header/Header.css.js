@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './_theme'
+import theme from '../styles/_theme'
 
 export const StyledHeader = styled.div`
   margin-bottom: 1.45rem;

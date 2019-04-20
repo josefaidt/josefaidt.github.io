@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './_theme'
+import theme from '../styles/_theme'
 
 const FooterContainer = styled.div`
   @media screen and (max-width: 760px) {
@@ -21,16 +21,13 @@ const StyledFooter = styled.footer`
   }
 
   @media only screen and (max-width: 760px) {
-    /* filter: brightness(85%); */
     background-color: WHITESMOKE;
     position: relative;
-    /* border-top: 1px solid ${theme.almostblack}; */
     padding: 1rem;
     bottom: 9vh;
     &.noOffset {
       bottom: 0;
     }
-    /* margin-bottom: 7vh; */
   }
 `
 

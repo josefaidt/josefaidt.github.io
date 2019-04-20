@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import theme from './_theme'
+import theme from '../styles/_theme'
 
 const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   height: iHeight || '1.3rem',
