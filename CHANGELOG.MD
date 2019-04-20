@@ -6,11 +6,17 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ---
 
+## [2.2.2] - 2019-04-20
+
+### Changed
+
+- hotfix: twitter seo - card image
+
 ## [2.2.1] - 2019-04-20
 
 ### Changed
 
-- padding 0 on repo card header
+- hotfix: padding 0 on repo card header
 
 ## [2.2.0] - 2019-04-20
 
