@@ -70,7 +70,7 @@ const StyledRepoCard = styled(StyledCard)`
         opacity: 1;
       }
 
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
   }
 
