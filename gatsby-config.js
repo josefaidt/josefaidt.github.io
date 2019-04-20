@@ -108,6 +108,7 @@ module.exports = {
                     name
                     description
                     url
+                    homepageUrl
                     stargazers {
                       totalCount
                     }
@@ -121,7 +122,8 @@ module.exports = {
                 }
               }
             }
-          }`,
+          }
+          `,
         ],
       },
     },

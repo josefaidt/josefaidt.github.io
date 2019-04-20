@@ -20,16 +20,15 @@ const ResumePage = ({ data }) => (
     <h2>Github Projects</h2>
     <ul>
       {data.githubUser.repositories.edges.map(({ node: r }, i) => (
-        <StyledPostLink key={i}>
-          <OutboundLink
-            className="link card"
-            href={r.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RepoCard {...r}/>
-          </OutboundLink>
-        </StyledPostLink>
+        <OutboundLink
+          className="link card"
+          href={r.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={i}
+        >
+          <RepoCard {...r} />
+        </OutboundLink>
       ))}
     </ul>
     <br />
@@ -231,6 +230,7 @@ export const queryResume = graphql`
             name
             description
             url
+            homepageUrl
             stargazers {
               totalCount
             }
