@@ -23,6 +23,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
