@@ -56,6 +56,7 @@ const BlogPost = ({
       <SEO
         keywords={seoTags.concat(tags)}
         title={title}
+        url={`${meta.url}${slug}`}
         description={`${description.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
