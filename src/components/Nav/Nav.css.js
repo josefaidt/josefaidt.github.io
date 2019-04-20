@@ -25,7 +25,7 @@ export const StyledNav = styled.div`
     }
   }
   a:active {
-    filter: brightness(90%);
+    filter: brightness(60%);
     transition: ease 100ms;
     border-bottom: 1px solid;
   }
