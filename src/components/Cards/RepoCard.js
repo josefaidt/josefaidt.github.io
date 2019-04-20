@@ -55,61 +55,6 @@ const StyledRepoCard = styled(StyledCard)`
       }
     }
   }
-
-  /* The ribbons */
-  .ribbon {
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    z-index: 1;
-    overflow: hidden;
-    width: 75px;
-    height: 75px;
-    text-align: right;
-
-    span {
-      font-size: 10px;
-      font-weight: bold;
-      color: #fff;
-      // text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      line-height: 20px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-      width: 100px;
-      display: block;
-      background: #79a70a;
-      background: linear-gradient(#ee6e73 0%, #ee6e73 100%);
-      box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-      position: absolute;
-      top: 19px;
-      right: -21px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0px;
-        top: 100%;
-        z-index: -1;
-        border-left: 3px solid #ee6e73;
-        border-right: 3px solid transparent;
-        border-bottom: 3px solid transparent;
-        border-top: 3px solid #ee6e73;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        right: 0px;
-        top: 100%;
-        z-index: -1;
-        border-left: 3px solid transparent;
-        border-right: 3px solid #ee6e73;
-        border-bottom: 3px solid transparent;
-        border-top: 3px solid #ee6e73;
-      }
-    }
-  }
 `
 
 const RepoCard = repoData => (
@@ -118,9 +63,6 @@ const RepoCard = repoData => (
       <h2>{repoData.name}</h2>
       <ul className="repo-stats--container">
         <li className="repo-stats--item">
-          <div className="ribbon">
-            <span>TESTING</span>
-          </div>
           <GithubIcons.watchers />
           <span>{repoData.watchers.totalCount}</span>
         </li>
