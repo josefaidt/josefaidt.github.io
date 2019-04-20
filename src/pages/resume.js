@@ -17,7 +17,7 @@ const ResumePage = ({ data }) => (
       <Icon icon="pdf" link={data.allFile.edges[0].node.publicURL} />
     </Title>
     <Line />
-    <h2>Github Projects</h2>
+    <h2>Personal Projects</h2>
     <p>
       A truncated list of my most recently-active repositories. For a complete list of visit my{' '}
       <OutboundLink
