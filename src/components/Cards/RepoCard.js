@@ -21,7 +21,7 @@ const StyledRepoCard = styled(StyledCard)`
       margin: 0;
     }
 
-    padding: 1.5rem 0;
+    padding: 0 0 1.5rem 0;
 
     .repo-stats--container {
       list-style: none;
