@@ -42,7 +42,7 @@ function SEO({ description, lang, image: imageSlug, meta, keywords, title, url }
               },
               {
                 property: `og:image`,
-                content: metaImage,
+                content: `${data.site.siteMetadata.siteUrl}${data.site.siteMetadata.image}`,
               },
               {
                 property: `author`,
