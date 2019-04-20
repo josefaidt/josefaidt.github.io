@@ -8,6 +8,7 @@ import LinkedInIcon, { LinkedInIconInverted } from './LinkedinIcon'
 import PushpinIcon from './PushpinIcon'
 import SpotifyIcon from './SpotifyIcon'
 import TwitterIcon from './TwitterIcon'
+import NewTabIcon from './NewTabIcon'
 
 const PlaceholderIcon = styled.div`
   height: 32px;
@@ -34,6 +35,8 @@ const renderIcon = (icon, invert) => {
       return <SpotifyIcon />
     case 'twitter':
       return <TwitterIcon />
+    case 'newtab':
+      return <NewTabIcon />
     default:
       return <PlaceholderIcon />
   }
@@ -66,4 +69,4 @@ Icon.propTypes = {
 
 export default Icon
 
-export { FilePdfIcon, LinkedInIcon, PushpinIcon, SpotifyIcon, TwitterIcon, GithubIcons }
+export { FilePdfIcon, LinkedInIcon, PushpinIcon, SpotifyIcon, TwitterIcon, GithubIcons, NewTabIcon }

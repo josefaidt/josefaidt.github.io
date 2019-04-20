@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import posed from 'react-pose'
 import theme from '../styles/_theme'
-import { GithubIcons } from '../Icon'
+import { GithubIcons, NewTabIcon } from '../Icon'
 import { StyledCard } from './Card'
 
 const StyledRepoCard = styled(StyledCard)`
@@ -55,6 +55,31 @@ const StyledRepoCard = styled(StyledCard)`
       }
     }
   }
+
+  .repo-info--container {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+      align-self: flex-end;
+      height: 1.3rem;
+      fill: ${theme.almostblack};
+      opacity: 0;
+
+      @media only screen and (max-width: 760px) {
+        opacity: 1;
+      }
+
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .repo-info--container svg {
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+  }
 `
 
 const RepoCard = repoData => (
@@ -78,6 +103,7 @@ const RepoCard = repoData => (
     </div>
     <div className="repo-info--container">
       <p>{repoData.description}</p>
+      <NewTabIcon />
     </div>
   </StyledRepoCard>
 )
