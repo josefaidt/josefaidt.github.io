@@ -7,7 +7,7 @@ import Layout from 'components/Skeleton'
 import Icon from 'components/Icon'
 import SEO from 'components/seo'
 import { StyledImage } from 'components/styles/Image.css'
-import StyledIcons from 'components/styles/Icon.css'
+import StyledIcons from 'components/Icon/Icon.css'
 import StyledBackButton from 'components/Buttons/Back.css'
 import { FabMenu } from 'components/Buttons/Fab'
 
@@ -76,6 +76,9 @@ const BlogPost = ({
       )}
       <div>
         <h1>{title}</h1>
+        <span className="date" style={{ position: 'relative', top: '-1rem' }}>
+          {post.frontmatter.date}
+        </span>
         <StyledImage>
           {image ? <Img fluid={post.frontmatter.image.childImageSharp.fluid} /> : ''}
         </StyledImage>
@@ -108,6 +111,7 @@ export const query = gql`
         title
         description
         tags
+        date(formatString: "MMMM Do YYYY")
         image {
           publicURL
           childImageSharp {
