@@ -46,6 +46,14 @@ const StyledRepoCard = styled(StyledCard)`
         font-size: 0.9rem;
       }
     }
+    @media only screen and (max-width: 760px) {
+      flex-direction: column;
+      align-items: flex-start;
+      .repo-stats--container {
+        margin-top: 0.8rem;
+        grid-gap: 0.5rem;
+      }
+    }
   }
 `
 

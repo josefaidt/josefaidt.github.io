@@ -18,7 +18,7 @@ const ResumePage = ({ data }) => (
     </Title>
     <Line />
     <h2>Github Projects</h2>
-    <ul>
+    <div className="repo-list--container">
       {data.githubUser.repositories.edges.map(({ node: r }, i) => (
         <OutboundLink
           className="link card"
@@ -30,7 +30,7 @@ const ResumePage = ({ data }) => (
           <RepoCard {...r} />
         </OutboundLink>
       ))}
-    </ul>
+    </div>
     <br />
     <h2>Work Experience</h2>
     <Line />
