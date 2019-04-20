@@ -9,8 +9,8 @@
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
   "eslint.options": {
-    "configFile": "./.eslintrc.js",
-    "ignorePath": "./.eslintignore" 
+    "configFile": ".config/.eslintrc.js",
+    "ignorePath": ".config/.eslintignore" 
   },
 
   "markdownlint.config": {
