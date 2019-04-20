@@ -59,36 +59,40 @@ const BlogPost = ({
         description={`${description.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
-        <StyledBlogHeader>
-          <Link to={blogIdAnchor}>
-            <StyledBackButton>
-              <b>BACK</b>
-            </StyledBackButton>
-          </Link>
-          <StyledIcons className="share_icons" height="2rem">
-            <Icon icon="linkedin" link={links.linkedin} share invert />
-            <Icon icon="twitter" link={links.twitter} share />
-          </StyledIcons>
-        </StyledBlogHeader>
-      ) : (
-        ''
-      )}
-      <div>
-        <h1>{title}</h1>
-        <span className="date" style={{ position: 'relative', top: '-1rem' }}>
-          {post.frontmatter.date}
-        </span>
-        <StyledImage>
-          {image ? <Img fluid={post.frontmatter.image.childImageSharp.fluid} /> : ''}
-        </StyledImage>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
-      {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
-        ''
-      ) : (
-        <FabMenu symbol={'+'} {...links} />
-      )}
+      <article>
+        {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
+          <StyledBlogHeader>
+            <Link to={blogIdAnchor}>
+              <StyledBackButton>
+                <b>BACK</b>
+              </StyledBackButton>
+            </Link>
+            <StyledIcons className="share_icons" height="2rem">
+              <Icon icon="linkedin" link={links.linkedin} share invert />
+              <Icon icon="twitter" link={links.twitter} share />
+            </StyledIcons>
+          </StyledBlogHeader>
+        ) : (
+          ''
+        )}
+        <div>
+          <header>
+            <h1>{title}</h1>
+            <span className="date" style={{ position: 'relative', top: '-1rem' }}>
+              {post.frontmatter.date}
+            </span>
+          </header>
+          <StyledImage>
+            {image ? <Img fluid={post.frontmatter.image.childImageSharp.fluid} /> : ''}
+          </StyledImage>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+        {typeof window !== 'undefined' && window.innerWidth >= 760 ? (
+          ''
+        ) : (
+          <FabMenu symbol={'+'} {...links} />
+        )}
+      </article>
     </Layout>
   )
 }
