@@ -6,16 +6,26 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ---
 
-## [2.1.4] - 2019-04-19
+## [2.2.0] - 2019-04-20
 
 ### Added
 
 - Github Repo cards on resume
+  - open in new tab icon
+- blog template
+  - add date
+  - add og:link
+  - add SEO twitter site author
+- DEV UX: add Prisma Playground for GraphQL
+- DEV UX: add lint-staged and better hooks
+- DEV UX: replaced eslint config with @josefaidt config
 
 ### Changed
 
+- component file restructure
 - mobile padding
 - resume content rework
+- nav active link contrast (90% -> 60%)
 
 ## [2.1.3] - 2019-02-18
 
