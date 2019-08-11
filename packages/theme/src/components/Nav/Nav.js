@@ -4,7 +4,7 @@ import { StyledNav } from './Nav.css'
 
 const Nav = props => {
   return (
-    <StyledNav className="nav">
+    <StyledNav>
       <Link activeClassName="active" to="/">
         HOME
       </Link>
