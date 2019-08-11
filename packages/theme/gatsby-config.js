@@ -1,3 +1,4 @@
+const path = require('path')
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   require('dotenv').config()
@@ -11,7 +12,7 @@ module.exports = {
     twitter: `garlicbred`,
     url: `https://josefaidt.me`,
     siteUrl: `https://josefaidt.me`,
-    image: '/_images/logo2.png',
+    // image: '/_images/logo2.png',
     social: {
       twitter: `gatsbyjs`,
       fbAppId: `966242223397117`,
@@ -20,99 +21,63 @@ module.exports = {
   plugins: [
     `gatsby-plugin-playground`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-eslint`,
+    // {
+    //   resolve: `gatsby-plugin-eslint`,
+    //   test: /\.js$|\.jsx$/,
+    //   exclude: /(node_modules|.cache|public)/,
+    //   stages: ['develop'],
+    //   options: {
+    //     emitWarning: true,
+    //     failOnError: false,
+    //   },
+    // },
     {
       resolve: `gatsby-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
+          extensions: ['.mdx', '.md'],
+          default: require.resolve('./src/templates/page.js'),
         },
-        globalScope: `
-          import Header from '${__dirname}/src/components/Header.js'
-          import { Paragraph } from '@josef/components'
-
-          export default { Header, Paragraph }
-        `,
       },
     },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/pages`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-page-creator`,
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: 'pages',
+        path: path.resolve('./pages'),
       },
     },
-    {
-      resolve: '@dschau/gatsby-source-github',
-      options: {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        },
-        queries: [
-          `{
-            user(login: "josefaidt") {
-              id
-              url
-              avatarUrl,
-              name
-              repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 5, ownerAffiliations: OWNER, isFork: false) {
-                totalCount
-                edges {
-                  node {
-                    id
-                    name
-                    description
-                    url
-                    homepageUrl
-                    
-                    stargazers {
-                      totalCount
-                    }
-                    watchers {
-                      totalCount
-                    }
-                    forks {
-                      totalCount
-                    }
-                  }
-                }
-              }
-            }
-          }`,
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-134211753-1',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `josefaidt.me`,
-        short_name: `josefaidt.me`,
-        start_url: `/`,
-        background_color: `#172030`,
-        theme_color: `#c6797e`,
-        display: `minimal-ui`,
-        icon: `src/images/logo2.png`, // This path is relative to the root of the site.
-        icons: [
-          {
-            src: `/_images/logo2.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-134211753-1',
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `josefaidt.me`,
+    //     short_name: `josefaidt.me`,
+    //     start_url: `/`,
+    //     background_color: `#172030`,
+    //     theme_color: `#c6797e`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/logo2.png`, // This path is relative to the root of the site.
+    //     icons: [
+    //       {
+    //         src: `/_images/logo2.png`,
+    //         sizes: `512x512`,
+    //         type: `image/png`,
+    //       },
+    //     ],
+    //   },
+    // },
     // {
     //   resolve: `gatsby-plugin-offline`,
     //   options: {

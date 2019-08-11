@@ -1,4 +1,4 @@
-<h2>josefaidt.me <a href='https://app.netlify.com/sites/gallant-easley-3de8ba/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/d58ac795-8767-433a-bf66-31558d459980/deploy-status'/></a>
+<h2>josefaidt.dev <a href='https://app.netlify.com/sites/gallant-easley-3de8ba/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/d58ac795-8767-433a-bf66-31558d459980/deploy-status'/></a>
 </h2>
 
 [![code style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
@@ -6,7 +6,7 @@
 ![dev dependencies](https://img.shields.io/david/dev/josefaidt/josefaidt.github.io.svg?style=flat-square)
 ![License](https://img.shields.io/github/license/josefaidt/josefaidt.github.io.svg?style=flat-square)
 
-Website project created for my personal portfolio. Visit it at [josefaidt.me](https://josefaidt.me/). Visit the progress over at [trello](https://trello.com/b/GQqL1K11/josefaidtme).
+Website project created for my personal portfolio. Visit it at [josefaidt.dev](https://josefaidt.dev/). Visit the progress over at [trello](https://trello.com/b/GQqL1K11/josefaidtme).
 
 ## The Stack
 

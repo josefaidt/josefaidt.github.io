@@ -1,14 +1,14 @@
 {
   "name": "@josef/components",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "gatsby": "^2.3.25",
+    "gatsby": "^2.13.57",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
   }
 }

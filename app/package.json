@@ -1,8 +1,7 @@
 {
   "name": "@josef/app",
-  "private": true,
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "start": "rm -rf .cache && yarn develop",
@@ -10,20 +9,9 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@josef/theme": "*",
-    "gatsby-plugin-playground": "^1.0.6",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-source-filesystem": "^2.0.29",
-    "styled-components": "^4.2.0"
-  },
-  "devDependencies": {
-    "gatsby": "^2.3.25",
+    "@josef/theme": "^0.1.0",
+    "gatsby": "^2.5.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
-  },
-  "workspaces": {
-    "nohoist": [
-      "@josef/*"
-    ]
   }
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import { MDXProvider } from '@mdx-js/tag'
+import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import components from '../components/markdown'
-import Layout from '../components/layout'
-import { GlobalStyle } from '../components/global.css'
+// import components from '../components/markdown'
+import Layout from '../components/Skeleton'
+import { GlobalStyle } from '../components/style.css'
 
-const MdxPageTemplate = ({ pageContext }) => {
+const MdxPageTemplate = ({ pageContext, children }) => {
   console.log(pageContext)
   return (
     <div>
@@ -13,9 +13,7 @@ const MdxPageTemplate = ({ pageContext }) => {
       <Layout>
         <h1>MDX PAGE TEMPLATE</h1>
         <h2 style={{ color: 'red' }}>{pageContext.meta.title}</h2>
-        <MDXProvider components={components}>
-          <MDXRenderer>{pageContext.body}</MDXRenderer>
-        </MDXProvider>
+        <MDXProvider>{children}</MDXProvider>
       </Layout>
     </div>
   )

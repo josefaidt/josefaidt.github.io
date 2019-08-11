@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import posed from 'react-pose'
+// import posed from 'react-pose'
 import theme from '../styles/_theme'
 import { GithubIcons, NewTabIcon } from '../Icon'
 import { StyledCard } from './Card'
