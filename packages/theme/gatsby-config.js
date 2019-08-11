@@ -4,38 +4,21 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-module.exports = {
+module.exports = options => ({
   siteMetadata: {
     title: `josef.aidt`,
-    description: `Welcome to my personal site.`,
+    description: `Welcome to my personal site`,
     author: `josefaidt`,
-    twitter: `garlicbred`,
-    url: `https://josefaidt.me`,
-    siteUrl: `https://josefaidt.me`,
-    // image: '/_images/logo2.png',
-    social: {
-      twitter: `gatsbyjs`,
-      fbAppId: `966242223397117`,
-    },
+    twitter: `josefaidt`,
+    url: `https://josefaidt.dev`,
+    siteUrl: `https://josefaidt.dev`,
   },
   plugins: [
     `gatsby-plugin-playground`,
-    `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: `gatsby-plugin-eslint`,
-    //   test: /\.js$|\.jsx$/,
-    //   exclude: /(node_modules|.cache|public)/,
-    //   stages: ['develop'],
-    //   options: {
-    //     emitWarning: true,
-    //     failOnError: false,
-    //   },
-    // },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          extensions: ['.mdx', '.md'],
           default: require.resolve('./src/templates/page.js'),
         },
       },
@@ -62,8 +45,8 @@ module.exports = {
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
-    //     name: `josefaidt.me`,
-    //     short_name: `josefaidt.me`,
+    //     name: `josefaidt.dev`,
+    //     short_name: `josefaidt.dev`,
     //     start_url: `/`,
     //     background_color: `#172030`,
     //     theme_color: `#c6797e`,
@@ -121,4 +104,4 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
   ],
-}
+})

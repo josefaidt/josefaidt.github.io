@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const FooterContainer = styled.div`
   @media screen and (max-width: 760px) {

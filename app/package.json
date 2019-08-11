@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@josef/theme": "^0.1.0",
-    "gatsby": "^2.5.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "gatsby": "^2.13.57",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

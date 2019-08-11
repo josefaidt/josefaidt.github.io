@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from '@emotion/styled'
 import theme from './_theme'
 export const GlobalStyle = createGlobalStyle`
 html {

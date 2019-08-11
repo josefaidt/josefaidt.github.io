@@ -1,5 +1,5 @@
 // currently only used in Resume.js
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const Title = styled.div`
   display: flex;

@@ -1,5 +1,17 @@
 module.exports = {
-  __experimentalThemes: ['@josef/theme'],
+  siteMetadata: {
+    title: `josef.aidt`,
+    description: `Welcome to my personal site.`,
+    author: `josefaidt`,
+    twitter: `josefaidt`,
+    url: `https://josefaidt.dev`,
+    siteUrl: `https://josefaidt.dev`,
+    // image: '/_images/logo2.png',
+    social: {
+      twitter: `josefaidt`,
+    },
+  },
+  plugins: ['@josef/theme'],
   // plugins: [
   //   {
   //     resolve: '@dschau/gatsby-source-github',

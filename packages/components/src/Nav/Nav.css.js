@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import theme from '../styles/_theme'
 
 export const StyledNav = styled.div`

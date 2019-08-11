@@ -8,13 +8,13 @@
 
 Website project created for my personal portfolio. Visit it at [josefaidt.dev](https://josefaidt.dev/). Visit the progress over at [trello](https://trello.com/b/GQqL1K11/josefaidtme).
 
-## The Stack
+## Info
 
 This version of my website is built using the following technologies:
 
-- ESLint & Prettier &mdash; *linting and formatting*
+- ESLint & Prettier &mdash; _linting and formatting_
   - Pseudo-Standard.js, see [Prettier#3845](https://github.com/prettier/prettier/issues/3845)
-- [Gatsby v2](https://gatsbyjs.org/) &mdash; *static site generator; build*
+- [Gatsby v2](https://gatsbyjs.org/) &mdash; _static site generator; build_
   - React
     - Hooks
     - [styled-components](https://www.styled-components.com/)

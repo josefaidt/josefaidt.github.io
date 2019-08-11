@@ -5,33 +5,19 @@
   "version": "2.2.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "build": "yarn workspace @josef/app run build",
-    "develop": "yarn workspace @josef/app run develop",
     "start": "yarn workspace @josef/app run start",
-    "clean": "rimraf node_modules **/node_modules yarn.lock",
-    "reload": "yarn clean; lerna bootstrap"
+    "develop": "yarn workspace @josef/app run develop",
+    "build": "yarn workspace @josef/app run build",
+    "clean": "rm -rf node_modules **/node_modules yarn.lock",
+    "reload": "yarn clean; yarn install"
   },
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.9",
+    "@josefaidt/prettier-config": "0.0.2",
     "eslint": "^6.1.0",
     "husky": "^3.0.3",
-    "lerna": "^3.16.4",
     "lint-staged": "^9.2.1",
-    "prettier": "^1.18.2",
-    "rimraf": "^2.6.3"
-  },
-  "husky": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --config .config/.eslintrc.js --ignorePath .config/.eslintignore --fix",
-      "git add"
-    ],
-    "*.{md,mdx}": [
-      "prettier --config .config/.prettierrc.js --write",
-      "git add"
-    ]
+    "prettier": "^1.18.2"
   },
   "workspaces": [
     "packages/*",
@@ -48,5 +34,27 @@
   "keywords": [
     "gatsby",
     "react"
-  ]
+  ],
+  "eslintConfig": {
+    "extends": "@josefaidt/eslint-config"
+  },
+  "eslintIgnore": [
+    "!**/.*.js"
+  ],
+  "prettier": "@josefaidt/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{md|mdx|json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
