@@ -62,7 +62,7 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ### Added
 
-- gatsby-mdx
+- gatsby-plugin-mdx
   - mdx page creation
 
 ### Changed
@@ -88,7 +88,7 @@ All notable changes to the "josefaidtaidt.me" website will be documented in this
 
 ### Fixed
 
-- escaped HTML strings 
+- escaped HTML strings
 
 ## [2.0.1] - 2019-01-29
 

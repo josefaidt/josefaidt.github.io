@@ -1,0 +1,101 @@
+{
+  "componentChunkName": "component---src-pages-blog-js",
+  "path": "/blog/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "allMarkdownRemark": {
+        "edges": [
+          {
+            "node": {
+              "id": "2e813a7c-3156-592e-9bad-3f843208fb17",
+              "fields": { "slug": "/blog/2019/04/first-dev-conf/" },
+              "excerpt": "Late 2018 I attended my first tech conference the Tableau Conference — a massive event full of workshops and sessions stretched across the New Orleans' convention center (about a 1/4 mile long). The covered topics were mostly data-related with a few…",
+              "frontmatter": {
+                "date": "April 19th 2019",
+                "title": "My First Dev Conference",
+                "tags": ["javascript", "conferences", "experiences"],
+                "image": {
+                  "name": "magnoliajs",
+                  "childImageSharp": {
+                    "fluid": {
+                      "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABYUlEQVQ4y71TXUvCYBT2n/VhotNwujmEwkoH0Qc6a2bfkFFBQQWRWGFX0V3QvbY5xVqKF9FF9Ae66z88vXvZ3LJFEdLFw3nPw95n5zznvJ4at4h+wtN3QTW68Inozf9coVPIODvRyznz3mKooBKWUIvJUFjJ/siMColusEQUS5iX7Zb1mR108sfQZ3ehCTkokSw0849NPod7Ew/8UvdsVWhwGhGrMnNQ2Sw8jbEVPO+V8VbR8Xp+g464jVN/Aps+ARsjMZSYKVwEUzSeBCZwFkziMiSi4IvjwD9O+dZWES9HV2gk1r8KtsUCyoEkMsMsFcwMhZEmSA0wWPXyhBOQ93JYJlgj+fRgCI+la7w3n9CS9t1bpu1wtl+34XkUmUncmd5VohLlqxESBRlt+RD1eJ76+P1QTBhe1jmZeuXkrKhFyf3RNFTie3fKP62NalbqxhudWBP+9WK77dz/Pb1+C34AQs28sQ/FDEkAAAAASUVORK5CYII=",
+                      "aspectRatio": 1.3157894736842106,
+                      "src": "/static/be9132e8d08d39afea4006c3dd4fb0bc/7d7c7/magnoliajs.png",
+                      "srcSet": "/static/be9132e8d08d39afea4006c3dd4fb0bc/efcc7/magnoliajs.png 50w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/37e61/magnoliajs.png 100w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/7d7c7/magnoliajs.png 200w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/7156a/magnoliajs.png 300w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/2807a/magnoliajs.png 400w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/e9717/magnoliajs.png 2000w",
+                      "sizes": "(max-width: 200px) 100vw, 200px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "f4de9c1c-b409-59d9-a59c-d90758673771",
+              "fields": { "slug": "/blog/2019/02/enhancing-workflow-with-fish/" },
+              "excerpt": "The tooling surrounding the JavaScript community is uncanny. There are so many useful tools out in the wild such as Webpack, Rollup, create-react-app, Gatsby, VSCode extensions, and let's not forget npm & Yarn! Despite this I feel we often overlook…",
+              "frontmatter": {
+                "date": "February 27th 2019",
+                "title": "Enhancing Your Workflow With Fish Shell Functions",
+                "tags": ["tooling", "cli", "development", "workflow", "fishshell"],
+                "image": null
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "61988af8-0360-5e8d-9d75-0fe549498808",
+              "fields": { "slug": "/blog/2019/02/gatsby-mdx/" },
+              "excerpt": "This.tech.is.too.cool. Using Gatsby to write blog posts in Markdown is great, for the most part I don't feel the need to reach for anything more. Well, but it would be nice to write all of my pages in Markdown if only I could also use my JavaScript…",
+              "frontmatter": {
+                "date": "February 18th 2019",
+                "title": "Gatsby & MDX",
+                "tags": ["javascript", "mdx", "gatsby", "websites"],
+                "image": null
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "cd3a6fc5-cada-5fb0-b012-ddfd4dac62b4",
+              "fields": { "slug": "/blog/2019/01/global-eslint/" },
+              "excerpt": "Okay, when I say installing ESLint \"globally\", I mean using one ESLint config for all VSCode project. You might be wondering why this is useful if you can just load the same config file in every single project, and you can. Setting up a global config…",
+              "frontmatter": {
+                "date": "January 29th 2019",
+                "title": "VSCode & Installing ESLint Globally",
+                "tags": ["tooling", "javascript"],
+                "image": null
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "b808c673-ae7d-51f8-ab5b-e58cb412c970",
+              "fields": { "slug": "/blog/2019/01/a-new-dawn/" },
+              "excerpt": "Well, I'm sure you've visited the rest of the site by this point. This is my first official site built using Gatsby.js, and I had a great time using it. I've helped set up a site in the past, I'd played around with templates, and I contributed…",
+              "frontmatter": {
+                "date": "January 24th 2019",
+                "title": "A New Dawn: My Experiences with Gatsby.js",
+                "tags": ["websites", "javascript", "gatsby"],
+                "image": {
+                  "name": "Gatsby",
+                  "childImageSharp": {
+                    "fluid": {
+                      "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAGeibXesQv/xAAZEAEBAAMBAAAAAAAAAAAAAAABAgADESH/2gAIAQEAAQUCDreliMPGtjU5/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAABAREv/aAAgBAQAGPwKGq4v/xAAZEAEAAwEBAAAAAAAAAAAAAAABABAxEWH/2gAIAQEAAT8hYxq8m4CkgmkOMA8r/9oADAMBAAIAAwAAABBUD//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAEDAQE/EKf/xAAXEQADAQAAAAAAAAAAAAAAAAABEBEh/9oACAECAQE/EDbi/8QAHBABAAIDAAMAAAAAAAAAAAAAAREhABAxQVGR/9oACAEBAAE/EOK6GGCYhShh8l6UOEkfTg5P0lf1rX//2Q==",
+                      "aspectRatio": 1.3157894736842106,
+                      "src": "/static/2da71efc57e77804cca91041bdf50432/25693/Gatsby.jpg",
+                      "srcSet": "/static/2da71efc57e77804cca91041bdf50432/c6dda/Gatsby.jpg 50w,\n/static/2da71efc57e77804cca91041bdf50432/fdf3e/Gatsby.jpg 100w,\n/static/2da71efc57e77804cca91041bdf50432/25693/Gatsby.jpg 200w,\n/static/2da71efc57e77804cca91041bdf50432/eb94d/Gatsby.jpg 300w,\n/static/2da71efc57e77804cca91041bdf50432/ebce7/Gatsby.jpg 400w,\n/static/2da71efc57e77804cca91041bdf50432/ef92e/Gatsby.jpg 1600w",
+                      "sizes": "(max-width: 200px) 100vw, 200px"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pageContext": { "isCreatedByStatefulCreatePages": true }
+  }
+}

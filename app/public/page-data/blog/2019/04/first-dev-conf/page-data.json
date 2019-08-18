@@ -1,0 +1,43 @@
+{
+  "componentChunkName": "component---src-pages-blog-template-js",
+  "path": "/blog/2019/04/first-dev-conf/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "markdownRemark": {
+        "id": "2e813a7c-3156-592e-9bad-3f843208fb17",
+        "html": "<p>Late 2018 I attended my first tech conference the Tableau Conference — a massive event full of workshops and sessions stretched across the New Orleans' convention center (about a 1/4 mile long). The covered topics were mostly data-related with a few gritty developer talks sprinkled throughout. I learned a ton of data analytics concepts and tools, but even though I sat in on the developer talks I didn't feel like I fit the mould. At the time my attendance made sense given my position as a developer focusing 50%+ of efforts on BI tasks, specifically SQL reports and Tableau visualizations.</p>\n<p>After the conference I realized that I cared more about the JavaScript language and the way it was used to deliver Tableau reports rather than using Tableau or looking at data in that aspect.</p>\n<p>Fast-forward to early 2019. I'm still relatively new at IBM and am now focusing solely on web development. I see on Twitter that <a href=\"https://twitter.com/jchiatt\">@jchiatt</a> was looking to plan a JavaScript conference in Jackson, Mississippi in a mere six weeks. <em>Six weeks</em>. On top of that it would end up as Mississippi's <em>first</em> conference of its kind! I had to go to the inaugural <a href=\"https://magnoliajs.com\">MagnoliaJS Conference</a>.</p>\n<p>Through a lot of hard work and sheer willpower, JC managed to pull it together and deliver an amazing event. The agenda was so smooth albeit a few Tornado warnings, and the talks were held in a single auditorium, ultimately creating an intimate experience with a lineup chock-full of incredible people. Even the talks were ordered in such a way that felt like a novel; such a defined arc in the subjects that left you feeling euphoric. You could truly feel the amount of sincere thought that went into planning, curating, and executing such an occasion.</p>\n<p>I'll admit I was nervous to be going and talking to the people I draw inspiration from on all things JavaScript, but in the end it was all worth it. Meeting all of the people I've been following on Twitter IRL was so surreal and rewarding.</p>\n<p>Sidebar, Twitter is a wonderful space to interact with the JavaScript community.</p>\n<p>If you're thinking about attending MagnoliaJS 2020 I can't recommend it enough. Everyone was welcoming and expressed a certain level of candor when conversing. Already I can't wait to see what's in store given such a successful first year.</p>",
+        "fields": { "slug": "/blog/2019/04/first-dev-conf/" },
+        "frontmatter": {
+          "title": "My First Dev Conference",
+          "description": "Thoughts driven by post-conference bliss on Mississippi's first ever JavaScript conference",
+          "tags": ["javascript", "conferences", "experiences"],
+          "date": "April 19th 2019",
+          "image": {
+            "publicURL": "/static/magnoliajs-be9132e8d08d39afea4006c3dd4fb0bc.png",
+            "childImageSharp": {
+              "fluid": {
+                "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABYUlEQVQ4y71TXUvCYBT2n/VhotNwujmEwkoH0Qc6a2bfkFFBQQWRWGFX0V3QvbY5xVqKF9FF9Ae66z88vXvZ3LJFEdLFw3nPw95n5zznvJ4at4h+wtN3QTW68Inozf9coVPIODvRyznz3mKooBKWUIvJUFjJ/siMColusEQUS5iX7Zb1mR108sfQZ3ehCTkokSw0849NPod7Ew/8UvdsVWhwGhGrMnNQ2Sw8jbEVPO+V8VbR8Xp+g464jVN/Aps+ARsjMZSYKVwEUzSeBCZwFkziMiSi4IvjwD9O+dZWES9HV2gk1r8KtsUCyoEkMsMsFcwMhZEmSA0wWPXyhBOQ93JYJlgj+fRgCI+la7w3n9CS9t1bpu1wtl+34XkUmUncmd5VohLlqxESBRlt+RD1eJ76+P1QTBhe1jmZeuXkrKhFyf3RNFTie3fKP62NalbqxhudWBP+9WK77dz/Pb1+C34AQs28sQ/FDEkAAAAASUVORK5CYII=",
+                "aspectRatio": 1.5873015873015872,
+                "src": "/static/be9132e8d08d39afea4006c3dd4fb0bc/fb340/magnoliajs.png",
+                "srcSet": "/static/be9132e8d08d39afea4006c3dd4fb0bc/7cb0f/magnoliajs.png 100w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/eacd7/magnoliajs.png 200w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/fb340/magnoliajs.png 400w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/f3677/magnoliajs.png 600w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/e75a6/magnoliajs.png 800w,\n/static/be9132e8d08d39afea4006c3dd4fb0bc/bdd8b/magnoliajs.png 2000w",
+                "sizes": "(max-width: 400px) 100vw, 400px"
+              }
+            }
+          }
+        }
+      },
+      "site": {
+        "siteMetadata": {
+          "title": "josef.aidt",
+          "url": "https://josefaidt.me",
+          "twitter": "garlicbred"
+        }
+      }
+    },
+    "pageContext": {
+      "isCreatedByStatefulCreatePages": false,
+      "slug": "/blog/2019/04/first-dev-conf/"
+    }
+  }
+}

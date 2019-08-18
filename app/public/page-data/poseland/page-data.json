@@ -1,0 +1,35 @@
+{
+  "componentChunkName": "component---src-components-skeleton-mdx-js",
+  "path": "/poseland/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "mdx": {
+        "id": "e993d979-eb0d-5ebc-bb91-59b22dea822f",
+        "exports": {
+          "meta": {
+            "title": "Poseland MDX",
+            "tags": ["pose", "mdx"],
+            "description": "A playground for animating elements using react-pose and page rendering using gatsby-plugin-mdx",
+            "image": {
+              "publicURL": "/static/yellowstone-5cf8f53318574de4b40a0b348de6e241.jpg",
+              "childImageSharp": {
+                "fluid": {
+                  "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFAv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHDY7B5PE//xAAaEAACAwEBAAAAAAAAAAAAAAABAgADESEi/9oACAEBAAEFAkcCG5DGu6r4LG9bP//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPwGBf//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPwG6r//EABsQAAEFAQEAAAAAAAAAAAAAAAEAAhARISJx/9oACAEBAAY/AhbVrSuRnsGo/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERITFRQf/aAAgBAQABPyFC0b6ns2pXKTlMBsHkuvBXI+T/2gAMAwEAAgADAAAAENP/AP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxCyY//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxCSaf/EABwQAQADAAIDAAAAAAAAAAAAAAEAESExUUFxkf/aAAgBAQABPxDq7omPARxgOoKcEGpssWbeka5J8LmnIPc//9k=",
+                  "aspectRatio": 1.5873015873015872,
+                  "src": "/static/5cf8f53318574de4b40a0b348de6e241/b2741/yellowstone.jpg",
+                  "srcSet": "/static/5cf8f53318574de4b40a0b348de6e241/9a859/yellowstone.jpg 100w,\n/static/5cf8f53318574de4b40a0b348de6e241/abd34/yellowstone.jpg 200w,\n/static/5cf8f53318574de4b40a0b348de6e241/b2741/yellowstone.jpg 400w,\n/static/5cf8f53318574de4b40a0b348de6e241/05822/yellowstone.jpg 600w,\n/static/5cf8f53318574de4b40a0b348de6e241/92e1a/yellowstone.jpg 800w,\n/static/5cf8f53318574de4b40a0b348de6e241/f96b7/yellowstone.jpg 3133w",
+                  "sizes": "(max-width: 400px) 100vw, 400px"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "pageContext": {
+      "isCreatedByStatefulCreatePages": false,
+      "id": "e993d979-eb0d-5ebc-bb91-59b22dea822f"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "componentChunkName": "component---src-pages-resume-js",
+  "path": "/resume/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "allFile": {
+        "edges": [
+          {
+            "node": {
+              "name": "jaidt_Resume",
+              "relativePath": "jaidt_Resume.pdf",
+              "relativeDirectory": "",
+              "publicURL": "/static/jaidt_Resume-3a296da62692a64be453f962d18fd950.pdf"
+            }
+          }
+        ]
+      },
+      "githubUser": {
+        "name": "josef",
+        "url": "https://github.com/josefaidt",
+        "repositories": {
+          "edges": [
+            {
+              "node": {
+                "id": "MDEwOlJlcG9zaXRvcnk2MzM3Nzg3NA==",
+                "name": "josefaidt.github.io",
+                "description": "website created for personal portfolio",
+                "url": "https://github.com/josefaidt/josefaidt.github.io",
+                "homepageUrl": null,
+                "stargazers": { "totalCount": 1 },
+                "watchers": { "totalCount": 2 },
+                "forks": { "totalCount": 1 }
+              }
+            },
+            {
+              "node": {
+                "id": "MDEwOlJlcG9zaXRvcnkxODM4MTg2NTI=",
+                "name": "mdx-deck-theme-garlic",
+                "description": "garlic theme for mdx-deck",
+                "url": "https://github.com/josefaidt/mdx-deck-theme-garlic",
+                "homepageUrl": null,
+                "stargazers": { "totalCount": 0 },
+                "watchers": { "totalCount": 1 },
+                "forks": { "totalCount": 0 }
+              }
+            },
+            {
+              "node": {
+                "id": "MDEwOlJlcG9zaXRvcnkxMTU2Mzk0MTY=",
+                "name": "discord-hansl",
+                "description": "Weather bot for Discord built using Node.js and nWeather",
+                "url": "https://github.com/josefaidt/discord-hansl",
+                "homepageUrl": "",
+                "stargazers": { "totalCount": 0 },
+                "watchers": { "totalCount": 1 },
+                "forks": { "totalCount": 0 }
+              }
+            },
+            {
+              "node": {
+                "id": "MDEwOlJlcG9zaXRvcnkxNzQ4NzQ3NDg=",
+                "name": "tools",
+                "description": "my tooling - npm packages",
+                "url": "https://github.com/josefaidt/tools",
+                "homepageUrl": "https://www.npmjs.com/search?q=josefaidt",
+                "stargazers": { "totalCount": 0 },
+                "watchers": { "totalCount": 1 },
+                "forks": { "totalCount": 0 }
+              }
+            },
+            {
+              "node": {
+                "id": "MDEwOlJlcG9zaXRvcnkxOTUyNzkxODY=",
+                "name": "gatsby-theme-weather",
+                "description": "A weather dashboard Gatsby theme, composed using MDX and Theme UI, powered by Dark Sky.",
+                "url": "https://github.com/josefaidt/gatsby-theme-weather",
+                "homepageUrl": "https://gatsby-theme-weather.netlify.com",
+                "stargazers": { "totalCount": 0 },
+                "watchers": { "totalCount": 0 },
+                "forks": { "totalCount": 0 }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pageContext": { "isCreatedByStatefulCreatePages": true }
+  }
+}

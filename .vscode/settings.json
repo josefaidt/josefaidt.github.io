@@ -1,4 +1,3 @@
-
 {
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
@@ -8,10 +7,6 @@
   "editor.formatOnSave": false,
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
-  "eslint.options": {
-    "configFile": "./.eslintrc.js",
-    "ignorePath": "./.eslintignore" 
-  },
 
   "markdownlint.config": {
     "MD002": false

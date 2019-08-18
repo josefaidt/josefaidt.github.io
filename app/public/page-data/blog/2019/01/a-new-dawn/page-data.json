@@ -1,0 +1,40 @@
+{
+  "componentChunkName": "component---src-pages-blog-template-js",
+  "path": "/blog/2019/01/a-new-dawn/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "markdownRemark": {
+        "id": "b808c673-ae7d-51f8-ab5b-e58cb412c970",
+        "html": "<p>Well, I'm sure you've visited the rest of the site by this point. This is my first official site built using <a href=\"https://gastbyjs.org\" target=\"_blank\">Gatsby.js</a>, and I had a great time using it. I've helped set up a site in the past, I'd played around with templates, and I contributed technical documentation to the project, but I never quite finished my website. Started quite a few times, actually, and ended up moving back over to another project. Thus is the hobby of development, I guess.</p>\n<p>Between my <a href=\"https://github.com/josefaidt/josefaidt.github.io/releases/tag/v1.2.1\" target=\"_blank\">old site</a> <em>(github)</em> and this iteration, I had set up a couple different prototypes; much of which included Express backends with React and React Router v4, however in the end I enjoyed the ease of use of using Gatsby and Netlify rather than managing a server. That wasn't the only speedbump, though. Gatsby offered me so much out of the box including offline support via service workers, GraphQL for querying page assets, and most importantly a <em>blazing</em> fast end product. If you're looking to rebuild your site soon, I can't recommend it enough.</p>\n<p>I hope to continue using this blog as a space for me to talk about whatever I'm working on, tech, code, music, etc. Perhaps I will continue sharing bits and pieces of my work with Gatsby as I add new features to the site, or even my thoughts on web development in general.</p>\n<hr>\n<p>If you'd like to learn more about the tech behind my site and hosting choice, stop by my <a href=\"https://github.com/josefaidt/josefaidt.github.io/\" target=\"_blank\">Github</a> or by my <a href='https://trello.com/b/GQqL1K11/josefaidtme' target='_blank'>Trello board</a> to see what's in store.</p>",
+        "fields": { "slug": "/blog/2019/01/a-new-dawn/" },
+        "frontmatter": {
+          "title": "A New Dawn: My Experiences with Gatsby.js",
+          "description": "My first blog post regarding my experiences using Gatsby.js",
+          "tags": ["websites", "javascript", "gatsby"],
+          "date": "January 24th 2019",
+          "image": {
+            "publicURL": "/static/Gatsby-2da71efc57e77804cca91041bdf50432.jpg",
+            "childImageSharp": {
+              "fluid": {
+                "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAGeibXesQv/xAAZEAEBAAMBAAAAAAAAAAAAAAABAgADESH/2gAIAQEAAQUCDreliMPGtjU5/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAABAREv/aAAgBAQAGPwKGq4v/xAAZEAEAAwEBAAAAAAAAAAAAAAABABAxEWH/2gAIAQEAAT8hYxq8m4CkgmkOMA8r/9oADAMBAAIAAwAAABBUD//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAEDAQE/EKf/xAAXEQADAQAAAAAAAAAAAAAAAAABEBEh/9oACAECAQE/EDbi/8QAHBABAAIDAAMAAAAAAAAAAAAAAREhABAxQVGR/9oACAEBAAE/EOK6GGCYhShh8l6UOEkfTg5P0lf1rX//2Q==",
+                "aspectRatio": 1.5873015873015872,
+                "src": "/static/2da71efc57e77804cca91041bdf50432/b2741/Gatsby.jpg",
+                "srcSet": "/static/2da71efc57e77804cca91041bdf50432/9a859/Gatsby.jpg 100w,\n/static/2da71efc57e77804cca91041bdf50432/abd34/Gatsby.jpg 200w,\n/static/2da71efc57e77804cca91041bdf50432/b2741/Gatsby.jpg 400w,\n/static/2da71efc57e77804cca91041bdf50432/05822/Gatsby.jpg 600w,\n/static/2da71efc57e77804cca91041bdf50432/92e1a/Gatsby.jpg 800w,\n/static/2da71efc57e77804cca91041bdf50432/eee7b/Gatsby.jpg 1600w",
+                "sizes": "(max-width: 400px) 100vw, 400px"
+              }
+            }
+          }
+        }
+      },
+      "site": {
+        "siteMetadata": {
+          "title": "josef.aidt",
+          "url": "https://josefaidt.me",
+          "twitter": "garlicbred"
+        }
+      }
+    },
+    "pageContext": { "isCreatedByStatefulCreatePages": false, "slug": "/blog/2019/01/a-new-dawn/" }
+  }
+}

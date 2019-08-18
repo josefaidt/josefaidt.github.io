@@ -1,0 +1,20 @@
+{
+  "componentChunkName": "component---src-pages-about-js",
+  "path": "/about/",
+  "webpackCompilationHash": "",
+  "result": {
+    "data": {
+      "allFile": {
+        "edges": [
+          {
+            "node": {
+              "name": "josef",
+              "publicURL": "/static/josef-571aa3f4f63b39d928eda96f8d82671b.jpg"
+            }
+          }
+        ]
+      }
+    },
+    "pageContext": { "isCreatedByStatefulCreatePages": true }
+  }
+}
