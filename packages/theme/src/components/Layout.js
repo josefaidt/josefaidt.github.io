@@ -1,24 +1,8 @@
+import React from 'react'
 import styled from '@emotion/styled'
+import { useTheme } from '../helpers/Theme'
 
-export const Container = styled.div`
-  margin: 3rem auto;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans';
-  font-size: 1rem;
-
-  .centered-image {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  @media only screen and (max-width: 480px) {
-    margin: 0 0.8rem;
-  }
-`
-
-export const StyledLayout = styled.div`
+const StyledLayout = styled.div`
   background: white;
   color: ${({ theme }) => theme.almostblack || 'darkgrey'};
   font-family: 'Open Sans';
@@ -55,3 +39,10 @@ export const StyledLayout = styled.div`
     background-color: red;
   }
 `
+
+const Layout = ({ children }) => {
+  const theme = useTheme()
+  return <StyledLayout theme={theme}>{children}</StyledLayout>
+}
+
+export default Layout

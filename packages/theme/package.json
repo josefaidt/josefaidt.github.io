@@ -26,7 +26,6 @@
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.11",
     "gatsby-plugin-sitemap": "^2.2.6",
-    "gatsby-plugin-theme-ui": "^0.2.29",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-prismjs": "^3.3.5",
     "gatsby-source-filesystem": "^2.1.9",
@@ -40,7 +39,6 @@
     "react": "next",
     "react-dom": "next",
     "react-helmet": "^5.2.1",
-    "react-pose": "^4.0.8",
-    "theme-ui": "^0.2.31"
+    "react-pose": "^4.0.8"
   }
 }

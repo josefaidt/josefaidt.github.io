@@ -20,10 +20,13 @@ const StyledFooter = styled.footer`
   }
 
   @media only screen and (max-width: 760px) {
-    background-color: whitesmoke;
+    background-color: WHITESMOKE;
     position: relative;
     padding: 1rem;
     bottom: 9vh;
+    &.noOffset {
+      bottom: 0;
+    }
   }
 `
 

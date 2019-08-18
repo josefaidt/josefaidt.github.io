@@ -23,12 +23,18 @@ module.exports = options => ({
         },
       },
     },
-    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: path.resolve('./pages'),
+        path: path.resolve('src/pages'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: path.resolve('blog'),
       },
     },
     {

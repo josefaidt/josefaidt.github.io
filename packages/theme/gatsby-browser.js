@@ -1,5 +1,3 @@
-// import wrapPageElementWithTransition from './src/helpers/wrapPage'
-require('prismjs/themes/prism.css')
-
-// Page Transitions
-// export const wrapPageElement = wrapPageElementWithTransition
+import React from 'react'
+import { ThemeProvider } from './src/helpers/Theme'
+export const wrapRootElement = ({ element }) => <ThemeProvider>{element}</ThemeProvider>

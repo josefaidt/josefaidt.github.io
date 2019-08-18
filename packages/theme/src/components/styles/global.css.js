@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import colors from './colors'
+import { createGlobalStyle } from '@emotion/styled'
+import theme from './_theme'
 export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: ${colors.red};
+  color: ${theme.red};
   transition: color 0.2s ease;
 }
 button {  font-family: 'josefinsans'; }
