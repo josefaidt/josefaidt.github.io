@@ -1,6 +1,8 @@
 {
-  "componentChunkName": "component---src-pages-index-js",
+  "componentChunkName": "component---src-pages-index-mdx",
   "path": "/",
   "webpackCompilationHash": "",
-  "result": { "pageContext": { "isCreatedByStatefulCreatePages": true } }
+  "result": {
+    "pageContext": { "isCreatedByStatefulCreatePages": true, "frontmatter": { "title": "Home" } }
+  }
 }

@@ -1,38 +1,39 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import posed from 'react-pose'
+import { Link, useStaticQuery, graphql as gql } from 'gatsby'
 import { StyledNav } from './Nav.css'
 
-const AnimatedLink = posed(Link)({
-  pressable: true,
-  init: { scale: 1, opacity: 1 },
-  press: { scale: 0.8, opacity: 1 },
-})
-
-export default class Nav extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { addClass: false }
-  }
-  toggle() {
-    this.setState({ addClass: !this.state.addClass })
-  }
-  render() {
-    return (
-      <StyledNav className="nav">
-        <AnimatedLink activeClassName="active" to="/">
-          HOME
-        </AnimatedLink>
-        <AnimatedLink activeClassName="active" to="/about/">
-          ABOUT
-        </AnimatedLink>
-        <AnimatedLink activeClassName="active" to="/resume/">
-          RESUME
-        </AnimatedLink>
-        <AnimatedLink activeClassName="active" to="/blog/">
-          BLOG
-        </AnimatedLink>
-      </StyledNav>
-    )
-  }
+const Nav = props => {
+  const data = useStaticQuery(gql`
+    query NAV_PAGES {
+      allFile(filter: { sourceInstanceName: { eq: "pages" } }) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+  `)
+  const [activeClass, setActiveClass] = React.useState('HOME')
+  const navPages = data.allFile.edges
+    .filter(({ node: page }) => page.name !== '404')
+    .map(({ node: page }) => {
+      if (page.name === 'index') {
+        return { name: 'home', path: '/' }
+      } else {
+        return { name: page.name, path: `/${page.name.toLowerCase()}/` }
+      }
+    })
+  console.log('NAV PAGES', navPages)
+  return (
+    <StyledNav className="nav">
+      {navPages.map(({ name, path }, key) => (
+        <Link to={path} key={key}>
+          {name.toUpperCase()}
+        </Link>
+      ))}
+    </StyledNav>
+  )
 }
+
+export default Nav

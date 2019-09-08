@@ -21,14 +21,14 @@
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.9",
     "@josefaidt/prettier-config": "^0.0.2",
-    "eslint": "^6.1.0",
-    "husky": "^3.0.4",
-    "lint-staged": "^9.2.3",
+    "eslint": "^6.3.0",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   },
   "workspaces": [
     "app",
-    "packages"
+    "packages/*"
   ],
   "eslintConfig": {
     "extends": "@josefaidt/eslint-config"

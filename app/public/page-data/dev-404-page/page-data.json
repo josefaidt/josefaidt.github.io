@@ -6,19 +6,10 @@
     "data": {
       "allSitePage": {
         "nodes": [
-          { "path": "/blog/2019/04/first-dev-conf/" },
-          { "path": "/blog/2019/02/enhancing-workflow-with-fish/" },
-          { "path": "/blog/2019/02/gatsby-mdx/" },
-          { "path": "/blog/2019/01/global-eslint/" },
-          { "path": "/blog/2019/01/a-new-dawn/" },
-          { "path": "/poseland/" },
           { "path": "/404/" },
+          { "path": "/404.html" },
           { "path": "/about/" },
-          { "path": "/blog/" },
-          { "path": "/" },
-          { "path": "/resume/" },
-          { "path": "/work/" },
-          { "path": "/404.html" }
+          { "path": "/" }
         ]
       }
     },

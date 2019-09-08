@@ -1,20 +1,11 @@
 {
-  "componentChunkName": "component---src-pages-about-js",
+  "componentChunkName": "component---src-pages-about-mdx",
   "path": "/about/",
   "webpackCompilationHash": "",
   "result": {
-    "data": {
-      "allFile": {
-        "edges": [
-          {
-            "node": {
-              "name": "josef",
-              "publicURL": "/static/josef-571aa3f4f63b39d928eda96f8d82671b.jpg"
-            }
-          }
-        ]
-      }
-    },
-    "pageContext": { "isCreatedByStatefulCreatePages": true }
+    "pageContext": {
+      "isCreatedByStatefulCreatePages": true,
+      "frontmatter": { "title": "About Me" }
+    }
   }
 }
