@@ -1,6 +1,0 @@
-{
-  "componentChunkName": "component---src-pages-blog-js",
-  "path": "/blog/",
-  "webpackCompilationHash": "",
-  "result": { "pageContext": { "isCreatedByStatefulCreatePages": true } }
-}

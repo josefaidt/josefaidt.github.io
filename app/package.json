@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn develop",
+    "start": "yarn clean; yarn develop",
+    "clean": "rm -rf .cache",
     "develop": "gatsby develop"
   },
   "devDependencies": {
