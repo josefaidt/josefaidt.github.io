@@ -1,5 +1,4 @@
 import React from 'react'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import StyledIcons from '../Icon/Icon.css'
 import Icon from '../Icon'
 import { StyledFooter } from './Footer.css'
@@ -12,9 +11,9 @@ const Footer = ({ children, noOffset }) => (
         <div className="signature">
           &copy; {new Date().getFullYear()}, Built with
           {` `}
-          <OutboundLink href="https://www.gatsbyjs.org" target="_blank">
+          <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer">
             Gatsby
-          </OutboundLink>
+          </a>
         </div>
         <StyledIcons iHeight="1.3rem">
           <Icon icon="github" link="https://github.com/josefaidt" />

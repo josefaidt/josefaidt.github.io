@@ -1,19 +1,20 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
-
-// eslint-disable-next-line jsx-a11y/heading-has-content
-const H1 = props => <h1 style={{ color: 'tomato' }} {...props} />
+import Skeleton from '../components/Skeleton'
+import Quote from '../components/styles/Quote'
 
 const components = {
-  h1: H1,
+  Link,
+  blockquote: Quote,
 }
 
 const PageTemplate = props => {
   return (
-    <div>
+    <Skeleton>
       <MDXProvider components={components}>{props.children}</MDXProvider>
-    </div>
+    </Skeleton>
   )
 }
 

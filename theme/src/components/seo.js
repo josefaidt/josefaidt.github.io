@@ -1,88 +1,94 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, image: imageSlug, meta, keywords, title, url }) {
+const SEO = ({ description, lang, meta, keywords, title, url }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
+      }
+    `
+  )
+  const metaDescription = description || site.siteMetadata.description
+  // const metaImage =
+  //   `${site.siteMetadata.siteUrl}${imageSlug}` || site.siteMetadata.image
+  const metaTitle = title || site.siteMetadata.title
+  const metaUrl = url || site.siteMetadata.siteUrl
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription = description || data.site.siteMetadata.description
-        const metaImage =
-          `${data.site.siteMetadata.siteUrl}${imageSlug}` || data.site.siteMetadata.image
-        const metaTitle = title || data.site.siteMetadata.title
-        const metaUrl = url || data.site.siteMetadata.siteUrl
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                name: `title`,
-                property: `og:title`,
-                content: `${data.site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
-              },
-              {
-                property: `og:url`,
-                content: metaUrl,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                property: `og:image`,
-                content: `${data.site.siteMetadata.siteUrl}${data.site.siteMetadata.image}`,
-              },
-              {
-                property: `author`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:site`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
-              .concat(meta)}
-            title={metaTitle}
-            titleTemplate={`${data.site.siteMetadata.title.split('')[0]}: %s`}
-          />
-        )
+    <Helmet
+      htmlAttributes={{
+        lang,
       }}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: `title`,
+          property: `og:title`,
+          content: `${site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
+        },
+        {
+          property: `og:url`,
+          content: metaUrl,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
+        },
+        {
+          property: `author`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:site`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ]
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
+      title={metaTitle}
+      titleTemplate={`${site.siteMetadata.title.split('')[0]}: %s`}
     />
   )
 }

@@ -1,25 +1,7 @@
 import styled from 'styled-components'
-import theme from './_theme'
+import theme from '../styles/_theme'
 
-export const Container = styled.div`
-  margin: 3rem auto;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans';
-  font-size: 1rem;
-
-  .centered-image {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  @media only screen and (max-width: 480px) {
-    margin: 0 0.8rem;
-  }
-`
-
-export const StyledLayout = styled.div`
+const StyledLayout = styled.div`
   background: white;
   color: ${theme.almostblack};
   font-family: 'Open Sans';
@@ -56,3 +38,5 @@ export const StyledLayout = styled.div`
     background-color: red;
   }
 `
+
+export default StyledLayout

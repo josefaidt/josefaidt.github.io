@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import FilePdfIcon from './FilePdfIcon'
 import GithubIcons from './GithubIcons'
 import LinkedInIcon, { LinkedInIconInverted } from './LinkedinIcon'
@@ -45,7 +44,7 @@ const renderIcon = (icon, invert) => {
 const Icon = props => {
   return (
     <div className="icon">
-      <OutboundLink
+      <a
         href={props.link}
         rel="noopener noreferrer"
         target="_blank"
@@ -54,7 +53,7 @@ const Icon = props => {
       >
         {renderIcon(props.icon, props.invert)}
         {props.share ? <span className="share">&rang;</span> : null}
-      </OutboundLink>
+      </a>
     </div>
   )
 }
