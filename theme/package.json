@@ -1,0 +1,28 @@
+{
+  "name": "@josef/theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "gatsby": "^2.15.20",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.15.20",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "gatsby-plugin-mdx": "^1.0.43",
+    "gatsby-plugin-page-creator": "^2.1.21",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.1.26",
+    "@mdx-js/react": "^1.4.5",
+    "@mdx-js/mdx": "^1.4.5",
+    "styled-components": "^4.3.2",
+    "mkdirp": "^0.5.1",
+    "prop-types": "^15.7.2",
+    "react-helmet": "^5.2.1"
+  }
+}

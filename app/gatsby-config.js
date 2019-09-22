@@ -1,17 +1,27 @@
-if (process.env.NODE_ENV !== 'production') {
-  // eslint-disable-next-line global-require
-  require('dotenv').config()
-}
-
 module.exports = {
   siteMetadata: {
     title: `josef.aidt`,
-    description: `Welcome to my personal site.`,
-    author: `josefaidt`,
-    twitter: `josefaidt`,
-    url: `https://josefaidt.dev`,
-    siteUrl: `https://josefaidt.dev`,
-    image: '/_images/logo2.png',
+    author: `Josef Aidt`,
+    description: `Welcome to my personal site`,
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/josefaidt`,
+      },
+      {
+        name: `GitHub`,
+        url: `https://github.com/josefaidt`,
+      },
+    ],
   },
-  plugins: [`@josef/gatsby-theme`],
+  plugins: [
+    '@josef/theme',
+    {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        basePath: `/blog`,
+        mdx: false,
+      },
+    },
+  ],
 }
