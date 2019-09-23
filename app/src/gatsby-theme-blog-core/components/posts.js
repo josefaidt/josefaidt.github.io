@@ -1,5 +1,5 @@
 import React from 'react'
-import { Skeleton, BlogCard, Quote } from '@josef/theme'
+import { Skeleton, BlogCard, Quote } from '@josef/gatsby-theme'
 
 const Posts = ({ location, data }) => {
   const { site, allBlogPost } = data
