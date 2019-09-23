@@ -1,19 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { MDXProvider } from '@mdx-js/react'
 import Skeleton from '../components/Skeleton'
-import Quote from '../components/styles/Quote'
-
-const components = {
-  Link,
-  blockquote: Quote,
-}
+import MdxProvider from '../components/MDXProvider'
 
 const PageTemplate = props => {
   return (
     <Skeleton>
-      <MDXProvider components={components}>{props.children}</MDXProvider>
+      <MdxProvider>{props.children}</MdxProvider>
     </Skeleton>
   )
 }

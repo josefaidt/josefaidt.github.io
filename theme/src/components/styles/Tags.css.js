@@ -15,6 +15,10 @@ const StyledPostLink = styled.div`
     transform: translateY(-5px);
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .container {
     padding: 1rem;
     color: ${theme.almostblack};

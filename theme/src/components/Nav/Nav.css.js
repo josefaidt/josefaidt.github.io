@@ -9,6 +9,7 @@ export const StyledNav = styled.div`
   margin: auto;
   a {
     padding: 0 0.5rem;
+    text-decoration: none;
   }
   @media (min-width: 760px) {
     a.active,
@@ -18,7 +19,6 @@ export const StyledNav = styled.div`
       border-bottom: 0;
     }
     a:hover {
-      /* filter: brightness(80%); */
       padding-bottom: 1rem;
       border-bottom: 1px solid;
       transition: ease 300ms;
@@ -38,8 +38,6 @@ export const StyledNav = styled.div`
   @media only screen and (max-width: 760px) {
     height: 9vh;
     display: flex;
-    /* align-items: center;
-    justify-content: stretch; */
 
     /* box-shadow: 0 0 40px 0 ${theme.almostblack}; */
     box-shadow: 0px 0px 40px -10px ${theme.almostblack};
