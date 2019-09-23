@@ -77,7 +77,7 @@ const prodPlugins = [
 ]
 
 if (process.env.NODE_ENV.toLowerCase() === 'production') {
-  config.plugins.push(prodPlugins)
+  config.plugins.push(...prodPlugins)
 }
 
 module.exports = config
