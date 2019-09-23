@@ -34,19 +34,20 @@ const BlogPost = ({
   const links = {
     blogIdAnchor,
     linkedinDeep: `linkedin://shareArticle?mini=true&url=${
-      meta.url
+      meta.siteUrl
     }${slug}&title=${shareText}&summary=${encodeURIComponent(
       `${excerpt}.slice(0, 80)}...`
-    )}&source=${meta.url}`,
+    )}&source=${meta.siteUrl}`,
     linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${
-      meta.url
+      meta.siteUrl
     }${slug}&title=${shareText}&summary=${encodeURIComponent(
       `${excerpt}.slice(0, 80)}...`
-    )}&source=${meta.url}`,
-    twitterDeep: `twitter://intent/tweet?url=${meta.url}${slug}&text=${shareText}&hashtags=${tags ||
-      ''}&via=${twitterUsername}`,
+    )}&source=${meta.siteUrl}`,
+    twitterDeep: `twitter://intent/tweet?url=${
+      meta.siteUrl
+    }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
     twitter: `https://twitter.com/intent/tweet?url=${
-      meta.url
+      meta.siteUrl
     }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
   }
   return (
@@ -54,7 +55,7 @@ const BlogPost = ({
       <SEO
         keywords={seoTags.concat(tags)}
         title={title}
-        url={`${meta.url}${slug}`}
+        siteUrl={`${meta.siteUrl}${slug}`}
         description={`${excerpt.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />

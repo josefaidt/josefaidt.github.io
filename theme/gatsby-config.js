@@ -2,7 +2,7 @@ module.exports = options => ({
   siteMetadata: {
     title: 'josef.aidt',
     author: '@josefaidt',
-    url: 'https://josefaidt.dev',
+    siteUrl: 'https://josefaidt.dev',
     keywords: ['josef', 'aidt', 'personal', 'portfolio'],
     description: 'Welcome to my personal site',
   },
