@@ -1,5 +1,7 @@
 import React from 'react'
-import { Skeleton, BlogCard, Quote } from '@josef/gatsby-theme'
+import BlogCard from '../../components/Cards'
+import Skeleton from '../../components/Skeleton'
+import Quote from '../../components/styles/Quote'
 
 const Posts = ({ location, data }) => {
   const { site, allBlogPost } = data

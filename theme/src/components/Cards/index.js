@@ -1,4 +1,4 @@
-import Card from './Card'
+import BlogCard from './BlogCard'
 import RepoCard from './RepoCard'
-export default Card
+export default BlogCard
 export { RepoCard }

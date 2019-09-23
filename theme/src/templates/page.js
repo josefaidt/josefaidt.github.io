@@ -23,7 +23,7 @@ const PageTemplate = props => {
   return (
     <Skeleton>
       <SEO
-        keywords={meta.keywords.join(',')}
+        keywords={meta.keywords}
         title={meta.title}
         url={meta.url}
         description={`${meta.description.slice(0, 140)}...`}

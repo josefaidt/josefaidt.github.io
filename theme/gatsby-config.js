@@ -47,6 +47,13 @@ module.exports = options => ({
       },
     },
     {
+      resolve: `gatsby-theme-blog-core`,
+      options: {
+        basePath: `/blog`,
+        mdx: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {

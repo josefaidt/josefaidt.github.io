@@ -16,16 +16,7 @@ const config = {
       },
     ],
   },
-  plugins: [
-    '@josef/gatsby-theme',
-    {
-      resolve: `gatsby-theme-blog-core`,
-      options: {
-        basePath: `/blog`,
-        mdx: false,
-      },
-    },
-  ],
+  plugins: ['@josef/gatsby-theme'],
 }
 
 const prodPlugins = [
