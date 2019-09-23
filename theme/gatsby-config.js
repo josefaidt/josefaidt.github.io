@@ -25,6 +25,16 @@ module.exports = options => ({
         defaultLayouts: {
           default: require.resolve('./src/templates/page.js'),
         },
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1300,
+            },
+          },
+        ],
+        plugins: [`gatsby-remark-images`],
       },
     },
     {

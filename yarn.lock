@@ -5628,7 +5628,7 @@ gatsby-plugin-page-creator@^2.1.21:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-sharp@^2.2.11:
+gatsby-plugin-sharp@^2.2.11, gatsby-plugin-sharp@^2.2.25:
   version "2.2.25"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.25.tgz#8ce172071d914123b895e5ffd5b1c06bf294a481"
   integrity sha512-NBoMWC/AtImBggdzePVH1Iqj6DqG23uhrrcEmCoVq5pJDvuGaq/Wsr9+igQT6rJ8MbfFHNxSyY0JvDREelbc9Q==
@@ -5684,7 +5684,7 @@ gatsby-remark-copy-linked-files@^2.1.5:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-images@^3.1.11:
+gatsby-remark-images@^3.1.11, gatsby-remark-images@^3.1.23:
   version "3.1.23"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.23.tgz#4cc72a71f6342b8b2780841a979ccff0da5b7c2b"
   integrity sha512-s6CPKtfZRQp2ARHKPNFUC93Wjp7kN9UTxlqkMOSG2KoCRVIsPR32hibWgSUxk8apKZa7wiHeWq4iuuRPASaPXw==
@@ -5701,7 +5701,7 @@ gatsby-remark-images@^3.1.11:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-remark-smartypants@^2.1.2:
+gatsby-remark-smartypants@^2.1.2, gatsby-remark-smartypants@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.1.9.tgz#5531e98ab345ea75a9d30e645620f76e1f161a1b"
   integrity sha512-7FGqD9N2GbSTjsTCQCG/AYN5bop7PsN2uRcDKaCoN4cAhPsIy7J3XREAL3rNvDsu0i+6YUERo/JIjxgavvpEog==

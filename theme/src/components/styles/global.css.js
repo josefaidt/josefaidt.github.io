@@ -5,6 +5,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 10px;
 }
 body {
   margin: 0;
