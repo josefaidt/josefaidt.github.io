@@ -1,8 +1,10 @@
 module.exports = options => ({
   siteMetadata: {
-    title: '',
-    author: '',
-    description: '',
+    title: 'josef.aidt',
+    author: '@josefaidt',
+    url: 'https://josefaidt.dev',
+    keywords: ['josef', 'aidt', 'personal', 'portfolio'],
+    description: 'Welcome to my personal site',
   },
   plugins: [
     `gatsby-transformer-json`,

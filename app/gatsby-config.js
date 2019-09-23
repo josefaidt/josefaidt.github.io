@@ -1,8 +1,10 @@
 const config = {
   siteMetadata: {
-    title: `josef.aidt`,
-    author: `Josef Aidt`,
-    description: `Welcome to my personal site`,
+    title: 'josef.aidt',
+    author: '@josefaidt',
+    url: 'https://josefaidt.dev',
+    keywords: ['josef', 'aidt', 'personal', 'portfolio'],
+    description: 'Welcome to my personal site',
     social: [
       {
         name: `Twitter`,

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Layout from '../components/Skeleton'
+import Skeleton from '../components/Skeleton'
 import Icon from '../components/Icon'
 import SEO from '../components/seo'
 import StyledIcons from '../components/Icon/Icon.css'
@@ -50,12 +50,12 @@ const BlogPost = ({
     }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
   }
   return (
-    <Layout isBlog>
+    <Skeleton>
       <SEO
         keywords={seoTags.concat(tags)}
         title={title}
         url={`${meta.url}${slug}`}
-        description={`${excerpt}.slice(0, 140)}...`}
+        description={`${excerpt.slice(0, 140)}...`}
         image={image ? image.publicURL : '/_images/logo2.png'}
       />
       <article>
@@ -76,7 +76,7 @@ const BlogPost = ({
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
       </article>
-    </Layout>
+    </Skeleton>
   )
 }
 
