@@ -22,7 +22,7 @@ const SEO = ({ description, lang, meta, keywords, title, url }) => {
   // const metaImage =
   //   `${site.siteMetadata.siteUrl}${imageSlug}` || site.siteMetadata.image
   const metaTitle = title || site.siteMetadata.title
-  const metaUrl = url || site.siteMetadata.siteUrl
+  const metaUrl = url || site.siteMetadata.url
   return (
     <Helmet
       htmlAttributes={{
