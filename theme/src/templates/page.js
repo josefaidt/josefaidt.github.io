@@ -14,7 +14,7 @@ const PageTemplate = props => {
         siteMetadata {
           title
           keywords
-          url
+          siteUrl
           description
         }
       }
@@ -25,7 +25,7 @@ const PageTemplate = props => {
       <SEO
         keywords={meta.keywords}
         title={meta.title}
-        url={meta.url}
+        siteUrl={meta.siteUrl}
         description={`${meta.description.slice(0, 140)}...`}
       />
       <MdxProvider>{props.children}</MdxProvider>
