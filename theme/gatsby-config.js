@@ -28,7 +28,6 @@ module.exports = options => ({
           default: require.resolve('./src/templates/page.js'),
         },
         gatsbyRemarkPlugins: [
-          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -39,8 +38,12 @@ module.exports = options => ({
               wrapperStyle: `border-radius: 3rem;`,
             },
           },
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-copy-linked-files`,
         ],
         plugins: [`gatsby-remark-images`],
+        // eslint-disable-next-line global-require
+        remarkPlugins: [require(`remark-slug`)],
       },
     },
     {
