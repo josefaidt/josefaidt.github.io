@@ -48,6 +48,7 @@ const Icon = props => {
         href={props.link}
         rel="noopener noreferrer"
         target="_blank"
+        style={{ textDecoration: 'none' }}
         download={props.icon === 'pdf'}
         {...props}
       >

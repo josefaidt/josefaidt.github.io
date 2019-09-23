@@ -50,10 +50,6 @@ const SEO = ({ description, lang, meta, keywords, title, url }) => {
           content: `website`,
         },
         {
-          property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
-        },
-        {
           property: `author`,
           content: site.siteMetadata.author,
         },
@@ -102,7 +98,6 @@ SEO.defaultProps = {
 
 SEO.propTypes = {
   description: PropTypes.string,
-  image: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
@@ -110,17 +105,3 @@ SEO.propTypes = {
 }
 
 export default SEO
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        image
-        siteUrl
-      }
-    }
-  }
-`
