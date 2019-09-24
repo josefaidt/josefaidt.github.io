@@ -8,6 +8,7 @@ module.exports = options => ({
   },
   plugins: [
     `gatsby-transformer-json`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
