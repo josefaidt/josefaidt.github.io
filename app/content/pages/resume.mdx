@@ -1,0 +1,152 @@
+---
+title: Resume
+keywords: ['resume']
+---
+
+import { graphql } from 'gatsby'
+import { PageLayout, Title, Icon, RepoCard, Line } from '@josef/gatsby-theme'
+
+export default ({ children, data, ...props }) => (
+  <PageLayout>
+    <Title>
+      <h1>Résumé</h1>
+      <Icon icon="pdf" link={data.file.publicURL} />
+    </Title>
+    <Line />
+    <h2>Personal Projects</h2>
+    <p>
+      A truncated list of my most recently-active repositories. For a complete list of visit my{' '}
+      <a
+        href="https://github.com/josefaidt?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github profile
+      </a>
+      .
+    </p>
+    <div className="repo-list--container">
+      {data.githubUser.repositories.edges.map(({ node: r }, i) => (
+        <a
+          className="link card"
+          href={r.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={i}
+          style={{ textDecoration: 'none' }}
+        >
+          <RepoCard {...r} />
+        </a>
+      ))}
+    </div>
+    <br />
+    <div>{children}</div>
+  </PageLayout>
+)
+
+export const query = graphql`
+  query {
+    file(name: { eq: "jaidt_Resume" }) {
+      publicURL
+    }
+    githubUser {
+      name
+      url
+      repositories {
+        edges {
+          node {
+            id
+            name
+            description
+            url
+            homepageUrl
+            stargazers {
+              totalCount
+            }
+            watchers {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+## Work Experience
+
+<Line />
+
+### Frontend UI Developer [@IBM](https://twitter.com/IBM)
+
+_Dec 2018 - Present_
+
+- Uses frontend development technologies to build fully-accessible, interactive educational websites
+- Utilizes Agile methodologies to accomplish daily tasks, using JIRA
+- Applies IBM Enterprise Design Thinking to website build and design
+
+### BI Developer [@FMOL Health System](https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/)
+
+_Aug 2017 - Dec 2018_
+
+- Used JavaScript and JQuery to accomplish various tasks within mature ERP environment, Lawson Infor
+- Designed and developed internal charitable giving campaigns, front-end benefits enrollment form changes, and interfacing with external companies
+- Engineered pure front-end JavaScript cryptography solution to pass encrypted employee user information to an intranet site, using C# and Windows’s native cryptography library to deliver employee benefits statements
+- Leveraged MSSQL Server Reporting Services and Crystal Reports to deliver reports such as supply chain asset management, financial reporting, and employee turnover; primarily from ERP’s Oracle database
+- Utilized Tableau to visualize – and enhance – legacy reporting to provide interactive, meaningful results
+
+### IS Support Analyst [@FMOL Health System](https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/)
+
+_May 2014 - Aug 2017_
+
+- Managed, tested, and deployed VDI inventory. Created and managed standardization documentation.
+- Database Design – mobile app and PHP web services integration developed to streamline equipment receiving process, and interface with existing asset management database
+- Virtualized (P2V) legacy hospital applications hosted by local support into VMWare
+- PowerShell and batch scripting automation of time-consuming tasks (reporting Bitlocker encryption status, IE versions, mass editing of configuration files, removing manually installed software)
+- Lead multiple projects to provide streamlined deployment processes and documentation practices
+- VDI endpoint deployment projects to replace thick client installations on multiple units across hospital units and its clinics (~1,200 devices overall)
+- Replace and install new clients in high-intensity areas: multiple OR wings, ER, and CVL departments
+- Orchestrated equipment relocation during a hospital unit renovation project
+- Mentored new interns and high school work study students on general troubleshooting, documentation, deployments, and disposal procedures
+
+<br />
+
+## Education
+
+<Line />
+
+### Louisiana State University, Baton Rouge, LA
+
+Bachelor of Science – Information Systems and Decision Sciences
+Activities: LSU Tiger Marching Band, Association of IT Professionals LSU Chapter
+
+<br />
+
+## Accomplishments
+
+<Line />
+
+### Boy Scouts of America – Eagle Scout
+
+2009 Philmont Scout Ranch attendee<br />2010 Centennial National Scout Jamboree attendee
+
+<br />
+
+## Volunteer Work
+
+<Line />
+
+### Geaux BIG Baton Rouge 2015
+
+Annual event held by LSU Campus Life to give a streamlined opportunity for students to give back to the community; involves simple tasks such as landscaping, pressure washing, painting, and elderly assistance
+
+### Our Lady of the Lake RMC
+
+Provided DJ and music entertainment services for community events such as annual Easter and Halloween celebrations. Also participated as a member of the company-sponsored team for the Jambalaya Jam 2018 event, which benefits the Capital Area United Way campaign.
+
+### Krewe of Apollo Baton Rouge
+
+Provided DJ and music entertainment services for various events such as local concerts, crowning galas, and fundraising ball

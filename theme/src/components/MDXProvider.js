@@ -3,12 +3,23 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import Quote from '../components/styles/Quote'
+import Quote from './styles/Quote'
+import Line from './styles/Line'
+import Icon from './Icon'
+import { Title } from './styles/Titles.css'
+
+const shortcodes = {
+  Quote,
+  Line,
+  Link,
+  Icon,
+  Title,
+}
 
 const components = {
   img: props => <img style={{ borderRadius: '3rem' }} {...props} />,
-  Link,
   blockquote: Quote,
+  ...shortcodes,
 }
 
 const MdxProvider = props => <MDXProvider components={components}>{props.children}</MDXProvider>
