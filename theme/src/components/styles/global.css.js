@@ -1,6 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from './_theme'
 export const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../assets/OpenSans-Regular.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("../../assets/JosefinSans-Regular.ttf") format("ttf")
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

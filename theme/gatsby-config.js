@@ -22,6 +22,7 @@ module.exports = options => ({
         path: `content/pages`,
       },
     },
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -52,14 +53,6 @@ module.exports = options => ({
       options: {
         basePath: `/blog`,
         mdx: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        google: {
-          families: ['Josefin Sans', 'Open Sans'],
-        },
       },
     },
   ],
