@@ -36,7 +36,7 @@ module.exports = options => ({
               linkImagesToOriginal: false,
               showCaptions: false,
               backgroundColor: 'transparent',
-              wrapperStyle: `border-radius: 3rem;`,
+              wrapperStyle: `border-radius: 2rem;`,
             },
           },
           `gatsby-remark-smartypants`,
