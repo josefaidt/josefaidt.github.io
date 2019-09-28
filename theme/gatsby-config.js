@@ -35,9 +35,15 @@ module.exports = options => ({
             options: {
               maxWidth: 1300,
               linkImagesToOriginal: false,
+              withWebp: true,
               showCaptions: false,
               backgroundColor: 'transparent',
               wrapperStyle: `border-radius: 1rem;`,
+              tracedSVG: {
+                color: '#c6797ecc',
+                turnPolicy: 'TURNPOLICY_MAJORITY',
+                optTolerance: 0.9,
+              },
             },
           },
           `gatsby-remark-smartypants`,

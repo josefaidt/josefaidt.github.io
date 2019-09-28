@@ -7,7 +7,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import StyledLayout from './Skeleton.css'
 
-const Layout = ({ children }) => (
+const Skeleton = ({ children }) => (
   <>
     <GlobalStyle />
     <StyledLayout>
@@ -22,8 +22,8 @@ const Layout = ({ children }) => (
   </>
 )
 
-Layout.propTypes = {
+Skeleton.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Skeleton
