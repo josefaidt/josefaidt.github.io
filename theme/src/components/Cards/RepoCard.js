@@ -26,7 +26,7 @@ const StyledRepoCard = styled(StyledCard)`
       list-style: none;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1.5rem;
+      grid-gap: 1rem;
       align-items: center;
 
       .repo-stats--item {
