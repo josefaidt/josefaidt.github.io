@@ -6,7 +6,7 @@ import theme from '../styles/_theme'
 
 const StyledCard = styled.article`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   margin: 1rem 0;
@@ -76,20 +76,23 @@ const renderTags = tags => {
   )
 }
 
-const BlogCard = ({ post }) => (
-  <StyledPostLink aria-labelledby="post-title">
-    <Link className="link card" to={post.slug} id={post.id}>
-      <div className="container">
-        <h1 id="post-title">{post.title}</h1>
-        {post.tags ? <StyledTagList>{renderTags(post.tags)}</StyledTagList> : ''}
-        <span id="date">{post.date}</span>
-        <div className="excerpt-preview">
-          <p>{post.excerpt}</p>
+const BlogCard = ({ post }) => {
+  console.log(post)
+  return (
+    <StyledPostLink aria-labelledby="post-title">
+      <Link className="link card" to={post.slug} id={post.id}>
+        <div className="container">
+          <h1 id="post-title">{post.title}</h1>
+          {post.keywords ? <StyledTagList>{renderTags(post.keywords)}</StyledTagList> : null}
+          <span id="date">{post.date}</span>
+          <div className="excerpt-preview">
+            <p>{post.excerpt}</p>
+          </div>
         </div>
-      </div>
-    </Link>
-  </StyledPostLink>
-)
+      </Link>
+    </StyledPostLink>
+  )
+}
 
 export default BlogCard
 export { StyledCard }
