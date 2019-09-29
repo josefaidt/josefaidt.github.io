@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql as gql } from 'gatsby'
+import { ThemeContext } from 'styled-components'
 import { StyledNav } from './Nav.css'
 
 const Nav = props => {
+  const theme = React.useContext(ThemeContext)
   const {
     allNavJson: { edges: navItems },
   } = useStaticQuery(gql`
@@ -17,9 +19,8 @@ const Nav = props => {
       }
     }
   `)
-  console.log('NAV ITEMS', navItems)
   return (
-    <StyledNav className="nav">
+    <StyledNav className="nav" theme={theme}>
       {navItems.map(({ node: { name, route } }, key) => (
         <Link to={route} key={key}>
           {name.toUpperCase()}

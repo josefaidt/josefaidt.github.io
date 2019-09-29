@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import theme from '../styles/_theme'
+import styled, { ThemeContext } from 'styled-components'
 import { GithubIcons, NewTabIcon } from '../Icon'
 import { StyledCard } from './BlogCard'
 
@@ -38,7 +37,7 @@ const StyledRepoCard = styled(StyledCard)`
 
       .repo-stats--item svg {
         justify-self: center;
-        fill: ${theme.almostblack};
+        fill: ${props => props.theme.text};
       }
 
       .repo-stats--item span {
@@ -62,7 +61,7 @@ const StyledRepoCard = styled(StyledCard)`
     svg {
       align-self: flex-end;
       height: 1.3rem;
-      fill: ${theme.almostblack};
+      fill: ${props => props.theme.text};
       opacity: 0;
 
       @media only screen and (max-width: 760px) {
@@ -81,31 +80,34 @@ const StyledRepoCard = styled(StyledCard)`
   }
 `
 
-const RepoCard = repoData => (
-  <StyledRepoCard>
-    <div className="repo-header--container">
-      <h2>{repoData.name}</h2>
-      <ul className="repo-stats--container">
-        <li className="repo-stats--item">
-          <GithubIcons.watchers />
-          <span>{repoData.watchers.totalCount}</span>
-        </li>
-        <li className="repo-stats--item">
-          <GithubIcons.stargazers />
-          <span>{repoData.stargazers.totalCount}</span>
-        </li>
-        <li className="repo-stats--item">
-          <GithubIcons.forks />
-          <span>{repoData.forks.totalCount}</span>
-        </li>
-      </ul>
-    </div>
-    <div className="repo-info--container">
-      <p>{repoData.description}</p>
-      <NewTabIcon />
-    </div>
-  </StyledRepoCard>
-)
+const RepoCard = repoData => {
+  const theme = React.useContext(ThemeContext)
+  return (
+    <StyledRepoCard theme={theme}>
+      <div className="repo-header--container">
+        <h2>{repoData.name}</h2>
+        <ul className="repo-stats--container">
+          <li className="repo-stats--item">
+            <GithubIcons.watchers />
+            <span>{repoData.watchers.totalCount}</span>
+          </li>
+          <li className="repo-stats--item">
+            <GithubIcons.stargazers />
+            <span>{repoData.stargazers.totalCount}</span>
+          </li>
+          <li className="repo-stats--item">
+            <GithubIcons.forks />
+            <span>{repoData.forks.totalCount}</span>
+          </li>
+        </ul>
+      </div>
+      <div className="repo-info--container">
+        <p>{repoData.description}</p>
+        <NewTabIcon />
+      </div>
+    </StyledRepoCard>
+  )
+}
 
 RepoCard.propTypes = {
   name: PropTypes.string.isRequired,

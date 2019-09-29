@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from './_theme'
 
 const StyledPostLink = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -21,7 +20,7 @@ const StyledPostLink = styled.div`
 
   .container {
     padding: 1rem;
-    color: ${theme.almostblack};
+    color: ${props => props.theme.text};
     /* transition */
     h1,
     p,
@@ -52,10 +51,10 @@ const StyledPostLink = styled.div`
     h1,
     span#date,
     p {
-      color: ${theme.almostblack};
+      color: ${props => props.theme.text};
     }
     span.tag {
-      background-color: ${theme.almostblack};
+      background-color: ${props => props.theme.text};
       transition: background-color 0.2s linear;
       color: white;
     }
@@ -77,7 +76,7 @@ const StyledTagList = styled.div`
 `
 
 const StyledTag = styled.span`
-  background-color: ${theme.almostblack};
+  background-color: ${props => props.theme.text};
   color: white;
   border-radius: 5px;
   padding: 0.1rem 0.5rem;

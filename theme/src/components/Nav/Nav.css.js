@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from '../styles/_theme'
 
 export const StyledNav = styled.div`
   font-family: 'Josefin Sans';
@@ -39,8 +38,8 @@ export const StyledNav = styled.div`
     height: 9vh;
     display: flex;
 
-    /* box-shadow: 0 0 40px 0 ${theme.almostblack}; */
-    box-shadow: 0px 0px 40px -10px ${theme.almostblack};
+    /* box-shadow: 0 0 40px 0 ${props => props.theme.text}; */
+    box-shadow: 0px 0px 40px -10px ${props => props.theme.text};
     text-align: center;
     font-size: 1.2rem;
     min-height: 7vh;

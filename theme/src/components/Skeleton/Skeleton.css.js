@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import theme from '../styles/_theme'
 
 const StyledLayout = styled.div`
   background: white;
-  color: ${theme.almostblack};
+  color: ${props => props.theme.text};
   font-family: 'Open Sans';
   font-size: 1rem;
   min-height: 100vh;
@@ -22,12 +21,11 @@ const StyledLayout = styled.div`
     height: 100%;
   }
   a {
-    color: ${theme.red};
-    transition: color 0.2s ease;
+    color: ${props => props.theme.main};
   }
   a:hover {
-    color: ${theme.red4};
-    transition: color 0.2s ease;
+    filter: brightness(80%);
+    transition: filter 0.2s ease;
   }
   @media only screen and (max-width: 760px) {
     .content {

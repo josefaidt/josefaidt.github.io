@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import { StyledPostLink, StyledTagList, StyledTag } from '../styles/Tags.css'
-import theme from '../styles/_theme'
 
 const StyledCard = styled.article`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   margin: 1rem 0;
@@ -18,7 +17,7 @@ const StyledCard = styled.article`
   }
 
   padding: 1rem;
-  color: ${theme.almostblack};
+  color: ${props => props.theme.text};
   /* transition */
   h1,
   p,
@@ -49,10 +48,10 @@ const StyledCard = styled.article`
     h1,
     span#date,
     p {
-      color: ${theme.almostblack};
+      color: ${props => props.theme.text};
     }
     span.tag {
-      background-color: ${theme.almostblack};
+      background-color: ${props => props.theme.text};
       transition: background-color 0.2s linear;
       color: white;
     }
@@ -77,9 +76,9 @@ const renderTags = tags => {
 }
 
 const BlogCard = ({ post }) => {
-  console.log(post)
+  const theme = React.useContext(ThemeContext)
   return (
-    <StyledPostLink aria-labelledby="post-title">
+    <StyledPostLink aria-labelledby="post-title" theme={theme}>
       <Link className="link card" to={post.slug} id={post.id}>
         <div className="container">
           <h1 id="post-title">{post.title}</h1>

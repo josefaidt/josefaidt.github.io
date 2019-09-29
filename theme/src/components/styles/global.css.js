@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import theme from './_theme'
 export const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: "Open Sans";

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Skeleton from '../components/Skeleton'
 import Icon from '../components/Icon'
@@ -21,6 +21,7 @@ const BlogPost = ({
     site: { siteMetadata: meta },
   },
 }) => {
+  const theme = React.useContext(ThemeContext)
   const { id, slug } = post
   const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, excerpt } = post
@@ -50,6 +51,7 @@ const BlogPost = ({
       meta.siteUrl
     }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
   }
+
   return (
     <Skeleton>
       <SEO
@@ -62,7 +64,7 @@ const BlogPost = ({
       <article>
         <StyledBlogHeader>
           <Button.back anchor={blogIdAnchor} />
-          <StyledIcons className="share_icons" height="2rem">
+          <StyledIcons theme={theme} className="share_icons" height="2rem">
             <Icon icon="linkedin" link={links.linkedin} share invert />
             <Icon icon="twitter" link={links.twitter} share />
           </StyledIcons>

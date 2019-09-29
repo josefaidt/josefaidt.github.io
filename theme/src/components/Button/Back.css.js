@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const StyledBackButton = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   margin: 1rem 0;
@@ -15,13 +15,13 @@ const StyledBackButton = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     letter-spacing: 3px;
     transition: 0.3s ease;
-    background-color: #c6797e80;
-    border: 0.5px solid #c6797e80;
+    background-color: ${props => props.theme}80;
+    border: 0.5px solid ${props => props.theme}80;
     color: white;
   }
 
   &:active {
-    background-color: #c6797ebf;
+    background-color: ${props => props.theme}bf;
     color: white;
     transition: 0.1s ease;
     letter-spacing: 3px;

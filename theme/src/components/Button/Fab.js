@@ -1,6 +1,7 @@
 import React, { forwardRef, useState } from 'react'
 import { Link } from 'gatsby'
 import posed, { PoseGroup } from 'react-pose'
+import { ThemeContext } from 'styled-components'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
 import StyledFab from './Fab.css'
@@ -34,6 +35,7 @@ AnimatedFab.propTypes = {
 
 const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
   const [open, setOpen] = useState(false)
+  const theme = React.useContext(ThemeContext)
 
   const Button = posed.button({
     pressable: true,
@@ -59,7 +61,7 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
 
   return (
     <>
-      <StyledFab>
+      <StyledFab theme={theme}>
         {!open ? (
           <Button onClick={() => setOpen(!open)} value="Open Menu">
             <div className="icon">{symbol}</div>

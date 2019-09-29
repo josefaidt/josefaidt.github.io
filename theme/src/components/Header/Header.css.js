@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from '../styles/_theme'
 
 export const StyledHeader = styled.div`
   margin-bottom: 1.45rem;
@@ -11,7 +10,7 @@ export const StyledHeader = styled.div`
     padding: 1.45rem 1.0875rem;
   }
   div h1 {
-    color: ${theme.almostblack};
+    color: ${props => props.theme.text};
     margin: 0;
     font-size: 2.5rem;
     font-family: 'Josefin Sans';

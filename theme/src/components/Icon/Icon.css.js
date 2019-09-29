@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import theme from '../styles/_theme'
 
 const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   height: iHeight || '1.3rem',
@@ -13,8 +12,8 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
     display: flex;
     align-items: center;
 
-    color: ${theme.almostblack};
-    fill: ${theme.almostblack};
+    color: ${props => props.theme.text};
+    fill: ${props => props.theme.text};
   }
 
   .icon a {
@@ -32,14 +31,14 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   }
 
   .share {
-    color: ${theme.almostblack};
+    color: ${props => props.theme.text};
     font-weight: bold;
   }
 
   .icon:hover .share,
   .icon:hover svg {
-    color: ${theme.red};
-    fill: ${theme.rouge};
+    color: ${props => props.theme.main};
+    fill: ${props => props.theme.accent};
     transition: ease 0.3s;
   }
 `
