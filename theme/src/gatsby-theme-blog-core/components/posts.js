@@ -5,8 +5,11 @@ import Quote from '../../components/styles/Quote'
 
 const Posts = ({ location, data }) => {
   const { site, allBlogPost } = data
+  console.log('POSTS DATA', data)
+  console.log(allBlogPost)
   return (
     <Skeleton>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
       <h1>Snakes and Sparklers</h1>
       <p>
         Compilation of my thoughts and opinions on all things tech, my experiences in the industry,
@@ -16,9 +19,10 @@ const Posts = ({ location, data }) => {
         &quot;Snakes and Sparklers are the only ones I like.&quot; -Kicking Wing, Joe Dirt (2001)
       </Quote>
       <div>
-        {allBlogPost.edges.map(({ node: post }, i) => (
-          <BlogCard key={i} post={post} />
-        ))}
+        {allBlogPost.edges.map(({ node: post }, i) => {
+          console.log('POSTS NODE', post)
+          return <BlogCard key={i} post={post} />
+        })}
       </div>
     </Skeleton>
   )
