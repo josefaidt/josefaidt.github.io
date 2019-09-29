@@ -5,6 +5,7 @@ module.exports = options => ({
     siteUrl: 'https://josefaidt.dev',
     keywords: ['josef', 'aidt', 'personal', 'portfolio'],
     description: 'Welcome to my personal site',
+    image: 'content/assets/images/favicon.jpg',
   },
   plugins: [
     `gatsby-transformer-json`,
@@ -42,7 +43,6 @@ module.exports = options => ({
               tracedSVG: {
                 color: '#c6797ecc',
                 turnPolicy: 'TURNPOLICY_MAJORITY',
-                optTolerance: 0.9,
               },
             },
           },
