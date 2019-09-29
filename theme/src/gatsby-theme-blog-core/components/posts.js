@@ -5,11 +5,8 @@ import Quote from '../../components/styles/Quote'
 
 const Posts = ({ location, data }) => {
   const { site, allBlogPost } = data
-  console.log('POSTS DATA', data)
-  console.log(allBlogPost)
   return (
     <Skeleton>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
       <h1>Snakes and Sparklers</h1>
       <p>
         Compilation of my thoughts and opinions on all things tech, my experiences in the industry,
