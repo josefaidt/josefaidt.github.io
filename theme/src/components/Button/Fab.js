@@ -116,4 +116,4 @@ const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
   )
 }
 
-export { FabMenu, AnimatedFab }
+export default FabMenu
