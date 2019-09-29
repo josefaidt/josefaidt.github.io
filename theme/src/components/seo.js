@@ -40,6 +40,11 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl }) => {
           content: `${site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
         },
         {
+          name: `title`,
+          property: `title`,
+          content: `${site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
+        },
+        {
           property: `og:url`,
           content: metaUrl,
         },
