@@ -6,10 +6,10 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Skeleton from '../components/Skeleton'
 import Icon from '../components/Icon'
 import SEO from '../components/seo'
-import StyledIcons from '../components/Icon/Icon.css'
+import Icons from '../components/Icon/Icons'
 import Button from '../components/Button'
 
-const StyledBlogHeader = styled.div`
+const StyledBlogHeader = styled.header`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
@@ -64,10 +64,10 @@ const BlogPost = ({
       <article>
         <StyledBlogHeader>
           <Button.back anchor={blogIdAnchor} />
-          <StyledIcons theme={theme} className="share_icons" height="2rem">
+          <Icons theme={theme}>
             <Icon icon="linkedin" link={links.linkedin} share invert />
             <Icon icon="twitter" link={links.twitter} share />
-          </StyledIcons>
+          </Icons>
         </StyledBlogHeader>
         <div>
           <header>

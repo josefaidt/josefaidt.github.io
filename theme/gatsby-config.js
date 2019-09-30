@@ -5,13 +5,6 @@ module.exports = options => ({
     siteUrl: 'https://josefaidt.dev',
     keywords: ['josef', 'aidt', 'personal', 'portfolio'],
     description: 'Welcome to my personal site',
-    blog: {
-      title: 'Snakes and Sparklers',
-      description:
-        'Compilation of my thoughts and opinions on all things tech, my experiences in industry, web development, and oxford commas.',
-      quote:
-        '&quot;Snakes and Sparklers are the only ones I like.&quot; -Kicking Wing, Joe Dirt (2001)',
-    },
   },
   plugins: [
     `gatsby-transformer-json`,
@@ -71,12 +64,12 @@ module.exports = options => ({
         remarkPlugins: [require(`remark-slug`)],
       },
     },
-    {
+    options.blog && {
       resolve: `gatsby-theme-blog-core`,
       options: {
         basePath: `/blog`,
         mdx: false,
       },
     },
-  ],
+  ].filter(Boolean),
 })

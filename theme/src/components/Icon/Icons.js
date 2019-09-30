@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import React from 'react'
+import styled, { ThemeContext } from 'styled-components'
 
 const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   height: iHeight || '1.3rem',
@@ -25,8 +26,8 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   }
 
   .icon svg {
-    fill: rgb(90, 83, 91);
-    height: ${props => props.iHeight};
+    fill: ${props => props.theme.text};
+    height: ${props => props.iconHeight};
     /* filter: brightness(100%); */
   }
 
@@ -43,5 +44,14 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
     transition: ease 0.3s;
   }
 `
+
+const Icons = props => {
+  const theme = React.useContext(ThemeContext)
+  return <StyledIcons theme={theme} {...props} />
+}
+
+Icons.defaultProps = {
+  iconHeight: '2rem',
+}
 
 export default StyledIcons

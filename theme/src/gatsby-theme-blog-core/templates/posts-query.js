@@ -12,11 +12,6 @@ export const query = graphql`
           name
           url
         }
-        blog {
-          title
-          description
-          quote
-        }
       }
     }
     allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {

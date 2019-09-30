@@ -1,18 +1,10 @@
-import styled from 'styled-components'
-
-const FooterContainer = styled.div`
-  @media screen and (max-width: 760px) {
-    display: flex;
-    flex-direction: row;
-    .nav {
-      z-index: 1;
-    }
-  }
-`
+import React from 'react'
+import styled, { ThemeContext } from 'styled-components'
 
 const StyledFooter = styled.footer`
   margin: 0.5rem auto;
   max-width: 600px;
+
   .footer-container {
     background: linear-gradient(whitesmoke);
     display: flex;
@@ -24,14 +16,16 @@ const StyledFooter = styled.footer`
   }
 
   @media only screen and (max-width: 760px) {
-    background-color: WHITESMOKE;
+    background-color: whitesmoke;
     position: relative;
     padding: 1rem;
     bottom: 9vh;
-    &.noOffset {
-      bottom: 0;
-    }
   }
 `
 
-export { FooterContainer, StyledFooter }
+const StyledFooterWrapper = props => {
+  const theme = React.useContext(ThemeContext)
+  return <StyledFooter theme={theme} {...props} />
+}
+
+export default StyledFooterWrapper

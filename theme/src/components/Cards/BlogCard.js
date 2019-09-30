@@ -23,7 +23,7 @@ const StyledCard = styled.article`
   p,
   span,
   span.tag {
-    color: #8b868c;
+    color: ${props => props.theme.grey};
     transition: color 0.2s ease;
   }
   /* filters */
@@ -37,7 +37,7 @@ const StyledCard = styled.article`
   }
   span.tag {
     color: white;
-    background-color: #8b868c;
+    background-color: ${props => props.theme.grey};
     transition: background-color 0.2s linear;
   }
   #date {

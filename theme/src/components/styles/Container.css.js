@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.main`
   margin: 3rem auto;
   max-width: 600px;
   display: flex;

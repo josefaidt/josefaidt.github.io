@@ -26,7 +26,7 @@ const StyledPostLink = styled.div`
     p,
     span,
     span.tag {
-      color: #8b868c;
+      color: ${props => props.theme.text};
       transition: color 0.2s ease;
     }
     /* filters */
