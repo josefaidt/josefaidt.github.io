@@ -63,31 +63,23 @@ const config = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `josefaidt.dev`,
+        short_name: `josefaidt.dev`,
+        start_url: `/`,
+        background_color: `#172030`,
+        theme_color: `#c6797e`,
+        display: `minimal-ui`,
+      },
+    },
   ],
 }
 
 const prodPlugins = [
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-netlify`,
-  {
-    resolve: `gatsby-plugin-manifest`,
-    options: {
-      name: `josefaidt.dev`,
-      short_name: `josefaidt.dev`,
-      start_url: `/`,
-      background_color: `#172030`,
-      theme_color: `#c6797e`,
-      display: `minimal-ui`,
-      icon: `content/assets/images/logo2.png`, // This path is relative to the root of the site.
-      // icons: [
-      //   {
-      //     src: `/_images/logo2.png`,
-      //     sizes: `512x512`,
-      //     type: `image/png`,
-      //   },
-      // ],
-    },
-  },
   // {
   //   resolve: `gatsby-plugin-offline`,
   //   options: {
