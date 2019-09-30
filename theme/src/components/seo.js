@@ -4,7 +4,10 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ description, lang, meta, keywords, title, siteUrl }) => {
-  const { site } = useStaticQuery(
+  const {
+    site,
+    file: { publicURL: favicon },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,6 +18,13 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl }) => {
             keywords
             siteUrl
           }
+        }
+        file(
+          sourceInstanceName: { eq: "content/assets" }
+          name: { eq: "favicon" }
+          relativeDirectory: { eq: "images" }
+        ) {
+          publicURL
         }
       }
     `
@@ -92,7 +102,9 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl }) => {
         .concat(meta)}
       title={metaTitle}
       titleTemplate={`${site.siteMetadata.title.split('')[0]}: %s`}
-    />
+    >
+      <link rel="icon" href={favicon} />
+    </Helmet>
   )
 }
 

@@ -5,11 +5,17 @@ module.exports = options => ({
     siteUrl: 'https://josefaidt.dev',
     keywords: ['josef', 'aidt', 'personal', 'portfolio'],
     description: 'Welcome to my personal site',
-    image: 'content/assets/images/favicon.png',
   },
   plugins: [
     `gatsby-transformer-json`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content/assets`,
+        path: `content/assets`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

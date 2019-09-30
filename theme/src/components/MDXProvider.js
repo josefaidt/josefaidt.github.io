@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/display-name */
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import Quote from './styles/Quote'
@@ -31,7 +30,6 @@ const StyledMdLink = styled.a`
 
 const components = {
   a: props => <StyledMdLink {...props} />,
-  img: props => <img style={{ borderRadius: '2rem' }} {...props} />,
   blockquote: Quote,
   ...shortcodes,
 }
