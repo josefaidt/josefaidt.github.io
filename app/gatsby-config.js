@@ -22,7 +22,7 @@ const config = {
     ],
   },
   plugins: [
-    '@josef/gatsby-theme',
+    '@josefaidt/gatsby-theme',
     {
       resolve: '@dschau/gatsby-source-github',
       options: {

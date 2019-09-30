@@ -1,5 +1,5 @@
 {
-  "name": "@josef/app",
+  "name": "@josefaidt/app",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -19,6 +19,6 @@
     "gatsby-plugin-offline": "^3.0.8",
     "gatsby-plugin-sitemap": "^2.2.14",
     "@dschau/gatsby-source-github": "^0.0.1",
-    "@josef/gatsby-theme": "*"
+    "@josefaidt/gatsby-theme": "*"
   }
 }

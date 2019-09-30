@@ -1,8 +1,12 @@
 {
-  "name": "@josef/gatsby-theme",
-  "version": "1.0.0",
+  "name": "@josefaidt/gatsby-theme",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "theme"
+  ],
   "devDependencies": {
     "gatsby": "^2.15.21",
     "react": "^16.9.0",

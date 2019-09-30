@@ -17,7 +17,6 @@ const Posts = ({ location, data }) => {
       </Quote>
       <div>
         {allBlogPost.edges.map(({ node: post }, i) => {
-          console.log('POSTS NODE', post)
           return <BlogCard key={i} post={post} />
         })}
       </div>

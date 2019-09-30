@@ -1,12 +1,11 @@
 {
-  "name": "@josef/root",
+  "name": "@josefaidt/root",
   "private": true,
-  "description": "my personal site",
   "version": "2.2.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "start": "yarn workspace @josef/app run start",
-    "build": "yarn workspace @josef/app run build",
+    "start": "yarn workspace @josefaidt/app run start",
+    "build": "yarn workspace @josefaidt/app run build",
     "clean": "rm -rf node_modules **/node_modules yarn.lock",
     "reload": "yarn clean; yarn install"
   },
