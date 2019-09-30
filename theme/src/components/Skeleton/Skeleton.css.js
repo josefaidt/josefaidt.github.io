@@ -23,10 +23,6 @@ const StyledLayout = styled.div`
   a {
     color: ${props => props.theme.main};
   }
-  a:hover {
-    filter: brightness(80%);
-    transition: filter 0.2s ease;
-  }
   @media only screen and (max-width: 760px) {
     .content {
       padding-bottom: 5rem;

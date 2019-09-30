@@ -11,20 +11,44 @@ const StyledBackButton = styled.div`
   max-width: 100px;
   text-align: center;
 
-  &:hover {
+  /* &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     letter-spacing: 3px;
     transition: 0.3s ease;
-    background-color: ${props => props.theme}80;
-    border: 0.5px solid ${props => props.theme}80;
+    background-color: ${props => props.theme.main.concat('80')};
+    border: 0.5px solid ${props => props.theme.text};
     color: white;
   }
 
   &:active {
-    background-color: ${props => props.theme}bf;
+    background-color: ${props => props.theme.main.concat('BF')};
     color: white;
     transition: 0.1s ease;
     letter-spacing: 3px;
+  } */
+  a {
+    padding: 0.5rem 0.5rem;
+    margin: 0.2rem;
+    text-decoration: none;
+    line-height: 1rem;
+  }
+  @media (min-width: 760px) {
+    a.active,
+    a.active:hover {
+      filter: none;
+      background-color: ${props => props.theme.main.concat('DF')};
+      transition: all 200ms;
+      color: white;
+      border-radius: 0.2rem;
+    }
+    a:hover {
+      filter: none !important;
+      background-color: ${props => props.theme.main.concat('DF')};
+      transition: all 200ms;
+      color: white;
+      /* padding-top: 0.7rem; */
+      border-radius: 0.2rem;
+    }
   }
 
   .container {

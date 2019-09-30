@@ -1,33 +1,39 @@
 import styled from 'styled-components'
 
 export const StyledNav = styled.div`
+  display: flex;
+  align-items: center;
+
+
   font-family: 'Josefin Sans';
   font-size: 1.1rem;
   font-weight: 700;
   padding-bottom: 0;
   margin: auto;
-  a {
-    padding: 0 0.5rem;
+  /* a {
+    padding: 0.5rem 0.5rem;
+    margin: 0.2rem;
     text-decoration: none;
+    line-height: 1rem;
   }
   @media (min-width: 760px) {
     a.active,
     a.active:hover {
-      filter: brightness(70%);
-      padding-bottom: 1rem;
-      border-bottom: 0;
+      filter: none;
+      background-color: ${props => props.theme.main.concat('DF')};
+      transition: all 200ms;
+      color: white;
+      border-radius: 0.2rem;
     }
     a:hover {
-      padding-bottom: 1rem;
-      border-bottom: 1px solid;
-      transition: ease 300ms;
+      filter: none !important;
+      background-color: ${props => props.theme.main.concat('DF')};
+      transition: all 200ms;
+      color: white;
+      /* padding-top: 0.7rem; */
+      border-radius: 0.2rem;
     }
-  }
-  a:active {
-    filter: brightness(60%);
-    transition: ease 100ms;
-    border-bottom: 1px solid;
-  }
+  } */
   .screen {
     margin: 0 auto;
     z-index: 1;
@@ -48,7 +54,7 @@ export const StyledNav = styled.div`
     width: 100%;
     position: fixed;
     bottom: 0;
-    a {
+    /* a {
       flex-grow: 1;
       height: 100%;
       display: flex;
@@ -57,6 +63,6 @@ export const StyledNav = styled.div`
     }
     a:active {
       border-bottom: none;
-    }
+    } */
   }
 `

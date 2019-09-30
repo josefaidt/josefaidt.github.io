@@ -27,12 +27,13 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   .icon svg {
     fill: rgb(90, 83, 91);
     height: ${props => props.iHeight};
-    filter: brightness(120%);
+    /* filter: brightness(100%); */
   }
 
   .share {
     color: ${props => props.theme.text};
     font-weight: bold;
+    text-shadow: 0rem 0.05rem ${props => props.theme.text};
   }
 
   .icon:hover .share,
