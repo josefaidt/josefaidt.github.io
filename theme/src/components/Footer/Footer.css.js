@@ -19,6 +19,10 @@ const StyledFooter = styled.footer`
     justify-content: space-between;
   }
 
+  .signature {
+    font-size: 0.8rem;
+  }
+
   @media only screen and (max-width: 760px) {
     background-color: WHITESMOKE;
     position: relative;
