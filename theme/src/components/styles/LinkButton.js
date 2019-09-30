@@ -4,6 +4,7 @@ import styled, { ThemeContext } from 'styled-components'
 
 const StyledLink = styled(Link)`
   padding: 0.5rem 0.5rem;
+  padding-top: 0.65rem;
   margin: 0.2rem;
   text-decoration: none;
   line-height: 1rem;

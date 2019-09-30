@@ -5,7 +5,7 @@ module.exports = options => ({
     siteUrl: 'https://josefaidt.dev',
     keywords: ['josef', 'aidt', 'personal', 'portfolio'],
     description: 'Welcome to my personal site',
-    image: 'content/assets/images/favicon.jpg',
+    image: 'content/assets/images/favicon.png',
   },
   plugins: [
     `gatsby-transformer-json`,
@@ -39,9 +39,13 @@ module.exports = options => ({
               withWebp: true,
               showCaptions: false,
               backgroundColor: 'transparent',
-              wrapperStyle: `border-radius: 1rem;`,
+              wrapperStyle: `
+                border-radius: 1rem;
+                overflow: hidden;
+              `,
               tracedSVG: {
                 color: '#c6797ecc',
+                borderRadius: '1rem',
                 turnPolicy: 'TURNPOLICY_MAJORITY',
               },
             },
