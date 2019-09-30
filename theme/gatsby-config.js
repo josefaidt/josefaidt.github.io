@@ -64,12 +64,12 @@ module.exports = options => ({
         remarkPlugins: [require(`remark-slug`)],
       },
     },
-    options.blog && {
+    {
       resolve: `gatsby-theme-blog-core`,
       options: {
         basePath: `/blog`,
         mdx: false,
       },
     },
-  ].filter(Boolean),
+  ],
 })
