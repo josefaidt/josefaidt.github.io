@@ -6,7 +6,6 @@ import { StyledPostLink, StyledTagList, StyledTag } from '../styles/Tags.css'
 const StyledCard = styled.article`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
   border-radius: 5px;
   margin: 1rem 0;
   transition: transform 0.3s ease;

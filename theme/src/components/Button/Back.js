@@ -2,12 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled, { ThemeContext } from 'styled-components'
-import LinkButton from '../styles/LinkButton'
+import LinkButton from './LinkButton'
 
 const StyledLink = styled(LinkButton)`
   border: 2px solid ${props => props.theme.text.concat('df')};
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
+    transition: all 0ms;
     border-color: ${props => props.theme.main.concat('DF')};
+    background-color: ${props => props.theme.main.concat('DF')};
+    color: white;
   }
 `
 

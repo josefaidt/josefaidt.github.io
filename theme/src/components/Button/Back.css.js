@@ -51,6 +51,14 @@ const StyledBackButton = styled.div`
     }
   }
 
+  @media (max-width: 768px) {
+    a:hover,
+    a:active {
+      background-color: ${props => props.theme.main.concat('DF')};
+      color: white;
+    }
+  }
+
   .container {
     padding: 1rem;
     filter: brightness(150%);

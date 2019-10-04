@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { ThemeContext } from 'styled-components'
-import StyledLink from '../styles/LinkButton'
+import StyledLink from '../Button/LinkButton'
 import { StyledNav } from './Nav.css'
 
 const Nav = props => {
