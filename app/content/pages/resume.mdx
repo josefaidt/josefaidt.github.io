@@ -10,7 +10,7 @@ export default ({ children, data, ...props }) => (
   <PageLayout>
     <Title>
       <h1>Résumé</h1>
-      <Icon icon="pdf" link={data.file.publicURL} />
+      <Icon icon="pdf" link={data.file.publicURL} downloadName={data.file.name} />
     </Title>
     <Line />
     <h2>Personal Projects</h2>
@@ -48,6 +48,7 @@ export const query = graphql`
   query {
     file(name: { eq: "jaidt_Resume" }) {
       publicURL
+      name
     }
     githubUser {
       name

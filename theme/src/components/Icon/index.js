@@ -49,7 +49,7 @@ const Icon = props => {
         rel="noopener noreferrer"
         target="_blank"
         style={{ textDecoration: 'none' }}
-        download={props.icon === 'pdf'}
+        download={props.icon === 'pdf' ? (props.downloadName ? props.downloadName : true) : false}
         {...props}
       >
         {renderIcon(props.icon, props.invert)}
