@@ -23,7 +23,7 @@ const Nav = props => {
   return (
     <StyledNav className="nav" theme={theme}>
       {navItems.map(({ node: { name, route } }, key) => (
-        <StyledLink activeClassName="active" to={route} key={key}>
+        <StyledLink activeClassName="active" to={route} key={key} partiallyActive={route !== '/'}>
           {name.toUpperCase()}
         </StyledLink>
       ))}
