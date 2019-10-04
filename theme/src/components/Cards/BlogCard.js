@@ -20,12 +20,10 @@ const StyledCard = styled.article`
   /* transition */
   h1,
   p,
-  span,
-  span.tag {
+  span {
     color: ${props => props.theme.grey};
-    transition: color 0.2s ease;
+    /* transition: color 0.2s ease; */
   }
-  /* filters */
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -35,8 +33,9 @@ const StyledCard = styled.article`
     font-size: 0.8rem;
   }
   span.tag {
-    color: white;
-    background-color: ${props => props.theme.grey};
+    font-weight: bold;
+    color ${props => props.theme.background};
+    background-color: ${props => props.theme.text};
     transition: background-color 0.2s linear;
   }
   #date {
@@ -44,15 +43,10 @@ const StyledCard = styled.article`
   }
 
   &:hover {
-    h1,
-    span#date,
-    p {
-      color: ${props => props.theme.text};
-    }
     span.tag {
-      background-color: ${props => props.theme.text};
+      color: ${props => props.theme.background};
+      background-color: ${props => props.theme.main};
       transition: background-color 0.2s linear;
-      color: white;
     }
   }
 

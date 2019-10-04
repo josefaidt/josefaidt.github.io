@@ -27,7 +27,6 @@ const StyledPostLink = styled.div`
     span,
     span.tag {
       color: ${props => props.theme.text};
-      transition: color 0.2s ease;
     }
     /* filters */
     h1 {
@@ -39,8 +38,10 @@ const StyledPostLink = styled.div`
       font-size: 0.8rem;
     }
     span.tag {
-      color: white;
-      background-color: #8b868c;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      color: ${props => props.theme.background};
+      background-color: ${props => props.theme.text.concat('DF')};
       transition: background-color 0.2s linear;
     }
     #date {
@@ -48,15 +49,10 @@ const StyledPostLink = styled.div`
     }
   }
   .container:hover {
-    h1,
-    span#date,
-    p {
-      color: ${props => props.theme.text};
-    }
     span.tag {
+      color: ${props => props.theme.background.concat('DF')};
       background-color: ${props => props.theme.text};
       transition: background-color 0.2s linear;
-      color: white;
     }
   }
 
