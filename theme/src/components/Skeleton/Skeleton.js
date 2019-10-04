@@ -12,7 +12,6 @@ const Skeleton = ({ children }) => {
   const theme = React.useContext(ThemeContext)
   return (
     <>
-      <GlobalStyle />
       <StyledLayout theme={theme}>
         <div className="content">
           <Header siteTitle="josef.aidt">

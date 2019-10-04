@@ -1,41 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
-/* @font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/OpenSans-Regular.ttf") format("ttf")
-}
-@font-face {
-  font-family: "Josefin Sans";
-  src: url("../../assets/JosefinSans-Regular.ttf") format("ttf")
-} */
-
-/* josefin-sans-regular - latin */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../static/fonts/josefin-sans-v14-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Josefin Sans Regular'), local('JosefinSans-Regular'),
-       url('../../static/fonts/josefin-sans-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../static/fonts/josefin-sans-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../../static/fonts/josefin-sans-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../../static/fonts/josefin-sans-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../../static/fonts/josefin-sans-v14-latin-regular.svg#JosefinSans') format('svg'); /* Legacy iOS */
-}
-
-/* open-sans-regular - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../static/fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('../../static/fonts/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../static/fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../../static/fonts/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../../static/fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../../static/fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
-}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans&display=swap');
 
 html {
   font-family: sans-serif;
