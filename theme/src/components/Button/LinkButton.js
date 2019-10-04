@@ -15,13 +15,13 @@ const StyledLink = styled(Link)`
     filter: none;
     background-color: ${props => props.theme.main.concat('DF')};
     transition: all 200ms;
-    color: white;
+    color: ${props => props.theme.background};
   }
   &:hover {
     filter: none;
     background-color: ${props => props.theme.main.concat('DF')};
     transition: all 200ms;
-    color: white;
+    color: ${props => props.theme.background};
   }
 `
 
