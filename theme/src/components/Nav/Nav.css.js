@@ -19,7 +19,9 @@ export const StyledNav = styled.div`
   @media only screen and (max-width: 760px) {
     height: 9vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 0;
+    background-color: ${props => props.theme.background};
 
     /* box-shadow: 0 0 40px 0 ${props => props.theme.text}; */
     box-shadow: 0px 0px 40px -10px ${props => props.theme.text};
