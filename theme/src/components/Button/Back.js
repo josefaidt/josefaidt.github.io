@@ -9,7 +9,6 @@ const StyledLink = styled(LinkButton)`
   &:hover,
   &:active,
   &:focus {
-    transition: all 0ms;
     border-color: ${props => props.theme.main.concat('DF')};
     background-color: ${props => props.theme.main.concat('DF')};
     color: white;
