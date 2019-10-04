@@ -56,7 +56,7 @@ const StyledCard = styled.article`
 `
 
 const renderTags = tags => {
-  const hashtagged = tags.map(tag => `#${tag}`)
+  const hashtagged = tags.map(tag => `#${tag.toLowerCase()}`)
   return (
     <div>
       {hashtagged.map((tag, key) => (

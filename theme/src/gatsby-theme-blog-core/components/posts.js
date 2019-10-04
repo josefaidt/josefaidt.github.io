@@ -74,7 +74,10 @@ const Posts = ({ location, data }) => {
   const filterPosts = (keyword, clear = false) => {
     console.log('FILTERING', keyword)
     if (clear) return setFilteredPosts([...baseState])
-    else return setFilteredPosts([...baseState].filter(post => post.keywords.includes(keyword)))
+    else
+      return setFilteredPosts(
+        [...baseState].filter(post => post.keywords.includes(keyword.toLowerCase()))
+      )
   }
 
   const handleKeyPress = event => {
