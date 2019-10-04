@@ -5,7 +5,7 @@ import { GlobalStyle } from './src/components/styles/global.css'
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider theme={theme}>
-    <GlobalStyle />
+    <GlobalStyle theme={theme} />
     {element}
   </ThemeProvider>
 )
