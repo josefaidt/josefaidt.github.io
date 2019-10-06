@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled, { ThemeContext } from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -59,7 +58,7 @@ const BlogPost = ({
         title={title}
         siteUrl={`${meta.siteUrl}${slug}`}
         description={`${excerpt.slice(0, 140)}...`}
-        image={image ? image.publicURL : '/_images/logo2.png'}
+        image={image ? image.publicURL : ''}
       />
       <article>
         <StyledBlogHeader>
