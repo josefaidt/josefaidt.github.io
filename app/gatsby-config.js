@@ -63,17 +63,6 @@ const config = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `josefaidt.dev`,
-        short_name: `josefaidt.dev`,
-        start_url: `/`,
-        background_color: `#172030`,
-        theme_color: `#c6797e`,
-        display: `minimal-ui`,
-      },
-    },
   ],
 }
 

@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'josef.aidt',
+    title: '@josefaidt/gatsby-theme',
     author: '@josefaidt',
-    siteUrl: 'https://josefaidt.dev',
-    keywords: ['josef', 'aidt', 'personal', 'portfolio'],
-    description: 'Welcome to my personal site',
+    siteUrl: 'https://gatsby-theme.josefaidt.dev',
+    keywords: ['josef', 'aidt', 'gatsby', 'theme'],
+    description: 'Welcome to @josefaidt/gatsby-theme',
     social: [
       {
         name: `Twitter`,
@@ -16,20 +16,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    '@josefaidt/gatsby-theme',
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `josefaidt.dev`,
-        short_name: `josefaidt.dev`,
-        start_url: `/`,
-        background_color: `#172030`,
-        theme_color: `#c6797e`,
-        display: `minimal-ui`,
-      },
-    },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-netlify`,
-  ],
+  plugins: ['@josefaidt/gatsby-theme', `gatsby-plugin-sitemap`, `gatsby-plugin-netlify`],
 }

@@ -5,6 +5,7 @@
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
     "start": "yarn workspace @josefaidt/app run start",
+    "start:example": "yarn workspace @josefaidt/example run start",
     "build": "yarn workspace @josefaidt/app run build",
     "clean": "rm -rf node_modules **/node_modules yarn.lock",
     "reload": "yarn clean; yarn install"
@@ -19,7 +20,8 @@
   },
   "workspaces": [
     "app",
-    "theme"
+    "theme",
+    "example"
   ],
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.9",
