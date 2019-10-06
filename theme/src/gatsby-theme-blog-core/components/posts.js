@@ -10,14 +10,27 @@ const StyledForm = styled.form`
   display: flex;
   margin: 1rem 0 0;
 
+  @media screen and (max-width: 768px) {
+    & {
+      flex-wrap: wrap;
+    }
+  }
+
   input {
     margin: 0.2rem;
+    border-radius: 0.2rem;
   }
 
   input[type='text'] {
     flex-grow: 1;
     border: 2px solid ${props => props.theme.text.concat('CC')};
     padding: 0 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    input[type='text'] {
+      width: 100%;
+    }
   }
 
   input:not([type='text']) {
@@ -41,6 +54,12 @@ const StyledForm = styled.form`
       border-color: ${props => props.theme.main};
       transition: all 200ms;
       color: ${props => props.theme.background};
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    input[type='submit'] {
+      margin-left: auto;
     }
   }
 `
@@ -71,12 +90,10 @@ const Posts = ({ location, data }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log('EVENT SUBMITTED', event)
     return filterPosts(searchInput)
   }
 
   const filterPosts = (keyword, clear = false) => {
-    console.log('FILTERING', keyword)
     if (clear) return setFilteredPosts([...posts])
     else
       return setFilteredPosts(
@@ -84,7 +101,7 @@ const Posts = ({ location, data }) => {
       )
   }
 
-  const handleKeyPress = event => {
+  const handleKeyDown = event => {
     if (event.keyCode === 27) {
       // if `esc` key is pressed
       event.target.value = ''
@@ -107,9 +124,9 @@ const Posts = ({ location, data }) => {
           formAction="submit"
           placeholder="Tag Search (e.g. JavaScript)"
           onChange={e => setSearchInput(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
         ></input>
-        <input type="submit" />
+        <input type="submit" value="Apply" />
         <input type="reset" value="Reset" onClick={e => filterPosts(null, true)} />
       </StyledForm>
       <div>
