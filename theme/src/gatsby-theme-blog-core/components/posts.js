@@ -66,7 +66,6 @@ const Posts = ({ location, data }) => {
   `)
   const posts = allBlogPosts.map(({ node }) => node)
   const keywords = keywordEdges.map(({ node }) => node)
-  const allKeywords = new Set(keywords.map(post => post.keywords).flat())
   const [filteredPosts, setFilteredPosts] = React.useState(posts)
   const [searchInput, setSearchInput] = React.useState(null)
 
