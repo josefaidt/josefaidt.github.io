@@ -46,45 +46,47 @@ const StyledForm = styled.form`
 `
 
 const Posts = ({ location, data }) => {
-  const { site, allBlogPost } = data
-  const keywords = useStaticQuery(graphql`
+  const {
+    site,
+    allBlogPost: { edges: allBlogPosts },
+  } = data
+  const {
+    allBlogPost: { edges: keywordEdges },
+  } = useStaticQuery(graphql`
     query {
       allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
         edges {
           node {
+            id
             keywords
           }
         }
       }
     }
   `)
+  const posts = allBlogPosts.map(({ node }) => node)
+  const keywords = keywordEdges.map(({ node }) => node)
+  const allKeywords = new Set(keywords.map(post => post.keywords).flat())
+  const [filteredPosts, setFilteredPosts] = React.useState(posts)
+  const [searchInput, setSearchInput] = React.useState(null)
 
-  // attach keywords to their respective posts
-  allBlogPost.edges.map(({ node: post }, i) => {
-    post.keywords = keywords.allBlogPost.edges[i].node.keywords
-  })
-  const baseState = allBlogPost.edges.map(({ node }) => node)
-  const allKeywords = new Set(baseState.map(post => post.keywords).flat())
-  console.log('ALL KEYWORDS', allKeywords)
-  // filtered State for tag filtering
-  const [filteredPosts, setFilteredPosts] = React.useState(baseState)
-  // const [filteredKeywords, setFilteredKeywords] = React.useState(null)
-  console.log(filteredPosts)
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log('EVENT SUBMITTED', event)
+    return filterPosts(searchInput)
+  }
 
   const filterPosts = (keyword, clear = false) => {
     console.log('FILTERING', keyword)
-    if (clear) return setFilteredPosts([...baseState])
+    if (clear) return setFilteredPosts([...posts])
     else
       return setFilteredPosts(
-        [...baseState].filter(post => post.keywords.includes(keyword.toLowerCase()))
+        [...posts].filter(post => post.keywords.includes(keyword.toLowerCase()))
       )
   }
 
   const handleKeyPress = event => {
-    if (event.keyCode === 13) {
-      // if `enter` key is pressed
-      filterPosts(event.target.value)
-    } else if (event.keyCode === 27) {
+    if (event.keyCode === 27) {
       // if `esc` key is pressed
       event.target.value = ''
       filterPosts(null, true)
@@ -95,7 +97,7 @@ const Posts = ({ location, data }) => {
   return (
     <Skeleton>
       <BlogText />
-      <StyledForm>
+      <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="tag-search" className="visually-hidden">
           Blog Post Keyword Search
         </label>
@@ -105,19 +107,38 @@ const Posts = ({ location, data }) => {
           type="text"
           formAction="submit"
           placeholder="Tag Search (e.g. JavaScript)"
-          value={this}
-          onKeyDown={e => handleKeyPress(e)}
+          onChange={e => setSearchInput(e.target.value)}
+          onKeyPress={handleKeyPress}
         ></input>
-        <input type="Submit" />
+        <input type="submit" />
         <input type="reset" value="Reset" onClick={e => filterPosts(null, true)} />
       </StyledForm>
       <div>
         {filteredPosts.map((post, i) => {
+          const [{ keywords: postKeywords }] = keywords.filter(({ id }) => post.id === id)
+          post.keywords = postKeywords
           return <BlogCard key={i} post={post} />
         })}
       </div>
     </Skeleton>
   )
 }
+
+export const PageQuery = graphql`
+  query {
+    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+      edges {
+        node {
+          id
+          excerpt
+          slug
+          title
+          keywords
+          date(formatString: "MMMM DD, YYYY")
+        }
+      }
+    }
+  }
+`
 
 export default Posts
