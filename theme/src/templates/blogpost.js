@@ -24,7 +24,7 @@ const BlogPost = ({
   const { id, slug } = post
   const blogIdAnchor = `/blog/#${id}`
   const { title, image, tags, excerpt } = post
-  const seoTags = [`gatsby`, `josef aidt`, `josef`, `aidt`, `blog`]
+  const seoTags = [`blog`]
   const shareText = encodeURIComponent(title)
   const twitterUsername = meta.social
     .filter(s => s.name.toLowerCase() === 'twitter')[0]
