@@ -4,8 +4,6 @@ A responsive theme for personal sites and blogs.
 
 ## Installation
 
-To use this theme in your Gatsby site, follow these instructions:
-
 1. Install the theme
 
    ```sh
@@ -16,10 +14,10 @@ To use this theme in your Gatsby site, follow these instructions:
 
    ```js
    module.exports = {
-     plugins: [
-       {
-         resolve: '@josefaidt/gatsby-theme',
-       },
-     ],
+     plugins: ['@josefaidt/gatsby-theme'],
    }
    ```
+
+## Docs
+
+Visit the [documentation](https://gatsby-theme.josefaidt.dev).

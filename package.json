@@ -1,7 +1,7 @@
 {
   "name": "@josefaidt/root",
   "private": true,
-  "version": "2.2.0",
+  "version": "2.3.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
     "start": "yarn workspace @josefaidt/app run start",
