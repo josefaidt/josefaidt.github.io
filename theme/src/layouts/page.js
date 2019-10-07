@@ -6,7 +6,7 @@ import MdxProvider from '../components/MDXProvider'
 const PageTemplate = props => {
   return (
     <Skeleton>
-      <SEO title={props.pageContext.frontmatter.title} />
+      <SEO title={props.pageContext && props.pageContext.frontmatter.title} />
       <MdxProvider>{props.children}</MdxProvider>
     </Skeleton>
   )
