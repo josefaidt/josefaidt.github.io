@@ -234,6 +234,7 @@ h1 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+  margin-top: 1.2rem
   margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -251,6 +252,7 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+  margin-top: 1.2rem
   margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,

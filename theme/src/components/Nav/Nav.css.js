@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledNav = styled.div`
+export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
 

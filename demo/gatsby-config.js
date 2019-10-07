@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: '@josefaidt/gatsby-theme',
-    titleTemplate: 'j: ',
+    title: 'gatsby-theme',
     author: '@josefaidt',
     siteUrl: 'https://gatsby-theme.josefaidt.dev',
     keywords: ['josef', 'aidt', 'gatsby', 'theme'],
@@ -13,7 +12,7 @@ module.exports = {
       },
       {
         name: `GitHub`,
-        url: `https://github.com/josefaidt`,
+        url: `https://github.com/josefaidt/josefaidt.github.io/tree/master/src/theme`,
       },
     ],
   },

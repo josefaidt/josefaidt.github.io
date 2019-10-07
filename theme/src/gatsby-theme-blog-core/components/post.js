@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogPost from '../../templates/blogpost'
+import BlogPost from '../../layouts/blogpost'
 
 const Post = ({ location, data }) => {
   const { blogPost, previous, next } = data

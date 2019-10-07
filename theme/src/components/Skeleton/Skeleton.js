@@ -14,7 +14,7 @@ const Skeleton = ({ children }) => {
     <>
       <StyledLayout theme={theme}>
         <div className="content">
-          <Header siteTitle="josef.aidt">
+          <Header>
             <Nav />
           </Header>
           <Container>{children}</Container>

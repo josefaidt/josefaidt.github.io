@@ -8,6 +8,14 @@ const Quote = styled.div`
   font-style: italic;
   filter: brightness(120%);
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
   @media only screen and (max-width: 760px) {
     margin: 3rem 1rem;
   }

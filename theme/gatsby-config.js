@@ -6,6 +6,16 @@ module.exports = options => {
       siteUrl: 'https://josefaidt.dev',
       keywords: ['josef', 'aidt', 'personal', 'portfolio'],
       description: 'Welcome to my personal site',
+      social: [
+        {
+          name: `Twitter`,
+          url: `https://twitter.com/josefaidt`,
+        },
+        {
+          name: `GitHub`,
+          url: `https://github.com/josefaidt/josefaidt.github.io/tree/master/src/theme`,
+        },
+      ],
     },
     plugins: [
       `gatsby-transformer-json`,
@@ -35,7 +45,7 @@ module.exports = options => {
         resolve: 'gatsby-plugin-mdx',
         options: {
           defaultLayouts: {
-            default: require.resolve('./src/templates/page.js'),
+            default: require.resolve('./src/layouts/page.js'),
           },
           gatsbyRemarkPlugins: [
             {

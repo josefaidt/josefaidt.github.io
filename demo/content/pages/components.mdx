@@ -1,0 +1,125 @@
+---
+title: Components
+---
+
+# @josefaidt/gatsby-theme
+
+> A versatile theme with subtelty.
+
+Built with `gatsby-theme-blog-core`, this theme offers an extended experience for building portfolio websites with a blogging platform, all composed using MDX.
+
+<br />
+
+**Configuration:**
+
+- [Files](#files)
+- [gatsby-config](#gatsby-config)
+- [Theme](#theme)
+- [Navigation](#navigation)
+- [Blog](#blog)
+  - [Blog Text](#blog-text)
+
+## Files
+
+```
+| my-site/
+  |-- assets/
+  |   |-- images/
+  |   |   |-- favicon.png
+  |-- content/
+  |   |-- pages/
+  |       |-- index.mdx
+  |       |-- nav.json
+  |-- package.json
+  |-- gatsby-config.js
+```
+
+## gatsby-config
+
+```js
+// gatsby-config.js
+siteMetadata: {
+  title: 'josef.aidt', // seo title prefix
+  author: '@josefaidt',
+  siteUrl: 'https://josefaidt.dev',
+  // base set of seo keywords
+  keywords: ['josef', 'aidt', 'personal', 'portfolio'],
+  // default seo description
+  description: 'Welcome to my personal site',
+  // social links (used by footer to render icons)
+  social: [
+    {
+      name: `Twitter`,
+      url: `https://twitter.com/josefaidt`,
+    },
+    {
+      name: `GitHub`,
+      url: `https://github.com/josefaidt`,
+    },
+  ],
+},
+```
+
+## Theme
+
+This theme uses the ThemeProvider from `style-components`. To override the default theme colors, shadow `components/theme.js`
+
+```
+// src/@josefaidt/gatsby-theme/components/theme.js
+export default {
+  main: '#d46a6a',
+  accent: '#c6797e',
+  text: '#5a535b',
+  grey: '#8b868c',
+  background: 'white',
+  backgroundContrast: 'whitesmoke',
+}
+```
+
+## Navigation
+
+We must configure the navigation component by creating a JSON file, `content/pages/nav.json` with our node's name, route, and component. Note for the Blog you do not need to pass a component
+
+```json
+[
+  {
+    "name": "home",
+    "route": "/",
+    "component": "index.mdx"
+  },
+  {
+    "name": "about",
+    "route": "/about",
+    "component": "about.mdx"
+  },
+  {
+    "name": "blog",
+    "route": "/blog"
+  }
+]
+```
+
+## Blog
+
+This theme uses `gatsby-theme-blog-core` to power the blog platform.
+
+### Blog Text
+
+Text displayed on main blog page above article cards
+
+```js
+// src/@josefaidt/gatsby-theme/components/BlogTest.js
+import React from 'react'
+
+const BlogText = props => (
+  <>
+    <h1>Blog</h1>
+    <p>
+      This is the blog description, to edit shadow{' '}
+      <code>@josefaidt/gatsby-theme/components/blog.js</code>.
+    </p>
+  </>
+)
+
+export default BlogText
+```

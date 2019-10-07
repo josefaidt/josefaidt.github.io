@@ -1,14 +1,6 @@
----
-title: Components
----
-
-## Footer Icons
-
-```js
-// @josefaidt/gatsby-theme/components/Footer/Footer.icons.js
 import React from 'react'
-import Icons from '../Icon/Icons'
-import Icon from '../Icon'
+import Icons from '@josefaidt/gatsby-theme/src/components/Icon/Icons'
+import Icon from '@josefaidt/gatsby-theme/src/components/Icon'
 
 const FooterIcons = props => (
   <Icons iconHeight="1.3rem">
@@ -22,4 +14,3 @@ const FooterIcons = props => (
 )
 
 export default FooterIcons
-```

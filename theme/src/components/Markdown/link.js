@@ -6,6 +6,9 @@ const MdLink = props => {
   if (props.href.startsWith('http')) {
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     return <a {...props} />
+  } else if (props.href.startsWith('#')) {
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    return <a {...props} />
   } else {
     return <Link to={props.href} {...props} />
   }
