@@ -4,7 +4,7 @@ export { default as Quote } from './src/components/styles/Quote'
 export { default as Icon } from './src/components/Icon'
 export { default as MdxProvider } from './src/components/MDXProvider'
 export { default as BlogPost } from './src/layouts/blogpost'
-export { default as PageLayout } from './src/templates/page'
+export { default as PageLayout } from './src/layouts/page'
 export { default as Line } from './src/components/styles/Line'
 export { RepoCard } from './src/components/Cards'
 
