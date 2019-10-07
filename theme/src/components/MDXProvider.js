@@ -1,36 +1,24 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/display-name */
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import Quote from './styles/Quote'
-import Line from './styles/Line'
+import Line from './Markdown/break'
+import Link from './Markdown/link'
 import Icon from './Icon'
 import { Title } from './styles/Titles.css'
 
 const shortcodes = {
   Quote,
-  Line,
-  Link,
   Icon,
   Title,
 }
 
-const StyledMdLink = styled.a`
-  filter: contrast(115%);
-  &:hover {
-    filter: brightness(80%) contrast(80%);
-    transition: filter 0.2s ease;
-  }
-  &:active {
-    filter: brightness(80%) contrast(80%);
-  }
-`
-
 const components = {
-  a: props => <StyledMdLink {...props} />,
+  a: props => <Link {...props} />,
   blockquote: Quote,
+  hr: Line,
   ...shortcodes,
 }
 

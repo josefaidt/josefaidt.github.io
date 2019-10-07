@@ -32,7 +32,11 @@
     "prettier": "^1.18.2"
   },
   "eslintConfig": {
-    "extends": "@josefaidt/eslint-config"
+    "extends": "@josefaidt/eslint-config",
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "sourceType": "module"
+    }
   },
   "prettier": "@josefaidt/prettier-config",
   "husky": {

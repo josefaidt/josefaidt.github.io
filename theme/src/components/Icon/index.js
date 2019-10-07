@@ -63,8 +63,9 @@ Icon.propTypes = {
   share: PropTypes.bool,
   invert: PropTypes.bool,
   icon: PropTypes.string,
-  link: PropTypes.string,
+  link: PropTypes.string.isRequired,
   color: PropTypes.string,
+  downloadName: PropTypes.string,
 }
 
 export default Icon

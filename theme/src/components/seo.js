@@ -101,7 +101,7 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl }) => {
         )
         .concat(meta)}
       title={metaTitle}
-      titleTemplate={`${site.siteMetadata.title.split('')[0]}: %s`}
+      titleTemplate={`${site.siteMetadata.title}: %s`}
     >
       <link rel="icon" href={favicon} />
     </Helmet>
@@ -120,8 +120,8 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-  siteUrl: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  siteUrl: PropTypes.string,
 }
 
 export default SEO

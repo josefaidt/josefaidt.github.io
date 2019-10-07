@@ -1,5 +1,3 @@
-const theme = require('./src/components/theme.js')
-
 module.exports = options => {
   return {
     siteMetadata: {
@@ -49,11 +47,11 @@ module.exports = options => {
                 showCaptions: false,
                 backgroundColor: 'transparent',
                 wrapperStyle: `
-                border-radius: 1rem;
-                overflow: hidden;
-              `,
+                  border-radius: 1rem;
+                  overflow: hidden;
+                `,
                 tracedSVG: {
-                  color: theme.accent.concat('CC'),
+                  color: '#c6797ecc',
                   borderRadius: '1rem',
                   turnPolicy: 'TURNPOLICY_MAJORITY',
                 },
@@ -80,8 +78,8 @@ module.exports = options => {
           name: `josefaidt.dev`,
           short_name: `josefaidt.dev`,
           start_url: `/`,
-          background_color: theme.backgroundColor,
-          theme_color: theme.main,
+          background_color: 'whitesmoke',
+          theme_color: '#D46A6A',
           display: `minimal-ui`,
         },
       },
