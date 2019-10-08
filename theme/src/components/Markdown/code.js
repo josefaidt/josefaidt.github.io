@@ -31,20 +31,17 @@ const CodeBlock = ({ children, className = '' }) => {
   const language = className.replace(/language-/, '')
   return (
     <Highlight {...defaultProps} code={children} language={language} theme={prismTheme}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => {
-        console.log(tokens)
-        return (
-          <pre className={className} style={{ ...style, padding: '20px' }}>
-            {tokens.slice(0, tokens.length - 1).map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )
-      }}
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ ...style, padding: '20px' }}>
+          {tokens.slice(0, tokens.length - 1).map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
     </Highlight>
   )
 }
