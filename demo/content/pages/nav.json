@@ -1,0 +1,12 @@
+[
+  {
+    "name": "install",
+    "route": "/",
+    "component": "index.mdx"
+  },
+  {
+    "name": "components",
+    "route": "/components",
+    "component": "components.mdx"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "name": "@josefaidt/gatsby-theme",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "theme"
+  ],
+  "devDependencies": {
+    "gatsby": "^2.15.21",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.15.21",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.0",
+    "@mdx-js/react": "^1.5.0",
+    "gatsby-image": "^2.2.23",
+    "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-mdx": "^1.0.43",
+    "gatsby-plugin-page-creator": "^2.1.21",
+    "gatsby-plugin-sharp": "^2.2.25",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-styled-components": "^3.1.6",
+    "gatsby-remark-images": "^3.1.23",
+    "gatsby-remark-copy-linked-files": "^2.1.20",
+    "gatsby-remark-prismjs": "^3.2.7",
+    "gatsby-remark-smartypants": "^2.1.9",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-json": "^2.2.9",
+    "gatsby-theme-blog-core": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "prop-types": "^15.7.2",
+    "prism-react-renderer": "^1.0.1",
+    "prismjs": "^1.17.1",
+    "react-helmet": "^5.2.1",
+    "react-pose": "^4.0.8",
+    "remark-slug": "^5.1.2",
+    "styled-components": "^4.4.0"
+  }
+}
