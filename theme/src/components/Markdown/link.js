@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 
 const MdLink = props => {
+  const theme = React.useContext(ThemeContext)
   if (props.href.startsWith('http')) {
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     return <a {...props} />
@@ -15,6 +16,7 @@ const MdLink = props => {
 }
 
 const StyledMdLink = styled(MdLink)`
+  color: ${props => props.theme.secondary}
   transition: filter 0.2s ease;
   &:hover {
     filter: brightness(70%) contrast(80%);
