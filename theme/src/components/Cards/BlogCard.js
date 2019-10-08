@@ -45,7 +45,7 @@ const StyledCard = styled.article`
   &:hover {
     span.tag {
       color: ${props => props.theme.background};
-      background-color: ${props => props.theme.main};
+      background-color: ${props => props.theme.primary};
       transition: background-color 0.2s linear;
     }
   }

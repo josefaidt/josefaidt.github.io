@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   }
   div h1 {
     color: ${props => props.theme.text};
-    text-shadow: 0.1rem 0.1rem ${props => props.theme.main};
+    text-shadow: 0.1rem 0.1rem ${props => props.theme.primary};
     margin: 0;
     font-size: 2.5rem;
     font-family: 'Josefin Sans';
@@ -20,7 +20,7 @@ export const StyledHeader = styled.header`
 
   div h1:hover {
     transition: all 300ms;
-    text-shadow: 0.05rem 0.05rem ${props => props.theme.main.concat('CC')};
+    text-shadow: 0.05rem 0.05rem ${props => props.theme.primary.concat('CC')};
   }
 
   div h1 a {

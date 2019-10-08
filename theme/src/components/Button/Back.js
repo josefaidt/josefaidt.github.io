@@ -21,8 +21,8 @@ const StyledLink = styled(LinkButton)`
   &:active,
   &:focus {
     filter: none;
-    background-color: ${props => props.theme.main.concat('DF')};
-    border-color: ${props => props.theme.main};
+    background-color: ${props => props.theme.primary.concat('DF')};
+    border-color: ${props => props.theme.primary};
     transition: all 200ms;
     color: ${props => props.theme.background};
   }
