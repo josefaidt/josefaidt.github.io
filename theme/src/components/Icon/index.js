@@ -49,7 +49,7 @@ const renderIcon = (icon, invert) => {
 
 const Icon = props => {
   return (
-    <StyledIcon>
+    <StyledIcon className="icon">
       <a
         href={props.link}
         rel="noopener noreferrer"
