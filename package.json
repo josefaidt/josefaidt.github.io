@@ -4,7 +4,8 @@
   "version": "2.3.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "start": "yarn workspace @josefaidt/app run start",
+    "start": "yarn start:app",
+    "start:app": "yarn workspace @josefaidt/app run start",
     "start:demo": "yarn workspace @josefaidt/demo run start",
     "build": "yarn build:app && yarn build:demo",
     "build:app": "yarn workspace @josefaidt/app run build",
