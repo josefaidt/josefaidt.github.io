@@ -16,21 +16,28 @@ export const StyledNav = styled.nav`
     box-shadow: 1px ${props => props.theme.text};
   }
 
+  a {
+    white-space: nowrap;
+  }
+
   @media only screen and (max-width: 760px) {
-    height: 9vh;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
     background-color: ${props => props.theme.background};
 
     /* box-shadow: 0 0 40px 0 ${props => props.theme.text}; */
     box-shadow: 0px 0px 40px -10px ${props => props.theme.text};
     text-align: center;
     font-size: 1.2rem;
-    min-height: 7vh;
     z-index: 10;
     width: 100%;
     position: fixed;
     bottom: 0;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    grid-gap: 0.5rem;
+    padding: 0 0.5rem;
+    height: 4rem;
+
   }
 `
