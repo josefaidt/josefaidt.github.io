@@ -89,7 +89,6 @@ const theme = {
       style: {
         color: prism.purple,
         fontStyle: 'italic',
-        fontWeight: 'bold',
       },
     },
     {
