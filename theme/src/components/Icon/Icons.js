@@ -39,7 +39,7 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
 
   .icon:hover .share,
   .icon:hover svg {
-    color: ${props => props.theme.main};
+    color: ${props => props.theme.primary};
     fill: ${props => props.theme.accent};
     transition: ease 0.3s;
   }
