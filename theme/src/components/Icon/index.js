@@ -16,6 +16,12 @@ const PlaceholderIcon = styled.div`
   border-radius: 5px;
 `
 
+const StyledIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const renderIcon = (icon, invert) => {
   switch (icon) {
     case 'pdf':
@@ -43,7 +49,7 @@ const renderIcon = (icon, invert) => {
 
 const Icon = props => {
   return (
-    <div className="icon">
+    <StyledIcon>
       <a
         href={props.link}
         rel="noopener noreferrer"
@@ -55,7 +61,7 @@ const Icon = props => {
         {renderIcon(props.icon, props.invert)}
         {props.share ? <span className="share">&rang;</span> : null}
       </a>
-    </div>
+    </StyledIcon>
   )
 }
 
