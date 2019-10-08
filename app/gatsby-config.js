@@ -63,13 +63,8 @@ const config = {
         ],
       },
     },
+    `gatsby-plugin-netlify`,
   ],
-}
-
-const prodPlugins = [`gatsby-plugin-netlify`]
-
-if (process.env.NODE_ENV.toLowerCase() === 'production') {
-  config.plugins.push(...prodPlugins)
 }
 
 module.exports = config
