@@ -1,7 +1,7 @@
 module.exports = options => {
   return {
     siteMetadata: {
-      title: 'josef.aidt',
+      title: 'gatsby-theme',
       author: '@josefaidt',
       siteUrl: 'https://josefaidt.dev',
       keywords: ['josef', 'aidt', 'personal', 'portfolio'],
