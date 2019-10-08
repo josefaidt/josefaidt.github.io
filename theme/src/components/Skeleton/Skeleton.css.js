@@ -20,9 +20,6 @@ const StyledLayout = styled.div`
     flex: 1 0 auto;
     height: 100%;
   }
-  a {
-    color: ${props => props.theme.main};
-  }
   @media only screen and (max-width: 760px) {
     .content {
       padding-bottom: 5rem;
