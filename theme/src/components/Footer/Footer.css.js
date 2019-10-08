@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
     background-color: whitesmoke;
     position: relative;
     padding: 1rem;
-    bottom: 9vh;
+    bottom: 4rem;
   }
 `
 
