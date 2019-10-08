@@ -16,14 +16,15 @@ const MdLink = props => {
 }
 
 const StyledMdLink = styled(MdLink)`
-  color: ${props => props.theme.secondary}
+  color: ${props => props.theme.secondary};
+  filter: brightness(70%) contrast(80%);
   transition: filter 0.2s ease;
   &:hover {
-    filter: brightness(70%) contrast(80%);
+    filter: brightness(100%) contrast(100%);
     transition: filter 0.2s ease;
   }
   &:active {
-    filter: brightness(70%) contrast(80%);
+    filter: brightness(100%) contrast(100%);
   }
 `
 
