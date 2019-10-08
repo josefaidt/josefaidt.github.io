@@ -4,7 +4,8 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import prismTheme from './prismTheme'
 
 const StyledInlineCode = styled.code`
-  padding: 0 0.3rem;
+  padding: 0.3rem;
+  font-size: 0.85rem;
   border-radius: 5px;
   background-color: ${props => props.theme.backgroundContrast};
   ::after {
