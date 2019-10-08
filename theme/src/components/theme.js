@@ -1,6 +1,7 @@
 // Define what props.theme will look like
 export default {
-  main: '#d46a6a',
+  primary: '#d46a6a',
+  secondary: '#518A8D',
   accent: '#c6797e',
   text: '#5a535b',
   grey: '#8b868c',
@@ -10,7 +11,7 @@ export default {
     yellow: '#A17D3B',
     green: '#518A8D',
     orange: '#dc771e',
-    purple: '#8D8D9E',
+    purple: '#b482b4',
     punctuation: '#6C83A1',
     background: 'whitesmoke',
     text: '#5a535b',
