@@ -1,7 +1,6 @@
 import _theme from '../theme'
 const { prism } = _theme
-console.log('PRISM THEME', prism)
-const theme /* : PrismTheme */ = {
+const theme = {
   plain: {
     backgroundColor: prism.background,
     color: prism.text,
@@ -38,13 +37,13 @@ const theme /* : PrismTheme */ = {
       },
     },
     {
-      types: ['function', 'attr-name'],
+      types: ['function', 'attr-name', 'selector'],
       style: {
         color: prism.orange,
       },
     },
     {
-      types: ['number'],
+      types: ['number', 'boolean'],
       style: {
         color: prism.yellow,
       },
@@ -62,7 +61,7 @@ const theme /* : PrismTheme */ = {
       },
     },
     {
-      types: ['string'],
+      types: ['string', 'url'],
       style: {
         color: prism.green,
       },
@@ -75,9 +74,7 @@ const theme /* : PrismTheme */ = {
     },
     {
       types: [
-        'boolean',
         'entity',
-        'url',
         'attr-value',
         'control',
         'directive',
@@ -85,7 +82,6 @@ const theme /* : PrismTheme */ = {
         'statement',
         'regex',
         'at-rule',
-        'selector',
         'keyword',
         'placeholder',
         'module',
