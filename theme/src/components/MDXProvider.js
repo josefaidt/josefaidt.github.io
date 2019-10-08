@@ -6,6 +6,7 @@ import { MDXProvider } from '@mdx-js/react'
 import Quote from './styles/Quote'
 import Line from './Markdown/break'
 import Link from './Markdown/link'
+import { Code, InlineCode, CodeBlock } from './Markdown/code'
 import Icon from './Icon'
 import { Title } from './styles/Titles.css'
 
@@ -17,6 +18,9 @@ const shortcodes = {
 
 const components = {
   a: props => <Link {...props} />,
+  pre: props => <div {...props} />,
+  code: CodeBlock,
+  inlineCode: InlineCode,
   blockquote: Quote,
   hr: Line,
   ...shortcodes,

@@ -4,13 +4,15 @@ title: Components
 
 # @josefaidt/gatsby-theme
 
-> A versatile theme with subtelty.
+![Glacier](../assets/images/glacier.jpg)
+
+> simplistic and subtle
 
 Built with `gatsby-theme-blog-core`, this theme offers an extended experience for building portfolio websites with a blogging platform, all composed using MDX.
 
 <br />
 
-**Configuration:**
+## Configuration:
 
 - [Files](#files)
 - [gatsby-config](#gatsby-config)
@@ -19,7 +21,7 @@ Built with `gatsby-theme-blog-core`, this theme offers an extended experience fo
 - [Blog](#blog)
   - [Blog Text](#blog-text)
 
-## Files
+### Files
 
 ```
 | my-site/
@@ -34,7 +36,7 @@ Built with `gatsby-theme-blog-core`, this theme offers an extended experience fo
   |-- gatsby-config.js
 ```
 
-## gatsby-config
+### gatsby-config
 
 ```js
 // gatsby-config.js
@@ -60,11 +62,11 @@ siteMetadata: {
 },
 ```
 
-## Theme
+### Theme
 
 This theme uses the ThemeProvider from `style-components`. To override the default theme colors, shadow `components/theme.js`
 
-```
+```js
 // src/@josefaidt/gatsby-theme/components/theme.js
 export default {
   main: '#d46a6a',
@@ -76,7 +78,7 @@ export default {
 }
 ```
 
-## Navigation
+### Navigation
 
 We must configure the navigation component by creating a JSON file, `content/pages/nav.json` with our node's name, route, and component. Note for the Blog you do not need to pass a component
 
@@ -99,11 +101,11 @@ We must configure the navigation component by creating a JSON file, `content/pag
 ]
 ```
 
-## Blog
+### Blog
 
 This theme uses `gatsby-theme-blog-core` to power the blog platform.
 
-### Blog Text
+#### Blog Text
 
 Text displayed on main blog page above article cards
 
@@ -111,6 +113,7 @@ Text displayed on main blog page above article cards
 // src/@josefaidt/gatsby-theme/components/BlogTest.js
 import React from 'react'
 
+const test = 123
 const BlogText = props => (
   <>
     <h1>Blog</h1>

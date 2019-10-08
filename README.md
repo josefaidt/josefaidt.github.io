@@ -5,3 +5,9 @@
 ![dependencies](https://img.shields.io/david/josefaidt/josefaidt.github.io.svg?style=flat-square)
 ![dev dependencies](https://img.shields.io/david/dev/josefaidt/josefaidt.github.io.svg?style=flat-square)
 ![License](https://img.shields.io/github/license/josefaidt/josefaidt.github.io.svg?style=flat-square)
+
+## What's Here
+
+- App powering [josefaidt.dev](https://josefaidt.dev)
+- [@josefaidt/gatsby-theme](/theme)
+- @josefaidt/gatsby-theme [demo](https:/gatsby-theme.josefaidt.dev)
