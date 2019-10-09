@@ -18,6 +18,9 @@ export const StyledNav = styled.nav`
 
   a {
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media only screen and (max-width: 760px) {
@@ -38,6 +41,5 @@ export const StyledNav = styled.nav`
     grid-gap: 0.5rem;
     padding: 0 0.5rem;
     height: 4rem;
-
   }
 `
