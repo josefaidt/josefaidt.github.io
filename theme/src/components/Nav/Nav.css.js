@@ -41,5 +41,9 @@ export const StyledNav = styled.nav`
     grid-gap: 0.5rem;
     padding: 0 0.5rem;
     height: 4rem;
+
+    a {
+      margin: 0;
+    }
   }
 `
