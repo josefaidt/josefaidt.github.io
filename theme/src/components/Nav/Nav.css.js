@@ -39,7 +39,7 @@ export const StyledNav = styled.nav`
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
     grid-gap: 0.5rem;
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
     height: 4rem;
 
     a {
