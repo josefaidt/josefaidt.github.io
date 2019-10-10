@@ -24,6 +24,10 @@ const StyledLink = styled(Link)`
     transition: all 200ms;
     color: ${props => props.theme.background};
   }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 0.9rem;
+  }
 `
 
 const LinkButton = props => {

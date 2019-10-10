@@ -37,10 +37,10 @@ export const StyledNav = styled.nav`
 
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-    grid-gap: 0.5rem;
-    padding: 0 0.2rem;
-    height: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+    grid-gap: 0.4rem;
+    padding: 0 0.3rem;
+    height: 3.8rem;
 
     a {
       margin: 0;
