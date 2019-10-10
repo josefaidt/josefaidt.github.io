@@ -20,7 +20,6 @@ module.exports = options => {
     plugins: [
       `gatsby-transformer-json`,
       `gatsby-plugin-styled-components`,
-      `gatsby-plugin-sitemap`,
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -87,6 +86,7 @@ module.exports = options => {
         resolve: `gatsby-plugin-manifest`,
         options: {
           name: `josefaidt.dev`,
+          icon: 'content/images/favicon.png',
           short_name: `josefaidt.dev`,
           start_url: `/`,
           background_color: 'whitesmoke',
