@@ -1,13 +1,14 @@
 ---
 title: Resume
-keywords: ['resume']
 ---
 
 import { graphql } from 'gatsby'
 import { PageLayout, Title, Icon, RepoCard, Line } from '@josefaidt/gatsby-theme'
+import SEO from '@josefaidt/gatsby-theme/src/components/seo'
 
 export default ({ children, data, ...props }) => (
   <PageLayout>
+    <SEO title="Resume" />
     <Title>
       <h1>Résumé</h1>
       <Icon icon="pdf" link={data.file.publicURL} downloadName={data.file.name} />

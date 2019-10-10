@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import BlogCard from '../../components/Cards'
 import Skeleton from '../../components/Skeleton'
-import Quote from '../../components/styles/Quote'
 import BlogText from '../../components/BlogText'
+import SEO from '../../components/seo'
 
 const StyledForm = styled.form`
   display: flex;
@@ -112,6 +112,7 @@ const Posts = ({ location, data }) => {
   // filtering
   return (
     <Skeleton>
+      <SEO title="Blog" />
       <BlogText />
       <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="tag-search" className="visually-hidden">
