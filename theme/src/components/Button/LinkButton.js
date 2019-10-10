@@ -4,7 +4,7 @@ import styled, { ThemeContext } from 'styled-components'
 
 const StyledLink = styled(Link)`
   padding: 0.5rem 0.5rem;
-  padding-top: 0.7rem;
+  padding-top: 0.8rem;
   margin: 0.2rem;
   text-decoration: none;
   line-height: 1rem;
@@ -23,10 +23,6 @@ const StyledLink = styled(Link)`
     background-color: ${props => props.theme.primary.concat('DF')};
     transition: all 200ms;
     color: ${props => props.theme.background};
-  }
-
-  @media screen and (max-width: 768px) {
-    padding-top: 0.9rem;
   }
 `
 
