@@ -41,5 +41,6 @@ export const StyledHeader = styled.header`
 
   @media only screen and (max-width: 760px) {
     max-height: 10vh;
+    margin-bottom: 1rem;
   }
 `
