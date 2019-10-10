@@ -86,7 +86,7 @@ module.exports = options => {
         resolve: `gatsby-plugin-manifest`,
         options: {
           name: `josefaidt.dev`,
-          icon: 'content/images/favicon.png',
+          icon: 'content/assets/images/favicon.png',
           short_name: `josefaidt.dev`,
           start_url: `/`,
           background_color: 'whitesmoke',
