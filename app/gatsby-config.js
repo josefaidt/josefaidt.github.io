@@ -76,4 +76,17 @@ const config = {
   ],
 }
 
+if (process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'production') {
+  config.plugins.push({
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: process.env.GOOGLE_ANALYTICS,
+      // Defines where to place the tracking script - `true` in the head and `false` in the body
+      head: false,
+      anonymize: true,
+      respectDNT: true,
+    },
+  })
+}
+
 module.exports = config
