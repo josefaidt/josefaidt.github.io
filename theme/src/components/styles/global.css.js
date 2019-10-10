@@ -7,6 +7,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 10px;
+  overflow: hidden;
 }
 body {
   margin: 0;
