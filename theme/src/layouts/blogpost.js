@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled, { ThemeContext } from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -20,11 +21,24 @@ const BlogPost = ({
     site: { siteMetadata: meta },
   },
 }) => {
+  const {
+    site: {
+      siteMetadata: { keywords: metaKeywords },
+    },
+  } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          keywords
+        }
+      }
+    }
+  `)
   const theme = React.useContext(ThemeContext)
   const { id, slug } = post
   const blogIdAnchor = `/blog/#${id}`
-  const { title, image, tags, excerpt } = post
-  const seoTags = [`blog`]
+  const { title, image, keywords, excerpt } = post
+  const seoTags = [`blog`].concat(metaKeywords)
   const shareText = encodeURIComponent(title)
   const twitterUsername = meta.social
     .filter(s => s.name.toLowerCase() === 'twitter')[0]
@@ -45,16 +59,16 @@ const BlogPost = ({
     )}&source=${meta.siteUrl}`,
     twitterDeep: `twitter://intent/tweet?url=${
       meta.siteUrl
-    }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
+    }${slug}&text=${shareText}&hashtags=${keywords || ''}&via=${twitterUsername}`,
     twitter: `https://twitter.com/intent/tweet?url=${
       meta.siteUrl
-    }${slug}&text=${shareText}&hashtags=${tags || ''}&via=${twitterUsername}`,
+    }${slug}&text=${shareText}&hashtags=${keywords || ''}&via=${twitterUsername}`,
   }
 
   return (
     <Skeleton>
       <SEO
-        keywords={seoTags.concat(tags)}
+        keywords={seoTags.concat(keywords)}
         title={title}
         siteUrl={`${meta.siteUrl}${slug}`}
         description={`${excerpt.slice(0, 140)}...`}
@@ -65,7 +79,7 @@ const BlogPost = ({
           <Button.back anchor={blogIdAnchor} />
           <Icons theme={theme}>
             <Icon icon="linkedin" link={links.linkedin} share invert />
-            <Icon icon="twitter" link={links.twitter} share />
+            {twitterUsername ? <Icon icon="twitter" link={links.twitter} share /> : null}
           </Icons>
         </StyledBlogHeader>
         <div>
