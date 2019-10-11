@@ -20,6 +20,7 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 
   const files = [
     'content/assets/images/favicon.png',
+    'content/assets/images/canyonlands.jpg',
     'content/pages/nav.json',
     'content/pages/index.mdx',
     'content/pages/about.mdx',
