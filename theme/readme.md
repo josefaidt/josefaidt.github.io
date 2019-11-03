@@ -1,6 +1,6 @@
 # @josefaidt/gatsby-theme
 
-![NPM Package Version](https://img.shields.io/npm/v/@josefaidt/gatsby-theme?color=c6797e&style=flat-square)
+[![NPM Package Version](https://img.shields.io/npm/v/@josefaidt/gatsby-theme?color=c6797e&style=flat-square)](https://www.npmjs.com/package/@josefaidt/gatsby-theme)
 [![code style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
 
 <br />

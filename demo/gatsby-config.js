@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         name: `GitHub`,
-        url: `https://github.com/josefaidt/josefaidt.github.io/tree/master/src/theme`,
+        url: `https://github.com/josefaidt/josefaidt.github.io/tree/master/theme`,
       },
     ],
   },
