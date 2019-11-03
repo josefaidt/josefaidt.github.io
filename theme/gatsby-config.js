@@ -90,7 +90,7 @@ module.exports = options => {
           short_name: `josefaidt.dev`,
           start_url: `/`,
           background_color: 'whitesmoke',
-          theme_color: '#D46A6A',
+          theme_color: '#c6797e',
           display: `minimal-ui`,
         },
       },
