@@ -8,6 +8,7 @@ import Icon from '../components/Icon'
 import SEO from '../components/seo'
 import Icons from '../components/Icon/Icons'
 import Button from '../components/Button'
+import MdxProvider from '../components/MDXProvider'
 
 const StyledBlogHeader = styled.header`
   display: flex;
@@ -89,7 +90,9 @@ const BlogPost = ({
               {post.date}
             </span>
           </header>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <MdxProvider>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MdxProvider>
         </div>
       </article>
     </Skeleton>
