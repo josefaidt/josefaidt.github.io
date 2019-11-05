@@ -90,7 +90,9 @@ const Posts = ({ location, data }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    return filterPosts(searchInput)
+    if (searchInput !== null) {
+      return filterPosts(searchInput)
+    }
   }
 
   const filterPosts = (keyword, clear = false) => {
