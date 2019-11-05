@@ -19,29 +19,27 @@ const StyledBlogHeader = styled.header`
 const BlogPost = ({
   data: {
     blogPost: post,
-    site: { siteMetadata: meta },
+    site: { siteMetadata: postMeta },
   },
 }) => {
   const {
-    site: {
-      siteMetadata: { keywords: metaKeywords },
-    },
+    site: { siteMetadata: meta },
   } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           keywords
+          siteUrl
         }
       }
     }
   `)
   const theme = React.useContext(ThemeContext)
-  const { id, slug } = post
+  const { title, image, keywords, excerpt, slug, id } = post
   const blogIdAnchor = `/blog/#${id}`
-  const { title, image, keywords, excerpt } = post
-  const seoTags = [`blog`].concat(metaKeywords)
+  const seoTags = [`blog`].concat(meta.keywords)
   const shareText = encodeURIComponent(title)
-  const twitterUsername = meta.social
+  const twitterUsername = postMeta.social
     .filter(s => s.name.toLowerCase() === 'twitter')[0]
     .url.split('/')
     .pop()
