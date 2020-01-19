@@ -96,7 +96,7 @@ const Posts = ({ location, data }) => {
   }
 
   const filterPosts = (keyword, clear = false) => {
-    if (clear) return setFilteredPosts([...posts])
+    if (!keyword || clear) return setFilteredPosts([...posts])
     else
       return setFilteredPosts(
         [...posts].filter(post => post.keywords.includes(keyword.toLowerCase()))
