@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeContext } from 'styled-components'
 import { GithubIcons, NewTabIcon } from '../Icon'
-import { StyledCard } from './BlogCard'
+import { StyledCard } from './Card.css'
 
 const StyledRepoCard = styled(StyledCard)`
   .repo-header--container {
@@ -31,7 +31,7 @@ const StyledRepoCard = styled(StyledCard)`
       .repo-stats--item {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0.4rem;
+        grid-gap: 0.2rem;
         align-items: center;
       }
 
