@@ -69,22 +69,7 @@ const Posts = ({ location, data }) => {
     site,
     allBlogPost: { edges: allBlogPosts },
   } = data
-  const {
-    allBlogPost: { edges: keywordEdges },
-  } = useStaticQuery(graphql`
-    query {
-      allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-        edges {
-          node {
-            id
-            keywords
-          }
-        }
-      }
-    }
-  `)
   const posts = allBlogPosts.map(({ node }) => node)
-  const keywords = keywordEdges.map(({ node }) => node)
   const [filteredPosts, setFilteredPosts] = React.useState(posts)
   const [searchInput, setSearchInput] = React.useState(null)
 
@@ -99,7 +84,7 @@ const Posts = ({ location, data }) => {
     if (!keyword || clear) return setFilteredPosts([...posts])
     else
       return setFilteredPosts(
-        [...posts].filter(post => post.keywords.includes(keyword.toLowerCase()))
+        [...posts].filter(post => post.keywords.find(k => new RegExp(keyword).test(k)))
       )
   }
 
@@ -128,14 +113,13 @@ const Posts = ({ location, data }) => {
           placeholder="Tag Search (e.g. JavaScript)"
           onChange={e => setSearchInput(e.target.value)}
           onKeyDown={handleKeyDown}
+          autoComplete="off"
         ></input>
         <input type="submit" value="Apply" />
         <input type="reset" value="Reset" onClick={e => filterPosts(null, true)} />
       </StyledForm>
       <div>
         {filteredPosts.map((post, i) => {
-          const [{ keywords: postKeywords }] = keywords.filter(({ id }) => post.id === id)
-          post.keywords = postKeywords
           return <BlogCard key={i} post={post} />
         })}
       </div>
