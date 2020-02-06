@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledPostLink = styled.div`
+const StyledCard = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -61,27 +61,4 @@ const StyledPostLink = styled.div`
   }
 `
 
-const StyledTagList = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  div {
-    display: flex;
-    flex-wrap: wrap;
-  }
-`
-
-const StyledTag = styled.span`
-  background-color: ${props => props.theme.text};
-  color: white;
-  border-radius: 5px;
-  padding: 0.1rem 0.5rem;
-  text-align: center;
-  margin: 0 0.3rem 0.3rem 0;
-  font-size: 0.7rem;
-  color: white;
-  &:hover {
-  }
-`
-
-export { StyledPostLink, StyledTagList, StyledTag }
+export { StyledCard }

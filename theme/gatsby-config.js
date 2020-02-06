@@ -1,4 +1,4 @@
-module.exports = options => {
+module.exports = ({ offline }) => {
   return {
     siteMetadata: {
       title: 'gatsby-theme',
@@ -94,7 +94,7 @@ module.exports = options => {
           display: `minimal-ui`,
         },
       },
-      {
+      offline && {
         resolve: `gatsby-plugin-offline`,
         options: {
           cacheId: `gatsby-plugin-offline`,
