@@ -98,6 +98,7 @@ module.exports = ({ offline = false }) => {
   }
 
   if (offline) {
+    console.info('Adding offline support')
     config.plugins.push({
       resolve: `gatsby-plugin-offline`,
       options: {

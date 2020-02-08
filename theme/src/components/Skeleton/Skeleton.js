@@ -6,6 +6,7 @@ import Container from '../styles/Container.css'
 import Nav from '../Nav'
 import Header from '../Header'
 import Footer from '../Footer'
+import { NotificationContainer } from '../Notification'
 import StyledLayout from './Skeleton.css'
 
 const Skeleton = ({ children }) => {
@@ -20,6 +21,7 @@ const Skeleton = ({ children }) => {
           <Container>{children}</Container>
         </div>
         <Footer />
+        <NotificationContainer />
       </StyledLayout>
     </>
   )
