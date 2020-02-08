@@ -28,7 +28,9 @@ const NotificationContainer = ({ children, notifications }) => {
     return notificationDispatch({ type: 'toast_shown', payload: { id: notificationId } })
   }
   React.useEffect(() => {
+    console.log('MOUNTING NOTIFICATION CONTAINER')
     if (window.navigator.serviceWorker) {
+      console.log('THERES A SERVICE WORKER FOUND')
       const notificationData = {
         type: 'info',
         content: {
