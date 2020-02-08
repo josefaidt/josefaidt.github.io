@@ -31,6 +31,7 @@ const NotificationContainer = ({ children, notifications }) => {
     console.log('MOUNTING NOTIFICATION CONTAINER')
     if (window.navigator.serviceWorker) {
       console.log('THERES A SERVICE WORKER FOUND')
+      window.notificationDispatch = notificationDispatch
       const notificationData = {
         type: 'info',
         content: {
