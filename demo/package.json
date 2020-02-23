@@ -10,12 +10,12 @@
     "clean": "rm -rf .cache public"
   },
   "dependencies": {
-    "gatsby": "^2.15.21",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-twitter-embed": "^2.0.8",
-    "gatsby-plugin-netlify": "^2.1.15",
-    "gatsby-plugin-sitemap": "^2.2.14",
+    "gatsby": "^2.19.19",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-twitter-embed": "^3.0.3",
+    "gatsby-plugin-netlify": "^2.1.32",
+    "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "@josefaidt/gatsby-theme": "*"
   }
