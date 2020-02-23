@@ -37,6 +37,8 @@ const NotificationContainer = ({ children, notifications }) => {
         content: {
           title: 'Update Found',
           description: 'This application has been updated. Reload to display the latest version?',
+          buttonText: 'Reload',
+          buttonFn: () => window.location.reload(true),
         },
       }
       window.navigator.serviceWorker.ready.then(reg => {

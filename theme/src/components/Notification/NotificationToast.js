@@ -112,6 +112,7 @@ const NotificationToast = ({ data: n, onClose }) => {
           </svg>
           <h4 className="gtw--notification-toast--title">{n.content.title}</h4>
           <p className="gtw--notification-toast--description">{n.content.description}</p>
+          <button onClick={() => n.content.buttonFn()}>{n.content.buttonText}</button>
           <button id="gtw--notification-toast--button__close" onClick={e => onClose(n.id)}>
             <svg width="20" height="20">
               <line x1="0" x2="100%" y1="0" y2="100%" stroke="black"></line>
