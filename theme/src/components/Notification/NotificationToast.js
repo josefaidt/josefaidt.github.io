@@ -91,9 +91,9 @@ const NotificationToast = ({ data: n, onClose }) => {
         return theme.secondary
     }
   }
-  useInterval(() => {
-    onClose(n.id)
-  }, 7 * 1000)
+  // useInterval(() => {
+  //   onClose(n.id)
+  // }, 7 * 1000)
   const typeColor = getTypeColor(n.type)
   const x = useMotionValue(0)
   const opacity = useTransform(x, [0, 120, 200], ['1', '0.7', '0'])
