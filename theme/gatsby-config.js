@@ -1,5 +1,5 @@
-module.exports = options => {
-  return {
+module.exports = ({ offline = false }) => {
+  const config = {
     siteMetadata: {
       title: 'gatsby-theme',
       author: '@josefaidt',
@@ -94,7 +94,7 @@ module.exports = options => {
           display: `minimal-ui`,
         },
       },
-      {
+      offline && {
         resolve: `gatsby-plugin-offline`,
         options: {
           cacheId: `gatsby-plugin-offline`,
@@ -127,6 +127,8 @@ module.exports = options => {
           clientsClaim: true,
         },
       },
-    ],
+    ].filter(Boolean),
   }
+
+  return config
 }

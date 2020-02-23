@@ -13,7 +13,7 @@ import MdxProvider from '../components/MDXProvider'
 const StyledBlogHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
 `
 
 const BlogPost = ({
@@ -84,7 +84,15 @@ const BlogPost = ({
         <div>
           <header>
             <h1>{title}</h1>
-            <span className="date" style={{ position: 'relative', top: '-1rem' }}>
+            <span
+              className="blog--post__date"
+              css={`
+                color: ${theme.grey || 'darkgrey'};
+                font-style: italic;
+                position: relative;
+                top: -1rem;
+              `}
+            >
               {post.date}
             </span>
           </header>
