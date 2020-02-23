@@ -27,30 +27,31 @@ const NotificationContainer = ({ children, notifications }) => {
   const onClose = notificationId => {
     return notificationDispatch({ type: 'toast_shown', payload: { id: notificationId } })
   }
-  React.useEffect(() => {
-    console.log('MOUNTING NOTIFICATION CONTAINER')
-    if (window.navigator.serviceWorker) {
-      console.log('THERES A SERVICE WORKER FOUND')
-      const notificationData = {
-        type: 'info',
-        content: {
-          title: 'Update Found',
-          description: 'This application has been updated. Reload to display the latest version?',
-          buttonText: 'Reload',
-          buttonFn: () => window.location.reload(true),
-        },
-      }
-      window.navigator.serviceWorker.ready.then(reg => {
-        console.log('SW ACTIVE', reg)
-        reg.addEventListener('updatefound', () => {
-          notificationDispatch({ type: 'create', payload: notificationData })
-        })
-      })
-    }
-    // return () => {
-    //   window.navigator.serviceWorker.removeEventListener('updatefound')
-    // }
-  }, [notificationDispatch])
+  // React.useEffect(() => {
+  //   console.log('MOUNTING NOTIFICATION CONTAINER')
+  //   if (window.navigator.serviceWorker) {
+  //     console.log('THERES A SERVICE WORKER FOUND')
+  //     const notificationData = {
+  //       type: 'info',
+  //       content: {
+  //         title: 'Update Found',
+  //         description: 'This application has been updated. Reload to display the latest version?',
+  //         buttonText: 'Reload',
+  //         buttonFn: () => window.location.reload(true),
+  //       },
+  //     }
+  //     window.navigator.serviceWorker.ready.then(reg => {
+  //       console.log('SW ACTIVE', reg)
+  //       reg.addEventListener('updatefound', () => {
+  //         notificationDispatch({ type: 'create', payload: notificationData })
+  //       })
+  //     })
+  //   }
+  //   // return () => {
+  //   //   window.navigator.serviceWorker.removeEventListener('updatefound')
+  //   // }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
   return (
     <StyledNotificationContainer>
       {children}
