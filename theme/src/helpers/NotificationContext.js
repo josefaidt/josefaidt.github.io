@@ -73,7 +73,7 @@ const NotificationProvider = ({ children }) => {
   // TODO: useEffect to update context when localStorage is available
   // const cachedData = localStorage && JSON.parse(localStorage.getItem('Notification'))
   // const [state, dispatch] = React.useReducer(NotificationReducer, initialState)
-  const [state, dispatch] = React.useReducer(NotificationReducer)
+  const [state, dispatch] = React.useReducer(NotificationReducer, [])
   return (
     <NotificationStateContext.Provider value={state}>
       <NotificationDispatchContext.Provider value={dispatch}>
