@@ -1,4 +1,4 @@
-if (process.env.IS_LOCAL) {
+if (process.env.IS_LOCAL || process.env.NODE_ENV !== 'production') {
   console.info('Loading dotenv...')
   // eslint-disable-next-line global-require
   require('dotenv').config()
