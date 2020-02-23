@@ -42,38 +42,38 @@ const NotificationReducer = (state, action) => {
   }
 }
 
-// FOR TESTING, REMOVE FOR PRODUCTION
-const initialState = [
-  {
-    __internal: {
-      toast_shown: false,
-    },
-    id: 0,
-    type: 'error',
-    content: {
-      title: 'Missing GeoLocation',
-      description:
-        'Something went wrong retrieving the geolocation from the browser. Please attempt to load again.',
-    },
-  },
-  {
-    __internal: {
-      toast_shown: false,
-    },
-    id: 1,
-    type: 'success',
-    content: {
-      title: 'GeoLocation Loaded',
-      description: 'GeoLocation loaded successfully',
-    },
-  },
-]
+// // FOR TESTING, REMOVE FOR PRODUCTION
+// const initialState = [
+//   {
+//     __internal: {
+//       toast_shown: false,
+//     },
+//     id: 0,
+//     type: 'error',
+//     content: {
+//       title: 'Missing GeoLocation',
+//       description:
+//         'Something went wrong retrieving the geolocation from the browser. Please attempt to load again.',
+//     },
+//   },
+//   {
+//     __internal: {
+//       toast_shown: false,
+//     },
+//     id: 1,
+//     type: 'success',
+//     content: {
+//       title: 'GeoLocation Loaded',
+//       description: 'GeoLocation loaded successfully',
+//     },
+//   },
+// ]
 
 const NotificationProvider = ({ children }) => {
   // TODO: useEffect to update context when localStorage is available
   // const cachedData = localStorage && JSON.parse(localStorage.getItem('Notification'))
   // const [state, dispatch] = React.useReducer(NotificationReducer, initialState)
-  const [state, dispatch] = React.useReducer(NotificationReducer, [...initialState])
+  const [state, dispatch] = React.useReducer(NotificationReducer)
   return (
     <NotificationStateContext.Provider value={state}>
       <NotificationDispatchContext.Provider value={dispatch}>
