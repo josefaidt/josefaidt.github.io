@@ -23,7 +23,7 @@ const config = {
     ],
   },
   plugins: [
-    { resolve: '@josefaidt/gatsby-theme' },
+    { resolve: '@josefaidt/gatsby-theme', options: { offline: true } },
     {
       resolve: '@dschau/gatsby-source-github',
       options: {
@@ -73,7 +73,6 @@ const config = {
         enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
       },
     },
-    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-netlify',
   ],
 }
