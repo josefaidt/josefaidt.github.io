@@ -127,21 +127,21 @@ const Posts = ({ location, data }) => {
   )
 }
 
-export const PageQuery = graphql`
-  query {
-    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-      edges {
-        node {
-          id
-          excerpt
-          slug
-          title
-          keywords
-          date(formatString: "MMMM DD, YYYY")
-        }
-      }
-    }
-  }
-`
+// export const PageQuery = graphql`
+//   query {
+//     allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+//       edges {
+//         node {
+//           id
+//           excerpt
+//           slug
+//           title
+//           keywords
+//           date(formatString: "MMMM DD, YYYY")
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Posts
