@@ -10,7 +10,7 @@
     "clean": "rm -rf .cache public"
   },
   "dependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.19",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-twitter-embed": "^3.0.3",

@@ -8,23 +8,24 @@
     "theme"
   ],
   "devDependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.19",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.19.19",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.5",
-    "@mdx-js/react": "^1.5.5",
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
+    "babel-plugin-styled-components": "^1.10.7",
     "framer-motion": "^1.8.4",
-    "gatsby-image": "^2.2.40",
+    "gatsby-image": "^2.2.41",
     "gatsby-plugin-manifest": "^2.2.41",
-    "gatsby-plugin-mdx": "^1.0.70",
-    "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-mdx": "^1.0.73",
+    "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-page-creator": "^2.1.40",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
@@ -34,7 +35,7 @@
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-theme-blog-core": "^1.0.68",
+    "gatsby-theme-blog-core": "^1.0.76",
     "gatsby-transformer-json": "^2.2.26",
     "mkdirp": "^1.0.3",
     "prism-react-renderer": "^1.0.2",
