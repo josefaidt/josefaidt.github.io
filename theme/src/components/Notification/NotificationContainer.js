@@ -31,7 +31,6 @@ const NotificationContainer = ({ children, notifications }) => {
     console.log('MOUNTING NOTIFICATION CONTAINER')
     if (window.navigator.serviceWorker) {
       console.log('THERES A SERVICE WORKER FOUND')
-      window.notificationDispatch = notificationDispatch
       const notificationData = {
         type: 'info',
         content: {
@@ -42,6 +41,7 @@ const NotificationContainer = ({ children, notifications }) => {
         },
       }
       window.navigator.serviceWorker.ready.then(reg => {
+        console.log('SW ACTIVE', reg)
         reg.addEventListener('updatefound', () => {
           notificationDispatch({ type: 'create', payload: notificationData })
         })
