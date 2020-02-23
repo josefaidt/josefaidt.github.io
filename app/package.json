@@ -18,6 +18,7 @@
     "gatsby-plugin-netlify": "^2.1.32",
     "gatsby-plugin-sentry": "^1.0.1",
     "@dschau/gatsby-source-github": "^0.0.1",
-    "@josefaidt/gatsby-theme": "*"
+    "@josefaidt/gatsby-theme": "*",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0"
   }
 }

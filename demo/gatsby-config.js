@@ -16,5 +16,10 @@ module.exports = {
       },
     ],
   },
-  plugins: ['@josefaidt/gatsby-theme', `gatsby-plugin-sitemap`, `gatsby-plugin-netlify`],
+  plugins: [
+    '@josefaidt/gatsby-theme',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-netlify',
+    'gatsby-plugin-remove-serviceworker',
+  ],
 }

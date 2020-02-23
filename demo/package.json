@@ -16,6 +16,7 @@
     "react-twitter-embed": "^2.0.8",
     "gatsby-plugin-netlify": "^2.1.15",
     "gatsby-plugin-sitemap": "^2.2.14",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "@josefaidt/gatsby-theme": "*"
   }
 }
