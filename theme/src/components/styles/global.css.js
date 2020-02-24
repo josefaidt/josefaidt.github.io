@@ -641,9 +641,9 @@ pre tt:after {
 }
 
 *:focus {
-  outline-color: ${props => props.theme.primary}
+  outline-color: ${({ theme }) => theme.colors.primary}
 }
 a {
-    color: ${props => props.theme.primary};
+    color: ${({ theme }) => theme.colors.primary};
 }
 `

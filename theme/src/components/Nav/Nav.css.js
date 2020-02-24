@@ -13,7 +13,7 @@ export const StyledNav = styled.nav`
   .screen {
     margin: 0 auto;
     z-index: 1;
-    box-shadow: 1px ${props => props.theme.text};
+    box-shadow: 1px ${({ theme }) => theme.colors.text};
   }
 
   a {
@@ -24,10 +24,10 @@ export const StyledNav = styled.nav`
   }
 
   @media only screen and (max-width: 760px) {
-    background-color: ${props => props.theme.background};
+    background-color: ${({ theme }) => theme.colors.background};
 
-    /* box-shadow: 0 0 40px 0 ${props => props.theme.text}; */
-    box-shadow: 0px 0px 40px -10px ${props => props.theme.text};
+    /* box-shadow: 0 0 40px 0 ${({ theme }) => theme.colors.text}; */
+    box-shadow: 0px 0px 40px -10px ${({ theme }) => theme.colors.text};
     text-align: center;
     font-size: 1.2rem;
     z-index: 10;

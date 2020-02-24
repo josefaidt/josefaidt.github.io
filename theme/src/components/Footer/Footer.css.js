@@ -6,7 +6,8 @@ const StyledFooter = styled.footer`
   max-width: 600px;
 
   .footer-container {
-    background: linear-gradient(whitesmoke);
+    background: ${({ theme }) =>
+      `linear-gradient(${theme.colors.background})` || 'linear-gradient(whitesmoke)'};
     display: flex;
     justify-content: space-between;
   }
@@ -16,7 +17,7 @@ const StyledFooter = styled.footer`
   }
 
   @media only screen and (max-width: 760px) {
-    background-color: whitesmoke;
+    background-color: ${({ theme }) => theme.colors.background || 'whitesmoke'};
     position: relative;
     padding: 1rem;
     bottom: 3.8rem;

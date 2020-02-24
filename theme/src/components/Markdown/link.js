@@ -16,7 +16,7 @@ const MdLink = props => {
 }
 
 const StyledMdLink = styled(MdLink)`
-  color: ${props => props.theme.primary};
+  color: ${({ theme }) => theme.colors.primary};
   transition: filter 0.2s ease;
   &:hover {
     filter: brightness(70%) contrast(80%);

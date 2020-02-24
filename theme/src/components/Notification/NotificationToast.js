@@ -5,7 +5,7 @@ import useInterval from '../../hooks/useInterval'
 
 const StyledNotificationToast = styled.div`
   .gtw--notification-toast {
-    background-color: ${({ theme }) => theme.background || 'white'};
+    background-color: ${({ theme }) => theme.colors.background || 'white'};
     width: 24rem;
     @media screen and (max-width: 768px) {
       max-width: 100%;
@@ -58,7 +58,7 @@ const StyledNotificationToast = styled.div`
         height: 0.5rem;
         width: 0.5rem;
         line {
-          stroke: ${({ theme }) => theme.text || 'black'};
+          stroke: ${({ theme }) => theme.colors.text || 'black'};
         }
       }
 
@@ -67,7 +67,7 @@ const StyledNotificationToast = styled.div`
         transition: all 0.3s ease;
         background-color: ${({ theme }) => `${theme.text}b3` || '#bbbbbbcc'};
         svg line {
-          stroke: ${({ theme }) => theme.background || 'white'};
+          stroke: ${({ theme }) => theme.colors.background || 'white'};
         }
       }
     }
@@ -80,15 +80,15 @@ const NotificationToast = ({ data: n, onClose }) => {
   const getTypeColor = type => {
     switch (type) {
       case 'error':
-        return theme.primary
+        return theme.colors.primary
       case 'warning':
-        return theme.secondary
+        return theme.colors.secondary
       case 'info':
-        return theme.info
+        return theme.colors.info
       case 'success':
-        return theme.success
+        return theme.colors.success
       default:
-        return theme.secondary
+        return theme.colors.secondary
     }
   }
   // useInterval(() => {

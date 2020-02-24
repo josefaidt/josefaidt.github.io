@@ -7,9 +7,9 @@ const FilePdfIcon = () => {
     <svg
       height="50"
       style={{
-        stroke: theme.accent,
+        stroke: theme.colors.accent,
         strokeWidth: 0,
-        fill: theme.accent,
+        fill: theme.colors.accent,
       }}
       version="1.1"
       viewBox="0 0 32 32"

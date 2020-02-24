@@ -1,12 +1,14 @@
 // Define what props.theme will look like
 export default {
-  primary: '#d46a6a',
-  secondary: '#518A8D',
-  accent: '#c6797e',
-  text: '#5a535b',
-  grey: '#8b868c',
-  background: 'white',
-  backgroundContrast: 'whitesmoke',
+  colors: {
+    primary: '#d46a6a',
+    secondary: '#518A8D',
+    accent: '#c6797e',
+    text: '#5a535b',
+    grey: '#8b868c',
+    background: '#ffffff',
+    backgroundContrast: 'whitesmoke',
+  },
   prism: {
     yellow: '#A17D3B',
     green: '#518A8D',

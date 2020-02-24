@@ -13,8 +13,8 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
     display: flex;
     align-items: center;
 
-    color: ${props => props.theme.text};
-    fill: ${props => props.theme.text};
+    color: ${({ theme }) => theme.colors.text};
+    fill: ${({ theme }) => theme.colors.text};
   }
 
   .icon a {
@@ -26,21 +26,21 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   }
 
   .icon svg {
-    fill: ${props => props.theme.text};
+    fill: ${({ theme }) => theme.colors.text};
     height: ${props => props.iconHeight};
     /* filter: brightness(100%); */
   }
 
   .share {
-    color: ${props => props.theme.text};
+    color: ${({ theme }) => theme.colors.text};
     font-weight: bold;
-    text-shadow: 0rem 0.05rem ${props => props.theme.text};
+    text-shadow: 0rem 0.05rem ${({ theme }) => theme.colors.text};
   }
 
   .icon:hover .share,
   .icon:hover svg {
-    color: ${props => props.theme.primary};
-    fill: ${props => props.theme.accent};
+    color: ${({ theme }) => theme.colors.primary};
+    fill: ${({ theme }) => theme.colors.accent};
     transition: ease 0.3s;
   }
 `

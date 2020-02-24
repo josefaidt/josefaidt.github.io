@@ -13,18 +13,18 @@ const StyledLink = styled(LinkButton)`
   display: flex;
   align-items: center;
 
-  color: ${props => props.theme.text};
-  border: 2px solid ${props => props.theme.text.concat('CC')};
+  color: ${({ theme }) => theme.colors.text};
+  border: 2px solid ${({ theme }) => theme.colors.text.concat('CC')};
   font-weight: bold;
 
   &:hover,
   &:active,
   &:focus {
     filter: none;
-    background-color: ${props => props.theme.primary.concat('DF')};
-    border-color: ${props => props.theme.primary};
+    background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
+    border-color: ${({ theme }) => theme.colors.primary};
     transition: all 200ms;
-    color: ${props => props.theme.background};
+    color: ${({ theme }) => theme.colors.background};
   }
 `
 

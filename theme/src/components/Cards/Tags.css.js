@@ -11,7 +11,7 @@ const StyledTagList = styled.div`
 `
 
 const StyledTag = styled.span`
-  background-color: ${props => props.theme.text};
+  background-color: ${({ theme }) => theme.colors.text};
   color: white;
   border-radius: 5px;
   padding: 0.1rem 0.5rem;

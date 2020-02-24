@@ -37,7 +37,7 @@ const StyledRepoCard = styled(StyledCard)`
 
       .repo-stats--item svg {
         justify-self: center;
-        fill: ${props => props.theme.text};
+        fill: ${({ theme }) => theme.colors.text};
       }
 
       .repo-stats--item span {
@@ -61,7 +61,7 @@ const StyledRepoCard = styled(StyledCard)`
     svg {
       align-self: flex-end;
       height: 1.3rem;
-      fill: ${props => props.theme.text};
+      fill: ${({ theme }) => theme.colors.text};
       opacity: 0;
 
       @media only screen and (max-width: 760px) {
