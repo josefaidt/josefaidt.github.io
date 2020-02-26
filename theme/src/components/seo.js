@@ -80,7 +80,7 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl, image, imageAl
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: image ? 'summary_large_image' : 'summary',
         },
         {
           name: `twitter:creator`,
@@ -104,11 +104,7 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl, image, imageAl
         },
         {
           name: `twitter:image:alt`,
-          content: image ? imageAlt || 'josef aidt custom image' : 'josef aidt J',
-        },
-        {
-          name: `twitter:card`,
-          content: 'summary_large_image',
+          content: image && imageAlt ? imageAlt : 'custom image',
         },
       ]
         .concat(
