@@ -80,14 +80,14 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl, image, imageAl
         },
         {
           name: `twitter:card`,
-          content: image ? 'summary_large_image' : 'summary',
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: 'summary_large_image',
         },
         {
           name: `twitter:site`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
