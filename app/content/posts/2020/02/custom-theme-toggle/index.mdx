@@ -199,7 +199,7 @@ After setting up our provider and mechanism to change the current theme, we're r
 
 ### useTheme
 
-Here is where using the internal `_current` property comes in handy. Another built-in React hook, `useContext` is leveraged here to access `ThemeState`, which is a Context set up to store the current theme. If it undefined, it is attempting to be used outside of our `ThemeProvider`.
+Here is where using the internal `_current` property comes in handy. Another built-in React hook, `useContext` is leveraged here to access `ThemeState`, which is a Context set up to store the current theme. If it is undefined, it is attempting to be used outside of our `ThemeProvider`.
 
 ```js
 const useTheme = () => {
