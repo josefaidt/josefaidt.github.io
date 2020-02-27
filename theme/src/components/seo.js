@@ -13,6 +13,7 @@ const SEO = ({
   image,
   imageAlt,
   isBlogPost,
+  ...rest
 }) => {
   const {
     site,
@@ -44,7 +45,6 @@ const SEO = ({
   //   `${site.siteMetadata.siteUrl}${imageSlug}` || site.siteMetadata.image
   const metaTitle = title || site.siteMetadata.title
   const metaUrl = siteUrl || site.siteMetadata.siteUrl
-  console.log('META IMAGE', image)
   return (
     <Helmet
       htmlAttributes={{

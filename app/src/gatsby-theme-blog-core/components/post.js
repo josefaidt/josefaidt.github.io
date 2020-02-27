@@ -6,7 +6,7 @@ import { useTheme } from '@josefaidt/gatsby-theme'
 
 const Post = ({ location, data }) => {
   const theme = useTheme()
-  const { blogPost, previous, next } = data
+  const { blogPost, previous, next, site } = data
   // return <BlogPost data={data}></BlogPost>
   const socialImage = getShareImage({
     title: blogPost.title,
@@ -17,8 +17,9 @@ const Post = ({ location, data }) => {
   })
   return (
     <>
-      <BlogPost data={data}></BlogPost>
-      <SEO image={socialImage} imageAlt={`Blog post card`} />
+      <BlogPost
+        data={{ ...blogPost, image: socialImage, imageAlt: 'blog card', site: data.site }}
+      ></BlogPost>
     </>
   )
 }

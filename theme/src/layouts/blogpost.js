@@ -18,8 +18,8 @@ const StyledBlogHeader = styled.header`
 
 const BlogPost = ({
   data: {
-    blogPost: post,
     site: { siteMetadata: postMeta },
+    ...post
   },
 }) => {
   const {
@@ -35,7 +35,7 @@ const BlogPost = ({
     }
   `)
   const theme = React.useContext(ThemeContext)
-  const { title, keywords, image, excerpt, slug, id } = post
+  const { title, keywords, image, imageAlt, excerpt, slug, id } = post
   const blogIdAnchor = `/blog/#${id}`
   const seoTags = [`blog`].concat(meta.keywords)
   const shareText = encodeURIComponent(title)
@@ -70,8 +70,10 @@ const BlogPost = ({
         keywords={seoTags.concat(keywords)}
         title={title}
         siteUrl={`${meta.siteUrl}${slug}`}
-        description={`${excerpt.slice(0, 140)}...`}
-        image={image ? image.publicURL : null}
+        description={`${
+          post.description ? post.description.slice(0, 140) : excerpt.slice(0, 140)
+        }...`}
+        image={image || null}
         isBlogPost
       />
       <article>
