@@ -35,7 +35,7 @@ const BlogPost = ({
     }
   `)
   const theme = React.useContext(ThemeContext)
-  const { title, image, keywords, excerpt, slug, id } = post
+  const { title, keywords, image, excerpt, slug, id } = post
   const blogIdAnchor = `/blog/#${id}`
   const seoTags = [`blog`].concat(meta.keywords)
   const shareText = encodeURIComponent(title)
@@ -71,7 +71,8 @@ const BlogPost = ({
         title={title}
         siteUrl={`${meta.siteUrl}${slug}`}
         description={`${excerpt.slice(0, 140)}...`}
-        image={image ? image.publicURL : ''}
+        image={image ? image.publicURL : null}
+        isBlogPost
       />
       <article>
         <StyledBlogHeader>
