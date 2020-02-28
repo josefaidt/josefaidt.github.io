@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn clean; yarn develop",
+    "start": "yarn develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "build:dev": "IS_LOCAL=true gatsby build",

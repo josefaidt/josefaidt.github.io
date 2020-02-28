@@ -3,7 +3,18 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const SEO = ({ description, lang, meta, keywords, title, siteUrl, image, imageAlt }) => {
+const SEO = ({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  siteUrl,
+  image,
+  imageAlt,
+  isBlogPost,
+  ...rest
+}) => {
   const {
     site,
     file: { publicURL: favicon },
@@ -39,91 +50,25 @@ const SEO = ({ description, lang, meta, keywords, title, siteUrl, image, imageAl
       htmlAttributes={{
         lang,
       }}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `title`,
-          property: `og:title`,
-          content: `${site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
-        },
-        {
-          name: `title`,
-          property: `title`,
-          content: `${site.siteMetadata.title.split('')[0]}: ${metaTitle}`,
-        },
-        {
-          property: `og:site_name`,
-          content: `${site.siteMetadata.title}`,
-        },
-        {
-          property: `og:url`,
-          content: metaUrl,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: image || favicon,
-        },
-        {
-          property: `author`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:site`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: image || favicon,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: image ? imageAlt || 'josef aidt custom image' : 'josef aidt J',
-        },
-        {
-          name: `twitter:card`,
-          content: 'summary_large_image',
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
       title={metaTitle}
       titleTemplate={`${site.siteMetadata.title}: %s`}
     >
       <link rel="icon" href={favicon} />
+      <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={keywords} />
+
+      <meta property="og:url" content={metaUrl} />
+      {isBlogPost ? <meta property="og:type" content="article" /> : null}
+      <meta property="og:title" content={metaTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={image || favicon} />
+
+      {/* Twitter Card tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={site.siteMetadata.author} />
+      <meta name="twitter:title" content={metaTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content={image || favicon} />
     </Helmet>
   )
 }
