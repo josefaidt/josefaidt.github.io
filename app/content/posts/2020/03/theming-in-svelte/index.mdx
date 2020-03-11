@@ -1,0 +1,72 @@
+---
+title: 'Theming in Svelte with CSS Variables'
+description: 'Explore Svelte and theming solutions leveraging platform features like CSS Variables'
+date: '2020-03-11'
+keywords: ['svelte', 'css', 'theming', 'websites']
+# image: unsplash-peackock.jpg
+---
+
+![Peacock](steve-harvey-peacock.jpg)
+
+Coming from React there are numerous theming solutions to choose from; styled-components, Emotion, styled-system, theme-ui &ndash; the list goes on. But in Svelte, a framework that feels like you have a front-row spot on The Platform&trade;, those kind of solutions don't exist. When I cracked open my brand new Svelte project I knew I wanted a theme toggle with persistence so visitors don't have to feel the pain of light mode if they don't want to.
+
+Enter [svelte-themer](https://svelte-themer.now.sh). A theming solution I originally built it into my new Svelte website, but ultimately ended up splitting it off into its own package for others to use as well!
+
+## What is Svelte?
+
+[Svelte](https://svelte.dev/) has been labeled as the "new framework on the block", touted for being effective yet efficient for building web applications quickly. Compared to the big players in the game &mdash; React, Angular, and Vue &mdash; it certainly brings a unique approach to the build process though also component-based.
+
+First of all, it feels very close to the platform. Check out this small snippet:
+
+```html
+<!-- src/components/Heading.svelte -->
+<script>
+  export let name = 'World'
+</script>
+
+<h1>Hello {name}</h1>
+
+<style>
+  h1 {
+    color: green;
+  }
+</style>
+```
+
+That's it for a stateful heading component. There's a few things going on here:
+
+```html
+<!-- src/components/Heading.svelte -->
+<script>
+  // define a prop, `name`, (just like React)
+  // give it a default value of `World`
+  export let name = 'World'
+</script>
+
+<!-- use curly braces to refer to `name` value -->
+<h1>Hello {name}</h1>
+
+<style>
+  /* scoped style */
+  h1 {
+    color: green;
+  }
+</style>
+```
+
+Now when we want to use it, it'll feel like using any other React component:
+
+```html
+<!-- src/App.svelte -->
+<script>
+  import Heading from './components/Heading.svelte'
+</script>
+
+<main>
+  <Heading name="Hansel" />
+</main>
+```
+
+For more information I _highly recommend_ checking out the [tutorial on Svelte's site](https://svelte.dev/tutorial/basics).
+
+## Theming
