@@ -8,15 +8,15 @@ keywords: ['svelte', 'css', 'theming', 'websites']
 
 ![Peacock](steve-harvey-peacock.jpg)
 
-Coming from React there are numerous theming solutions to choose from; styled-components, Emotion, styled-system, theme-ui &ndash; the list goes on. But in Svelte, a framework that feels like you have a front-row spot on The Platform&trade;, those kind of solutions don't exist. When I cracked open my brand new Svelte project I knew I wanted a theme toggle with persistence so visitors don't have to feel the pain of light mode if they don't want to.
+In React there are numerous theming solutions to choose from; styled-components, Emotion, styled-system, theme-ui &ndash; the list goes on. But in Svelte, a framework that feels like you have a front-row spot on The Platform&trade;, those kind of solutions don't exist. When I cracked open my brand new Svelte project I knew I wanted I knew I wanted to allow visitors to set (and persist) their preferred theme so they don't have to feel the pain of light mode if they don't want to.
 
-Enter [svelte-themer](https://svelte-themer.now.sh). A theming solution I originally built it into my new Svelte website, but ultimately ended up splitting it off into its own package for others to use as well!
+Enter [svelte-themer](https://svelte-themer.now.sh), a solution I originally implemented in as part of my website, but something I recently turned into an [npm package](https://www.npmjs.com/package/svelte-themer).
 
 ## What is Svelte?
 
-[Svelte](https://svelte.dev/) has been labeled as the "new framework on the block", touted for being effective yet efficient for building web applications quickly. Compared to the big players in the game &mdash; React, Angular, and Vue &mdash; it certainly brings a unique approach to the build process though also component-based.
+[Svelte](https://svelte.dev/) has been labeled as the "new framework on the block", touted for being effective and efficient for building web applications quickly. Compared to the big players in the game &mdash; React, Angular, and Vue &mdash; it certainly brings a unique approach to the build process while also component-based.
 
-First of all, it feels very close to the platform. Check out this small snippet:
+First of all, it feels very close to the platform meaning fewer frills or abstractions than a framework like React; the platform being the web (plain HTML, CSS, JavaScript). It feels like what natively supported web modules should feel like. Svelte has a few frills; check out this small snippet:
 
 ```html
 <!-- src/components/Heading.svelte -->
@@ -76,20 +76,23 @@ Thinking about how we want to shape the theme structure we immediately think of 
 1. Set/Collection of theme objects
 2. Toggle function
 
-This means we'll need a way to store the toggle function, provide it to the rest of our app, and consume it somewhere within the app at some component. Here this component will be a button. If you're coming from React this may seem all too familiar, and it is. We're going to be using two of Svelte's features:
+This means we'll need a way to store the toggle function, provide it to the rest of our app, and consume it somewhere within the app. 
+
+Here this component will be a button. If you're coming from React this may seem all too familiar, and it is. We're going to be using two of Svelte's features:
 
 - [context](https://svelte.dev/tutorial/context-api): framework API to provide & consume throughout the app with the help of a wrapper component
 - [writable stores](https://svelte.dev/tutorial/writable-stores): store data (themes, current theme)
 
-Though Svelte's tutorial demonstrates their writable stores by separating the store into its own JavaScript file. This would be preferable if we were to later import the theme values to use in a component's `<script>` section, however the colors should not change and the current value will be toggled from the same file. Therefore we're going to include the store right in our context component.
+Svelte's tutorial demonstrates their writable stores by separating the store into its own JavaScript file. This would be preferable if we were to later import the theme values to use in a component's `<script>` section and use the methods that come along with writable stores such as `.set()` and `.update()`, however the colors should not change and the current value will be toggled from the same file. Therefore we're going to include the store right in our context component.
 
 ### The Context Component
 
 ```html
+<!-- src/ThemeContext.svelte -->
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { presets } from './presets.js'
+  import { _themes } from './themes.js'
 </script>
 
 <slot>
@@ -102,7 +105,7 @@ Let's take a quick look at these imports:
 - `setContext`: allows us to set a context (key/value), here this will be `theme`
 - `onMount`: function that runs on component mount
 - `writable`: function to set up a writable data store
-- `presets`: our themes!
+- `_themes`: our themes!
 
 After the script block you'll notice the `<slot>` tag, and this is special to Svelte. Coming from React think of this as `props.children`; this is where the nested components will go.
 
@@ -111,7 +114,8 @@ After the script block you'll notice the `<slot>` tag, and this is special to Sv
 A quick look at the preset colors for this demo.
 
 ```js
-export const presets = [
+// src/themes.js
+export const themes = [
   {
     name: 'light',
     colors: {
@@ -132,12 +136,13 @@ export const presets = [
 #### Writable Store
 
 ```html
+<!-- src/ThemeContext.svelte -->
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { presets } from './presets.js'
+  import { _themes } from './themes.js'
   // expose props for customization and set default values
-  export let themes = [...presets]
+  export let themes = [..._themes]
   // set state of current theme's name
   let _current = themes[0].name
 
@@ -152,17 +157,18 @@ export const presets = [
 </slot>
 ```
 
-It's important to note that `_current` is prefixed with an underscore as it will be a value we use internally to hold the current theme's name. Since we'll be including the current theme's object to our context, it is unnecessary to expose.
+It's important to note that `_current` is prefixed with an underscore as it will be a value we use internally to hold the current theme's name. Similarly with `_themes`, they are used to populate our initial `themes` state. Since we'll be including the current theme's object to our context, it is unnecessary to expose.
 
 #### setContext
 
 ```html
+<!-- src/ThemeContext.svelte -->
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { presets } from './presets.js'
+  import { _themes } from './themes.js'
   // expose props for customization and set default values
-  export let themes = [...presets]
+  export let themes = [..._themes]
   // set state of current theme's name
   let _current = themes[0].name
 
@@ -192,6 +198,7 @@ It's important to note that `_current` is prefixed with an underscore as it will
 Now we have the context `theme` set up, all we have to do is wrap the App component and it will be accessible through the use of:
 
 ```html
+<!-- src/MyComponent.svelte -->
 <script>
   import { getContext } from 'svelte'
   let theme = getContext('theme')
@@ -205,12 +212,13 @@ By doing so, providing access to the `Theme` store (readonly) and our theme `tog
 Since Svelte feels close to The Platform™️ we'll leverage CSS Variables. In regards to the `styled` implementations in React, we will ignore the need for importing the current theme and interpolating values to CSS strings. It's fast, available everywhere, and pretty quick to set up. Let's take a look:
 
 ```html
+<!-- src/ThemeContext.svelte -->
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { presets } from './presets.js'
+  import { _themes } from './themes.js'
   // expose props for customization and set default values
-  export let themes = [...presets]
+  export let themes = [..._themes]
   // set state of current theme's name
   let _current = themes[0].name
 
