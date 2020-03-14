@@ -92,7 +92,7 @@ Svelte's tutorial demonstrates their writable stores by separating the store int
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { _themes } from './themes.js'
+  import { themes as _themes } from './themes.js'
 </script>
 
 <slot>
@@ -140,7 +140,7 @@ export const themes = [
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { _themes } from './themes.js'
+  import { themes as _themes } from './themes.js'
   // expose props for customization and set default values
   export let themes = [..._themes]
   // set state of current theme's name
@@ -166,7 +166,7 @@ It's important to note that `_current` is prefixed with an underscore as it will
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { _themes } from './themes.js'
+  import { themes as _themes } from './themes.js'
   // expose props for customization and set default values
   export let themes = [..._themes]
   // set state of current theme's name
@@ -216,7 +216,7 @@ Since Svelte feels close to The Platform™️ we'll leverage CSS Variables. In 
 <script>
   import { setContext, onMount } from 'svelte'
   import { writable } from 'svelte/store'
-  import { _themes } from './themes.js'
+  import { themes as _themes } from './themes.js'
   // expose props for customization and set default values
   export let themes = [..._themes]
   // set state of current theme's name
