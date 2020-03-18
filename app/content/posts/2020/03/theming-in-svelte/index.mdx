@@ -178,7 +178,7 @@ It's important to note that `_current` is prefixed with an underscore as it will
   const Theme = writable(getCurrentTheme(_current))
 
   setContext('theme', {
-    // providing Theme store through context makes store readonly
+    // provide Theme store through context
     theme: Theme,
     toggle: () => {
       // update internal state
@@ -205,7 +205,7 @@ Now we have the context `theme` set up, all we have to do is wrap the App compon
 </script>
 ```
 
-By doing so, providing access to the `Theme` store (readonly) and our theme `toggle()` function.
+By doing so, providing access to the `Theme` store and our theme `toggle()` function.
 
 ### Consuming Theme Colors - CSS Variables
 
