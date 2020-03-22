@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: app/content/pages/resume.mdx
+  label: resume
+  match: "**/*"
+- type: document
   path: app/content/pages/index.mdx
   label: homepage
   read_only: true
@@ -13,7 +17,7 @@ sections:
   label: blog
   create: all
   match: "**/*"
-  new_doc_ext: mdx
+  new_doc_ext: ".mdx"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
