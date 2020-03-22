@@ -4,6 +4,11 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: app/content/pages/index.mdx
+  label: homepage
+  match: "**/*"
+  read_only: true
 - type: directory
   path: app/content/posts
   label: blog
