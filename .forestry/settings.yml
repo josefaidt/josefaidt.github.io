@@ -7,22 +7,22 @@ sections:
 - type: document
   path: app/content/pages/index.mdx
   label: homepage
-  match: "**/*"
   read_only: true
 - type: directory
   path: app/content/posts
   label: blog
   create: all
   match: "**/*"
-  new_doc_ext: ".mdx"
+  new_doc_ext: mdx
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
-  install_dependencies_command: npm install
+  preview_output_directory: app/public
+  install_dependencies_command: yarn install
   preview_docker_image: node:10
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npm run forestry:preview
+  instant_preview_command: yarn start:app
