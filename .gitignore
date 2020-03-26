@@ -6,6 +6,7 @@ node_modules
 
 *.log
 **/*.log
+.cache
 
 .assets
 !/public
