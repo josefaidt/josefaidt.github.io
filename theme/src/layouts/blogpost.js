@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Skeleton from '../components/Skeleton'
 import Icon from '../components/Icon'
@@ -9,6 +9,7 @@ import SEO from '../components/seo'
 import Icons from '../components/Icon/Icons'
 import Button from '../components/Button'
 import MdxProvider from '../components/MDXProvider'
+import { useTheme } from '../helpers/ThemeContext'
 
 const StyledBlogHeader = styled.header`
   display: flex;
@@ -34,7 +35,7 @@ const BlogPost = ({
       }
     }
   `)
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   const { title, keywords, image, imageAlt, excerpt, slug, id } = post
   const blogIdAnchor = `/blog/#${id}`
   const seoTags = [`blog`].concat(meta.keywords)

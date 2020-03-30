@@ -1,12 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { ThemeContext } from 'styled-components'
 import PropTypes from 'prop-types'
+import { useTheme } from '../../helpers/ThemeContext'
 import { ShortLine } from '../styles/Line'
 import { StyledHeader } from './Header.css'
 
 const Header = ({ siteTitle, children }) => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
+  console.log('THEME IS', theme)
   const { site } = useStaticQuery(graphql`
     query {
       site {

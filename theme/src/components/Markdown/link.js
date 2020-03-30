@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const MdLink = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   if (props.href.startsWith('http')) {
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     return <a {...props} />

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { ThemeContext } from 'styled-components'
 import StyledLink from '../Button/LinkButton'
+import { useTheme } from '../../helpers/ThemeContext'
 import { StyledNav } from './Nav.css'
 
 const Nav = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   const {
     allNavJson: { edges: navItems },
   } = useStaticQuery(graphql`

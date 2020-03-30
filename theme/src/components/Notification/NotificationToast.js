@@ -76,7 +76,7 @@ const StyledNotificationToast = styled.div`
 
 const NotificationToast = ({ data: n, onClose }) => {
   // const theme = useCurrentTheme()
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   const getTypeColor = type => {
     switch (type) {
       case 'error':

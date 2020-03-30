@@ -23,7 +23,7 @@ const StyledNotificationContainer = styled.div`
 const NotificationContainer = ({ children, notifications }) => {
   const [notificationState, notificationDispatch] = useNotifications()
   // const theme = useCurrentTheme()
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   const onClose = notificationId => {
     return notificationDispatch({ type: 'toast_shown', payload: { id: notificationId } })
   }

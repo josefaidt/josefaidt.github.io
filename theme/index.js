@@ -7,7 +7,7 @@ export { default as BlogPost } from './src/layouts/blogpost'
 export { default as PageLayout } from './src/layouts/page'
 export { default as Line } from './src/components/styles/Line'
 export { RepoCard } from './src/components/Cards'
-export { default as useTheme } from './src/hooks/useTheme'
+export { useTheme } from './src/helpers/ThemeContext'
 
 // temp
 export { Title } from './src/components/styles/Titles.css'

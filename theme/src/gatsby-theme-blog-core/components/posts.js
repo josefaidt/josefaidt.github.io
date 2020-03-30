@@ -5,6 +5,7 @@ import BlogCard from '../../components/Cards'
 import Skeleton from '../../components/Skeleton'
 import BlogText from '../../components/BlogText'
 import SEO from '../../components/seo'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const StyledForm = styled.form`
   display: flex;
@@ -72,6 +73,7 @@ const Posts = ({ location, data }) => {
   const posts = allBlogPosts.map(({ node }) => node)
   const [filteredPosts, setFilteredPosts] = React.useState(posts)
   const [searchInput, setSearchInput] = React.useState(null)
+  const theme = useTheme()
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -101,7 +103,7 @@ const Posts = ({ location, data }) => {
     <Skeleton>
       <SEO title="Blog" />
       <BlogText />
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm theme={theme} onSubmit={handleSubmit}>
         <label htmlFor="tag-search" className="visually-hidden">
           Blog Post Keyword Search
         </label>

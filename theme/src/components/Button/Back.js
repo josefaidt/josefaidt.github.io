@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 import LinkButton from './LinkButton'
 
 const StyledLink = styled(LinkButton)`
@@ -29,7 +30,7 @@ const StyledLink = styled(LinkButton)`
 `
 
 const Button = ({ anchor, text }) => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return (
     <StyledLink to={anchor} theme={theme}>
       <b id="button-text">{text}</b>

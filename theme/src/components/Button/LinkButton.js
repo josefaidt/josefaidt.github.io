@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const StyledLink = styled(Link)`
   padding: 0.5rem 0.5rem;
@@ -27,7 +28,7 @@ const StyledLink = styled(Link)`
 `
 
 const LinkButton = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return <StyledLink theme={theme} {...props} />
 }
 

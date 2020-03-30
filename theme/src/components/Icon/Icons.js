@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const StyledIcons = styled.div.attrs(({ iHeight }) => ({
   height: iHeight || '1.3rem',
@@ -46,7 +47,7 @@ const StyledIcons = styled.div.attrs(({ iHeight }) => ({
 `
 
 const Icons = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return <StyledIcons theme={theme} {...props} />
 }
 

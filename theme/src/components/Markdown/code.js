@@ -1,6 +1,7 @@
 import React from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 import Highlight, { defaultProps } from 'prism-react-renderer'
+import { useTheme } from '../../helpers/ThemeContext'
 import prismTheme from './prismTheme'
 
 const StyledInlineCode = styled.code`
@@ -19,12 +20,12 @@ const StyledCode = styled.code`
 `
 
 const Code = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return <StyledCode theme={theme} {...props} />
 }
 
 const InlineCode = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return <StyledInlineCode theme={theme} {...props} />
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 import { StyledTagList, StyledTag } from './Tags.css'
 import { StyledCard } from './Card.css'
 
@@ -18,7 +19,7 @@ const renderTags = tags => {
 }
 
 const BlogCard = ({ post }) => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return (
     <StyledCard
       aria-labelledby="post-title"

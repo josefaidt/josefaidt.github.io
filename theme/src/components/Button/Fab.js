@@ -35,7 +35,7 @@
 
 // const FabMenu = ({ symbol, blogIdAnchor, linkedin, twitter }) => {
 //   const [open, setOpen] = useState(false)
-//   const theme = React.useContext(ThemeContext)
+//   const theme = useTheme()
 
 //   const Button = posed.button({
 //     pressable: true,

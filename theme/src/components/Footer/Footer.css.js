@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const StyledFooter = styled.footer`
   margin: 0.5rem auto;
@@ -24,7 +25,7 @@ const StyledFooter = styled.footer`
 `
 
 const StyledFooterWrapper = props => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return <StyledFooter theme={theme} {...props} />
 }
 

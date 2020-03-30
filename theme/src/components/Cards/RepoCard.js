@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 import { GithubIcons, NewTabIcon } from '../Icon'
+import { useTheme } from '../../helpers/ThemeContext'
 import { StyledCard } from './Card.css'
 
 const StyledRepoCard = styled(StyledCard)`
@@ -81,7 +82,7 @@ const StyledRepoCard = styled(StyledCard)`
 `
 
 const RepoCard = repoData => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return (
     <StyledRepoCard theme={theme}>
       <div className="repo-header--container">

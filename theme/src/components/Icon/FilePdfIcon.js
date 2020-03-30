@@ -1,8 +1,8 @@
 import React from 'react'
-import { ThemeContext } from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const FilePdfIcon = () => {
-  const theme = React.useContext(ThemeContext)
+  const theme = useTheme()
   return (
     <svg
       height="50"
