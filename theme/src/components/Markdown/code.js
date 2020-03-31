@@ -8,7 +8,7 @@ const StyledInlineCode = styled.code`
   padding: 0.3rem;
   font-size: 0.85rem;
   border-radius: 5px;
-  background-color: ${props => props.theme.backgroundContrast};
+  background-color: ${({ theme }) => theme.colors.backgroundContrast};
   ::after {
     content: '';
   }
@@ -16,7 +16,7 @@ const StyledInlineCode = styled.code`
 
 const StyledCode = styled.code`
   border-radius: 5px;
-  background-color: ${props => props.theme.backgroundContrast};
+  background-color: ${({ theme }) => theme.colors.backgroundContrast};
 `
 
 const Code = props => {

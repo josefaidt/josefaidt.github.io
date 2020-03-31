@@ -1,4 +1,6 @@
+import React from 'react'
 import styled from 'styled-components'
+import { useTheme } from '../../helpers/ThemeContext'
 
 const StyledTagList = styled.div`
   display: flex;
@@ -11,7 +13,7 @@ const StyledTagList = styled.div`
 `
 
 const StyledTag = styled.span`
-  background-color: ${props => props.theme.text};
+  background-color: ${({ theme }) => theme.colors.text};
   color: white;
   border-radius: 5px;
   padding: 0.1rem 0.5rem;
@@ -23,4 +25,14 @@ const StyledTag = styled.span`
   }
 `
 
-export { StyledTagList, StyledTag }
+const TagList = props => {
+  const theme = useTheme()
+  return <StyledTagList {...props} theme={theme} />
+}
+
+const Tag = props => {
+  const theme = useTheme()
+  return <StyledTag {...props} theme={theme} />
+}
+
+export { TagList, Tag }

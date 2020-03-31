@@ -10,20 +10,20 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   line-height: 1rem;
   border-radius: 0.2rem;
-  color: ${props => props.theme.primary};
+  color: ${({ theme }) => theme.colors.primary};
 
   &.active,
   &.active:hover {
     filter: none;
-    background-color: ${props => props.theme.primary.concat('DF')};
+    background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
     transition: all 200ms;
-    color: ${props => props.theme.background};
+    color: ${({ theme }) => theme.colors.background};
   }
   &:hover {
     filter: none;
-    background-color: ${props => props.theme.primary.concat('DF')};
+    background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
     transition: all 200ms;
-    color: ${props => props.theme.background};
+    color: ${({ theme }) => theme.colors.background};
   }
 `
 

@@ -13,7 +13,7 @@ const Post = ({ location, data }) => {
     tagline: blogPost.keywords.map(k => `#${k}`).join('  '),
     cloudName: 'dbxon0kwl',
     imagePublicID: 'blog/blog-card2',
-    textColor: theme.text.slice(1),
+    textColor: theme.colors.text.slice(1),
   })
   return (
     <>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const StyledLayout = styled.div`
   background: white;
-  color: ${props => props.theme.text};
+  color: ${({ theme }) => theme.colors.text};
   font-family: 'Open Sans';
   font-size: 1rem;
   min-height: 100vh;

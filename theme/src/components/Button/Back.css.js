@@ -15,13 +15,13 @@ const StyledBackButton = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     letter-spacing: 3px;
     transition: 0.3s ease;
-    background-color: ${props => props.theme.primary.concat('80')};
-    border: 0.5px solid ${props => props.theme.text};
+    background-color: ${({ theme }) => theme.colors.primary.concat('80')};
+    border: 0.5px solid ${({ theme }) => theme.colors.text};
     color: white;
   }
 
   &:active {
-    background-color: ${props => props.theme.primary.concat('BF')};
+    background-color: ${({ theme }) => theme.colors.primary.concat('BF')};
     color: white;
     transition: 0.1s ease;
     letter-spacing: 3px;
@@ -36,14 +36,14 @@ const StyledBackButton = styled.div`
     a.active,
     a.active:hover {
       filter: none;
-      background-color: ${props => props.theme.primary.concat('DF')};
+      background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
       transition: all 200ms;
       color: white;
       border-radius: 0.2rem;
     }
     a:hover {
       filter: none !important;
-      background-color: ${props => props.theme.primary.concat('DF')};
+      background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
       transition: all 200ms;
       color: white;
       /* padding-top: 0.7rem; */
@@ -54,7 +54,7 @@ const StyledBackButton = styled.div`
   @media (max-width: 768px) {
     a:hover,
     a:active {
-      background-color: ${props => props.theme.primary.concat('DF')};
+      background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
       color: white;
     }
   }

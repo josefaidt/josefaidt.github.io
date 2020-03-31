@@ -24,7 +24,7 @@ const StyledForm = styled.form`
 
   input[type='text'] {
     flex-grow: 1;
-    border: 2px solid ${props => props.theme.text.concat('CC')};
+    border: 2px solid ${({ theme }) => theme.colors.text.concat('CC')};
     padding: 0 0.5rem;
   }
 
@@ -44,17 +44,17 @@ const StyledForm = styled.form`
     display: flex;
     align-items: center;
 
-    border: 2px solid ${props => props.theme.text.concat('CC')};
+    border: 2px solid ${({ theme }) => theme.colors.text.concat('CC')};
     font-weight: bold;
 
     &:hover,
     &:active,
     &:focus {
       filter: none;
-      background-color: ${props => props.theme.primary.concat('DF')};
-      border-color: ${props => props.theme.primary};
+      background-color: ${({ theme }) => theme.colors.primary.concat('DF')};
+      border-color: ${({ theme }) => theme.colors.primary};
       transition: all 200ms;
-      color: ${props => props.theme.background};
+      color: ${({ theme }) => theme.colors.background};
     }
   }
 

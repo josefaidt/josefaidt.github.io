@@ -13,12 +13,12 @@ const StyledCard = styled.article`
   }
 
   padding: 1rem;
-  color: ${props => props.theme.text};
+  color: ${({ theme }) => theme.colors.text};
   /* transition */
   h1,
   p,
   span {
-    color: ${props => props.theme.text};
+    color: ${({ theme }) => theme.colors.text};
     /* transition: color 0.2s ease; */
   }
   h1 {
@@ -31,8 +31,8 @@ const StyledCard = styled.article`
   }
   span.tag {
     font-weight: bold;
-    color ${props => props.theme.background};
-    background-color: ${props => props.theme.text.concat('DF')};
+    color ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.text.concat('DF')};
     transition: background-color 0.2s linear;
   }
   #date {
@@ -41,8 +41,8 @@ const StyledCard = styled.article`
 
   &:hover {
     span.tag {
-      color: ${props => props.theme.background};
-      background-color: ${props => props.theme.text};
+      color: ${({ theme }) => theme.colors.background};
+      background-color: ${({ theme }) => theme.colors.text};
       transition: background-color 0.2s linear;
     }
   }

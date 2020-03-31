@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { useTheme } from '../../helpers/ThemeContext'
-import { StyledTagList, StyledTag } from './Tags.css'
+import { TagList, Tag } from './Tags.css'
 import { StyledCard } from './Card.css'
 
 const renderTags = tags => {
@@ -10,9 +10,9 @@ const renderTags = tags => {
   return (
     <div>
       {hashtagged.map((tag, key) => (
-        <StyledTag key={key} className="tag">
+        <Tag key={key} className="tag">
           {tag}
-        </StyledTag>
+        </Tag>
       ))}
     </div>
   )
@@ -34,7 +34,7 @@ const BlogCard = ({ post }) => {
       <Link to={post.slug} id={post.id}>
         <div className="blog--post__container">
           <h1 id="post-title">{post.title}</h1>
-          {post.keywords ? <StyledTagList>{renderTags(post.keywords)}</StyledTagList> : null}
+          {post.keywords ? <TagList>{renderTags(post.keywords)}</TagList> : null}
           <span id="date">{post.date}</span>
           <div className="blog--post__excerpt">
             <p>{post.excerpt}</p>

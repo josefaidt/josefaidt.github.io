@@ -7,7 +7,6 @@ import { StyledHeader } from './Header.css'
 
 const Header = ({ siteTitle, children }) => {
   const theme = useTheme()
-  console.log('THEME IS', theme)
   const { site } = useStaticQuery(graphql`
     query {
       site {
