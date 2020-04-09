@@ -4,13 +4,15 @@
   "version": "2.3.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "start": "yarn start:app",
-    "start:app": "yarn workspace @josefaidt/app run start",
-    "start:demo": "yarn workspace @josefaidt/demo run start",
+    "start": "yarn app start",
     "build": "yarn build:app && yarn build:demo",
-    "build:app": "yarn workspace @josefaidt/app run build",
-    "build:demo": "yarn workspace @josefaidt/demo run build",
+    "build:app": "yarn app build",
+    "build:demo": "yarn demo build",
     "clean": "rm -rf node_modules **/node_modules yarn.lock",
+    "app": "yarn workspace @josefaidt/app run",
+    "theme": "yarn workspace @josefaidt/gatsby-theme run",
+    "demo": "yarn workspace @josefaidt/demo run",
+    "resume": "yarn workspace @josefaidt/resume run",
     "reload": "yarn clean; yarn install"
   },
   "keywords": [
@@ -24,7 +26,8 @@
   "workspaces": [
     "app",
     "theme",
-    "demo"
+    "demo",
+    "resume"
   ],
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.11",
