@@ -1,4 +1,4 @@
-name: Deploy app to Netlify
+name: Deploy App to Netlify
 on:
   push:
     branches: [ master ]
