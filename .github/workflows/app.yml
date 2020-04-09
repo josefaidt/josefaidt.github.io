@@ -15,9 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: checkChangesInApp
     steps:
-    - name: Build
-      uses: netlify/actions/build@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
-        BUILD_DIR: app
+    - name: Deploy
+      run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_APP_ID }}&trigger_title=triggered+by+GitHub+Actions
