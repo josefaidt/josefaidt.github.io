@@ -1,0 +1,23 @@
+name: Deploy app to Netlify
+on:
+  push:
+    branches: [ master ]
+jobs:
+  checkChangesInApp:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Check changes in App
+      uses: netlify/actions/diff-includes@master
+      with:
+        args: app,theme
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build
+      needs: checkChangesInApp
+      uses: netlify/actions/build@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
+        BUILD_DIR: app,theme
