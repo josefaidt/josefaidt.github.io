@@ -1,6 +1,7 @@
 import React from 'react'
 import fetch from 'node-fetch'
 import Card from '../components/Card'
+import Grid from '../components/Grid'
 import projects from '../data/projects.json'
 import query from './_query'
 
@@ -23,22 +24,24 @@ const HomePage = ({ repositories, projects }) => {
           <h2>Personal Projects</h2>
           <p>Highlights from my personal work</p>
         </header>
-        {projects.map((project, i) => (
-          <Card key={i}>
-            <h4>{project.name}</h4>
-            <p>
-              <a href={project.url}>
-                {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
-              </a>
-            </p>
-            <p>{project.description}</p>
-            <div className="card--technologies">
-              {project.technologies.map((technology, k) => (
-                <div key={k}>{technology}</div>
-              ))}
-            </div>
-          </Card>
-        ))}
+        <Grid>
+          {projects.map((project, i) => (
+            <Card key={i}>
+              <h4>{project.name}</h4>
+              <p>
+                <a href={project.url}>
+                  {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
+                </a>
+              </p>
+              <p>{project.description}</p>
+              <div className="card--technologies">
+                {project.technologies.map((technology, k) => (
+                  <div key={k}>{technology}</div>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </Grid>
       </section>
       <section>
         <header>
@@ -78,7 +81,7 @@ const HomePage = ({ repositories, projects }) => {
           <ul>
             <li>Lead large-scale endpoint deployments</li>
             <li>
-              Buid inventory receiving application infrastructure (MySQL, Microsoft Server, PHP)
+              Build inventory receiving application infrastructure (MySQL, Microsoft Server, PHP)
             </li>
           </ul>
         </article>
