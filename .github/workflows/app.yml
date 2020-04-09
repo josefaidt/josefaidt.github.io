@@ -13,9 +13,9 @@ jobs:
         args: app,theme
   build:
     runs-on: ubuntu-latest
+    needs: checkChangesInApp
     steps:
     - name: Build
-      needs: checkChangesInApp
       uses: netlify/actions/build@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
