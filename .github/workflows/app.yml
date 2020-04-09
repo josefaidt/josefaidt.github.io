@@ -20,4 +20,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
-        BUILD_DIR: app,theme
+        BUILD_DIR: app
