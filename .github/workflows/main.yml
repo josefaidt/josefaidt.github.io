@@ -12,6 +12,8 @@ jobs:
       with:
         args: app,theme
   build:
+    runs-on: ubuntu-latest
+    steps:
     - name: Build
       needs: checkChangesInApp
       uses: netlify/actions/build@master
