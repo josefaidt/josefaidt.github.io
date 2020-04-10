@@ -10,7 +10,7 @@ jobs:
     - name: Check changes in App
       uses: netlify/actions/diff-includes@master
       with:
-        args: app,theme
+        args: app
   deploy:
     runs-on: ubuntu-latest
     needs: checkChangesInApp
@@ -21,5 +21,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
-          args: deploy --dir=app --prod
+          args: deploy --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
