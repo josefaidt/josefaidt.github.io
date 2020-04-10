@@ -26,10 +26,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn workspace @josefaidt/app build
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
         env:
