@@ -3,4 +3,5 @@
   grid-auto-flow: row;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+  margin-bottom: 2rem;
 }

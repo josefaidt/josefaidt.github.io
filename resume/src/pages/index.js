@@ -2,15 +2,17 @@ import React from 'react'
 import fetch from 'node-fetch'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
+import Container from '../components/Container'
 import projects from '../data/projects.json'
 import query from './_query'
 
 const HomePage = ({ repositories, projects }) => {
-  console.log(repositories, projects)
   return (
-    <main>
-      <h1>Josef Aidt</h1>
+    <Container>
       <section aria-label="contact information">
+        <header>
+          <h1>Josef Aidt</h1>
+        </header>
         <p>
           <strong>Email:</strong> josef.aidt@gmail.com <br />
           <strong>Website:</strong> josefaidt.dev <br />
@@ -22,17 +24,16 @@ const HomePage = ({ repositories, projects }) => {
       <section>
         <header>
           <h2>Personal Projects</h2>
-          <p>Highlights from my personal work</p>
         </header>
         <Grid>
           {projects.map((project, i) => (
             <Card key={i}>
               <h4>{project.name}</h4>
-              <p>
+              {/* <p>
                 <a href={project.url}>
                   {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
                 </a>
-              </p>
+              </p> */}
               <p>{project.description}</p>
               <div className="card--technologies">
                 {project.technologies.map((technology, k) => (
@@ -86,7 +87,7 @@ const HomePage = ({ repositories, projects }) => {
           </ul>
         </article>
       </section>
-    </main>
+    </Container>
   )
 }
 
