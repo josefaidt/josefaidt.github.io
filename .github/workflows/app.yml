@@ -5,9 +5,6 @@ on:
 jobs:
   checkChangesInApp:
     runs-on: ubuntu-latest
-    outputs:
-      continue:
-        description: "Determines whether deploy process should proceed"
     steps:
       - uses: actions/checkout@v1
       - name: Check changes in App
