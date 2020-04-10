@@ -51,7 +51,7 @@ const HomePage = ({ repositories, projects }) => {
         <article>
           <header>
             <h3>Full-Stack JavaScript Developer at IBM</h3>
-            <p>Baton Rouge, LA</p>
+            {/* <p>Baton Rouge, LA</p> */}
             <p>December 2018 - Present</p>
           </header>
           <ul>
@@ -62,7 +62,7 @@ const HomePage = ({ repositories, projects }) => {
         <article>
           <header>
             <h3>Business Intelligence Developer at FMOL Health System</h3>
-            <p>Baton Rouge, LA</p>
+            {/* <p>Baton Rouge, LA</p> */}
             <p>August 2017 - December 2018</p>
           </header>
           <ul>
@@ -76,7 +76,7 @@ const HomePage = ({ repositories, projects }) => {
         <article>
           <header>
             <h3>IS Support Analyst at FMOL Health System</h3>
-            <p>Baton Rouge, LA</p>
+            {/* <p>Baton Rouge, LA</p> */}
             <p>October 2013 - August 2017</p>
           </header>
           <ul>
