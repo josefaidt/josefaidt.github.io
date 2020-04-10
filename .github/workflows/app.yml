@@ -15,12 +15,12 @@ jobs:
           else
             echo "No changes in app, stopping" && echo "::set-output name=continue::false"
           fi
-      - name: Use Node.js 10
+      - name: Prepare Node
         if: steps.changes.output.continue == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 10
-      - name: Install Deps
+      - name: Install Dependencies with yarn
         if: steps.changes.output.continue == 'true'
         run: yarn
       - name: Build Gatsby App
