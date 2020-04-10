@@ -23,6 +23,8 @@ jobs:
       - name: Install Deps
         run: yarn
       - name: Build Gatsby App
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn workspace @josefaidt/app build
   deploy:
     runs-on: ubuntu-latest
@@ -33,7 +35,6 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           args: deploy --dir=app/public --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
