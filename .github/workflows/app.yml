@@ -3,30 +3,28 @@ on:
   push:
     branches: [ master ]
 jobs:
-  changes:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Check changes in App
-        run: |
+        id: changes
+        run: | # modified netlify/actions/diff, also prevents parallel checkouts
           if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") app; then
             echo "Changes in app, proceeding" && echo "::set-output name=continue::true"
           else
             echo "No changes in app, stopping" && echo "::set-output name=continue::false"
           fi
-  build:
-    runs-on: ubuntu-latest
-    needs: checkChangesInApp
-    if: ${{ jobs.changes.outputs.continue }} == 'true'
-    steps:
-      - uses: actions/checkout@master
       - name: Use Node.js 10
+        if: steps.changes.output.continue == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 10
       - name: Install Deps
+        if: steps.changes.output.continue == 'true'
         run: yarn
       - name: Build Gatsby App
+        if: steps.changes.output.continue == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
@@ -34,6 +32,7 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: yarn workspace @josefaidt/app build
       - name: Deploy to netlify
+        if: steps.changes.output.continue == 'true'
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
