@@ -10,13 +10,11 @@ jobs:
       - name: Check changes in App
         id: changes
         run: |
-          if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") $*; then
-            echo "Changes in $*, proceeding"
+          if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") app; then
+            echo "Changes in app, proceeding"
           else
-            echo "No changes in $*, stopping" && echo "ignore:$*" >> "$HOME/ignore"
+            echo "No changes in app, stopping" && echo "ignore:$*" >> "$HOME/ignore"
           fi
-        with:
-          args: app
   build:
     runs-on: ubuntu-latest
     needs: checkChangesInApp
