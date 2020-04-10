@@ -4,11 +4,11 @@ on:
     branches: [ master ]
 jobs:
   checkChangesInApp:
+    id: changes
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Check changes in App
-        id: changes
         run: |
           if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") app; then
             echo "Changes in app, proceeding" && echo "::set-output name=continue::true"
@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: checkChangesInApp
-    if: outputs.continue == 'true'
+    if: jobs.changes.outputs.continue == 'true'
     steps:
       - uses: actions/checkout@master
       - name: Use Node.js 10
