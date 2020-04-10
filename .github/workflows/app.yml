@@ -12,6 +12,8 @@ jobs:
         run: | # modified netlify/actions/diff, also prevents parallel checkouts
           if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") app; then
             echo "Changes in app, proceeding" && echo "::set-output name=continue::true"
+          elif ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") theme; then
+            echo "Changes in theme, proceeding" && echo "::set-output name=continue::true"
           else
             echo "No changes in app, stopping" && echo "::set-output name=continue::false"
           fi
