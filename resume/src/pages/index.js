@@ -4,7 +4,7 @@ import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import projects from '../data/projects.json'
-import query from './_query'
+import query from '../gh-query'
 
 const HomePage = ({ repositories, projects }) => {
   return (
@@ -105,9 +105,8 @@ export async function getStaticProps(context) {
     const data = await res.json()
     return data?.data
   }
-  const githubData = await getGithubData()
   return {
-    props: { projects, repositories: githubData.user.repositories }, // will be passed to the page component as props
+    props: { projects }, // will be passed to the page component as props
   }
 }
 
