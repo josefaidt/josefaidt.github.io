@@ -6,11 +6,21 @@ jobs:
   checkChangesInApp:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Check changes in App
-      uses: netlify/actions/diff-includes@master
-      with:
-        args: app
+      - uses: actions/checkout@master
+      - name: Check changes in App
+        uses: netlify/actions/diff-includes@master
+        with:
+          args: app
+  build:
+    runs-on: ubuntu-latest
+    needs: checkChangesInApp
+    steps:
+      - name: Use Node.js 10
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: build app
+        run: yarn workspace @josefaidt/app build
   deploy:
     runs-on: ubuntu-latest
     needs: checkChangesInApp
