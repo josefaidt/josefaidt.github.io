@@ -6,7 +6,7 @@ jobs:
   checkChangesInApp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - name: Check changes in App
         uses: netlify/actions/diff-includes@master
         with:
@@ -35,5 +35,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
-          args: deploy --dir=app/public --prod
+          args: deploy --dir=app/public --prod -m "Deployed with GitHub Actions"
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
