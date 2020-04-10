@@ -20,3 +20,7 @@ node_modules
 temp
 app-temp
 design
+# Local Netlify folder
+.netlify
+
+.cache

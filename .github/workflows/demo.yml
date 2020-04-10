@@ -1,0 +1,37 @@
+name: Deploy Gatsby Theme Demo to Netlify
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Check changes in Demo
+        id: changes
+        run: | # modified netlify/actions/diff, also prevents parallel checkouts
+          if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") demo; then
+            echo "Changes in demo, proceeding" && echo "::set-output name=continue::true"
+          else
+            echo "No changes in demo, stopping" && echo "::set-output name=continue::false"
+          fi
+      - name: Prepare Node
+        if: steps.changes.output.continue == 'true'
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: Install Dependencies with yarn
+        if: steps.changes.output.continue == 'true'
+        run: yarn
+      - name: Build Gatsby Demo
+        if: steps.changes.output.continue == 'true'
+        run: yarn workspace @josefaidt/demo build
+      - name: Deploy to netlify
+        if: steps.changes.output.continue == 'true'
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.DEMO_NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=demo/public --prod -m "Deployed with GitHub Actions"
+          secrets: '["NETLIFY_AUTH_TOKEN", "DEMO_NETLIFY_SITE_ID"]'
