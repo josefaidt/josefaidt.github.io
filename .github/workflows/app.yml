@@ -25,6 +25,9 @@ jobs:
       - name: Build Gatsby App
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: yarn workspace @josefaidt/app build
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
