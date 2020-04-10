@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
+      - name: Install Deps
+        run: yarn
       - name: build app
         run: yarn workspace @josefaidt/app build
   deploy:
