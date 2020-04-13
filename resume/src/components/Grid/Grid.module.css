@@ -1,7 +1,12 @@
 .grid {
   display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 66rem) {
+  .grid {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
