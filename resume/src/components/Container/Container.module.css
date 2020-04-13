@@ -8,3 +8,9 @@
     max-width: 60rem;
   }
 }
+
+@media print {
+  .container {
+    padding: 0;
+  }
+}

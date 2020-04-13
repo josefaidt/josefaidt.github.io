@@ -3,4 +3,7 @@
   padding: 1rem;
   border-radius: 0.2rem;
   border: 1px solid darkgrey;
+
+  display: flex;
+  flex-direction: column;
 }

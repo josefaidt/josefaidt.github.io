@@ -17,3 +17,13 @@ li {
 h3 {
   font-size: 1.2rem;
 }
+
+section {
+  margin-bottom: 3rem;
+}
+
+@media print {
+  section {
+    page-break-before: auto;
+  }
+}

@@ -4,7 +4,7 @@ import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import projects from '../data/projects.json'
-import query from '../gh-query'
+import query from '../data/gh-query'
 
 const HomePage = ({ repositories, projects }) => {
   return (
@@ -35,7 +35,7 @@ const HomePage = ({ repositories, projects }) => {
                 </a>
               </p> */}
               <p>{project.description}</p>
-              <div className="card--technologies">
+              <div style={{ marginTop: 'auto' }}>
                 {project.technologies.map((technology, k) => (
                   <div key={k}>{technology}</div>
                 ))}

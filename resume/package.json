@@ -8,6 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@josefaidt/gatsby-theme": "*",
+    "classnames": "^2.2.6",
+    "framer-motion": "^1.10.3",
+    "jspdf": "^1.5.3",
     "next": "^9.3.4",
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
