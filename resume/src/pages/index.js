@@ -15,11 +15,27 @@ const HomePage = ({ repositories, projects }) => {
           <h1>Josef Aidt</h1>
         </header>
         <p>
-          <strong>Email:</strong> josef.aidt@gmail.com <br />
-          <strong>Website:</strong> josefaidt.dev <br />
-          <strong>Twitter:</strong> @josefaidt <br />
-          <strong>Twitch:</strong> twitch.tv/josefaidt <br />
-          <strong>Github:</strong> github.com/josefaidt <br />
+          <strong>Email:</strong>{' '}
+          <a href="mailto:josef.aidt@gmail.com" target="_blank" rel="noopener noreferrer">
+            josef.aidt@gmail.com
+          </a>{' '}
+          <br />
+          <strong>Website:</strong> <a href="https://josefaidt.dev">josefaidt.dev</a> <br />
+          <strong>Twitter:</strong>{' '}
+          <a href="https://twitter.com/josefaidt" target="_blank" rel="noopener noreferrer">
+            @josefaidt
+          </a>{' '}
+          <br />
+          <strong>Twitch:</strong>{' '}
+          <a href="https://twitch.tv/josefaidt" target="_blank" rel="noopener noreferrer">
+            twitch.tv/josefaidt
+          </a>{' '}
+          <br />
+          <strong>Github:</strong>{' '}
+          <a href="https://github.com/josefaidt" target="_blank" rel="noopener noreferrer">
+            github.com/josefaidt
+          </a>{' '}
+          <br />
         </p>
       </section>
       <section>
