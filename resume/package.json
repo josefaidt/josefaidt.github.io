@@ -5,19 +5,20 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "yarn build && netlify deploy --dir=out"
   },
   "dependencies": {
     "@josefaidt/gatsby-theme": "*",
     "classnames": "^2.2.6",
     "framer-motion": "^1.10.3",
-    "jspdf": "^1.5.3",
     "next": "^9.3.4",
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "netlify-cli": "^2.46.0"
   }
 }
