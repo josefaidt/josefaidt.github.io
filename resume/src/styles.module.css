@@ -21,6 +21,31 @@
   font-style: italic;
 }
 
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardLaunch {
+  font-size: 80%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  grid-gap: 0.3rem;
+}
+
+@media print {
+  .cardLaunch {
+    display: none;
+  }
+}
+
+.cardLaunchIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media print {
   .cardTitle {
     margin-bottom: 0.45rem;

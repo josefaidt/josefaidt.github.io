@@ -47,10 +47,25 @@ const HomePage = ({ repositories, projects, experience }) => {
         <Grid>
           {projects.map((project, i) => (
             <Card key={i}>
-              <h4 className={styles.cardTitle}>{project.name}</h4>
+              <header className={styles.cardHeader}>
+                <h4 className={styles.cardTitle}>{project.name}</h4>
+                <a
+                  className={styles.cardLaunch}
+                  href={project.url}
+                  target="_blank"
+                  style={{ alignSelf: 'flex-start' }}
+                >
+                  Launch{' '}
+                  <svg className={styles.cardLaunchIcon} height="32" width="32" viewBox="0 0 32 32">
+                    <title>Launch Demo</title>
+                    <path d="M6 2v24h24v-24h-24zM28 24h-20v-20h20v20zM4 28v-21l-2-2v25h25l-2-2h-21z" />
+                    <path d="M11 8l5 5-6 6 3 3 6-6 5 5v-13z" />
+                  </svg>
+                </a>
+              </header>
               {/* <p>
                 <a href={project.url}>
-                  {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
+                {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
                 </a>
               </p> */}
               <p className={styles.cardDescription}>{project.description}</p>
