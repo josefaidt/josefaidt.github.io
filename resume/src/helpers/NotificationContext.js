@@ -52,7 +52,7 @@ const initialState = [
     content: {
       title: 'Download the PDF',
       description:
-        'Press ctrl+P or cmd+P, choose "Print to PDF", and disable headers and footers in "More Settings"!',
+        'Press ctrl+P or cmd+P, choose "Print to PDF", and disable headers and footers in "More Settings"',
     },
   },
 ]
