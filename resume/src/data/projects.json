@@ -23,14 +23,14 @@
   },
   {
     "name": "svelte-themer",
-    "type": "npm",
+    "type": "demo",
     "url": "https://svelte-themer.now.sh",
     "description": "Lightweight theming solution for Svelte applications using CSS Variables",
     "technologies": ["Svelte", "CSS"]
   },
   {
     "name": "svelte-cachedb",
-    "type": "download",
+    "type": "npm",
     "url": "https://www.npmjs.com/package/svelte-cachedb",
     "description": "JSON database using Svelte's writable store API, persisted to local storage",
     "technologies": ["Svelte"]

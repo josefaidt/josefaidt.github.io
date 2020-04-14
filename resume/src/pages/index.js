@@ -56,9 +56,12 @@ const HomePage = ({ repositories, projects, experience }) => {
                   style={{ alignSelf: 'flex-start' }}
                 >
                   {project.type.toLowerCase() !== 'download' ? 'Launch ' : ''}
-                  {[project.type[0].toUpperCase(), project.type.slice(1).toLowerCase()].join(
-                    ''
-                  )}{' '}
+                  {[
+                    project.type[0].toUpperCase(),
+                    project.type.toLowerCase() === 'npm'
+                      ? project.type.slice(1).toUpperCase()
+                      : project.type.slice(1).toLowerCase(),
+                  ].join('')}{' '}
                   <svg className={styles.cardLaunchIcon} height="32" width="32" viewBox="0 0 32 32">
                     <title>Launch Project</title>
                     <path d="M6 2v24h24v-24h-24zM28 24h-20v-20h20v20zM4 28v-21l-2-2v25h25l-2-2h-21z" />
