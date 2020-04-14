@@ -20,8 +20,15 @@
 }
 
 @media print {
+  .technologies {
+    margin-top: 0;
+  }
+}
+
+@media print {
   .card {
     background-color: transparent;
     border: none;
+    padding: 0;
   }
 }

@@ -9,7 +9,6 @@
     "deploy": "yarn build && netlify deploy --dir=out"
   },
   "dependencies": {
-    "@josefaidt/gatsby-theme": "*",
     "classnames": "^2.2.6",
     "framer-motion": "^1.10.3",
     "next": "^9.3.4",
