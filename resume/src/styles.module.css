@@ -5,6 +5,12 @@
   grid-gap: 1.5rem;
 }
 
+@media (max-width: 66rem) {
+  .xpHeader {
+    grid-auto-flow: row;
+  }
+}
+
 .xpTitle {
   /* margin-bottom: 1.45rem; */
 }

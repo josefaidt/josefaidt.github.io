@@ -4,11 +4,12 @@ import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import projects from '../data/projects.json'
+import experience from '../data/experience.json'
 import query from '../data/gh-query'
 import { technologies as cardTechnologies } from '../components/Card/Card.module.css'
 import styles from '../styles.module.css'
 
-const HomePage = ({ repositories, projects }) => {
+const HomePage = ({ repositories, projects, experience }) => {
   return (
     <Container>
       <section aria-label="contact information">
@@ -66,46 +67,23 @@ const HomePage = ({ repositories, projects }) => {
         <header>
           <h2>Work Experience</h2>
         </header>
-        <article>
-          <header className={styles.xpHeader}>
-            <h3 className={styles.xpTitle}>Full-Stack JavaScript Developer at IBM</h3>
-            {/* <p>Baton Rouge, LA</p> */}
-            <p className={styles.xpDate}>December 2018 &ndash; Present</p>
-          </header>
-          <ul>
-            <li>Established local front-end development group chapter, leads bi-weekly meetups</li>
-            <li>Build learning management system (Node.js, React)</li>
-          </ul>
-        </article>
-        <article>
-          <header className={styles.xpHeader}>
-            <h3 className={styles.xpTitle}>
-              Business Intelligence Developer at FMOL Health System
-            </h3>
-            {/* <p>Baton Rouge, LA</p> */}
-            <p className={styles.xpDate}>August 2017 &ndash; December 2018</p>
-          </header>
-          <ul>
-            <li>Build and support Lawson ERP submodules (HTML5, CSS3, JavaScript)</li>
-            <li>
-              Design financial, human resources, and logistics reports (Oracle SQL, Microsoft SQL,
-              Tableau)
-            </li>
-          </ul>
-        </article>
-        <article>
-          <header className={styles.xpHeader}>
-            <h3 className={styles.xpTitle}>IS Support Analyst at FMOL Health System</h3>
-            {/* <p>Baton Rouge, LA</p> */}
-            <p className={styles.xpDate}>October 2013 &ndash; August 2017</p>
-          </header>
-          <ul>
-            <li>Lead large-scale endpoint deployments</li>
-            <li>
-              Build inventory receiving application infrastructure (MySQL, Microsoft Server, PHP)
-            </li>
-          </ul>
-        </article>
+        {experience.map((xp, i) => (
+          <article key={i}>
+            <header className={styles.xpHeader}>
+              <h3 className={styles.xpTitle}>
+                {xp.title} at {xp.company}
+              </h3>
+              <p className={styles.xpDate}>
+                {xp.startDate} &ndash; {xp.endDate}
+              </p>
+            </header>
+            <ul>
+              {xp.responsibilities.map((responsibility, k) => (
+                <li key={k}>{responsibility}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </section>
     </Container>
   )
@@ -126,7 +104,7 @@ export async function getStaticProps(context) {
     return data?.data
   }
   return {
-    props: { projects }, // will be passed to the page component as props
+    props: { projects, experience }, // will be passed to the page component as props
   }
 }
 
