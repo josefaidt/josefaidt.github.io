@@ -6,12 +6,11 @@
 }
 
 .xpTitle {
-  margin-bottom: 1.45rem;
+  /* margin-bottom: 1.45rem; */
 }
 
 .xpDate {
   font-style: italic;
-  margin-bottom: 1.45rem;
 }
 
 @media print {
