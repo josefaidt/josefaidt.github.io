@@ -1,4 +1,5 @@
 import React from 'react'
+import { Head } from 'next/head'
 import NotificationContainer from '../components/NotificationContainer'
 import { NotificationProvider } from '../helpers/NotificationContext'
 import '../global.css'
