@@ -4,13 +4,13 @@ import styles from './NotificationToast.module.css'
 
 const NotificationToast = ({ data: n, onClose }) => {
   const x = useMotionValue(0)
-  const opacity = useTransform(x, [0, 120, 200], ['1', '0.7', '0'])
+  const opacity = useTransform(x, [0, 110, 200], ['1', '0.7', '0'])
   return (
     <motion.div
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.7}
-      onDrag={(event, info) => info.point.x > 150 && onClose(n.id)}
+      onDrag={(event, info) => info.point.x > 135 && onClose(n.id)}
       style={{ x, opacity }}
     >
       <div className={styles.container}>

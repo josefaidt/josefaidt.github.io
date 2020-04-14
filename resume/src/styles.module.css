@@ -1,0 +1,20 @@
+.xpHeader {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-gap: 1.5rem;
+}
+
+.xpDate {
+  font-style: italic;
+}
+
+@media print {
+  .cardTitle {
+    margin-bottom: 0.45rem;
+  }
+
+  .cardDescription {
+    margin-bottom: 0.45rem;
+  }
+}

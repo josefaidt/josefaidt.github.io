@@ -28,7 +28,7 @@
     "name": "svelte-cachedb",
     "url": "https://www.npmjs.com/package/svelte-cachedb",
     "description": "JSON database using Svelte's writable store API, persisted to local storage",
-    "technologies": ["Svelte", "CSS"]
+    "technologies": ["Svelte"]
   },
   {
     "name": "mdx-deck-theme-garlic",

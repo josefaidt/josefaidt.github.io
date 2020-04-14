@@ -4,6 +4,14 @@
   margin-bottom: 2rem;
 }
 
+@media print {
+  .grid {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+  }
+}
+
 @media (min-width: 66rem) {
   .grid {
     grid-auto-flow: row;

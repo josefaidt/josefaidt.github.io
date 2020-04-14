@@ -6,6 +6,7 @@ import Container from '../components/Container'
 import projects from '../data/projects.json'
 import query from '../data/gh-query'
 import { technologies as cardTechnologies } from '../components/Card/Card.module.css'
+import styles from '../styles.module.css'
 
 const HomePage = ({ repositories, projects }) => {
   return (
@@ -45,13 +46,13 @@ const HomePage = ({ repositories, projects }) => {
         <Grid>
           {projects.map((project, i) => (
             <Card key={i}>
-              <h4>{project.name}</h4>
+              <h4 className={styles.cardTitle}>{project.name}</h4>
               {/* <p>
                 <a href={project.url}>
                   {project.urlLabel || project.url.replace(/https?:\/\//, '')} &rarr;
                 </a>
               </p> */}
-              <p>{project.description}</p>
+              <p className={styles.cardDescription}>{project.description}</p>
               <div className={cardTechnologies}>
                 {project.technologies.map((technology, k) => (
                   <div key={k}>{technology}</div>
@@ -66,10 +67,10 @@ const HomePage = ({ repositories, projects }) => {
           <h2>Work Experience</h2>
         </header>
         <article>
-          <header>
+          <header className={styles.xpHeader}>
             <h3>Full-Stack JavaScript Developer at IBM</h3>
             {/* <p>Baton Rouge, LA</p> */}
-            <p>December 2018 - Present</p>
+            <p className={styles.xpDate}>December 2018 &ndash; Present</p>
           </header>
           <ul>
             <li>Established local front-end development group chapter, leads bi-weekly meetups</li>
@@ -77,10 +78,10 @@ const HomePage = ({ repositories, projects }) => {
           </ul>
         </article>
         <article>
-          <header>
+          <header className={styles.xpHeader}>
             <h3>Business Intelligence Developer at FMOL Health System</h3>
             {/* <p>Baton Rouge, LA</p> */}
-            <p>August 2017 - December 2018</p>
+            <p className={styles.xpDate}>August 2017 &ndash; December 2018</p>
           </header>
           <ul>
             <li>Build and support Lawson ERP submodules (HTML5, CSS3, JavaScript)</li>
@@ -91,10 +92,10 @@ const HomePage = ({ repositories, projects }) => {
           </ul>
         </article>
         <article>
-          <header>
+          <header className={styles.xpHeader}>
             <h3>IS Support Analyst at FMOL Health System</h3>
             {/* <p>Baton Rouge, LA</p> */}
-            <p>October 2013 - August 2017</p>
+            <p className={styles.xpDate}>October 2013 &ndash; August 2017</p>
           </header>
           <ul>
             <li>Lead large-scale endpoint deployments</li>
