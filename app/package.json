@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn develop",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "build:dev": "IS_LOCAL=true gatsby build",
     "clean": "rm -rf .cache public"
