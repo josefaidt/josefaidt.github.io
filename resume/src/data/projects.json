@@ -1,18 +1,21 @@
 [
   {
     "name": "Personal Portfolio",
+    "type": "app",
     "url": "https://josefaidt.dev",
     "description": "Progressive Web Application built to showcase my work and blog",
     "technologies": ["Serverless", "React", "Gatsby", "MDX"]
   },
   {
     "name": "@josefaidt/gatsby-theme",
+    "type": "demo",
     "url": "https://gatsby-theme.josefaidt.dev",
     "description": "Gatsby theme built for personal portfolio, using gatsby-theme-blog-core for MDX-enabled authoring",
     "technologies": ["React", "Gatsby", "MDX"]
   },
   {
     "name": "Rouge Theme",
+    "type": "download",
     "url": "https://marketplace.visualstudio.com/items?itemName=josef.rouge-theme",
     "urlLabel": "VSCode Marketplace",
     "description": "Color theme created for VSCode",
@@ -20,18 +23,21 @@
   },
   {
     "name": "svelte-themer",
+    "type": "demo",
     "url": "https://svelte-themer.now.sh",
     "description": "Lightweight theming solution for Svelte applications using CSS Variables",
     "technologies": ["Svelte", "CSS"]
   },
   {
     "name": "svelte-cachedb",
+    "type": "download",
     "url": "https://www.npmjs.com/package/svelte-cachedb",
     "description": "JSON database using Svelte's writable store API, persisted to local storage",
     "technologies": ["Svelte"]
   },
   {
     "name": "mdx-deck-theme-garlic",
+    "type": "demo",
     "url": "https://mdx-deck-theme-garlic.josefaidt.now.sh/",
     "description": "Slide deck theme created for mdx-deck",
     "technologies": ["React", "MDX"]
