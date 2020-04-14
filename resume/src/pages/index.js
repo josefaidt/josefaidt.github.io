@@ -68,7 +68,7 @@ const HomePage = ({ repositories, projects }) => {
         </header>
         <article>
           <header className={styles.xpHeader}>
-            <h3>Full-Stack JavaScript Developer at IBM</h3>
+            <h3 className={styles.xpTitle}>Full-Stack JavaScript Developer at IBM</h3>
             {/* <p>Baton Rouge, LA</p> */}
             <p className={styles.xpDate}>December 2018 &ndash; Present</p>
           </header>
@@ -79,7 +79,9 @@ const HomePage = ({ repositories, projects }) => {
         </article>
         <article>
           <header className={styles.xpHeader}>
-            <h3>Business Intelligence Developer at FMOL Health System</h3>
+            <h3 className={styles.xpTitle}>
+              Business Intelligence Developer at FMOL Health System
+            </h3>
             {/* <p>Baton Rouge, LA</p> */}
             <p className={styles.xpDate}>August 2017 &ndash; December 2018</p>
           </header>
@@ -93,7 +95,7 @@ const HomePage = ({ repositories, projects }) => {
         </article>
         <article>
           <header className={styles.xpHeader}>
-            <h3>IS Support Analyst at FMOL Health System</h3>
+            <h3 className={styles.xpTitle}>IS Support Analyst at FMOL Health System</h3>
             {/* <p>Baton Rouge, LA</p> */}
             <p className={styles.xpDate}>October 2013 &ndash; August 2017</p>
           </header>

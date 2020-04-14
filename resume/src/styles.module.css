@@ -5,8 +5,13 @@
   grid-gap: 1.5rem;
 }
 
+.xpTitle {
+  margin-bottom: 1.45rem;
+}
+
 .xpDate {
   font-style: italic;
+  margin-bottom: 1.45rem;
 }
 
 @media print {
