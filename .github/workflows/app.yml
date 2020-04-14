@@ -7,26 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Check changes in App
-        id: changes
-        run: | # modified netlify/actions/diff, also prevents parallel checkouts
-          if ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") app; then
-            echo "Changes in app, proceeding" && echo "::set-output name=continue::true"
-          elif ! git diff-index --quiet HEAD~$(jq '.commits | length' "${GITHUB_EVENT_PATH}") theme; then
-            echo "Changes in theme, proceeding" && echo "::set-output name=continue::true"
-          else
-            echo "No changes in app, stopping" && echo "::set-output name=continue::false"
-          fi
       - name: Prepare Node
-        if: steps.changes.output.continue == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 10
       - name: Install Dependencies with yarn
-        if: steps.changes.output.continue == 'true'
         run: yarn
       - name: Build Gatsby App
-        if: steps.changes.output.continue == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
@@ -34,7 +21,6 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: yarn workspace @josefaidt/app build
       - name: Deploy to netlify
-        if: steps.changes.output.continue == 'true'
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
