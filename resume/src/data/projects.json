@@ -15,7 +15,7 @@
   },
   {
     "name": "Rouge Theme",
-    "type": "download",
+    "type": "marketplace",
     "url": "https://marketplace.visualstudio.com/items?itemName=josef.rouge-theme",
     "urlLabel": "VSCode Marketplace",
     "description": "Color theme created for VSCode",
@@ -23,7 +23,7 @@
   },
   {
     "name": "svelte-themer",
-    "type": "demo",
+    "type": "npm",
     "url": "https://svelte-themer.now.sh",
     "description": "Lightweight theming solution for Svelte applications using CSS Variables",
     "technologies": ["Svelte", "CSS"]
