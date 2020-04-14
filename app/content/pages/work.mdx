@@ -1,5 +1,5 @@
 ---
-title: Resume
+title: Work
 ---
 
 import { graphql } from 'gatsby'
@@ -8,10 +8,12 @@ import SEO from '@josefaidt/gatsby-theme/src/components/seo'
 
 export default ({ children, data, ...props }) => (
   <PageLayout>
-    <SEO title="Resume" />
+    <SEO title="Work" />
     <Title>
-      <h1>Résumé</h1>
-      <Icon icon="pdf" link={data.file.publicURL} downloadName={data.file.name} />
+      <h1>Work</h1>
+      <a href="https://resume.josefaidt.dev" style={{ marginTop: '1.2rem' }}>
+        Résumé &rarr;
+      </a>
     </Title>
     <Line />
     <h2>Personal Projects</h2>
@@ -77,45 +79,6 @@ export const query = graphql`
     }
   }
 `
-
-## Work Experience
-
----
-
-### Front End UI Developer [@IBM](https://twitter.com/IBM)
-
-_Dec 2018 - Present_
-
-- Uses HTML, CSS, JavaScript, and React to build interactive educational websites with priority in accessibility
-- Leads front-end development meetup, facilitating speaking opportunities and hosting interactive lab sessions
-- Facilitated multiple technical lectures/talks on various front-end topics, mostly surrounding React ecosystem
-- Reduced deployment interaction by 80% of Node.js microservices through implementing Travis CI and pm2 ecosystem orchestration
-- GBS Service Excellence Award recipient
-- Manages 3 concurrent projects on average
-- Designed extended infrastructure and REST API for new Learning Platform
-- Contributes at least 2 articles per week to local front end Slack channel
-
-### Business Intelligence Developer [@FMOL Health System](https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/)
-
-_Aug 2017 - Dec 2018_
-
-- Designed and developed ERP submodule solutions using JavaScript and jQuery
-- Utilized MSSQL Server Reporting Services and Oracle 11g to deliver supply chain asset management, financial reporting, and employee turnover reports
-- Conceived, developed and implemented wide range of BI solutions
-- Created and oversaw dashboards with Tableau
-- Identified opportunities for process improvements that resulted in 30% decrease in support calls
-
-### Information Systems Support Analyst [@FMOL Health System](https://www.linkedin.com/company/franciscan-missionaries-of-our-lady-health-system/about/)
-
-_May 2014 - Aug 2017_
-
-- Designed and developed MySQL Database and PHP web services integration to streamline equipment receiving process, ultimately improving process by 75%
-- Successfully lead 8 key projects managing teams of contract employees for equipment deployment, process improvement, and organizational efforts
-- Lead endpoint deployments to high-traffic areas such as ER, OR, and CVL departments
-- Orchestrated equipment relocation during hospital unit renovation project
-- Mentored new interns and high school work study students on general troubleshooting, documentation best practices, deployments, and disposal procedures.
-
-<br />
 
 ## Education
 
