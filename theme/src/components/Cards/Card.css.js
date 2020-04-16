@@ -24,6 +24,7 @@ const StyledCard = styled.article`
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    margin-top: 0;
   }
   p,
   span#date {
@@ -31,7 +32,7 @@ const StyledCard = styled.article`
   }
   span.tag {
     font-weight: bold;
-    color ${props => props.theme.background};
+    color: ${props => props.theme.background};
     background-color: ${props => props.theme.text.concat('DF')};
     transition: background-color 0.2s linear;
   }
