@@ -28,7 +28,7 @@ const config = {
       resolve: '@dschau/gatsby-source-github',
       options: {
         headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer ${process.env.GH_TOKEN}`,
         },
         queries: [
           `{
@@ -37,7 +37,7 @@ const config = {
           url
           avatarUrl,
           name
-          repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 8, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
+          repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 15, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
             totalCount
             edges {
               node {

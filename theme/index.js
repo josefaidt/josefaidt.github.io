@@ -8,6 +8,8 @@ export { default as PageLayout } from './src/layouts/page'
 export { default as Line } from './src/components/styles/Line'
 export { RepoCard } from './src/components/Cards'
 export { default as useTheme } from './src/hooks/useTheme'
+export { useNotifications, NotificationProvider } from './src/helpers/NotificationContext'
+export { NotificationContainer, NotificationToast } from './src/components/Notification'
 
 // temp
 export { Title } from './src/components/styles/Titles.css'

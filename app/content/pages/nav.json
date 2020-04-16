@@ -10,9 +10,9 @@
     "component": "about.mdx"
   },
   {
-    "name": "resume",
-    "route": "/resume",
-    "component": "resume.mdx"
+    "name": "work",
+    "route": "/work",
+    "component": "work.mdx"
   },
   {
     "name": "blog",

@@ -4,12 +4,13 @@
   "version": "2.3.0",
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
-    "start": "yarn start:app",
-    "start:app": "yarn workspace @josefaidt/app run start",
-    "start:demo": "yarn workspace @josefaidt/demo run start",
+    "app": "yarn workspace @josefaidt/app run",
+    "theme": "yarn workspace @josefaidt/gatsby-theme run",
+    "demo": "yarn workspace @josefaidt/demo run",
+    "resume": "yarn workspace @josefaidt/resume run",
     "build": "yarn build:app && yarn build:demo",
-    "build:app": "yarn workspace @josefaidt/app run build",
-    "build:demo": "yarn workspace @josefaidt/demo run build",
+    "build:app": "yarn app build",
+    "build:demo": "yarn demo build",
     "clean": "rm -rf node_modules **/node_modules yarn.lock",
     "reload": "yarn clean; yarn install"
   },
@@ -24,7 +25,8 @@
   "workspaces": [
     "app",
     "theme",
-    "demo"
+    "demo",
+    "resume"
   ],
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.11",
@@ -32,6 +34,7 @@
     "eslint": "^6.8.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
+    "netlify-cli": "^2.46.0",
     "prettier": "^1.19.1"
   },
   "eslintConfig": {

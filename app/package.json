@@ -5,23 +5,25 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn develop",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "build:dev": "IS_LOCAL=true gatsby build",
+    "deploy": "yarn build:dev && netlify deploy --dir=public",
     "clean": "rm -rf .cache public"
   },
   "dependencies": {
+    "@dschau/gatsby-source-github": "^0.0.1",
+    "@josefaidt/gatsby-theme": "*",
     "gatsby": "^2.19.19",
-    "react": "^16.12.0",
-    "react-dom": "^16.9.0",
-    "react-twitter-embed": "^3.0.3",
     "gatsby-plugin-google-analytics": "^2.1.35",
     "gatsby-plugin-netlify": "^2.1.15",
     "gatsby-plugin-sentry": "^1.0.1",
-    "@dschau/gatsby-source-github": "^0.0.1",
-    "@josefaidt/gatsby-theme": "*"
+    "react": "^16.12.0",
+    "react-dom": "^16.9.0",
+    "react-twitter-embed": "^3.0.3"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "netlify-cli": "^2.46.0"
   }
 }

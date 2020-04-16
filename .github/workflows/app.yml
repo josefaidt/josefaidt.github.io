@@ -1,0 +1,30 @@
+name: Deploy App to Netlify
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: Install Dependencies with yarn
+        run: yarn
+      - name: Build Gatsby App
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        run: yarn workspace @josefaidt/app build
+      - name: Deploy to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=app/public --prod -m "Deployed with GitHub Actions"
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
