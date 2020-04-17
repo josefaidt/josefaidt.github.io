@@ -93,9 +93,9 @@ In the `package.json` file let's include a few dependencies and install them wit
 
 ## Apollo
 
-From my brief time with the Fauna community and
+From my brief time with the Fauna community and seeing other's interpretations, the Apollo layer is not entirely necessary as you can connect to Fauna using the bearer token directly. The benefits of Apollo being the enablement of third party security and additional resolvers to our connected applications.
 
-Let's create a new file in the `api/` directory, `graphql.js`, to create our [Apollo Link](https://www.apollographql.com/docs/link/links/http/):
+Let's start by creating a new file in the `api/` directory, `graphql.js`, to create our [Apollo Link](https://www.apollographql.com/docs/link/links/http/):
 
 _The http link is a terminating link that fetches GraphQL results from a GraphQL endpoint over an http connection. The http link supports both POST and GET requests with the ability to change the http options on a per query basis. This can be used for authentication, persisted queries, dynamic uris, and other granular updates._
 
