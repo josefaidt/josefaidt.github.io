@@ -113,7 +113,7 @@ const link = createHttpLink({
 })
 ```
 
-This snippet creates a connection to our Fauna database, which will allow us to _fetch_ our schema from the remote host (Fauna). Since we are getting our schema from Fauna there's no need to add typedefs or resolvers, however if we were to add additional resolvers not already available in our Fauna instance the logic would need to be written with [FQL](https://docs.fauna.com/fauna/current/api/fql/) &ndash; Fauna Query Language. In this demo we are going to avoid doing so.
+This snippet creates a connection to our Fauna database, which will allow us to _fetch_ our schema from the remote target (Fauna). Since we are getting our schema from Fauna there's no need to add typedefs or resolvers, however if we were to add additional resolvers not already available in our Fauna instance the logic would need to be written with [FQL](https://docs.fauna.com/fauna/current/api/fql/) &ndash; Fauna Query Language. In this demo we are going to avoid doing so.
 
 Let's set up our [Apollo Server](https://www.apollographql.com/docs/apollo-server/) handler using the micro distribution:
 
@@ -161,7 +161,7 @@ export default async (req, res) => {
 }
 ```
 
-There's a lot going on with this update so let's break it down by first taking a look at the very end, the default export of our file. ZEIT emulated Express's handler provides a familiar implementation pattern. This is where we'll use the Apollo handler.
+There's a lot going on with this update so let's break it down by first taking a look at the very end, the default export of our file. ZEIT's emulated Express handler provides a familiar implementation pattern. This is where we'll use the Apollo handler.
 
 Inside the `getHandler` function we are fetching our schema from Fauna and making it usable with Apollo, then creating the server instance with the ability to browse the schema when connecting using something like [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/testing/graphql-playground/).
 
@@ -186,6 +186,6 @@ This will run the Now development environment, enabling us to replicate the prod
 
 ## Results
 
-Open your web browser or GraphQL Playground and plug in the URL appended with `/api/graphql`. You should now be able to perform queries, mutations, and browse the available schema. Awesome! But there is concern with the security. We're using our security token from Fauna to access the database with Apollo, but nothing is in place to prevent people from calling the publicly available ZEIT Now API.
+Open your web browser or GraphQL Playground and plug in the `localhost` URL appended with `/api/graphql`. You should now be able to perform queries, mutations, and browse the available schema. Awesome! But there is concern with the security. We're using our security token from Fauna to access the database with Apollo, but nothing is in place to prevent people from calling the publicly available ZEIT Now API.
 
 Moving forward try to leverage Apollo Server's context to add the authentication check to block unauthorized calls. Next time we'll take a look at using Auth0 with [Svelte](https://svelte.dev/) to protect our API while also creating the frontend.
