@@ -3,6 +3,6 @@ type User {
 }
 
 type Query {
-  allUsers: [Player]!
+  allUsers: [User]!
   user(name: String): User
 }
