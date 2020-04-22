@@ -91,6 +91,29 @@ In the `package.json` file let's include a few dependencies and install them wit
 }
 ```
 
+Before moving forward, remember how we created the environment file, `.env`, and populated our `DB_TOKEN` variable? We'll need to do something similar for Now to expose that variable to our API routes at runtime. This will be done in two steps:
+
+1. Add secret to Now
+2. Map secret to (local) environment variable
+
+In your terminal,
+
+```shell
+now secrets add db_token <fauna-security-token>
+```
+
+Here we're defining the secret all lowercase, even if we defined it like we did our environment variable `DB_TOKEN` ZEIT Now changes it to the lowercase version, `db_token`. Now that we've got our secret added, let's map the secret by creating a new file in the project root, `now.json`:
+
+```json
+{
+  "env": {
+    "DB_TOKEN": "@db_token"
+  }
+}
+```
+
+With our environment variable stored on ZEIT Now and mapped for runtime exposure our API routes can now consume the security token in order to successfully make a connection to Fauna both locally and when deployed.
+
 ## Apollo
 
 From my brief time with the Fauna community and seeing other's interpretations, the Apollo layer is not entirely necessary as you can connect to Fauna using the bearer token directly. The benefits of Apollo are that it allows you to integrate third party security and write additional resolvers to the connected application.
@@ -185,6 +208,6 @@ This will run the Now development environment, enabling us to replicate the prod
 
 ## Results
 
-Open your web browser or GraphQL Playground and plug in the `localhost` URL appended with `/api/graphql`. You should now be able to perform queries, mutations, and browse the available schema. Awesome! But there is concern with the security. We're using our security token from Fauna to access the database with Apollo, but nothing is in place to prevent people from calling the publicly available ZEIT Now API.
+Open GraphQL Playground and plug in the `localhost` URL appended with `/api/graphql`. You should now be able to perform queries, mutations, and browse the available schema. Awesome! But there is concern with the security. We're using our security token from Fauna to access the database with Apollo, but nothing is in place to prevent people from calling the publicly available ZEIT Now API.
 
 Moving forward try to leverage Apollo Server's context to add the authentication check to block unauthorized calls. Next time we'll take a look at using Auth0 with [Svelte](https://svelte.dev/) to protect our API while also creating the frontend.
