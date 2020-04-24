@@ -646,4 +646,8 @@ pre tt:after {
 a {
     color: ${props => props.theme.primary};
 }
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Open Sans';
+}
 `
