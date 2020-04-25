@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import BlogCard from '../../components/Cards'
 import Skeleton from '../../components/Skeleton'
@@ -66,7 +65,6 @@ const StyledForm = styled.form`
 
 const Posts = ({ location, data }) => {
   const {
-    site,
     allBlogPost: { edges: allBlogPosts },
   } = data
   const posts = allBlogPosts.map(({ node }) => node)
@@ -126,22 +124,5 @@ const Posts = ({ location, data }) => {
     </Skeleton>
   )
 }
-
-// export const PageQuery = graphql`
-//   query {
-//     allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
-//       edges {
-//         node {
-//           id
-//           excerpt
-//           slug
-//           title
-//           keywords
-//           date(formatString: "MMMM DD, YYYY")
-//         }
-//       }
-//     }
-//   }
-// `
 
 export default Posts
