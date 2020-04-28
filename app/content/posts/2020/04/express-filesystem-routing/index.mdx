@@ -1,5 +1,5 @@
 ---
-title: "Replicating Vercel Now's File-System Routing for Express"
+title: "Replicating Vercel's File-System Routing for Express"
 description: 'Documenting my experience with building npm:express-fs-router'
 date: 2020-04-27
 keywords: ['javascript', 'tooling']
@@ -28,7 +28,7 @@ keywords: ['javascript', 'tooling']
   <span style="display:inline-block;padding:2px 3px">Martin Adams</span>
 </a> -->
 
-There is something magical about writing an API with Vercel (previously known as ZEIT) Now's API routing, where each file is an exposed route, and each file exports a default function that follows Express's handler nomenclature.
+There is something magical about writing an API with Vercel's (previously known as ZEIT) API routing, where each file is an exposed route, and each file exports a default function that follows Express's handler nomenclature.
 
 ```js
 export default function(req, res) {}
@@ -38,7 +38,7 @@ Since Vercel uses [micro](https://www.npmjs.com/package/micro) behind the scenes
 
 ## The Need
 
-When talking about adding file-system routing to Express you might be asking yourself "but why?", and that's a valid question. With Express we can easily import its router, create the route, export the router, and then roll it up in the `routes.js` or `app.js` file with the Express app. But with file-system routing we align with what Vercel Now offers: export a default function (the handler) and the route now exists and is exposed.
+When talking about adding file-system routing to Express you might be asking yourself "but why?", and that's a valid question. With Express we can easily import its router, create the route, export the router, and then roll it up in the `routes.js` or `app.js` file with the Express app. But with file-system routing we align with what Vercel offers: export a default function (the handler) and the route now exists and is exposed.
 
 ## Benefits
 
@@ -83,7 +83,7 @@ file-system routing isn't a new concept, but I can understand why some would cho
 
 ## express-fs-router
 
-Noted earlier, [express-fs-router](https://www.npmjs.com/package/express-fs-router) is a utility I wrote to bring file-system routing to Express. It functions a lot like Vercel Now's API routes, but with a bit of added functionality.
+Noted earlier, [express-fs-router](https://www.npmjs.com/package/express-fs-router) is a utility I wrote to bring file-system routing to Express. It functions a lot like Vercel's API routes, but with a bit of added functionality.
 
 ### Features
 
