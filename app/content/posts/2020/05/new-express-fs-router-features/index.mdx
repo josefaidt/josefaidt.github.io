@@ -1,0 +1,106 @@
+---
+title: 'New Features in Express FS Router'
+description: 'Adding middleware support and HTTP method file-system routing to the Express FileSystem Router'
+date: 2020-05-28
+keywords: ['javascript', 'tooling']
+---
+
+![PA Coal Power Plant - steam network - Photo by Martin Adams on Unsplash](martin-adams--unsplash.jpg)
+
+In my [last post](https://josefaidt.dev/blog/2020/04/express-filesystem-routing/) I talked about replicating Vercel's file-system routing for Express, and the reasoning behind the motivation.
+
+For this iteration of [the package](https://www.npmjs.com/package/express-fs-router) there are two new notable features:
+
+1. Middleware support
+2. file-system based HTTP method routing (i.e. "methods routing")
+
+I took some time away from the package to think about how I would like to design and implement middleware support. To align with the rest of the routing utility I wanted it to be straightforward and extremely approachable. Before diving into the solution, let's take a look at what middleware is and the apparent challenges with the existing codebase.
+
+## Middleware
+
+First, middleware is a term used to describe modular pieces of logic that runs before the execution of the endpoint handler. Think of it as a single function or a collection of functions that are chained together in order of execution before ultimately executing the defined handler. It sits in the "middle".
+
+What does this look like in Express?
+
+```js
+// index.js
+import express from 'express'
+const app = express()
+
+function myMiddleware(req, res, next) {
+  console.log('hello from my middleware!')
+  next()
+}
+
+app.get('/hello', myMiddleware, function(req, res) {
+  res.json({ message: `Hello, ${req.query.name ?? 'World'}` })
+})
+
+app.listen(3000)
+```
+
+As you may have noticed the middleware function takes a third argument, `next`, and this is used to _continue_ or go to the _next_ function. Remember these functions are executed in the order they are added to the route. Middleware can be used for a lot of additional functionalities such as authentication, body parsing, and uploading a file.
+
+For adding this support to `express-fs-router` &mdash; where routes' files export a default function handler &mdash; we needed a way to export a _collection_ of functions where the order is preserved. What better way to do this than Arrays!
+
+```js
+// api/hello.js
+
+function myMiddleware(req, res, next) {
+  console.log('hello from my middleware!')
+  next()
+}
+
+// our handler
+function get(req, res) {
+  res.json({ message: `Hello, ${req.query.name ?? 'World'}` })
+}
+
+export default [myMiddleware, get]
+```
+
+## Existing Codebase Challenges
+
+Before I started working on this feature, the existing codebase was only expecting function exports and solving the rest of the routing logic for us. One of the quirks with adding middleware via Arrays is that Arrays are not a primitive type in JavaScript, so if we try to check with `typeof` we're going to expect `object` to come back. Thanks to a handy Array method, `isArray` we can ensure what the utility will attempt to work with is in fact an Array.
+
+When looking at the skeleton code it looks something like this:
+
+```js
+// express-fs-router/index.js
+switch (typeof handler) {
+  case 'function': {
+    // export default function(req, res) {}
+  }
+  case 'object': {
+    if (Array.isArray(handler) && handler.length) {
+      // export default [function(req, res, next) {}, function(req, res) {}]
+    }
+  }
+}
+```
+
+From here the rest of the logic is as straightforward as the existing `function` check, where we will be expecting the handler to be at the last position in the array:
+
+```js
+// express-fs-router/index.js
+switch (typeof handler) {
+  case 'function': {
+    // export default function(req, res) {}
+  }
+  case 'object': {
+    if (Array.isArray(handler) && handler.length) {
+      // export default [function(req, res, next) {}, function(req, res) {}]
+      // get HTTP method from handler function name
+      if (!method) method = handler[handler.length - 1].name
+      // set to router
+      router[method](route, ...handler)
+    }
+  }
+}
+```
+
+**Disclaimer** this pseudo-code is to display the design of the new feature's implementation, for more details be sure to check out [the source code](https://github.com/josefaidt/express-fs-router/blob/master/packages/express-fs-router/index.js#L147-L172).
+
+And that's it! Middleware support is now fully functional for the Express routing utility. This next feature caused me to come back and refactor middleware support a little bit, but all for the better of the utility.
+
+## Methods Routing

@@ -20,12 +20,13 @@
 		"prefix": "!blog",
 		"body": [
 			"---",
-			"title: '$1'",
-			"description: '$2'",
-			"date: '$3'",
-			"tags: ['$4']",
-			"image: $5",
+			"title: \"$1\"",
+			"description: \"$2\"",
+			"date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+			"keywords: ['$4']",
 			"---",
+			"",
+			"![PA Coal Power Plant - steam network - Photo by Martin Adams on Unsplash](martin-adams--unsplash.jpg)",
 			"",
 			"$5"
 		],
