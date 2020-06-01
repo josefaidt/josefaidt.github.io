@@ -14,7 +14,7 @@ For this iteration of [express-fs-router](https://www.npmjs.com/package/express-
 1. Middleware support
 2. file-system based HTTP method routing (i.e. "methods routing")
 
-I took some time away from the package to think about how I would like to design and implement middleware support. To align with the rest of the routing utility I wanted it to be straightforward and extremely approachable. Before diving into the solution, let's take a look at what middleware is and the apparent challenges with the existing codebase.
+I took some time away from the package to think about how I would like to design and implement middleware support. To align with the rest of the routing utility I wanted the developer experience to be straightforward and extremely approachable. Before diving into the solution, let's take a look at what middleware is and the apparent challenges with the existing codebase.
 
 ## Middleware
 
@@ -41,11 +41,10 @@ app.listen(3000)
 
 As you may have noticed the middleware function takes a third argument, `next`, and this is used to continue or go to the _next_ function. Remember these functions are executed in the order they are added to the route. Middleware can be used for a lot of additional functionalities such as authentication, body parsing, and uploading a file.
 
-For adding this support to `express-fs-router` &mdash; where routes' files export a default function handler &mdash; we needed a way to export a _collection_ of functions where the order is preserved. What better way to do this than Arrays!
+For adding this support to `express-fs-router` &mdash; where routes respective files export a function &mdash; we needed a way to export a _collection_ of functions where the order is preserved. What better way to do this than Arrays!
 
 ```js
 // api/hello.js
-
 function myMiddleware(req, res, next) {
   console.log('hello from my middleware!')
   next()
@@ -61,9 +60,9 @@ export default [myMiddleware, get]
 
 ## Existing Codebase Challenges
 
-Before I started working on this feature, the existing codebase was only expecting function exports and solving the rest of the routing logic for us. One of the quirks with adding middleware via Arrays is that Arrays are not a primitive type in JavaScript, so if we try to check with `typeof` we're going to expect `object` to come back. Thanks to a handy Array method, `isArray` we can ensure what the utility will attempt to work with is in fact an Array.
+Before I started working on this feature the existing codebase was only expecting function exports and solving the remainder of the routing logic for us. One of the quirks with adding middleware via Arrays is that Arrays are not a primitive type in JavaScript, so if we try to check with `typeof` we're going to expect `object` to come back. Thanks to a handy Array method, `isArray` we can ensure what the utility will attempt to work with is in fact an Array.
 
-When looking at the skeleton code it looks something like this:
+The skeleton code looks something like this:
 
 ```js
 // express-fs-router/index.js
@@ -79,7 +78,7 @@ switch (typeof handler) {
 }
 ```
 
-From here the rest of the logic is as straightforward as the existing `function` check, where we will be expecting the handler to be at the last position in the array:
+From here the logic is as straightforward as the existing `function` check, but we will be expecting the handler to be at the last position in the array:
 
 ```js
 // express-fs-router/index.js
