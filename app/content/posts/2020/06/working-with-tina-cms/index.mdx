@@ -1,0 +1,25 @@
+---
+title: 'Working with TinaCMS'
+description: ''
+date: 2020-06-22
+keywords: ['thoughts', 'serverless', 'websites']
+---
+
+![Wildlife Grazing - Tupiza, Bolivia - Photo by Paz Arando on Unsplash](paz-arando-unsplash.jpg)
+
+> Tina is a lightweight but powerful toolkit for creating a content editing interface with JavaScript components... [read more](https://tinacms.org/docs/getting-started/introduction)
+
+Honestly, it is pretty darn cool. Although it is geared towards React and has specific tutorials for Gatsby and Next.js, I feel it can be a bit flexible for implementations outside of the [guides](https://tinacms.org/guides). At the end of the day we're editing content on the live site, then "saving" those changes somewhere.
+
+I picked this up not only because it seemed fun, but it provides an interactive authoring experience for those that may not feel entirely comfortable with using a text editor and straight markdown to author content. For most of you reading this, that's probably perfectly fine, and for me it is as well. My site is built on Gatsby with MDX-enabled authoring. To be frank, after setting this up and playing with it I may rewrite my site to use this setup as well, it's that cool.
+
+For this to be secure and fast, I have thought about the following tech stack:
+
+- Next.js - statically-generated content from database
+- CSS Modules - styling solution
+- TinaCMS
+- FaunaDB - store JSON content with Markdown
+- Vercel - hosting platform
+- auth0 - Authenticating appropriate users (content authors)
+
+And the idea is to create authoring components to be drag-and-dropped onto the page to insert various types of content like images, videos, video links (i.e. YouTube), plain text headings, rich text, Markdown, etc. This is where the authorization piece really comes in as we do not want unauthorized actors to perform changes on our site, and subsequently plague the database. Once authorized, the TinaCMS panel will appear and content editing is therefore enabled. After the author performs their edits and clicks "save" the application will post an update to our database and trigger a rebuild of our site, after all it's statically generated which means content is pulled in at build time (`yarn build`).
