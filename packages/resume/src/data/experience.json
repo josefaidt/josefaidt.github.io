@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Full-Stack JavaScript Developer",
+    "company": "IBM",
+    "startDate": "December 2018",
+    "endDate": "Present",
+    "responsibilities": [
+      "Established local front-end development group chapter, leads bi-weekly meetups",
+      "Build learning management system (Node.js, React)"
+    ]
+  },
+  {
+    "title": "Business Intelligence Developer",
+    "company": "FMOL Health System",
+    "startDate": "August 2017",
+    "endDate": "December 2018",
+    "responsibilities": [
+      "Build and support Lawson ERP submodules (HTML5, CSS3, JavaScript)",
+      "Design financial, human resources, and logistics reports (Oracle SQL, Microsoft SQL, Tableau)"
+    ]
+  },
+  {
+    "title": "IS Support Analyst",
+    "company": "FMOL Health System",
+    "startDate": "October 2013",
+    "endDate": "August 2017",
+    "responsibilities": [
+      "Lead large-scale endpoint deployments",
+      "Build inventory receiving application infrastructure (MySQL, Microsoft Server, PHP)"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "home",
+    "route": "/",
+    "component": "index.mdx"
+  },
+  {
+    "name": "about",
+    "route": "/about",
+    "component": "about.mdx"
+  },
+  {
+    "name": "work",
+    "route": "/work",
+    "component": "work.mdx"
+  },
+  {
+    "name": "blog",
+    "route": "/blog"
+  }
+]

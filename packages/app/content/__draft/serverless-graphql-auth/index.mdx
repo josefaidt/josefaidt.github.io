@@ -1,0 +1,25 @@
+---
+title: 'Serverless GraphQL Authentication with Apollo and Auth0'
+description: 'Explore adding third party authentication to an existing Apollo endpoint with Auth0'
+date: 2020-04-25
+keywords: ['serverless', 'infrastructure', 'graphql', 'fauna', 'security']
+---
+
+<!-- ![White Building - Photo by Joel Filipe on Unsplash](joel-filipe-white-building.jpg) -->
+
+**Note**: this is part two to the [previous blog post](https://josefaidt.dev/blog/2020/04/serverless-graphql-with-fauna-and-now) where we created an Apollo Server on top of Fauna, hosted on Vercel Now
+
+## Overview
+
+Last time we left on the note of security. Our existing endpoint is stood up and functional, but really anyone that knew of its existence could hit, and possibly abuse, our API. That's not ideal, so let's venture into what it takes to add third party authentication to our serverless endpoint.
+
+Before we dive in, let's take a look at some prerequisites:
+
+- Completion of [Part 1](https://josefaidt.dev/blog/2020/04/serverless-graphql-with-fauna-and-now) OR existing Apollo endpoint on Vercel Now
+- [Auth0 account](https://auth0.com)
+
+## Auth0
+
+> Rapidly integrate authentication and authorization for web, mobile, and legacy applications so you can focus on your core business.
+
+Taking a quick look through Auth0

@@ -5,28 +5,18 @@
   "author": "Josef Aidt <josef.aidt@gmail.com>",
   "scripts": {
     "app": "yarn workspace @josefaidt/app run",
-    "theme": "yarn workspace @josefaidt/gatsby-theme run",
-    "demo": "yarn workspace @josefaidt/demo run",
     "resume": "yarn workspace @josefaidt/resume run",
-    "build": "yarn build:app && yarn build:demo",
-    "build:app": "yarn app build",
-    "build:demo": "yarn demo build",
+    "build": "yarn app build",
     "clean": "rm -rf node_modules **/node_modules yarn.lock",
     "reload": "yarn clean; yarn install"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/josefaidt/josefaidt.github.io"
   },
   "workspaces": [
-    "app",
-    "theme",
-    "demo",
-    "resume"
+    "packages/*"
   ],
   "devDependencies": {
     "@josefaidt/eslint-config": "^0.1.11",

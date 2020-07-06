@@ -1,0 +1,114 @@
+---
+title: Work
+---
+
+export default ({ children, data, ...props }) => (
+  <PageLayout>
+    <SEO title="Work" />
+    <Title>
+      <h1>Work</h1>
+      <a href="https://resume.josefaidt.dev" style={{ marginTop: '1.2rem' }}>
+        Résumé &rarr;
+      </a>
+    </Title>
+    <Line />
+    <h2>Personal Projects</h2>
+    <p>
+      A truncated list of my most recently-active repositories. For a complete list of visit my{' '}
+      <a
+        href="https://github.com/josefaidt?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github profile
+      </a>
+      .
+    </p>
+    <div className="repo-list--container">
+      {data.githubUser.repositories.edges.map(({ node: r }, i) => (
+        <a
+          className="link card"
+          href={r.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={i}
+          style={{ textDecoration: 'none' }}
+        >
+          <RepoCard {...r} />
+        </a>
+      ))}
+    </div>
+    <br />
+    <div>{children}</div>
+  </PageLayout>
+)
+
+export const query = graphql`
+  query {
+    file(name: { eq: "josefaidt_Resume" }) {
+      publicURL
+      name
+    }
+    githubUser {
+      name
+      url
+      repositories {
+        edges {
+          node {
+            id
+            name
+            description
+            url
+            homepageUrl
+            stargazers {
+              totalCount
+            }
+            watchers {
+              totalCount
+            }
+            forks {
+              totalCount
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+## Education
+
+---
+
+### Louisiana State University, Baton Rouge, LA
+
+Bachelor of Science – Information Systems and Decision Sciences
+Activities: LSU Tiger Marching Band, Association of IT Professionals LSU Chapter
+
+<br />
+
+## Accomplishments
+
+---
+
+### Boy Scouts of America – Eagle Scout
+
+2009 Philmont Scout Ranch attendee<br />2010 Centennial National Scout Jamboree attendee
+
+<br />
+
+## Volunteer Work
+
+---
+
+### Geaux BIG Baton Rouge 2015
+
+Annual event held by LSU Campus Life to give a streamlined opportunity for students to give back to the community; involves simple tasks such as landscaping, pressure washing, painting, and elderly assistance
+
+### Our Lady of the Lake RMC
+
+Provided DJ and music entertainment services for community events such as annual Easter and Halloween celebrations. Also participated as a member of the company-sponsored team for the Jambalaya Jam 2018 event, which benefits the Capital Area United Way campaign.
+
+### Krewe of Apollo Baton Rouge
+
+Provided DJ and music entertainment services for various events such as local concerts, crowning galas, and fundraising ball
