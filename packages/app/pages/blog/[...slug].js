@@ -19,7 +19,7 @@ export default function BlogPostTemplate({ post, ...rest }) {
 export async function getStaticPaths(context) {
   const paths = await recursiveReadDir(path.join(process.env.PWD, `content/posts/`))
   return {
-    paths: paths.map(path => `/blog/${path}`),
+    paths: paths.map(path => `/blog/${path.replace(/index$/, '')}`),
     fallback: true,
   }
 }
@@ -31,7 +31,6 @@ export async function getStaticProps(context) {
     'utf8'
   )
   const content = fm(post)
-  // console.log('POST IS', content)
   return {
     props: {
       post: {

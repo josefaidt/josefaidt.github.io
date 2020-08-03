@@ -4,3 +4,4 @@ public
 .cache
 *.log
 .env
+.next

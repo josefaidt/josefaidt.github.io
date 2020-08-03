@@ -1,5 +1,8 @@
 const { existsSync: exists, promises: fs } = require('fs')
 const path = require('path')
+const withMDX = require('@next/mdx')({
+  extension: /\.(md|mdx)$/,
+})
 const recursiveReadDir = require('./support/recursiveReadDir')
 
 async function boostrap() {
@@ -14,9 +17,6 @@ async function boostrap() {
 
 boostrap()
 
-const withMDX = require('@next/mdx')({
-  extension: /\.(md|mdx)$/,
-})
 module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
