@@ -25,7 +25,7 @@ export default function BlogHomePage({ posts, ...rest }) {
 
 export async function getStaticProps(context) {
   const paths = await recursiveReadDir(path.join(process.env.PWD, `content/posts/`))
-  const slugs = paths.map(path => `/blog/${path}`)
+  const slugs = paths.map(path => `/blog/${path.replace(/\/index$/, '')}`)
   console.log('PATHS ARE', paths)
   return {
     props: {

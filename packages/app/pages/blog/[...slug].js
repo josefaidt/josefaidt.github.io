@@ -19,7 +19,7 @@ export default function BlogPostTemplate({ post, ...rest }) {
 export async function getStaticPaths(context) {
   const paths = await recursiveReadDir(path.join(process.env.PWD, `content/posts/`))
   return {
-    paths: paths.map(path => `/blog/${path.replace(/index$/, '')}`),
+    paths: paths.map(path => `/blog/${path.replace(/\/index$/, '')}`),
     fallback: true,
   }
 }
